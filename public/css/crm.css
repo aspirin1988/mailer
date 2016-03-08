@@ -1,0 +1,856 @@
+/* Bootstrap-стили для CRM программистов, менеджеров, дизайнеров, тестировщиков, верстальщиков, контент-менеджеров и т.д. */
+
+
+/* color classes */
+.black { /* programmgers' color */
+    background-color: #222;
+    color: #eee;
+}
+.loadingMikro{
+    background-image : url('/images/ajaxLoader.gif');
+    background-repeat: no-repeat;
+}
+
+.blue,
+.blue:hover,
+.blue:active,
+.blue:focus{ /* office-managers' color */
+    background-color: #2185d0;
+}
+
+.teal,
+.teal:hover,
+.teal:active,
+.teal:focus { /* call-center's color */
+    background-color: #00b5ad;
+}
+
+.green,
+.green:hover,
+.green:active,
+.green:focus { /* designers' color */
+    background-color: #21ba45;
+}
+
+.darkgreen,
+.darkgreen:hover,
+.darkgreen:active,
+.darkgreen:focus {    /* css-coders'(webmasters') color */
+    background-color: #006400;
+}
+
+
+.orange,
+.orange:hover,
+.orange:active,
+.orange:focus {   /* testers' color */
+    background-color: #f2711c;
+}
+
+.grey {     /* background grey */
+    background-color: #f9f9f9;
+}
+
+.yellow,
+.yellow:hover,
+.yellow:active,
+.yellow:focus {
+    background-color: #dad934;
+}
+
+.red,
+.red:hover,
+.red:active,
+.red:focus {
+    background-color: #a00007;
+}
+
+
+.modal .darkgreen,
+.modal .green,
+.modal .blue,
+.modal .black,
+.modal .orange,
+.modal .teal {
+    color: white;
+}
+/* end color classes */
+
+/* required  */
+.form-group.required .control-label:after {
+    content:" *";
+    color:red;
+}
+/* end required */
+
+/* general styles */
+a.btn:not(.btn-default),
+a.btn:hover:not(.btn-default),
+a.btn:focus:not(.btn-default),
+button.btn:not(.btn-default),
+button.btn:hover:not(.btn-default),
+button.btn:focus:not(.btn-default),
+input.btn:not(.btn-default),
+input.btn:hover:not(.btn-default),
+input.btn:focus:not(.btn-default) {
+    color: white;
+}
+
+select option {
+    padding: 0 3px;
+}
+
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+div#page-content-wrapper {
+    padding: 0;
+}
+
+.clearfix:after {
+   content: '';
+   display: table;
+   clear: both;
+}
+
+.in-blk {
+    display: inline-block;
+}
+
+span.glyphicon:hover {
+    opacity: 0.9;
+}
+
+textarea {
+    resize: vertical; /* user can resize vertically, but width is fixed */
+}
+
+.td-img {
+    height: 30px;
+    width: 30px;
+}
+
+.loading-img {
+    width: 250px;
+    margin: 30px auto;
+}
+
+.loading-img-project-info {
+    width: 120px;
+    margin: 30px auto;
+}
+
+.uploaded-img {
+    margin-left: 7px;
+    margin-right: 7px;
+    width: 200px;
+}
+/* end general styles */
+/* sidebar */
+
+#sidebar-wrapper {
+    box-shadow: 15px 0px 40px rgba(0,0,0,0.1);
+}
+
+.top-block {
+    padding: 3%;
+}
+
+.top-block img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.top-block p {
+    color: white;
+    line-height: 1;
+}
+
+.top-block p.nick {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-top: 30px;
+}
+
+.top-block hr {
+    clear: both;
+    opacity: .3;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 0;
+}
+
+.top-block .btn,
+.top-block .btn:hover,
+.top-block .btn:focus {
+    color: black;
+}
+/* end sidebar */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+header {
+    color: white;
+    padding: 25px 40px;
+}
+
+header h2 {
+    display: inline-block;
+    margin: 0;
+    margin-left: 3%;
+    font-weight: bold;
+}
+
+header > span,
+header > div > span { /* увеличиваем размер иконок в header-е */
+    font-size: 26px;
+    position: relative;
+    cursor: pointer;
+}
+
+header span.badge {
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+}
+
+header .dropdown-menu {
+    padding: 7px;
+}
+
+header .dropdown-menu li:last-child p {
+    margin-bottom: 0;
+}
+
+.container {
+    background-color: #eee;
+}
+
+.pageheader .glyphicon {
+    margin-right: 20px;
+}
+
+.wrapper_search {
+    background-color: #eee;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+form input[type="submit"],
+.wrapper_search button[type="button"]  {
+    margin-top: 25px;
+}
+
+/* chat button */
+.chat_wrapper {
+    bottom: 20px;
+    position: fixed;
+    right: 20px;
+}
+
+.chat_wrapper button.btn-chat {
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+
+.chat_wrapper button.btn-chat span {
+    color: #444;
+}
+
+.chat_wrapper button.btn-chat:hover {
+    opacity: .9;
+}
+
+.chat_wrapper button.btn-chat:focus,
+.chat_wrapper button.btn-chat:active {
+    outline: none!important;
+}
+
+.chat_wrapper .dropdown-menu {
+    min-width: 0px;
+}
+
+.chat_wrapper .dropdown-menu a {
+    padding: 5px;
+}
+
+.chat_wrapper .dropdown-menu img {
+    height: 40px;
+    width: 40px;
+}
+/* end chat button */
+/* little chat window */
+.little-chat {
+    box-sizing: content-box;
+    width: 310px;
+    height: 200px;
+    max-width: 600px;
+    min-width: 310px;
+    max-height: 500px;
+    min-height: 200px;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.little-chat span.glyphicon {
+    opacity: .7;
+    font-size: 20px;
+    margin: 8px;
+}
+
+.little-chat .table-cell.icon-div { /* делаем элемены хэдера и футера маленького чата таблицами */
+    display: table-cell;
+    width: 40px;
+    vertical-align: middle;
+}
+
+.little-chat .table-cell { /* делаем элемены хэдера и футера маленького чата таблицами */
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.little-chat .pan-head {
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.little-chat .pan-head .company-logo {
+    height: 40px;
+    cursor: move;
+}
+
+.little-chat .pan-head .company-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.little-chat .pan-head .company-name {
+    cursor: move;
+    padding-left: 10px;
+}
+
+.little-chat .pan-head .company-name h4 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.panel-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    padding: 10px;
+}
+
+.panel-body>.event {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    padding: .8rem 0;
+    margin: 0;
+    background: 0 0;
+    border-top: none;
+}
+.panel-body>.event>.content {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    text-align: left;
+    word-wrap: break-word;
+}
+.panel-body>.event>.content .summary {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 700;
+    color: rgba(0,0,0,.87);
+}
+.panel-body>.event>.content .summary>.date {
+    display: inline-block;
+    float: none;
+    font-weight: 400;
+    font-size: .85714286em;
+    font-style: normal;
+    margin: 0 0 0 1em;
+    padding: 0;
+    color: rgba(0,0,0,.4);
+}
+.panel-body>.event>.label {
+    display: block;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 5rem;
+    height: auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    text-align: left;
+}
+.panel-body a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+.panel-body>.event>.label img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 500rem;
+}
+.panel-body>.event>.content .extra.images img {
+    display: inline-block;
+    margin: 0 .15rem 0 0;
+    width: 6em;
+}
+
+.pan-footer {
+    border-top: 1px solid #ddd;
+    background-color: #f5f5f5;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    display: table;
+}
+
+.pan-footer input {
+    border: 1px solid #ddd;
+    margin-top: 2px;
+}
+/* end little chat window */
+
+/* big chat modal */
+.modal-content {
+    overflow: hidden;
+}
+
+.modal-dialog {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header.black .close,
+.modal-header.orange .close,
+.modal-header.blue .close,
+.modal-header.green .close,
+.modal-header.darkgreen .close{
+    opacity: .7;
+    color: white;
+}
+
+.modal-content button.close:hover {
+    opacity: 1;
+}
+
+.modal .row {
+    margin: 0;
+}
+
+.modal .row > img,
+.modal .row > h4 {
+    display: inline-block;
+}
+
+.modal .btn-default,
+.modal .btn-default:hover,
+.modal .btn-default:focus,
+.modal .btn-default:active {
+    color: black;
+}
+
+.modal li img,
+.modal li p {
+    display: inline-block;
+}
+
+.modal hr {
+    margin-top: 5px;
+}
+
+.modal .modal-footer input {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.modal .modal-footer {
+    display: table;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.modal .modal-footer span {
+    padding: 10px;
+}
+
+.modal .modal-footer .table-cell.icon-div { /* делаем элемены хэдера и футера маленького чата таблицами */
+    display: table-cell;
+    width: 40px;
+}
+
+.modal .modal-footer input {
+    display: table-cell;
+    width: 100%;
+}
+/* end big chat modal */
+@media screen and (max-width: 480px) {
+
+    header h2 {
+        display: none;
+    }
+
+}
+
+/* Адаптивный дизайн для отображение закладок */
+@media screen and (max-width: 768px) {
+
+    header h2 {
+        font-size: 2.2rem;
+    }
+
+    header {
+        color: white;
+        padding: 15px 20px;
+    }
+}
+/* Конец адаптивный дизайн для отображение закладок */
+
+/* designer project info modal window */
+.modal {
+    overflow: auto !important; /* этот говнокод(!important) был добавлен для того, чтобы исправить проблему бутстрапа, из-за которой после закрытия модального окна верхнего уровня, не скроллится модальное окно нижнего уровня.*/
+}
+
+.modal-body > .close {
+    margin-top: 5px;
+}
+
+.fade.if.modal {
+    padding-left: 0 !important; /* чтобы исправить проблему бутстрапа, из-за которой модальное окно второй вложенности появлялось не ровно над первым модальным окном, а со смшещением padding-left: 15px; */
+}
+
+.modal ul.nav-tabs {
+    margin: 0 -15px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-tabs>li {
+        float: none;
+        text-align: center;
+        border-bottom-color: #ddd;
+    }
+
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        border-bottom-color: #ddd;
+    }
+}
+
+.project-info.modal-body,
+.prototypes.modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.project-info.modal-body div.row + div.row {
+    margin-bottom: 15px;
+}
+
+.modal-dialog .modal-header h4 {
+    display: inline-block;
+}
+
+.modal-dialog .modal-header h4 + h4 {
+    margin-left: +10%;
+}
+
+.project-info.modal-body .glyphicon {
+    color: #555;
+}
+
+.project-info.modal-body .centered {
+    text-align: center;
+}
+
+.project-info.modal-body {
+    padding-bottom: 5px;
+}
+
+.project-info.modal-body .panel-default {
+    margin-bottom: 5px;
+}
+
+.project-info.modal-body  h5.user-and-date {
+    margin-bottom: 2px;
+}
+
+.project-info.modal-body .file-item {
+    display: inline-block;
+}
+
+.col-md-4 > .file-item {
+    display: block;
+    width: 100%;
+}
+
+.file-item img {
+    height: 25px;
+}
+
+.file-item {
+     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.col-md-8 .input-group {
+    margin-top: 10px;
+}
+
+.unavaliable-text { /* текст, написанны большими серыми буквами (например "Багрепорт недоступен") */
+    color: #ddd;
+    font-size: 4em;
+    padding: 1.5em 0;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container:hover img {
+    opacity: .4;
+}
+
+.img-container:hover .button-in-image {
+    display: block;
+}
+
+.button-in-image {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    cursor: pointer;
+}
+
+
+.button-in-image.button-upload {
+    left: 6%;
+}
+
+.button-in-image.button-get {
+    right: 6%;
+}
+/* end designer project info modal window */
+
+/* designer prototypes modal window */
+.modal-body .row.grey {
+    padding-top: 10px;
+}
+
+.modal-body .searchform {
+    padding: 15px;
+}
+
+.modal-body .row.prototype-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-inline .form-group {
+    margin-left: 3%;
+}
+
+.modal-body .panel-footer {
+    background-color: #fff;
+}
+
+.label {
+    display: inline-block;
+}
+
+.label + .label {
+    margin-left: 5px;
+}
+
+#accordion {
+    margin: 15px 0;
+}
+
+.accordion {
+    cursor: pointer;
+}
+
+.row.filter-buttons {
+    margin-bottom: 15px;
+}
+
+/* end designer prototypes modal window */
+
+/* tester prototypes modal window */
+
+.report-form {
+    margin: 15px 0
+}
+
+#cke_editor1 {
+    margin: 15px 0;
+}
+
+.report-item {
+    padding: 15px;
+}
+
+.close.add-error {
+    position: absolute;
+    top: -5px;
+    right: 0;
+}
+/* end tester prototypes modal window */
+
+/* CHATBOX */
+.chatbox {
+    margin: 10px 0;
+    padding: 0 5px;
+    list-style: none;
+}
+
+.chatbox li {
+    width: 80%;
+    display: block;
+    padding: 10px;
+    margin: 10px 0 35px 0;
+    position: relative;
+    border: 2px solid #eee;
+    border-radius: 5px;
+}
+
+
+.chatbox li::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.chatbox li.chatbox-from {
+    float: left;
+}
+
+
+
+.chatbox li.chatbox-to {
+    float: right;
+}
+
+
+.chatbox li .user_info{
+    position: absolute;
+    top: -25px;
+    right: 15px;
+}
+.chatbox li .tester_info {
+    position: absolute;
+    top: -25px;
+    left: 15px;
+}
+
+/* стили для модального окна Ертая "вы уверены?" */
+.popup-dialog-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; background: rgba(0,0,0,.7);
+}
+.popup-dialog-content {
+    overflow: hidden; position: fixed; top: 20%; left: 50%; background: #fff; z-index: 2001; min-width: 160px; border-radius: 5px; padding: 20px;
+}
+/* конец стили для модального окна Ертая "вы уверены?" */
+
+/* начало стили для маленьких модальных окон колл-центра
+.modal-sm {
+    margin-top: 175px;
+}
+.modal-little {
+    z-index: 1082 !important;
+}
+.modal-backdrop.in:nth-of-type(odd) {
+    z-index: 1081 !important;
+}
+/* конец стили для маленьких модальных окон колл-центра */
+
+/* стили для тайлов администратора */
+
+.tile{
+    display: inline-block;
+    border:1px solid dodgerblue;
+    background-color: #00aced;
+    color: #ffffff;
+    text-decoration: none;
+    min-width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.tile p{
+    padding: 30px;
+}
+
+.tile:hover{
+    border: 1px solid #0e566c;
+    background-color: #0d71bb;
+    color: #ffffff;
+}
+
+
+
+.textarea-block {
+    position: relative;
+}
+
+.textarea-submit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* call-center затемнение фона в маленьких модальках второго уровня
+.modal-little {
+    margin-top: 175px;
+}
+.modal-little {
+    z-index: 1060 !important;
+}
+.modal-backdrop.in:nth-of-type(even) {
+    z-index: 1055 !important;
+}
+/* конец call-center затемнение фона в маленьких модальках второго уровня */

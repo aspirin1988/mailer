@@ -1,0 +1,159 @@
+<!-- Свёрстано на Bootstrap'е -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Менеджер прав доступа</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+   <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+   <link href="css/crm.css" rel="stylesheet" type="text/css">
+   <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+   <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="top-block darkgray clearfix">
+                    <div>
+                        <img class="img-circle pull-left" src="images/avatar/small/elliot.jpg">
+                        <p class="nick">Darkusha</p>
+                        <p>Дарт Вейдер</p>
+                    </div>
+                    <div class="ui divider"></div>
+                    <hr>
+                    <div class="pull-right ">
+                        <button class="btn">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            Выход
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Sidebar -->
+        <div id="page-content-wrapper">
+            <header class="darkgray pageheader clearfix">
+                <span id="menu-toggle" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                <h2>Менеджер прав доступа</h2>
+                <div class="pull-right dropdown">
+                    <span class="glyphicon glyphicon-console"></span>
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    <span class="glyphicon glyphicon-bell dropdown-toggle" aria-hidden="true" data-toggle="dropdown">
+                        <span class="badge red">3</span>
+                    </span>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><p><a role="menuitem" tabindex="-1" href="#">Закоммититься</a></p></li>
+                        <li role="presentation"><p><a role="menuitem" tabindex="-1" href="#">Отрефакторить говнокод</a></p></li>
+                        <li role="presentation"><p><a role="menuitem" tabindex="-1" href="#">Перейти с Семантака на Бутстрап</a></p></li>
+                    </ul>
+                </div>
+            </header>
+
+            <!--TABLE -->
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                       <th>Тест     </th>
+                       <th>Действия</th>
+                    </tr>
+                    <tr>
+                       <td>call_center</td>
+                       <td>
+                           <button class="btn btn-sm darkgray" type="button" name="button"  data-toggle="modal" data-target="#editModal">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                           </button>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td>designer</td>
+                       <td>
+                           <button class="btn btn-sm darkgray" type="button" name="button">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                           </button>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td>office-manager</td>
+                       <td>
+                           <button class="btn btn-sm darkgray" type="button" name="button">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                           </button>
+                       </td>
+                    </tr>
+                </table>
+            </div><!--END TABLE -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="editModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Редактирование</h4>
+                        </div><!--end modal-header -->
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Название</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Menu</label><br>
+                                        <input type="checkbox" name="sait-mazmuny" value="forumchick"> Форум<br>
+                                        <input type="checkbox" name="sait-mazmuny" value="chatik"> Чат<br>
+                                        <input type="checkbox" name="sait-mazmuny" value="fotoslider"> Фотослайдер<br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end modal-body -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success">Сохранить</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                        </div><!--end modal-footer -->
+                    </div><!--end modal-content -->
+                </div><!--end modal-dialog modal-lg -->
+            </div><!--end modal infoModal -->
+
+
+
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script type="text/javascript">
+        /* switch-button */
+        $.fn.bootstrapSwitch.defaults.size = 'mini';
+        $("[name='my-checkbox']").bootstrapSwitch();
+        /* end switch-button */
+
+        /* sidebar */
+        $("#menu-toggle").click(function(e) {
+           $("#wrapper").toggleClass("toggled");
+        });
+        /* end sidebar */
+
+    </script>
+</body>
+</html>

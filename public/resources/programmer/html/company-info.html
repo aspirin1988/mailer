@@ -1,0 +1,74 @@
+<div class="modal-body">
+    <div><h4>Информация компании</h4></div>
+    <div>
+        <a href="#" data-target="#myCarousel" data-slide-to="0" class="btn btn-primary">{{locale.Programmers_back_to_projectDetails}}</a>
+    </div>
+    <br>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{locale.Programmers_info}}</div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{locale.Programmers_company_name}}</label>
+                        <p>{{companyInfo.name}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{locale.Programmers_company_address}}</label>
+                        <p>{{companyInfo.ph_address}}</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">{{locale.Programmers_company_contacts}}</div>
+            <div class="panel-body">
+                <div ng-repeat="(key, val) in companyInfo.contact">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{locale.Programmers_contact_name}}</label>
+                            <p>{{val.first_name}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{locale.Programmers_contact_name}}</label>
+                            <p>{{val.last_name}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{locale.Programmers_contact_phones}}</label>
+                            <p>{{val.phone}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{locale.Programmers_contact_email}}</label>
+                            <p>{{val.email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">{{locale.Programmers_briefs}}</div>
+            <div class="panel-body">
+                <div class="col-md-6" ng-repeat="(key, val) in projectDetail.brif">
+                    <div class="form-group">
+                        <label for="companyName">{{val.name}}</label>
+                        <p>{{val.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-dismiss="modal">{{locale.Programmers_close}}</button>
+</div>

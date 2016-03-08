@@ -1,0 +1,112 @@
+<div class="modal-body" ng-if="projectDetail">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="/?route=image&action=get-image-project&id={{projectDetail.thumbnail}}" alt="" class="img-thumbnail" err-src="/images/users/darth-vader.jpg">
+        </div>
+        <div class="col-sm-8">
+            <h4>{{locale.Programmers_project_name}}: {{ projectDetail.name }}</h4>
+            <h5>{{locale.Programmers_description}}: {{ projectDetail.description }}</h5>
+            <br><br>
+            <div class="pull-right">
+                <a class="btn btn-primary " href="#" data-target="#myCarousel" data-slide-to="3">Информация компаний</a>
+                <a class="btn btn-primary " href="#" ng-if="projectComments" data-target="#myCarousel" data-slide-to="1">{{locale.Programmers_new_comment}} ({{projectComments.length}})</a>
+                <a ng-if="projectBackreport.length > 0" href="#" data-target="#myCarousel" data-slide-to="2" class="btn btn-danger">{{locale.Programmers_bug_report}}</a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div  class="col-md-12 form-group" ng-if="projectFiles.length > 0">
+        <h4 >Файлы проекта:</h4>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">{{locale.Programmers_manager}}</h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <a ng-if="val.post === '5' || val.post === '14' " ng-repeat="(key, val) in projectFiles" class="btn btn-default file-item col-md-4" href="?route=programmer&action=download-file&id_file={{file.id}}" download="{{val['name_old']}}" style="text-align: left;">
+                            <img src="/?route=image&action=get-thumbnail-project&id={{val.id}}" alt="" err-src="images/icons/mimes/{{val.extension}}.svg" err-src1="images/icons/mimes/default.svg" style="height:50px;">
+                            {{val.name_old}}
+                        </a>
+                        <div>
+                            <a href="/?route=programmer&action=download-files-post&id={{projectDetail.id}}&post=5" class="btn btn-default pull-right" ng-if="soloProjectFilesApprove[3]" download>Скачать файлы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">{{locale.Programmers_designer}}</h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <a ng-if="val.post === '3' || val.post === '10' " ng-repeat="(key, val) in projectFiles" class="btn btn-default file-item col-md-4" href="?route=programmer&action=download-file&id_file={{file.id}}" download="{{val['name_old']}}" style="text-align: left;">
+                            <img src="/?route=image&action=get-thumbnail-project&id={{val.id}}" alt="" err-src="images/icons/mimes/{{val.extension}}.svg" err-src1="images/icons/mimes/default.svg" style="height:50px;">
+                            {{val.name_old}}
+                        </a>
+                        <div>
+                            <a href="/?route=programmer&action=download-files-post&id={{projectDetail.id}}&post=3" class="btn btn-default pull-right" ng-if="soloProjectFilesApprove[3]" download>Скачать файлы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3">{{locale.Programmers_webmaster}}</h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <a ng-if="val.post === '4' || val.post === '12'" ng-repeat="(key, val) in projectFiles" class="btn btn-default file-item col-md-4" href="?route=programmer&action=download-file&id_file={{file.id}}" download="{{val['name_old']}}" style="text-align: left;">
+                            <img src="/?route=image&action=get-thumbnail-project&id={{val.id}}" alt="" err-src="images/icons/mimes/{{val.extension}}.svg" err-src1="images/icons/mimes/default.svg" style="height:50px;">
+                            {{val.name_old}}
+                        </a>
+                        <div>
+                            <a href="/?route=programmer&action=download-files-post&id={{projectDetail.id}}&post=4" class="btn btn-default pull-right" ng-if="soloProjectFilesApprove[4]" download>Скачать файлы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse4">{{locale.Programmers_programmer}}</h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <a ng-if="val.post === '7' || val.post === '13'" ng-repeat="(key, val) in projectFiles" class="btn btn-default file-item col-md-4" href="?route=programmer&action=download-file&id_file={{file.id}}" download="{{val['name_old']}}" style="text-align: left;">
+                            <img src="/?route=image&action=get-thumbnail-project&id={{val.id}}" alt="" err-src="images/icons/mimes/{{val.extension}}.svg" err-src1="images/icons/mimes/default.svg" style="height:50px;">
+                            {{val.name_old}}
+                        </a>
+                        <div>
+                            <a href="/?route=programmer&action=download-files-post&id={{projectDetail.id}}&post=7" class="btn btn-default pull-right" ng-if="soloProjectFilesApprove[7]" download>Скачать файлы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--a style="margin: 2px" class="btn btn-default file-item" ng-repeat="(key, val) in projectFiles" href="/?route=programmer&action=get-project-file&id={{val['id']}}" download="{{val['name_old']}}">
+            <img  ng-src="images/icons/mimes/{{val['extension']}}.png" alt="" err-src="images/icons/mimes/default.png">
+            {{val['name_old']}}
+        </a-->
+    </div>
+    <div class="row">
+        <div>
+            <input type="file" file-model="myFile" id="uploadFile" class="hidden">
+        </div>
+        <h4 class="html-ProjectFilesList"></h4>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button type="button" class="btn blue" upload-files="uploadFile">
+                    <span class="glyphicon glyphicon-file"></span> Загрузить файл
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <a href="/?route=programmer&action=get-project-files&projectId={{projectDetail.id}}" class="btn btn-primary" download>{{locale.Programmers_download_all_files_of_project}}</a>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn darkgreen" ng-click="updateProject()" ng-if="projectDetail.status===16 && projectDetail.developer!==0">Утвердить проект</button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">{{locale.Programmers_close}}</button>
+</div>

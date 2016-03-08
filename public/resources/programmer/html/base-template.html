@@ -1,0 +1,173 @@
+<br>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#avaliableProjects" ng-click="getAvaiPrjects()">{{locale.Programmers_new_projects}}</a></li>
+    <li><a data-toggle="tab" href="#myProjects"  ng-click="getMyProjects()">{{locale.Programmers_my_projects}}</a></li>
+    <li><a data-toggle="tab" href="#toAcceptProjects" ng-click="getAcceptedProject()">{{locale.Programmers_wait_projects}}</a></li>
+    <li><a data-toggle="tab" href="#finishedProjects" ng-click="getFinishedProject()">{{locale.Programmers_done_projects}}</a></li>
+    <li><a data-toggle="tab" href="#reports" ng-click="getReport()" ng-if="user.post==='13'">{{locale.Programmers_report}}</a></li>
+</ul>
+<br>
+<div class="tab-content">
+    <div id="avaliableProjects" class="tab-pane fade in active">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <colgroup>
+                    <col class="col-md-1">
+                    <col class="col-md-10">
+                    <col class="col-md-1">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>{{locale.Programmers_id}}</th>
+                    <th>{{locale.Programmers_project_name}}</th>
+                    <th> </th>
+                </tr>
+                <tr ng-repeat="(key, val) in avaliableProjects">
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.name }}</td>
+                    <td ng-if="avaliableProjectsApprove === 0"><button class="btn btn-sm black" href="#" role="button" ng-click="projectDetailCheck(val.id)">{{locale.Programmers_about_project}}</button></td>
+                    <td ng-if="avaliableProjectsApprove === 1"><button class="btn btn-sm black" href="#" role="button" data-toggle="modal" data-target="#errorProject">{{locale.Programmers_about_project}}</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="myProjects" class="tab-pane fade">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <colgroup>
+                    <col class="col-md-1">
+                    <col class="col-md-10">
+                    <col class="col-md-1">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>{{locale.Programmers_id}}</th>
+                    <th>{{locale.Programmers_project_name}}</th>
+                    <th> </th>
+                </tr>
+                <tr ng-repeat="(key, val) in myProjects">
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.name }}</td>
+                    <td><button class="btn btn-sm black" href="#" role="button" get-project-detail="{{val.id}}" data-toggle="modal" data-target="#projectDetail">{{locale.Programmers_about_project}}</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="toAcceptProjects" class="tab-pane fade">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <colgroup>
+                    <col class="col-md-1">
+                    <col class="col-md-10">
+                    <col class="col-md-1">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>{{locale.Programmers_id}}</th>
+                    <th>{{locale.Programmers_project_name}}</th>
+                    <th> </th>
+                </tr>
+                <tr ng-repeat="(key, val) in toAcceptProjects">
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.name }}</td>
+                    <td><button class="btn btn-sm black" href="#" role="button" get-project-detail="{{val.id}}" data-toggle="modal" data-target="#projectDetail">{{locale.Programmers_about_project}}</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="finishedProjects" class="tab-pane fade">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <colgroup>
+                    <col class="col-md-1">
+                    <col class="col-md-10">
+                    <col class="col-md-1">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>{{locale.Programmers_id}}</th>
+                    <th>{{locale.Programmers_project_name}}</th>
+                    <th> </th>
+                </tr>
+                <tr ng-repeat="(key, val) in finishedProjects">
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.name }}</td>
+                    <td><button class="btn btn-sm black" href="#" role="button" get-project-detail="{{val.id}}" data-toggle="modal" data-target="#projectDetail">{{locale.Programmers_about_project}}</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="reports" class="tab-pane fade" ng-if="user.post==='13'">
+        <div class="table-responsive">
+            <div class="panel panel-default">
+                <div class="panel-heading text-right" style="overflow: hidden;">
+                    <div class="col-md-offset-3 col-md-3">
+                        <button class="black btn btn-sm" data-toggle="modal" data-target="#reportsModal" ng-click="getDepartment()">{{locale.Programmers_SeeDepartmentReport}}</button>
+                    </div>
+                    <div class=" col-md-3">
+                        <label type="text">{{locale.Programmers_SearchReportbyname}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" id="" class="form-control" search-slaves>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="col-md-1">{{locale.Programmers_id}}</th>
+                    <th class="col-md-9">{{locale.Programmers_name}}</th>
+                    <th class="col-md-2 text-center">{{locale.Programmers_actions}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, val) in report">
+                    <td class="col-md-1">{{ val.id }}</td>
+                    <td class="col-md-9">{{ val.first_name }} {{ val.last_name }} {{ val.middle_name }}</td>
+                    <td class="col-md-2 text-center"><button class="btn btn-sm black" data-toggle="modal" data-target="#reportsModal" ng-click="getSlaveId(val.id, val.first_name,  val.last_name, val.middle_name)">{{locale.Programmers_ReportSee}}</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<form action="">
+    <div id="projectDetail" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="modal-header black">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{locale.Programmers_description}}</h4>
+                    </div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active" id="projectDetails"></div>
+                        <div class="item" id="projectComments"></div>
+                        <div class="item" id="projectBackreport"></div>
+                        <div class="item" id="companyInfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="errorProject" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header black">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ошибка</h4></div>
+            <div class="modal-body">{{locale['Programmers_you_have_some_project']}}</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{locale.Programmers_close}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

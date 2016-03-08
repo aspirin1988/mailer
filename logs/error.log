@@ -1,0 +1,209 @@
+[Wed Feb 24 11:37:40.633418 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:40.633478 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Stack trace:
+[Wed Feb 24 11:37:40.633494 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:40.633502 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:40.633511 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633518 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633526 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:40.633553 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:40.633558 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Stack trace:
+[Wed Feb 24 11:37:40.633564 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:40.633570 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:40.633576 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633582 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633589 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:40.633599 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:40.633604 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Stack trace:
+[Wed Feb 24 11:37:40.633609 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:40.633615 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:40.633622 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633628 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633634 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:40.633650 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:40.633655 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP Stack trace:
+[Wed Feb 24 11:37:40.633660 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:40.633672 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:40.633678 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633685 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:40.633691 2016] [:error] [pid 3937] [client 127.0.0.1:37655] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:56.412937 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:56.412977 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:56.412989 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:56.412999 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:56.413008 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413016 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413025 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:56.413045 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:56.413052 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:56.413059 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:56.413067 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:56.413075 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413083 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413091 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:56.413104 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:56.413111 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:56.413118 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:56.413125 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:56.413133 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413141 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413161 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:56.413179 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:56.413186 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:56.413193 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:56.413201 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:56.413208 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413216 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:56.413224 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:57.770490 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:57.770525 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:57.770537 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:57.770548 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:57.770557 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770566 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770575 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:57.770593 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:37:57.770599 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:57.770607 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:57.770616 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:57.770624 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770632 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770641 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:57.770652 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:57.770658 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:57.770665 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:57.770688 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:57.770696 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770705 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770714 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:37:57.770733 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:37:57.770740 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP Stack trace:
+[Wed Feb 24 11:37:57.770748 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:37:57.770756 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:37:57.770764 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770772 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:37:57.770780 2016] [:error] [pid 4004] [client 127.0.0.1:37684] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:38:19.493325 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:38:19.493365 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Stack trace:
+[Wed Feb 24 11:38:19.493377 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:38:19.493386 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:38:19.493399 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493413 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493428 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:38:19.493448 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:38:19.493455 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Stack trace:
+[Wed Feb 24 11:38:19.493462 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:38:19.493470 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:38:19.493477 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493485 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493493 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:38:19.493517 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:38:19.493523 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Stack trace:
+[Wed Feb 24 11:38:19.493530 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:38:19.493537 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:38:19.493543 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493550 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493557 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:38:19.493574 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:38:19.493580 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP Stack trace:
+[Wed Feb 24 11:38:19.493587 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:38:19.493593 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:38:19.493600 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493607 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:38:19.493614 2016] [:error] [pid 4003] [client 127.0.0.1:37697] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:39:02.443513 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:39:02.443598 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:39:02.443626 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:39:02.443648 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:39:02.443669 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.443690 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.443712 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:39:02.443770 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Warning:  Illegal string offset 'contact' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:39:02.443785 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:39:02.443797 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:39:02.443842 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:39:02.443861 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.443880 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.443898 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:39:02.443933 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:39:02.443947 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:39:02.443963 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:39:02.443982 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:39:02.443999 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.444017 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.444034 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:39:02.444077 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Warning:  Illegal string offset 'comment' in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:39:02.444092 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:39:02.444107 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:39:02.444123 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:39:02.444139 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.444156 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:39:02.444175 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:40:15.682542 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Notice:  Undefined index: contact in /home/serg/site/yasf/app/callcenter/models/Company.php on line 282
+[Wed Feb 24 11:40:15.682633 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:40:15.682665 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:40:15.682681 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:40:15.682695 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:15.682744 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:15.682767 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:40:24.162474 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 283
+[Wed Feb 24 11:40:24.162563 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP Stack trace:
+[Wed Feb 24 11:40:24.162594 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:40:24.162617 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:40:24.162639 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:24.162661 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:24.162684 2016] [:error] [pid 4005] [client 127.0.0.1:37698] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:40:34.746419 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 284
+[Wed Feb 24 11:40:34.746500 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP Stack trace:
+[Wed Feb 24 11:40:34.746527 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:40:34.746549 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:40:34.746569 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:34.746589 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:40:34.746610 2016] [:error] [pid 4002] [client 127.0.0.1:37713] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:41:38.105796 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 284
+[Wed Feb 24 11:41:38.105891 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP Stack trace:
+[Wed Feb 24 11:41:38.105949 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:41:38.105969 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:41:38.105984 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:41:38.105999 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:41:38.106013 2016] [:error] [pid 4015] [client 127.0.0.1:37716] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:44:39.479715 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 284
+[Wed Feb 24 11:44:39.479766 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP Stack trace:
+[Wed Feb 24 11:44:39.479785 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:44:39.479797 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:44:39.479807 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:44:39.479819 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany() /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:44:39.479829 2016] [:error] [pid 4057] [client 127.0.0.1:37728] PHP   5. app\\callcenter\\models\\Company->getEditCompany() /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:54:00.949564 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP Notice:  Undefined index: contact in /home/serg/site/yasf/app/callcenter/models/Company.php on line 284
+[Wed Feb 24 11:54:00.949643 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP Stack trace:
+[Wed Feb 24 11:54:00.949716 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:54:00.949741 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:54:00.949764 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:54:00.949787 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:54:00.949810 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:54:00.949862 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 285
+[Wed Feb 24 11:54:00.949880 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP Stack trace:
+[Wed Feb 24 11:54:00.949899 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:54:00.949918 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:54:00.949938 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:54:00.949961 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:54:00.949983 2016] [:error] [pid 4003] [client 127.0.0.1:37745] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:55:12.657006 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP Notice:  Undefined index: contact in /home/serg/site/yasf/app/callcenter/models/Company.php on line 284
+[Wed Feb 24 11:55:12.657058 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP Stack trace:
+[Wed Feb 24 11:55:12.657090 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:55:12.657102 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:55:12.657113 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:55:12.657124 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:55:12.657135 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 11:55:12.657157 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP Notice:  Undefined index: comment in /home/serg/site/yasf/app/callcenter/models/Company.php on line 285
+[Wed Feb 24 11:55:12.657164 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP Stack trace:
+[Wed Feb 24 11:55:12.657173 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   1. {main}() /home/serg/site/yasf/public/index.php:0
+[Wed Feb 24 11:55:12.657182 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   2. core\\Router->run() /home/serg/site/yasf/public/index.php:39
+[Wed Feb 24 11:55:12.657190 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   3. call_user_func_array:{/home/serg/site/yasf/core/Router.php:64}(*uninitialized*, *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:55:12.657200 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   4. app\\callcenter\\controllers\\Company->getEditCompany($id = *uninitialized*) /home/serg/site/yasf/core/Router.php:64
+[Wed Feb 24 11:55:12.657210 2016] [:error] [pid 3937] [client 127.0.0.1:37759] PHP   5. app\\callcenter\\models\\Company->getEditCompany($user = *uninitialized*, $id = *uninitialized*) /home/serg/site/yasf/app/callcenter/controllers/Company.php:55
+[Wed Feb 24 14:41:14.175571 2016] [:error] [pid 4002] [client 127.0.0.1:39815] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Fri Feb 26 12:15:54.770831 2016] [:error] [pid 2086] [client 127.0.0.1:48460] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] could not connect to server: Network is unreachable\n\tIs the server running on host "192.168.1.213" and accepting\n\tTCP/IP connections on port 5432?' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Fri Feb 26 12:17:01.021395 2016] [:error] [pid 2088] [client 127.0.0.1:48474] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Fri Feb 26 16:27:34.621320 2016] [:error] [pid 6802] [client 127.0.0.1:50483] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Tue Mar 08 22:01:33.350355 2016] [:error] [pid 18518] [client 127.0.0.1:51548] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Tue Mar 08 22:01:35.044251 2016] [:error] [pid 18519] [client 127.0.0.1:51549] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133

@@ -1,0 +1,19 @@
+<div class="modal-content">
+    <div class="modal-header black">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{locale.Programmers_idea_name}}</h4>
+    </div>
+    <div class="modal-body">
+        <form ng-submit="ideaSubmit()">
+            <div class="form-group">
+                <label for="nameOfModal">{{locale.Programmers_nameofmodal}}</label>
+                <input type="text" class="form-control" id="nameOfTtype" placeholder="{{locale.Programmers_nameofmodal}}" ng-model="ideaData['name']">
+            </div>
+            <div class="form-group">
+                <label for="descriptionOfModal">{{locale.Programmers_idea_content}}</label>
+                <textarea class="form-control" id="descriptionOfModal" placeholder="{{locale.Programmers_idea_content}}" ng-model="ideaData['text']"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">{{locale.Programmers_idea_send}}</button>
+        </form>
+    </div>
+</div>
