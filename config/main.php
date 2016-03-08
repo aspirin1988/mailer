@@ -32,7 +32,7 @@ define("TEMPLATE_FOOTER_FILE", TEMPLATE_PATH . DS . DEFAULT_TEMPLATE . DS . 'foo
 
 // DB config
 define('DATABASE_TYPE', 'pgsql');
-define('DATABASE_NAME', 'crm');
+define('DATABASE_NAME', 'mailer');
 define('DATABASE_SERVER', '127.0.0.1');
 define('DATABASE_USERNAME', 'crm');
 define('DATABASE_PASSWORD', 'crm_user');
