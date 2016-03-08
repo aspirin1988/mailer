@@ -35,12 +35,14 @@ class Router
         /** @var Session $session */
         $session = YASF::$app->get('Session');
 
+        //Список роутов пока добавляется в ручную!!!
         $permissions = [
             'programmer',
             'auth',
             'designer',
             'callcenter',
             'helper',
+            'site',
         ];
 
         if (!$session->User() && $route[0] != 'auth') {
