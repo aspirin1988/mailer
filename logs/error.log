@@ -207,3 +207,63 @@
 [Fri Feb 26 16:27:34.621320 2016] [:error] [pid 6802] [client 127.0.0.1:50483] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
 [Tue Mar 08 22:01:33.350355 2016] [:error] [pid 18518] [client 127.0.0.1:51548] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
 [Tue Mar 08 22:01:35.044251 2016] [:error] [pid 18519] [client 127.0.0.1:51549] PHP Fatal error:  Uncaught exception 'Exception' with message 'SQLSTATE[08006] [7] timeout expired' in /home/serg/site/yasf/core/Database.php:133\nStack trace:\n#0 /home/serg/site/yasf/public/index.php(20): core\\Database->__construct(Array)\n#1 {main}\n  thrown in /home/serg/site/yasf/core/Database.php on line 133
+[Wed Mar 09 23:31:19.231090 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Warning:  Missing argument 1 for app\\site\\controllers\\Site::getAllSite() in /home/serg/site/mailer/app/site/controllers/Site.php on line 14
+[Wed Mar 09 23:31:19.231479 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Stack trace:
+[Wed Mar 09 23:31:19.231508 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:31:19.231538 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:31:19.231552 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:19.231566 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   4. app\\site\\controllers\\Site->getAllSite() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:19.233749 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Notice:  Undefined property: app\\site\\controllers\\Site::$response in /home/serg/site/mailer/app/site/controllers/Site.php on line 17
+[Wed Mar 09 23:31:19.233793 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Stack trace:
+[Wed Mar 09 23:31:19.233812 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:31:19.233826 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:31:19.233840 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:19.233853 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   4. app\\site\\controllers\\Site->getAllSite() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:19.233874 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Fatal error:  Call to a member function json() on null in /home/serg/site/mailer/app/site/controllers/Site.php on line 17
+[Wed Mar 09 23:31:19.233883 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP Stack trace:
+[Wed Mar 09 23:31:19.233894 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:31:19.233906 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:31:19.233919 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:19.233931 2016] [:error] [pid 21190] [client 127.0.0.1:55844] PHP   4. app\\site\\controllers\\Site->getAllSite() /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:40.551141 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Warning:  Missing argument 1 for app\\site\\controllers\\Site::getAllSite() in /home/serg/site/mailer/app/site/controllers/Site.php on line 14
+[Wed Mar 09 23:31:40.551234 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Stack trace:
+[Wed Mar 09 23:31:40.551250 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:31:40.551276 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:31:40.551309 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:31:40.551323 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:09.491204 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Notice:  Undefined property: app\\site\\controllers\\Site::$response in /home/serg/site/mailer/app/site/controllers/Site.php on line 17
+[Wed Mar 09 23:32:09.491286 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Stack trace:
+[Wed Mar 09 23:32:09.491349 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:32:09.491376 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:32:09.491401 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:09.491426 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:09.491459 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Fatal error:  Call to a member function json() on null in /home/serg/site/mailer/app/site/controllers/Site.php on line 17
+[Wed Mar 09 23:32:09.491472 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP Stack trace:
+[Wed Mar 09 23:32:09.491484 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:32:09.491496 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:32:09.491508 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:09.491522 2016] [:error] [pid 21186] [client 127.0.0.1:55853] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:42.938031 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP Warning:  Missing argument 1 for app\\site\\controllers\\Site::getAllSite() in /home/serg/site/mailer/app/site/controllers/Site.php on line 16
+[Wed Mar 09 23:32:42.938166 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP Stack trace:
+[Wed Mar 09 23:32:42.938201 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:32:42.938226 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:32:42.938249 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:42.938269 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:51.623554 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP Notice:  Undefined variable: page in /home/serg/site/mailer/app/site/controllers/Site.php on line 19
+[Wed Mar 09 23:32:51.623664 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP Stack trace:
+[Wed Mar 09 23:32:51.623727 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:32:51.623755 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:32:51.623806 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:32:51.623832 2016] [:error] [pid 21188] [client 127.0.0.1:55858] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:45:57.801121 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP Warning:  Missing argument 1 for app\\site\\controllers\\Site::getAllSite() in /home/serg/site/mailer/app/site/controllers/Site.php on line 16
+[Wed Mar 09 23:45:57.801153 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP Stack trace:
+[Wed Mar 09 23:45:57.801166 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:45:57.801176 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:45:57.801186 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:45:57.801197 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:45:57.801673 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP Notice:  Undefined variable: page in /home/serg/site/mailer/app/site/controllers/Site.php on line 19
+[Wed Mar 09 23:45:57.801688 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP Stack trace:
+[Wed Mar 09 23:45:57.801699 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Wed Mar 09 23:45:57.801709 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Wed Mar 09 23:45:57.801719 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:66}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:66
+[Wed Mar 09 23:45:57.801729 2016] [:error] [pid 21190] [client 127.0.0.1:55891] PHP   4. app\\site\\controllers\\Site->getAllSite($page = *uninitialized*) /home/serg/site/mailer/core/Router.php:66
