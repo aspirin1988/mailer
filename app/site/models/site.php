@@ -16,15 +16,14 @@ class site extends Models
     public function getAllSite($page=0)
     {
         $limit = PAGE_SIZE;
-        $countData = $this->db->count('site');
-        $countPage = ceil($countData / $limit);
+        $countSite = $this->db->count('site');
+        $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
-        $companyData = $this->db->select('site', [
+        $siteData = $this->db->select('site', [
             "[>]email" => ["email" => "id"]
         ],
             [
                 'site.*',
-                'email.id',
                 'email.login',
                 'email.password',
             ],
@@ -35,7 +34,7 @@ class site extends Models
         );
 
         return [
-            'data' => $companyData,
+            'data' => $siteData,
             'count' => $countPage
         ];
 
@@ -43,6 +42,30 @@ class site extends Models
 
     public function getSite($id)
     {
-        return $id;
+        $siteData = $this->db->select('site',
+            [
+                'site.*',
+            ]
+            ,
+            [
+                'id'=>$id
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
+
+    }
+
+    public function EditSite($id,$value)
+    {
+        $result = $this->db->update('site',$value,[
+            'id'=>$id
+        ]);
+
+        return [
+            'data'=>$result
+        ];
     }
 }

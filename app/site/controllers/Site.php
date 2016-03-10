@@ -18,4 +18,16 @@ class Site extends Controller
         $model = new \app\site\models\site();
         $this->response->json($model->getAllSite($page));
     }
+
+    public function getSite($id)
+    {
+        $model = new \app\site\models\site();
+        $this->response->json($model->getSite($id));
+    }
+
+    public  function EditSite ($id)
+    {
+
+    }
+
 }
