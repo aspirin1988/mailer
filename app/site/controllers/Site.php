@@ -27,7 +27,16 @@ class Site extends Controller
 
     public  function EditSite ($id)
     {
+        $value = $this->request->rest();
+        $model = new \app\site\models\site();
+        $this->response->json($model->EditSite($id,$value));
+    }
 
+    public function AddSite ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\site\models\site();
+        $this->response->json($model->AddSite($value));
     }
 
 }

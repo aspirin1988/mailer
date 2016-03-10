@@ -68,4 +68,13 @@ class site extends Models
             'data'=>$result
         ];
     }
+
+    public function AddSite ($value)
+    {
+      $result  = $this->db->insert('site',$value);
+
+        return [
+            'data'=>$result
+        ];
+    }
 }
