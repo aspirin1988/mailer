@@ -35,4 +35,25 @@ class email extends Models
         ];
 
     }
+
+    public function EditEmail($id,$value)
+    {
+        $result = $this->db->update('email',$value,[
+            'id'=>$id
+        ]);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
+    public function AddEmail ($value)
+    {
+        $result  = $this->db->insert('email',$value);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
 }

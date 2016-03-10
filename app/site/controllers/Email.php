@@ -18,4 +18,18 @@ class Email extends Controller
         $model = new \app\site\models\email();
         $this->response->json($model->getAllEmail($page));
     }
+
+    public  function EditEmail ($id)
+    {
+        $value = $this->request->rest();
+        $model = new \app\site\models\Email();
+        $this->response->json($model->EditEmail($id,$value));
+    }
+
+    public function AddSite ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\site\models\Email();
+        $this->response->json($model->AddEmail($value));
+    }
 }
