@@ -13,6 +13,11 @@ use core\Controller;
 
 class Template extends Controller
 {
+    public function index()
+    {
+        echo 'is template';
+    }
+
     public function Get($name,$style)
     {
         $model = new \app\client\models\template();

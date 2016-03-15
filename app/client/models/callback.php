@@ -9,7 +9,18 @@
 namespace app\client\models;
 
 
-class callback
+use core\Models;
+
+class callback extends Models
 {
+    public function Recall ()
+    {
+        return 'is recall';
+    }
+
+    public function Query ()
+    {
+        return 'is query';
+    }
 
 }

@@ -13,6 +13,11 @@ use core\Controller;
 
 class Script extends Controller
 {
+    public function index()
+    {
+        echo 'is script';
+    }
+
     public function Get($name)
     {
         $model = new \app\client\models\script();
