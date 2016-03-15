@@ -13,14 +13,16 @@ use core\Models;
 
 class callback extends Models
 {
-    public function Recall ()
+    public function Recall ($rest)
     {
-        return 'is recall';
+
+        return $rest['md5'];
     }
 
-    public function Query ()
+    public function Query ($rest)
     {
-        return 'is query';
+
+        return $rest['md5'];
     }
 
 }
