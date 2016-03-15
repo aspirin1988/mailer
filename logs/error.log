@@ -1466,3 +1466,293 @@
 [Tue Mar 15 16:27:46.061903 2016] [:error] [pid 2952] [client 127.0.0.1:46586] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
 [Tue Mar 15 16:27:46.061912 2016] [:error] [pid 2952] [client 127.0.0.1:46586] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
 [Tue Mar 15 16:27:46.061935 2016] [:error] [pid 2952] [client 127.0.0.1:46586] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353199 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Warning:  Missing argument 1 for app\\site\\controllers\\Email::index() in /home/serg/site/mailer/app/site/controllers/Email.php on line 16
+[Tue Mar 15 16:42:37.353540 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Stack trace:
+[Tue Mar 15 16:42:37.353555 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:37.353565 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:37.353575 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353581 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   4. app\\site\\controllers\\Email->index() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353592 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Warning:  Missing argument 2 for app\\site\\controllers\\Email::index() in /home/serg/site/mailer/app/site/controllers/Email.php on line 16
+[Tue Mar 15 16:42:37.353599 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Stack trace:
+[Tue Mar 15 16:42:37.353608 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:37.353613 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:37.353621 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353630 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   4. app\\site\\controllers\\Email->index() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353641 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Notice:  Undefined variable: p in /home/serg/site/mailer/app/site/controllers/Email.php on line 18
+[Tue Mar 15 16:42:37.353646 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Stack trace:
+[Tue Mar 15 16:42:37.353651 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:37.353659 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:37.353668 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353677 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   4. app\\site\\controllers\\Email->index() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353686 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Notice:  Undefined variable: p1 in /home/serg/site/mailer/app/site/controllers/Email.php on line 18
+[Tue Mar 15 16:42:37.353692 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP Stack trace:
+[Tue Mar 15 16:42:37.353700 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:37.353709 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:37.353715 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:37.353722 2016] [:error] [pid 2176] [client 127.0.0.1:37547] PHP   4. app\\site\\controllers\\Email->index() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:45.225589 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP Warning:  Missing argument 1 for app\\client\\controllers\\Script::Get() in /home/serg/site/mailer/app/client/controllers/Script.php on line 16
+[Tue Mar 15 16:42:45.225646 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP Stack trace:
+[Tue Mar 15 16:42:45.225660 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:45.225670 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:45.225679 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:45.225685 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   4. app\\client\\controllers\\Script->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:45.226800 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP Notice:  Undefined variable: name in /home/serg/site/mailer/app/client/controllers/Script.php on line 19
+[Tue Mar 15 16:42:45.226812 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP Stack trace:
+[Tue Mar 15 16:42:45.226821 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:42:45.226828 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:42:45.226837 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:42:45.226846 2016] [:error] [pid 2177] [client 127.0.0.1:37548] PHP   4. app\\client\\controllers\\Script->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:43:15.954318 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 16:43:15.954363 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP Stack trace:
+[Tue Mar 15 16:43:15.954380 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:43:15.954393 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:43:15.954403 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:43:15.954414 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:43:15.954535 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 16:43:15.954547 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP Stack trace:
+[Tue Mar 15 16:43:15.954557 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:43:15.954568 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:43:15.954578 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:43:15.954589 2016] [:error] [pid 27695] [client 127.0.0.1:37568] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:47:19.546981 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 27
+[Tue Mar 15 16:47:19.547045 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP Stack trace:
+[Tue Mar 15 16:47:19.547074 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 16:47:19.547082 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 16:47:19.547089 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:47:19.547094 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 16:47:19.547099 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 16:47:19.547104 2016] [:error] [pid 2177] [client 127.0.0.1:37633] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:50.490896 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 29
+[Tue Mar 15 17:00:50.490928 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP Stack trace:
+[Tue Mar 15 17:00:50.490940 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:00:50.490946 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:00:50.490952 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:50.490958 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:50.490963 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:50.490968 2016] [:error] [pid 2178] [client 127.0.0.1:37656] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:51.590266 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 29
+[Tue Mar 15 17:00:51.590294 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP Stack trace:
+[Tue Mar 15 17:00:51.590305 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:00:51.590312 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:00:51.590319 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:51.590325 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:51.590331 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:51.590336 2016] [:error] [pid 2179] [client 127.0.0.1:37659] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:52.503554 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 29
+[Tue Mar 15 17:00:52.503584 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP Stack trace:
+[Tue Mar 15 17:00:52.503597 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:00:52.503604 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:00:52.503610 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:52.503629 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:52.503636 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:52.503642 2016] [:error] [pid 2180] [client 127.0.0.1:37662] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:53.166633 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 29
+[Tue Mar 15 17:00:53.166671 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP Stack trace:
+[Tue Mar 15 17:00:53.166686 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:00:53.166697 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:00:53.166706 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:53.166715 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:53.166724 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:53.166733 2016] [:error] [pid 28223] [client 127.0.0.1:37665] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:53.729940 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/serg/site/mailer/app/client/models/template.php on line 29
+[Tue Mar 15 17:00:53.729971 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP Stack trace:
+[Tue Mar 15 17:00:53.729980 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:00:53.729988 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:00:53.729994 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:53.729998 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:00:53.730002 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:00:53.730006 2016] [:error] [pid 2176] [client 127.0.0.1:37668] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:06:02.398396 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:02.398436 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP Stack trace:
+[Tue Mar 15 17:06:02.398446 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:02.398454 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:02.398461 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:02.398469 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:02.399288 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:02.399324 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP Stack trace:
+[Tue Mar 15 17:06:02.399345 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:02.399356 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:02.399366 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:02.399388 2016] [:error] [pid 2178] [client 127.0.0.1:37685] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:11.427142 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:11.427185 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:11.427196 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:11.427204 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:11.427212 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:11.427219 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:11.427803 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:11.427816 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:11.427825 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:11.427832 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:11.427840 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:11.427847 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.098802 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:12.098834 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.098843 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.098850 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.098857 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.098863 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.098919 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:12.098927 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.098946 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.098952 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.098959 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.098965 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.574168 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:12.574192 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.574204 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.574213 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.574221 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.574230 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.574300 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:12.574309 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.574318 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.574326 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.574341 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.574349 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.755993 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:12.756043 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.756061 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.756071 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.756081 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.756090 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.756167 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:12.756177 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP Stack trace:
+[Tue Mar 15 17:06:12.756185 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:12.756193 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:12.756217 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:12.756225 2016] [:error] [pid 2179] [client 127.0.0.1:37686] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:44.497521 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:06:44.497630 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP Stack trace:
+[Tue Mar 15 17:06:44.497645 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:44.497653 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:44.497661 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:44.497669 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:44.498532 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:06:44.498559 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP Stack trace:
+[Tue Mar 15 17:06:44.498575 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:06:44.498586 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:06:44.498598 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:06:44.498609 2016] [:error] [pid 28223] [client 127.0.0.1:37705] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:10:06.878316 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:10:06.878411 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP Stack trace:
+[Tue Mar 15 17:10:06.878439 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:10:06.878449 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:10:06.878455 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:10:06.878462 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:10:06.878567 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:10:06.878577 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP Stack trace:
+[Tue Mar 15 17:10:06.878584 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:10:06.878591 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:10:06.878597 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:10:06.878633 2016] [:error] [pid 27695] [client 127.0.0.1:37752] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:24.197555 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:11:24.197604 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP Stack trace:
+[Tue Mar 15 17:11:24.197620 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:11:24.197633 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:11:24.197645 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:24.197655 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:24.198396 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:11:24.198415 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP Stack trace:
+[Tue Mar 15 17:11:24.198427 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:11:24.198439 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:11:24.198451 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:24.198460 2016] [:error] [pid 2180] [client 127.0.0.1:37762] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:28.400899 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:11:28.400921 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP Stack trace:
+[Tue Mar 15 17:11:28.400928 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:11:28.400933 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:11:28.400938 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:28.400944 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:28.401005 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:11:28.401014 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP Stack trace:
+[Tue Mar 15 17:11:28.401022 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:11:28.401029 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:11:28.401036 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:11:28.401052 2016] [:error] [pid 2177] [client 127.0.0.1:37768] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:12:23.193930 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:12:23.193959 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP Stack trace:
+[Tue Mar 15 17:12:23.193967 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:12:23.193972 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:12:23.193977 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:12:23.193983 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:12:23.194335 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:12:23.194343 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP Stack trace:
+[Tue Mar 15 17:12:23.194349 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:12:23.194354 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:12:23.194359 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:12:23.194365 2016] [:error] [pid 2178] [client 127.0.0.1:37775] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:13:04.764789 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:13:04.764852 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP Stack trace:
+[Tue Mar 15 17:13:04.764866 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:13:04.764905 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:13:04.764920 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:13:04.764931 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:13:04.765842 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:13:04.765858 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP Stack trace:
+[Tue Mar 15 17:13:04.765885 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:13:04.765895 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:13:04.765907 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}(*uninitialized*, *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:13:04.765956 2016] [:error] [pid 27695] [client 127.0.0.1:37781] PHP   4. app\\client\\controllers\\Template->Get($name = *uninitialized*, $style = *uninitialized*) /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:02.464976 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:20:02.465031 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP Stack trace:
+[Tue Mar 15 17:20:02.465045 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:02.465055 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:02.465063 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:02.465072 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:02.465577 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:20:02.465588 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP Stack trace:
+[Tue Mar 15 17:20:02.465597 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:02.465605 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:02.465613 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:02.465621 2016] [:error] [pid 2178] [client 127.0.0.1:37917] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:13.170894 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:20:13.170921 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP Stack trace:
+[Tue Mar 15 17:20:13.170932 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:13.170943 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:13.170949 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:13.170958 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:13.171110 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP Parse error:  syntax error, unexpected ';' in /home/serg/site/mailer/app/client/models/template.php on line 20
+[Tue Mar 15 17:20:13.171119 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP Stack trace:
+[Tue Mar 15 17:20:13.171128 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:13.171137 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:13.171146 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:13.171153 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:13.171175 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   5. spl_autoload_call() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:20:13.171181 2016] [:error] [pid 2177] [client 127.0.0.1:37930] PHP   6. autoload() /home/serg/site/mailer/core/Router.php:18
+[Tue Mar 15 17:20:21.037182 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:20:21.037206 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP Stack trace:
+[Tue Mar 15 17:20:21.037215 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:21.037220 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:21.037224 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:21.037229 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:21.037624 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:20:21.037633 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP Stack trace:
+[Tue Mar 15 17:20:21.037638 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:21.037643 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:21.037647 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:21.037651 2016] [:error] [pid 16087] [client 127.0.0.1:37933] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:31.662215 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:20:31.662241 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP Stack trace:
+[Tue Mar 15 17:20:31.662250 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:31.662256 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:31.662262 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:31.662268 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:31.662496 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:20:31.662506 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP Stack trace:
+[Tue Mar 15 17:20:31.662513 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:20:31.662519 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:20:31.662525 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:20:31.662543 2016] [:error] [pid 2180] [client 127.0.0.1:37937] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:21:15.350825 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP Warning:  Missing argument 2 for app\\client\\controllers\\Template::Get() in /home/serg/site/mailer/app/client/controllers/Template.php on line 16
+[Tue Mar 15 17:21:15.350868 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP Stack trace:
+[Tue Mar 15 17:21:15.350880 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:21:15.350889 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:21:15.350897 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:21:15.350905 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:21:15.351637 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP Notice:  Undefined variable: style in /home/serg/site/mailer/app/client/controllers/Template.php on line 20
+[Tue Mar 15 17:21:15.351658 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP Stack trace:
+[Tue Mar 15 17:21:15.351668 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   1. {main}() /home/serg/site/mailer/public/index.php:0
+[Tue Mar 15 17:21:15.351677 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   2. core\\Router->run() /home/serg/site/mailer/public/index.php:39
+[Tue Mar 15 17:21:15.351686 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   3. call_user_func_array:{/home/serg/site/mailer/core/Router.php:67}() /home/serg/site/mailer/core/Router.php:67
+[Tue Mar 15 17:21:15.351693 2016] [:error] [pid 31792] [client 127.0.0.1:37941] PHP   4. app\\client\\controllers\\Template->Get() /home/serg/site/mailer/core/Router.php:67
