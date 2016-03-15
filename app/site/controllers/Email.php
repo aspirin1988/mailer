@@ -13,6 +13,12 @@ use core\Controller;
 
 class Email extends Controller
 {
+    public function index($p,$p1)
+    {
+        echo 'index '.$p.' '.$p1;
+    }
+
+
     public function getAllEmail($page)
     {
         $model = new \app\site\models\email();

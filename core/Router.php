@@ -43,6 +43,7 @@ class Router
             'callcenter',
             'helper',
             'site',
+            'client',
         ];
 
         if (!$session->User() && $route[0] != 'auth') {
