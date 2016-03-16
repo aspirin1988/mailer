@@ -18,7 +18,24 @@ class callback extends Models
         $str = file_get_contents(LIBRARY.DS.'registration.php');
         $path=BASE_PATH.DS.'app'.DS.'client'.DS.'models'.DS.'send.php';
         include_once ($path);
-        print_r(send_smtp_html($str,[],['aspirin_1988@mail.ru'],'qqqq',['Email'=>'system@jpplayer.su']));
+        $to = 'aspirins24@gmail.com';
+        $subject = 'qqq';
+        $message = 'Привет';
+        // Заголовки сообщения, в них определяется кодировка сообщения, поля From, To и т.д.
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=windows-1251\r\n";
+        $headers .= "To: $to\r\n";
+        $headers .= "From: Имя отправителя <aspirin_1988@mail.ru>";
+
+        // mail ($to, $subject, $message, $headers);
+
+        MailSmtp($to, $subject, $message, $headers);
+
+
+
+
+
+       // print_r(send_smtp_html($str,[],['aspirin_1988@mail.ru'],'qqqq',['Email'=>'system@jpplayer.su']));
         //return $rest['md5'];
     }
 
