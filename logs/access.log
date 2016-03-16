@@ -652,3 +652,8 @@
 127.0.0.1 - - [16/Mar/2016:18:32:59 +0600] "POST /mail/index.php HTTP/1.1" 200 1602 "http://mailer.tes/mail/index.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
 127.0.0.1 - - [16/Mar/2016:18:33:01 +0600] "POST /mail/index.php HTTP/1.1" 200 1601 "http://mailer.tes/mail/index.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
 127.0.0.1 - - [16/Mar/2016:20:56:02 +0600] "GET /favicon.ico HTTP/1.1" 404 1921 "http://mailer.tes/client/script/Get/966128519f610498a7df19b1aa045b6f" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
+127.0.0.1 - - [16/Mar/2016:23:18:29 +0600] "GET /client/callback/Recall HTTP/1.1" 500 475 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
+127.0.0.1 - - [16/Mar/2016:23:18:47 +0600] "GET /client/callback/Recall HTTP/1.1" 500 475 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
+127.0.0.1 - - [16/Mar/2016:23:24:57 +0600] "GET /client/callback/Recall HTTP/1.1" 200 498 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
+127.0.0.1 - - [16/Mar/2016:23:30:20 +0600] "GET /client/callback/Recall HTTP/1.1" 200 498 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
+127.0.0.1 - - [16/Mar/2016:23:32:12 +0600] "GET /client/callback/Recall HTTP/1.1" 200 498 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36"
