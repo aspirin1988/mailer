@@ -14448,3 +14448,743 @@ Array
 )
 
 
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 17:53:20
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 17:53:20
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 17:53:20
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 17:53:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 17:53:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 17:53:39
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 17:54:16
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6'
+2016-03-16 17:54:16
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 17:54:16
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 17:59:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 17:59:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 17:59:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:00:51
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:00:51
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:02:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:02:09
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:02:09
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:02:23
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:26:18
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:26:18
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:26:18
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:26:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:26:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:26:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:26:44
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:27:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:28:38
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:28:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:28:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:28:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:29:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:29:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:30:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:30:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:30:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:30:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:34:14
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:34:14
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:34:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:37:51
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:37:51
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:37:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-16 18:43:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-16 18:43:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-16 18:43:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 2:43:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 2:43:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 2:43:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 2:43:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 2:43:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 2:44:09
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 2:44:09
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 2:44:13
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 2:45:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 2:45:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 2:45:14
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:25:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:25:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:25:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:25:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:25:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:25:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:25:23
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:25:23
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:25:23
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:25:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:26:13
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:28:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:29:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:29:44
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:29:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1889'
+2016-03-17 3:31:21
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".*,"email"."login","email"."password","email"."port","email"."host" FROM "site" LEFT JOIN "email" ON "site"."email" = "email"."id" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 3:31:21
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = 'e4565a8db1aa59c2991bc6fdfec475a9', "token" = 'ad5711bb5b031212d9e5abfe4066f200', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/default\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1889
+2016-03-17 3:31:24
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+

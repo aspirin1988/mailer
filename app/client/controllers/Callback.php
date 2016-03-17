@@ -20,9 +20,12 @@ class Callback extends Controller
 
     public function Recall()
     {
-        $rest = $this->request;
+        $rest['md5'] = '966128519f610498a7df19b1aa045b6f';  //= $this->request;
+        $rest['name'] = 'name_val';  //= $this->request;
+        $rest['phone'] = 'phone_val';  //= $this->request;
+        $rest['email'] = 'email_val';  //= $this->request;
         $model = new \app\client\models\callback();
-        echo $model->Recall($rest);
+        $this->response->json($model->Recall($rest));
     }
     public function Query()
     {

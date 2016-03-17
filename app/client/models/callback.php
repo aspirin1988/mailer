@@ -15,8 +15,34 @@ class callback extends Models
 {
     public function Recall ($rest)
     {
-        $this->db->insert('email_massage',$rest);
-        return $this->send_smtp_html('ergjroeger',[],['aspirin_1988@mail.ru'],'TEST',['email'=>'system@jpplayer.su','name'=>'system@jpplayer.su']);
+        $siteData = $this->db->select('site', [
+            "[>]email" => ["email" => "id"]
+        ],
+            [
+                'site.*',
+                'email.login',
+                'email.password',
+                'email.port',
+                'email.host',
+            ],
+            [
+                'md5'=>$rest['md5']
+            ]
+        );
+        if ($siteData) {
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
+            $content='';
+            foreach ($rest as $key=>$value) {
+                if ($key!='md5') $content .='<tr style="border: 1px solid black;text-align: center;padding: 4px;"><td style="border: 1px solid black;text-align: center;padding: 4px;">'.$key.'</td><td style="border:solid 1px">'.$value.'</td></tr>';
+            }
+
+            $this->send_smtp_html($str, $content, [$siteData[0]['cc_mail']], 'TEST', ['email' => 'system@jpplayer.su', 'name' => 'system@jpplayer.su'],$siteData[0]);
+        }
+        else
+        {
+            $siteData='Error no site';
+        }
+        return $siteData;
     }
 
     public function Query ($rest)
@@ -25,10 +51,9 @@ class callback extends Models
         return $rest['md5'];
     }
 
-    function send_smtp_html($str,$data,$email,$subject,$from){
-        foreach ($data as $key=>$value) {
-            $str = str_replace('{"'.$key.'"}',''.$value.'',$str);
-        }
+    function send_smtp_html($str,$data,$email,$subject,$from,$config){
+
+        $str = str_replace('{data}',''.$data.'',$str);
         //echo $email;
         //include_once(LIB_PATH.'/mailer/PHPMailerAutoload.php');
         //require '';
@@ -40,17 +65,17 @@ class callback extends Models
         //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
+        $mail->Host = $config['host'];  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'system@jpplayer.su';                 // SMTP username
-        $mail->Password = 'resident99';                           // SMTP password
+        $mail->Username = $config['login'];                 // SMTP username
+        $mail->Password = $config['password'];                           // SMTP password
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
+        $mail->Port = $config['port'];                                    // TCP port to connect to
 
         $mail->CharSet = "utf-8";
-        $mail->From = $from['email'];
-        $mail->FromName = $from['name'];
-        $mail->addReplyTo('system@jpplayer.su', 'Jpplayer.su');
+        $mail->From = $config['login'];
+        $mail->FromName = $config['name'];
+        $mail->addReplyTo($config['login'], $config['name']);
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = $subject;
