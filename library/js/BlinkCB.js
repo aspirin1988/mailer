@@ -115,16 +115,15 @@ var loadTmpJS = function() {
         var formElements = event.target;
 
         for(var i=0; i < formElements.length; i++) {
-
+            console.log(formElements.name);
         }
-        console.log(event);
     });
 };
 
 var BlinkCBModule = {
     IpxModule: function () {
         var xhr = new XMLHttpRequest();
-        var currentUrl = md5(document.location.origin);
+        //var currentUrl = md5(document.location.origin);
 
         xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
         xhr.send();
