@@ -1,3 +1,28 @@
+var BlinkCBModulePost  = function(object, callback) {
+    var data = "";
+
+    for(var i=0; i < object.length -1; i++) {
+        var inputName = object[i].name,
+            inputValue = object[i].value;
+
+        data += inputName + "=" + inputValue + "&";
+    }
+
+    data = data.slice(0, -1);
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('POST', '{host}/client/callback/Recall/966128519f610498a7df19b1aa045b6f', true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState!= 4) return;
+
+        callback(this.responseText);
+    };
+};
+
 var showIconsInterval = function(element, position, iteration, deleteClass, addClass) {
     setTimeout(function() {
         element.classList.remove('blink-cb-hidden');
@@ -114,31 +139,12 @@ var loadTmpJS = function() {
         event.preventDefault();
         var formElements = event.target, data = "";
 
-        for(var i=0; i < formElements.length -1; i++) {
-            var inputName = formElements[i].name,
-                inputValue = formElements[i].value;
-
-            data += inputName + "=" + inputValue + "&";
-        }
-
-        data = data.slice(0, -1);
-
-        console.log(data);
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', '{host}/client/callback/Recall/966128519f610498a7df19b1aa045b6f', true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send(data);
-
-        xhr.onreadystatechange = function() {
-            if (this.readyState!= 4) return;
-
-            var response = this.responseText;
+        BlinkCBModulePost(formElements, function(response) {
             console.log(response);
-        };
+        });
     });
 };
+
 
 var BlinkCBModule = {
     IpxModule: function () {

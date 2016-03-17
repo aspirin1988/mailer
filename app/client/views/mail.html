@@ -1,23 +1,41 @@
-<div>
-<table>
-    <tbody style="border-collapse: collapse; width: 300px; ">
-        <tr style="border:solid 1px">
-            <th style="border: 1px solid black;text-align: center; background: #fc0; height: 40px; vertical-align: bottom; padding: 0;">
-            Значение поля
-            </th>
-            <th style="border: 1px solid black;text-align: center; background: #fc0; height: 40px; vertical-align: bottom; padding: 0;">
-            Название поля
-            </th>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;text-align: center; background: #fff; vertical-align: bottom; padding: 0;">ФИО</td>
-            <td style="border: 1px solid black;text-align: center; background: #fff; vertical-align: bottom; padding: 0;">{fullname}</td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black;text-align: center; background: #fff; vertical-align: bottom; padding: 0;">Телефон</td>
-            <td style="border: 1px solid black;text-align: center; background: #fff; vertical-align: bottom; padding: 0;">{phone}</td>
-        </tr>
-
-    </tbody>
-</table>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+<div style="width: 820px; background: #fff; height: 500px;">
+    <div style="overflow: hidden; width: 85%; margin: 0 auto; padding: 15px 0;">
+        <img src="{host}/resources/callback/images/mail/04.png" alt="" height="150px;" style="float: left;">
+        <h4 style="font-family: 'Roboto', sans-serif; float: left; font-size: 28px; margin: 20px 0 0 30px; padding: 0;">Вам письмо <br> от вашего <br> клиента </h4>
+    </div>
+    <div style="background: #275ea3; padding: 15px 0;">
+        <div style="width: 80%; margin: 0 auto;">
+            <div style="text-align: center;">
+                <img src="{host}/resources/callback/images/mail/001.png" alt="">
+            </div>
+            <h2 style="color: #fff; font-size: 24px; font-family: 'Roboto', sans-serif;">С Вашего сайта Вам поступило сообщение от: <br> {fullname}</h2>
+            <p style="color: #fff; font-size: 18px; font-family: 'Roboto', sans-serif;"><strong>Текст сообщения:</strong> {messange} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+    </div>
+    <div>
+        <h3 style="font-family: 'Roboto', sans-serif; text-align: center; color: #000; font-size: 18px;">Контактные данные клиента</h3>
+        <p style="font-family: 'Roboto', sans-serif; text-align: center; color: #000; font-size: 18px;">{email}</p>
+        <p style="font-family: 'Roboto', sans-serif; text-align: center; color: #000; font-size: 18px;">{phone}</p>
+    </div>
+    <div style="padding: 15px 0; background: #000;">
+        <div style="width: 85%; margin: 0 auto; text-align: center;">
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 18px; color: #fff; margin: 0; padding: 0;">Пакеты Услуг</h3>
+            <div style="width: 25%; display: inline-block; margin: 25px 20px 0 20px">
+                <a href="" onmouseover="this.style.background='#20497c';" onmouseout="this.style.background='#275ea3';" style="font-family: 'Roboto', sans-serif; display: block; background: #275ea3; padding: 5px 0; font-size: 18px; color: #fff; text-decoration: none;">Classic</a>
+                <small style="font-family: 'Roboto', sans-serif; padding: 0 5px; color: #fff; font-size: 13px; margin: 10px 0 20px 0; display: block;">Стоимость: <br>1 месяц – 9 900 тг. <br>iСтандартные услуги: <br>Домен - ?, хостинг, мониторинг <br>работоспособности сайта, резервное коппирование, и так далее…</small>
+            </div>
+            <div style="width: 25%; display: inline-block; margin: 25px 20px 0 20px">
+                <a href="" onmouseover="this.style.background='#20497c';" onmouseout="this.style.background='#275ea3';" style="font-family: 'Roboto', sans-serif; display: block; background: #275ea3; padding: 5px 0; font-size: 18px; color: #fff; text-decoration: none;">Business</a>
+                <small style="font-family: 'Roboto', sans-serif; padding: 0 5px; color: #fff; font-size: 13px; margin: 10px 0 20px 0; display: block;">Стоимость: <br>1 месяц – 9 900 тг. <br>iСтандартные услуги: <br>Домен - ?, хостинг, мониторинг <br>работоспособности сайта, резервное коппирование, и так далее…</small>
+            </div>
+            <div style="width: 25%; display: inline-block; margin: 25px 20px 0 20px">
+                <a href="" onmouseover="this.style.background='#20497c';" onmouseout="this.style.background='#275ea3';" style="font-family: 'Roboto', sans-serif; display: block; background: #275ea3; padding: 5px 0; font-size: 18px; color: #fff; text-decoration: none;">Premium</a>
+                <small style="font-family: 'Roboto', sans-serif; padding: 0 5px; color: #fff; font-size: 13px; margin: 10px 0 20px 0; display: block;">Стоимость: <br>1 месяц – 9 900 тг. <br>iСтандартные услуги: <br>Домен - ?, хостинг, мониторинг <br>работоспособности сайта, резервное коппирование, и так далее…</small>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 25px 0;">
+        <img src="{host}/resources/callback/images/mail/logo.png" alt="">
+    </div>
 </div>
