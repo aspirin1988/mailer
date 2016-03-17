@@ -16,13 +16,10 @@ class template extends Models
     public function Get($name, $style)
     {
         if ($this->permission($name)['data']) {
-            $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . $style . '.css';
-            if (!file_exists($path)) {
-                $style = 'style';
-            }
+
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
-            $template = str_replace('{css}', HOST_NAME . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . $style . '.css', $template);
+            $template = str_replace('{css}', HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS.$name.DS.$style , $template);
             return $template;
         } else {
             return false;

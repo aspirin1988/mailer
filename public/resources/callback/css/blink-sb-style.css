@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'FontAwesome';
-    src: url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.eot?v=4.5.0");
-    src: url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("http://mailer.b-link.kz/resources/callback/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+    src: url("{host}/resources/callback/fonts/fontawesome-webfont.eot?v=4.5.0");
+    src: url("{host}/resources/callback/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("{host}/resources/callback/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("{host}/resources/callback/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("{host}/resources/callback/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("{host}/resources/callback/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -187,19 +187,19 @@
 }
 
 .blink-cb-container .blink-cb-head ul li a:hover .blink-cb-icon-phone {
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/phone-hover.png);
+    background-image: url({host}/resources/callback/images/phone-hover.png);
 }
 
 .blink-cb-container .blink-cb-head ul li a:hover .blink-cb-icon-email {
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/mail-hover.png);
+    background-image: url({host}/resources/callback/images/mail-hover.png);
 }
 
 .blink-cb-container .blink-cb-head ul li a.active .blink-cb-icon-phone {
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/phone-hover.png);
+    background-image: url({host}/resources/callback/images/phone-hover.png);
 }
 
 .blink-cb-container .blink-cb-head ul li a.active .blink-cb-icon-email {
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/mail-hover.png);
+    background-image: url({host}/resources/callback/images/mail-hover.png);
 }
 
 .blink-cb-container .blink-cb-head ul li a img {
@@ -210,7 +210,7 @@
 .blink-cb-container .blink-cb-head ul li a .blink-cb-icon-phone {
     display: block;
     height: 25px;
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/phone.png);
+    background-image: url({host}/resources/callback/images/phone.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px 25px;
@@ -219,7 +219,7 @@
 .blink-cb-container .blink-cb-head ul li a .blink-cb-icon-email {
     display: block;
     height: 25px;
-    background-image: url(http://mailer.b-link.kz/resources/callback/images/mail.png);
+    background-image: url({host}/resources/callback/images/mail.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px 25px;

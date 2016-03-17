@@ -92,6 +92,14 @@ class Response
         echo json_encode($array, true);
     }
 
+    public function js($data)
+    {
+        ///header_remove();
+        header('Access-Control-Allow-Origin: *');
+        //print_r($_SERVER);
+        echo $data;
+    }
+
     /**
      * Редирект
      * @param $url
