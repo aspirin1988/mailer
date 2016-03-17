@@ -5,6 +5,7 @@
  * Date: 16.02.2016
  * Time: 13:27
  */
+header('Access-Control-Allow-Origin: *');
 include('../config/main.php');
 include (BASE_PATH.DS.'bootstrap.php');
 

@@ -21,6 +21,7 @@ class template extends Models
             $template = file_get_contents($path);
             $template = str_replace('{css}', HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS.$name.DS.$style , $template);
             $template = str_replace('{host}',HOST_NAME, $template);
+            $template = str_replace('{md5}',$name, $template);
             return $template;
         } else {
             return false;

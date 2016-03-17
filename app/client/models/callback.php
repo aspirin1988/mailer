@@ -13,7 +13,7 @@ use core\Models;
 
 class callback extends Models
 {
-    public function Recall ($rest)
+    public function Recall ($rest,$name)
     {
         $siteData = $this->db->select('site', [
             "[>]email" => ["email" => "id"]
@@ -26,17 +26,17 @@ class callback extends Models
                 'email.host',
             ],
             [
-                'md5'=>$rest['md5']
+                'md5'=>$name
             ]
         );
+        $this->save_message($rest);
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
-            $content='';
             foreach ($rest as $key=>$value) {
-                if ($key!='md5') $content .='<tr style="border: 1px solid black;text-align: center;padding: 4px;"><td style="border: 1px solid black;text-align: center;padding: 4px;">'.$key.'</td><td style="border:solid 1px">'.$value.'</td></tr>';
+                if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
-
-            return $this->send_smtp_html($str, $content, [$siteData[0]['cc_mail']], 'TEST', ['email' => 'system@jpplayer.su', 'name' => 'system@jpplayer.su'],$siteData[0]);
+            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0]);
+            return $result;
         }
         else
         {
@@ -45,19 +45,39 @@ class callback extends Models
 
     }
 
-    public function Query ($rest)
+    public function Query ($rest,$name)
     {
 
-        return $rest['md5'];
+        $siteData = $this->db->select('site', [
+            "[>]email" => ["email" => "id"]
+        ],
+            [
+                'site.*',
+                'email.login',
+                'email.password',
+                'email.port',
+                'email.host',
+            ],
+            [
+                'md5'=>$name
+            ]
+        );
+        $this->save_message($rest);
+        if ($siteData) {
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'query.html'); //$this->db->insert('email_massage',$rest);
+            foreach ($rest as $key=>$value) {
+                if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
+            }
+            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0]);
+            return $result;
+        }
+        else
+        {
+            return 'Error no site';
+        }
     }
 
-    function send_smtp_html($str,$data,$email,$subject,$from,$config){
-
-        $str = str_replace('{data}',''.$data.'',$str);
-        //echo $email;
-        //include_once(LIB_PATH.'/mailer/PHPMailerAutoload.php');
-        //require '';
-
+    function send_smtp_html($str,$email,$subject,$config){
         $mail = new \library\mailer\PHPMailer();
         $to=array();
 
@@ -91,6 +111,11 @@ class callback extends Models
             }
         }
         return $mess;
+    }
+
+    function save_message($data)
+    {
+        return $this->db->insert('email_massage',$data);
     }
 
 }

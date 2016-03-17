@@ -18,19 +18,21 @@ class Callback extends Controller
         echo 'is Callback';
     }
 
-    public function Recall()
+    public function Recall($name)
     {
-        $rest['md5'] = '966128519f610498a7df19b1aa045b6f';  //= $this->request;
-        $rest['name'] = 'name_val';  //= $this->request;
-        $rest['phone'] = 'phone_val';  //= $this->request;
-        $rest['email'] = 'email_val';  //= $this->request;
+
+        $rest['fullname']=$_POST['fullname'];  //= $this->request;
+        $rest['phone'] = $_POST['phone'];  //= $this->request;
         $model = new \app\client\models\callback();
-        $this->response->json($model->Recall($rest));
+        $this->response->json($model->Recall($rest,$name));
     }
-    public function Query()
+    public function Query($name)
     {
-        $rest = $this->request;
+        $rest['fullname']=$_POST['fullname'];  //= $this->request;
+        $rest['phone'] = $_POST['phone'];  //= $this->request;
+        $rest['email'] = $_POST['email'];  //= $this->request;
+        $rest['messange'] = $_POST['messange'];  //= $this->request;
         $model = new \app\client\models\callback();
-        $this->response->json($model->Query($rest));
+        $this->response->json($model->Query($rest,$name));
     }
 }
