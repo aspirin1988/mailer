@@ -21,7 +21,9 @@ class Script extends Controller
     public function Get($name)
     {
         $model = new \app\client\models\script();
-        $this->response->json($model->Get($name));
+        header('Content-Type: text/javascript');
+        echo file_get_contents(LIBRARY.DS.'js/BlinkCB.js');
+        //$this->response->json($model->Get($name));
     }
 
 
