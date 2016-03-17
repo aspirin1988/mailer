@@ -112,22 +112,24 @@ var loadTmpJS = function() {
 
     recallFormSubmit.addEventListener('submit', function (event) {
         event.preventDefault();
-        var formElements = event.target, data = {};
+        var formElements = event.target, data = "";
 
         for(var i=0; i < formElements.length -1; i++) {
             var inputName = formElements[i].name,
                 inputValue = formElements[i].value;
 
-            data[inputName] = inputValue;
+            data += inputName + "=" + inputValue + "&";
         }
+
+        data = data.slice(0, -1);
+
+        console.log(data);
 
         var xhr = new XMLHttpRequest();
 
-        var postData = "data="+ JSON.stringify(data);
-
         xhr.open('POST', '{host}/client/callback/Recall/966128519f610498a7df19b1aa045b6f', true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(postData);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send(data);
 
         xhr.onreadystatechange = function() {
             if (this.readyState!= 4) return;
