@@ -73,7 +73,7 @@ var loadTmpJS = function() {
             switcherActiveButon.classList.add('active');
         }, false);
     }
-
+/*
     iconsContainer.addEventListener('mouseover', function(event) {
         var iconsPos = 0;
 
@@ -92,8 +92,9 @@ var loadTmpJS = function() {
             hideIconsInterval(icons[i], 0, i, 'blink-cb-fadeInRight', 'blink-cb-fadeOutRight');
         }
 
-        iconsContainer.style.width = 80;
+        iconsContainer.style.width = 80 + 'px';
     });
+*/
 
     exitBtn.addEventListener('click', function() {
         openBlock.classList.remove('blink-cb-fadeInRight');
@@ -114,7 +115,7 @@ var BlinkCBModule = {
         var xhr = new XMLHttpRequest();
         var currentUrl = md5(document.location.origin);
 
-        xhr.open('GET', '{host}/client/Template/Get/'+ currentUrl +'/style', true);
+        xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
         xhr.send();
 
         xhr.onreadystatechange = function() {
