@@ -20,6 +20,7 @@ class Css extends Controller
 
     public function Get($name,$style)
     {
+        $user =$this->session->getUser();
         $model = new \app\client\models\css();
         $data =$model->Get($name,$style);
         $data = str_replace('{host}',HOST_NAME,$data);
