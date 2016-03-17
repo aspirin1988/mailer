@@ -20,6 +20,7 @@ class template extends Models
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
             $template = str_replace('{css}', HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS.$name.DS.$style , $template);
+            $template = str_replace('{host}',HOST_NAME, $template);
             return $template;
         } else {
             return false;

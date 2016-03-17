@@ -21,8 +21,9 @@ class Script extends Controller
     public function Get($name)
     {
         $model = new \app\client\models\script();
-
-        $this->response->js($model->Get($name));
+        $data =$model->Get($name);
+        $data = str_replace('{host}',HOST_NAME,$data);
+        $this->response->js($data);
     }
 
 
