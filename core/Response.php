@@ -122,7 +122,7 @@ class Response
      */
     public function redirect($url)
     {
-        header('Location: ' . $url, true, 303);
+        header('Location: ' . $url, true, 302);
     }
 
     public function notFound()

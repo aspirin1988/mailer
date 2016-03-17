@@ -16,11 +16,11 @@ class Main extends Controller
 
     public function index()
     {
-        /*if($this->session->user()){*/
+        if($this->session->user()){
+            $this->response->redirect($this->session->user('template'));
+        }else{
             $this->response->renderPage('public/resources/auth/Default',[]);
-       /* }else{
-            $this->response->redirect('/'.$this->session->user('template'));
-        }*/
+        }
 
     }
 
