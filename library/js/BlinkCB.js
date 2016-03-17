@@ -112,7 +112,9 @@ var loadTmpJS = function() {
 var BlinkCBModule = {
     IpxModule: function () {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
+        var currentUrl = md5(document.location.origin);
+
+        xhr.open('GET', '{host}/client/Template/Get/'+ currentUrl +'/style', true);
         xhr.send();
 
         xhr.onreadystatechange = function() {
