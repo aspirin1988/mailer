@@ -22,6 +22,7 @@ class Template extends Controller
     {
         $model = new \app\client\models\template();
         //print_r($_SERVER);
+        header('Access-Control-Allow-Origin: *');
         echo  $model->Get($name,$style);
     }
 

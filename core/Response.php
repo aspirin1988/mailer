@@ -88,8 +88,24 @@ class Response
      */
     public function json($array)
     {
-        header('Content-Type: application/json');
+        header('Content-Type: application/json',true);
         echo json_encode($array, true);
+    }
+
+    public function js($data)
+    {
+        ///header_remove();
+        header('Access-Control-Allow-Origin: *',true);
+        //print_r($_SERVER);
+        echo $data;
+    }
+
+    public function css($data)
+    {
+        ///header_remove();
+        header('Content-Type: text/css',true);
+        //print_r($_SERVER);
+        echo $data;
     }
 
     /**

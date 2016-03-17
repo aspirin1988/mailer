@@ -113,7 +113,7 @@ var BlinkCBModule = {
     IpxModule: function () {
         var xhr = new XMLHttpRequest();
 
-        xhr.open('GET', 'http://mailer.b-link.kz/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
+        xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
         xhr.send();
 
         xhr.onreadystatechange = function() {

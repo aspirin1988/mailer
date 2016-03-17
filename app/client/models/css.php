@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: serg
- * Date: 15.03.16
- * Time: 12:54
+ * Date: 17.03.16
+ * Time: 14:14
  */
 
 namespace app\client\models;
@@ -11,14 +11,19 @@ namespace app\client\models;
 
 use core\Models;
 
-class script extends Models
+class css extends Models
 {
-    public function Get($name)
+    public function Get($name,$style)
     {
         if ( $this-> permission($name)['data'])
         {
             //print_r($_SERVER);
-            return file_get_contents(LIBRARY.DS.'js/BlinkCB.js');
+            $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-'.$style . '.css';
+            if (!file_exists($path)) {
+                $style = 'style';
+            }
+            $path = PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'css'.DS.'blink-sb-'.$style.'.css';
+            return file_get_contents($path);
         }
         else
         {
@@ -43,4 +48,5 @@ class script extends Models
             'data' => $siteData,
         ];
     }
+
 }
