@@ -32,6 +32,7 @@ class callback extends Models
         $this->save_message($rest);
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
+            $str=str_replace('{host}',HOST_NAME,$str);
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
@@ -65,6 +66,7 @@ class callback extends Models
         $this->save_message($rest);
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'query.html'); //$this->db->insert('email_massage',$rest);
+            $str=str_replace('{host}',HOST_NAME,$str);
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
