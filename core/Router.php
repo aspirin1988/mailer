@@ -45,10 +45,13 @@ class Router
             'client',
         ];
 
-        if (!$session->User() && $route[0] != 'auth') {
+
+        if (!$session->User() && $route[0] != 'auth' && $route[0] != 'client') {
             $response->redirect('/auth');
             exit;
         }
+
+
 
         if (isset($route[0]) && !empty($route[0])) {
             $this->folder = $route[0];

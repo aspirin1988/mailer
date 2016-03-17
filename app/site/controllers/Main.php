@@ -15,6 +15,6 @@ class Main extends Controller
 {
     public function index()
     {
-        echo "<script src=\"http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f\"></script><script>BlinkCBModule.IpxModule();</script>";
+        $this->response->json(['asd'=>'hello']);
     }
 }
