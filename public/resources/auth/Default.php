@@ -141,6 +141,7 @@
 <script src="libs/waypoints/waypoints.min.js"></script>
 <script src="libs/md5/md5.js"></script>
 
+
 <script type="text/javascript">
     $(function () {
         setTimeout(function () {
@@ -217,6 +218,11 @@
             }, function error(response) {});
         }
     });
+</script>
+
+<script src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
+<script>
+    BlinkCBModule.IpxModule();
 </script>
 
 </body>
