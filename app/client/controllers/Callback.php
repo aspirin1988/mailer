@@ -31,6 +31,6 @@ class Callback extends Controller
     {
         $rest = $this->request;
         $model = new \app\client\models\callback();
-        echo $model->Query($rest);
+        $this->response->json($model->Query($rest));
     }
 }

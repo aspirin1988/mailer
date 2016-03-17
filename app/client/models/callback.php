@@ -36,13 +36,13 @@ class callback extends Models
                 if ($key!='md5') $content .='<tr style="border: 1px solid black;text-align: center;padding: 4px;"><td style="border: 1px solid black;text-align: center;padding: 4px;">'.$key.'</td><td style="border:solid 1px">'.$value.'</td></tr>';
             }
 
-            $this->send_smtp_html($str, $content, [$siteData[0]['cc_mail']], 'TEST', ['email' => 'system@jpplayer.su', 'name' => 'system@jpplayer.su'],$siteData[0]);
+            return $this->send_smtp_html($str, $content, [$siteData[0]['cc_mail']], 'TEST', ['email' => 'system@jpplayer.su', 'name' => 'system@jpplayer.su'],$siteData[0]);
         }
         else
         {
-            $siteData='Error no site';
+            return 'Error no site';
         }
-        return $siteData;
+
     }
 
     public function Query ($rest)

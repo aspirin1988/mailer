@@ -95,7 +95,8 @@ class Response
     public function js($data)
     {
         ///header_remove();
-        header('Access-Control-Allow-Origin: *',true);
+       // header('Access-Control-Allow-Origin: *',true);
+        header('Content-Type: text/javascript;',true);
         //print_r($_SERVER);
         echo $data;
     }
