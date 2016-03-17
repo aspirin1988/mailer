@@ -140,6 +140,10 @@
     font-weight: normal;
 }
 
+.blink-cb-container .blink-cb-header-text {
+    color: #fff;
+}
+
 .blink-cb-container #blink-cb-block-recall {
     margin-top: 115px;
 }
