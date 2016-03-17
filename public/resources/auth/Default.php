@@ -213,6 +213,8 @@
                     $('.password-error').removeClass('fadeInUp').removeClass('animated').addClass("animated").addClass('fadeOutDown');
                     $('.login-error').removeClass("animated").removeClass('fadeInUp').addClass("animated").addClass('fadeOutDown');
 
+
+                    console.log(response.data.data.redirect);
                     window.location = (response.data.data.redirect);
                 }
             }, function error(response) {});
@@ -220,8 +222,8 @@
     });
 </script>
 
-<script src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
-<script>
+<script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
+<script type="text/javascript">
     BlinkCBModule.IpxModule();
 </script>
 
