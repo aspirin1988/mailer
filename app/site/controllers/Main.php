@@ -16,5 +16,6 @@ class Main extends Controller
     public function index()
     {
         $this->response->json(['asd'=>'hello']);
+
     }
 }
