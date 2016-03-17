@@ -5,8 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="libs/preview/preview.css" rel="stylesheet" />
-    <script src="libs/modernizr/modernizr.js"></script>
+    <link href="/libs/preview/preview.css" rel="stylesheet" />
+    <script src="/libs/modernizr/modernizr.js"></script>
     <style>
         .formOverflow {
             overflow: hidden;
@@ -134,12 +134,12 @@
     </div>
 </section>
 
-<script src="libs/jquery/jquery.min.js"></script>
-<script src="libs/angular/angular.min.js"></script>
-<script src="libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="libs/jquery/icheck/jquery.icheck.js"></script>
-<script src="libs/waypoints/waypoints.min.js"></script>
-<script src="libs/md5/md5.js"></script>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script src="/libs/angular/angular.min.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="/libs/jquery/icheck/jquery.icheck.js"></script>
+<script src="/libs/waypoints/waypoints.min.js"></script>
+<script src="/libs/md5/md5.js"></script>
 
 
 <script type="text/javascript">

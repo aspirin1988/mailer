@@ -29,7 +29,6 @@ class Router
     {
         $url = trim($_SERVER['REQUEST_URI'], '/');
         $route = explode('/', $url);
-
         /** @var Response $response */
         $response = YASF::$app->get('Response');
         /** @var Session $session */
