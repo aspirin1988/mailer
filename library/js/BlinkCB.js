@@ -128,6 +128,8 @@ var loadTmpJS = function() {
         xhr.send(data);
 
         xhr.onreadystatechange = function() {
+            if (this.readyState!= 4) return;
+
             var response = this.responseText;
             console.log(response);
         };
