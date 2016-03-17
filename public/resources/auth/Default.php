@@ -167,7 +167,7 @@
 
         setTimeout(function () {
             $('#loader-wrapper').fadeOut(100);
-        }, 800)
+        }, 800);
     });
 </script>
 
@@ -224,12 +224,9 @@
 
 <script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
 <script type="text/javascript">
-    BlinkCBModule.IpxModule();
-</script>
-
-<script type="text/javascript" src="http://mailer.tes/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
-<script type="text/javascript">
-    BlinkCBModule.IpxModule();
+    window.onload = function () {
+        BlinkCBModule.IpxModule();
+    }
 </script>
 
 </body>

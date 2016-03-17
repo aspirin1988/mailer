@@ -51518,3 +51518,3603 @@ Array
 )
 
 
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:35
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/site\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:35
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/site\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:38
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:38
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/site\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:38
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:47
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:17:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:02
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:18:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:18:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:18:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:19:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:19:58
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:19:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:28
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:29
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:29
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:29
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:33
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:20:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "users" WHERE "login_crm" = 'serg_qqq' LIMIT 1
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "language" WHERE "id" = 1 LIMIT 1
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "post_categorias" WHERE "id" = 3 LIMIT 1
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"site"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/site\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:20:59
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:17
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:50
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:21:55
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:22:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:26
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "users" WHERE "login_crm" = 'serg_qqq' LIMIT 1
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "language" WHERE "id" = 1 LIMIT 1
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "post_categorias" WHERE "id" = 3 LIMIT 1
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"site"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"id":91,"last_name":"\u0414\u0435\u043c\u0438\u0434\u043e\u0432","first_name":"\u0421\u0435\u0440\u0433\u0435\u0439","middle_name":"\u0418\u0432\u0430\u043d\u043e\u0432\u0438\u0447","issue_date":"2016-01-15","post":3,"boss":92,"in_phone":null,"skype":null,"location":4,"login_crm":"serg_qqq","password_crm":"$2y$10$0OHyArpNpl6eEGTL.P9KzOMAGRHvzqTk0NM\/xj9NkhDwuM06FBt3y","access":999,"photo":null,"creator":null,"status":true,"language":{"name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","code":"ru","path":"russian","id":1},"document":"{&quot;document_name&quot;:&quot;&quot;,&quot;number&quot;:&quot;&quot;,&quot;iin&quot;:&quot;&quot;,&quot;family_status&quot;:&quot;&quot;,&quot;issuing_authority&quot;:&quot;&quot;,&quot;date_issue&quot;:&quot;&quot;}","email":"{&quot;1&quot;:&quot;apirins24@gmail.com&quot;}","address":"{&quot;country&quot;:&quot;1&quot;,&quot;city&quot;:null,&quot;address&quot;:&quot;&quot;}","phone":"{&quot;1&quot;:&quot;&quot;}","cell_phone":"{&quot;1&quot;:&quot;&quot;}","messagers":"{}","languages":"{&quot;1&quot;:{&quot;language&quot;:&quot;2&quot;,&quot;level&quot;:&quot;&quot;}}","educations":"{}","exerience":"{}","info":"{&quot;certificates&quot;:{},&quot;skill&quot;:{},&quot;hobby&quot;:}","comment":null,"probation_date":null,"dismissal_date":null,"activation_string":"d7c6f271f7f32fbb35cf3adbb2b4296e1452857867","post_code":null,"A_R":null,"permission":{"menu":{"home":true},"route":{"designer":{"value":true,"action":{"get-locale":true,"get":true,"get-edit":true,"add-comment":true,"add-thumbnail":true,"get-project":true,"stat-project":true,"update-project":true,"get-prototype":true,"get-edit-project":true,"get-prototypes":true,"prototype-to-project":true,"get-frameworks":true,"fileup":true,"download-file":true,"download-files":true,"download-prototype":true,"download-prototypes":true,"edit-bugtrack":true,"get-projects":true,"edit-project":true,"accept-project":true,"download-files-post":true,"get-company":true}}}},"debug":true,"birthday":null,"auth":true,"is_admin":true,"template":"\/site\/"}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:31
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:36
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:37
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:22:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:22:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:22:41
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:00
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:01
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:03
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:06
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:12
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:42
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:43
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:45
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:46
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:53
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:54
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:23:57
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:18
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:18
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:19
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:20
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:20
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:28:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:29:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:29:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:29:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:29:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:29:07
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:29:08
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:04
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:05
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:48
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:31:49
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:32:10
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT * FROM "session" WHERE "id" = '1964'
+2016-03-17 11:32:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+SELECT "site".* FROM "site" WHERE "md5" = '966128519f610498a7df19b1aa045b6f'
+2016-03-17 11:32:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+
+UPDATE "session" SET "key" = '3f1d0e1542ebe5e5bf088cb0c7106964', "token" = '0f807dacebdb56c9e18d6d9736ee1115', "session" = '[]', "data" = '{"auth":false,"access":0,"boss":0,"document_number":0,"email":"anonymous@oto.com","first_name":"anonymous","id":-1,"issue_date":"00-00-00","language":{"path":"russian","name":"russian","code":"ru","id":0},"login_crm":"","middle_name":"anonymous","name":"anonymous","photo":"images\/users\/darth-vader.jpg","ip":"127.0.0.1","debug":"","is_admin":false}', "recent_ip" = '127.0.0.1' WHERE "id" = 1964
+2016-03-17 11:32:11
+Array
+(
+    [0] => 00000
+    [1] => 
+    [2] => 
+)
+
+

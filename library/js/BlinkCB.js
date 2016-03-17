@@ -28,7 +28,8 @@ var loadTmpJS = function() {
         openBlock = document.getElementsByClassName('blink-cb-container')[0],
         exitBtn = document.getElementsByClassName('blink-cb-exit-btn')[0],
         icons = document.getElementsByClassName('blink-cb-icon-wrapper'),
-        iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0];
+        iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0],
+        recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0];
 
     for (var i = 0; i < swticherAnchor.length; i++) {
         swticherAnchor[i].addEventListener('click', function(event) {
@@ -107,6 +108,16 @@ var loadTmpJS = function() {
         setTimeout(function() {
             openBlockBtn.style.display = 'block';
         }, 300);
+    });
+
+    recallFormSubmit.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var formElements = event.target;
+
+        for(var i=0; i < formElements.length; i++) {
+
+        }
+        console.log(event);
     });
 };
 
