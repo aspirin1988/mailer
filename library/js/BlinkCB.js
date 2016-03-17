@@ -125,7 +125,7 @@ var loadTmpJS = function() {
 
         xhr.open('POST', '{host}/client/callback/Recall/966128519f610498a7df19b1aa045b6f', true);
         xhr.setRequestHeader("Content-type", "application/json");
-        xhr.send(JSON.stringify.(data));
+        xhr.send(JSON.stringify(data));
 
         xhr.onreadystatechange = function() {
             if (this.readyState!= 4) return;
