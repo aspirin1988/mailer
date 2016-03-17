@@ -6,6 +6,14 @@
     font-style: normal;
 }
 
+#blink-cb-html-container {
+    font-family: 'Roboto', sans-serif;
+}
+
+#blink-cb-html-container * {
+    outline: none;
+}
+
 #blink-cb-main-btn {
     width: 80px;
     height: 80px;
@@ -79,7 +87,7 @@
     margin-top: 6.5px;
 }
 
-#blink-cb-main-btn .blink-cb-small-icons i.blink-cb-main-popup-btn {
+#blink-cb-main-btn .blink-cb-small-icons > i {
     display: block;
     position: absolute;
     top: 50%;
@@ -98,7 +106,7 @@
 
 .blink-cb-container {
     display: none;
-    font-family: Calibri;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     width: 330px;
     padding: 15px 0;
@@ -133,7 +141,7 @@
 }
 
 .blink-cb-container #blink-cb-block-recall {
-    margin-top: 100px;
+    margin-top: 115px;
 }
 
 .blink-cb-container #blink-cb-block-messange {
@@ -214,6 +222,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px 25px;
+    margin-bottom: -10px;
 }
 
 .blink-cb-container .blink-cb-head ul li a .blink-cb-icon-email {
@@ -223,6 +232,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px 25px;
+    margin-bottom: -10px;
 }
 
 .blink-cb-container .blink-cb-content {
@@ -238,7 +248,7 @@
     border-radius: 5px;
     border: 2px solid #e2e3e7;
     color: #e2e3e7;
-    font-family: Calibri;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 7px;
     padding: 0 7px;
     height: 40px;
@@ -263,7 +273,7 @@
 .blink-cb-container .blink-cb-content form textarea {
     padding: 3px 7px;
     color: #e2e3e7;
-    font-family: Calibri;
+    font-family: 'Open Sans', sans-serif;
     background-color: #434a54;
     min-height: 95px;
     border-radius: 5px;

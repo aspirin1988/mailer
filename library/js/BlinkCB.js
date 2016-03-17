@@ -84,7 +84,7 @@ var loadTmpJS = function() {
 
         var width  = 80 - iconsPos;
 
-        iconsContainer.style.width = width;
+        iconsContainer.style.width = width + 'px';
     });
 
     iconsContainer.addEventListener('mouseleave', function(event) {
@@ -112,7 +112,6 @@ var loadTmpJS = function() {
 var BlinkCBModule = {
     IpxModule: function () {
         var xhr = new XMLHttpRequest();
-
         xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
         xhr.send();
 
