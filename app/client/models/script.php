@@ -17,7 +17,7 @@ class script extends Models
     {
         if ( $this-> permission($name)['data'])
         {
-            return file_get_contents(LIBRARY.DS.'js/BlinkCB.js');
+            readfile(LIBRARY.DS.'js/BlinkCB.js');
         }
         else
         {

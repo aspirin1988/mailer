@@ -21,7 +21,7 @@ class Script extends Controller
     public function Get($name)
     {
         $model = new \app\client\models\script();
-        echo $model->Get($name);
+        $this->response->json($model->Get($name));
     }
 
 
