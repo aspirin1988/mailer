@@ -100,6 +100,14 @@ class Response
         echo $data;
     }
 
+    public function html($data)
+    {
+        ///header_remove();
+        header('Content-Type: text/html; charset=utf-8');
+        //print_r($_SERVER);
+        echo $data;
+    }
+
     public function css($data)
     {
         ///header_remove();
