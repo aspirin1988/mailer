@@ -51,13 +51,12 @@ BlinkCBModule.prototype.post = function (object, url, callback) {
 BlinkCBModule.prototype.clearForm = function (object) {
     for(var i=0; i < object.length -1; i++) {
         object[i].value = '';
-        object[i].setAttribute('disabled', false);
     }
 };
 
 BlinkCBModule.prototype.blockInputs = function (object) {
     for(var i=0; i < object.length -1; i++) {
-        object[i].setAttribute('disabled', true);
+        //object[i].setAttribute('disabled', true);
     }
 };
 
