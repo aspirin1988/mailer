@@ -222,6 +222,6 @@
     });
 </script>
 
-<script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/6434916fe85768c063d1702f7b6dc469"></script>
+<script type="text/javascript" src="<?=HOST_NAME?>/client/script/GET/6434916fe85768c063d1702f7b6dc469"></script>
 </body>
 </html>

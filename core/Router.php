@@ -44,6 +44,8 @@ class Router
             'helper',
             'site',
             'client',
+            'admin',
+
         ];
 
 
