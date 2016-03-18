@@ -223,11 +223,6 @@
 </script>
 
 <script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
-<script type="text/javascript">
-    window.onload = function () {
-        BlinkCBModule.IpxModule();
-    }
-</script>
 
 </body>
 </html>
