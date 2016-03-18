@@ -51,6 +51,13 @@ BlinkCBModule.prototype.post = function (object, url, callback) {
 BlinkCBModule.prototype.clearForm = function (object) {
     for(var i=0; i < object.length -1; i++) {
         object[i].value = '';
+        object[i].setAttribute('disabled', false);
+    }
+};
+
+BlinkCBModule.prototype.blockInputs = function (object) {
+    for(var i=0; i < object.length -1; i++) {
+        object[i].setAttribute('disabled', true);
     }
 };
 
@@ -87,7 +94,9 @@ BlinkCBModule.prototype.loadJS = function() {
         icons = document.getElementsByClassName('blink-cb-icon-wrapper'),
         iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0],
         recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0],
-        messangeFormSubmit = document.getElementsByClassName('blink-cb-messange-form')[0];
+        messangeFormSubmit = document.getElementsByClassName('blink-cb-messange-form')[0],
+        successDiv = document.getElementsByClassName('blink-cb-response-success'),
+        errorDiv =  document.getElementsByClassName('blink-cb-response-error');
 
     for (var i = 0; i < swticherAnchor.length; i++) {
         swticherAnchor[i].addEventListener('click', function(event) {
@@ -155,6 +164,14 @@ BlinkCBModule.prototype.loadJS = function() {
     });
 
     exitBtn.addEventListener('click', function() {
+        for(var i=0; i < errorDiv.length; i++) {
+            errorDiv[i].style.display = 'none';
+        }
+
+        for(var i=0; i < successDiv.length; i++) {
+            successDiv[i].style.display = 'none';
+        }
+
         openBlock.classList.remove('blink-cb-fadeInRight');
         openBlock.classList.add('blink-cb-fadeOutRight');
         setTimeout(function() {
@@ -172,13 +189,14 @@ BlinkCBModule.prototype.loadJS = function() {
         var formElements = event.target, data = "";
 
         that.post(formElements, 'Recall', function(response) {
-            var successDiv = document.getElementsByClassName('blink-cb-response-success'),
-                errorDiv =  document.getElementsByClassName('blink-cb-response-error');
-
+            that.blockInputs(formElements);
             if(response !== false) {
                 that.clearForm(formElements);
+                errorDiv[0].style.display = 'none';
+                successDiv[0].style.display = 'block';
             } else {
-                that.clearForm(formElements);
+                successDiv[0].style.display = 'none';
+                errorDiv[0].style.display = 'block';
             }
         });
     });
@@ -188,7 +206,16 @@ BlinkCBModule.prototype.loadJS = function() {
         var formElements = event.target, data = "";
 
         that.post(formElements, 'Query', function(response) {
-            console.log(response);
+            that.blockInputs(formElements);
+
+            if(response !== false) {
+                that.clearForm(formElements);
+                errorDiv[1].style.display = 'none';
+                successDiv[1].style.display = 'block';
+            } else {
+                successDiv[1].style.display = 'none';
+                errorDiv[1].style.display = 'block';
+            }
         });
     });
 };

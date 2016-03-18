@@ -222,7 +222,6 @@
     });
 </script>
 
-<script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/966128519f610498a7df19b1aa045b6f"></script>
-
+<script type="text/javascript" src="http://mailer.b-link.kz/client/script/GET/6434916fe85768c063d1702f7b6dc469"></script>
 </body>
 </html>

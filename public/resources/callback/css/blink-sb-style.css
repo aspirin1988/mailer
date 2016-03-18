@@ -135,23 +135,33 @@
     visibility: visible;
 }
 
+.blink-cb-content .blink-cb-success-hidden {
+    display: none;
+}
+
 .blink-cb-container h4 {
     text-transform: uppercase;
     font-weight: normal;
+}
+
+.blink-cb-container .blink-cb-content .blink-cb-response-success {
+    display: none;
+}
+
+.blink-cb-container .blink-cb-content .blink-cb-response-error {
+    display: none;
 }
 
 .blink-cb-container .blink-cb-content .blink-cb-response-success small {
     display: block;
     margin-bottom: 10px;
     color: #27ae60;
-    display: none;
 }
 
 .blink-cb-container .blink-cb-content .blink-cb-response-error small {
     display: block;
     margin-bottom: 10px;
     color: #cf5664;
-    display: none;
 }
 
 .blink-cb-container .blink-cb-header-text {
