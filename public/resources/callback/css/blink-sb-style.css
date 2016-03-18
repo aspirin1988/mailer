@@ -286,6 +286,10 @@
     width: 100%;
 }
 
+.blink-cb-container .blink-cb-content form input[type=email] {
+    width: 100%;
+}
+
 .blink-cb-container .blink-cb-content form input[type=submit] {
     background-color: #cf5664;
     color: #ffffff;
