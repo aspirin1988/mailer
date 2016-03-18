@@ -60,6 +60,7 @@ class client extends Models
 
     public function EditSite($id,$value)
     {
+        $value['md5']=md5($value['name']);
         $result = $this->db->update('site',$value,[
             'id'=>$id
         ]);
@@ -71,6 +72,7 @@ class client extends Models
 
     public function AddSite ($value)
     {
+        $value['md5']=md5($value['name']);
         $result  = $this->db->insert('site',$value);
 
         return [
