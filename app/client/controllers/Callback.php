@@ -20,7 +20,7 @@ class Callback extends Controller
 
     public function Recall($name)
     {
-
+        $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
         $model = new \app\client\models\callback();
@@ -28,6 +28,7 @@ class Callback extends Controller
     }
     public function Query($name)
     {
+        $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
         $rest['email'] = $_POST['email'];  //= $this->request;
