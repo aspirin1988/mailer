@@ -18,11 +18,13 @@ class Script extends Controller
         echo 'is script';
     }
 
-    public function Get($name)
+    public function Get()
     {
+        $name=md5($_SERVER['HTTP_REFERER']);
         $model = new \app\client\models\script();
         $data =$model->Get($name);
         $data = str_replace('{host}',HOST_NAME,$data);
+        $data = str_replace('{name}',$name,$data);
         $this->response->js($data);
     }
 

@@ -85,7 +85,7 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
-            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
             //$str=str_replace('{host}',HOST_NAME,$str);
             //$image = file_get_contents(PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'images'.DS.'mail'.DS.'001.png');
 
