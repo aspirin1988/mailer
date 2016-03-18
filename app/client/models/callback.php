@@ -31,7 +31,7 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
-            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
             //$str=str_replace('{host}',HOST_NAME,$str);
             //$image = file_get_contents(PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'images'.DS.'mail'.DS.'001.png');
 
@@ -57,11 +57,11 @@ class callback extends Models
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
             $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
-            return $str;
+            return $result;
         }
         else
         {
-            return 'Error no site';
+            return [];
         }
 
     }
@@ -85,17 +85,37 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
-            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'query.html'); //$this->db->insert('email_massage',$rest);
-            $str=str_replace('{host}',HOST_NAME,$str);
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
+            //$str=str_replace('{host}',HOST_NAME,$str);
+            //$image = file_get_contents(PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'images'.DS.'mail'.DS.'001.png');
+
+            $url = explode('<img src="{host}',$str);
+            $image='';
+            unset($url[0]);
+            foreach ($url as $key =>$value)
+            {
+                $i=stripos($value,'"');
+                $src = substr($value,0,$i);
+                $j=stripos($src,'.');
+                $e=strripos($src,'/')+1;
+                $cid = substr($src,$e,$j-$e);
+                $type= substr($src,strripos($src,'.')+1,strlen($src));
+                $mime= 'image/'.$type;
+
+                $image[$key]=["url"=>PUBLIC_PATH.$src,'cid'=>$cid,'name'=>$cid.'.'.$type,'type'=>$type,'mime'=>$mime];
+                $host ='{host}'.$src;
+                $str=str_replace($host,'cid:'.$cid,$str);
+            }
+            //$str=str_replace('{001}','src="data:image/png;base64,'.base64_encode($image).'"',$str);
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
-            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0]);
+            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
             return $result;
         }
         else
         {
-            return 'Error no site';
+            return [];
         }
     }
 

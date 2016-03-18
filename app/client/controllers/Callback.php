@@ -24,7 +24,7 @@ class Callback extends Controller
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
         $model = new \app\client\models\callback();
-        $this->response->html($model->Recall($rest,$name));
+        $this->response->json($model->Recall($rest,$name));
     }
     public function Query($name)
     {
