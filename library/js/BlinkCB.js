@@ -23,7 +23,7 @@ function BlinkCBModule() {
     };
 }
 
-BlinkCBModule.prototype.post = function (object, callback) {
+BlinkCBModule.prototype.post = function (object, url, callback) {
     var data = "";
 
     for(var i=0; i < object.length -1; i++) {
@@ -37,7 +37,7 @@ BlinkCBModule.prototype.post = function (object, callback) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', '{host}/client/callback/Recall/966128519f610498a7df19b1aa045b6f', true);
+    xhr.open('POST', '{host}/client/callback/'+ url +'/966128519f610498a7df19b1aa045b6f', true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
 
@@ -80,7 +80,8 @@ BlinkCBModule.prototype.loadJS = function() {
         exitBtn = document.getElementsByClassName('blink-cb-exit-btn')[0],
         icons = document.getElementsByClassName('blink-cb-icon-wrapper'),
         iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0],
-        recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0];
+        recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0],
+        messangeFormSubmit = document.getElementsByClassName('blink-cb-messange-form')[0];
 
     for (var i = 0; i < swticherAnchor.length; i++) {
         swticherAnchor[i].addEventListener('click', function(event) {
@@ -164,7 +165,16 @@ BlinkCBModule.prototype.loadJS = function() {
         event.preventDefault();
         var formElements = event.target, data = "";
 
-        that.post(formElements, function(response) {
+        that.post(formElements, 'Recall', function(response) {
+            console.log(response);
+        });
+    });
+
+    messangeFormSubmit.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var formElements = event.target, data = "";
+
+        that.post(formElements, 'Query', function(response) {
             console.log(response);
         });
     });
