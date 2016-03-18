@@ -20,14 +20,12 @@ class Script extends Controller
 
     public function Get()
     {
-        echo $_SERVER['HTTP_REFERER'];
         $name=md5($_SERVER['HTTP_REFERER']);
-        echo $name;
-        /*$model = new \app\client\models\script();
+        $model = new \app\client\models\script();
         $data =$model->Get($name);
         $data = str_replace('{host}',HOST_NAME,$data);
         $data = str_replace('{name}',$name,$data);
-        $this->response->js($data);*/
+        $this->response->js($data);
     }
 
 
