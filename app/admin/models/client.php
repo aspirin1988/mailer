@@ -13,7 +13,7 @@ use core\Models;
 
 class client extends Models
 {
-    public function GetAllSite($page=0)
+    public function GetAllSite($page)
     {
         $limit = PAGE_SIZE;
         $countSite = $this->db->count('site');
@@ -38,4 +38,29 @@ class client extends Models
             'count' => $countPage
         ];
     }
+
+
+    public function GetAllGateway($page)
+    {
+        $limit = PAGE_SIZE;
+        $countData = $this->db->count('email');
+        $countPage = ceil($countData / $limit);
+        $offset = (int)$page * $limit;
+        $companyData = $this->db->select('email',
+            [
+                'email.*',
+            ],
+            [
+                'LIMIT' => [$offset, $limit],
+                'ORDER' => ['id ASC']
+            ]
+        );
+
+        return [
+            'data' => $companyData,
+            'count' => $countPage
+        ];
+    }
+
+
 }

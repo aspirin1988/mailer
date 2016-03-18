@@ -18,4 +18,31 @@ class Client extends Controller
         $model = new \app\admin\models\client();
         $this->response->json($model->getAllSite($page));
     }
+
+    public function GetSite($id)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->GetSite($id));
+    }
+
+    public  function EditSite ($id)
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->EditSite($id,$value));
+    }
+
+    public function AddSite ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->AddSite($value));
+    }
+/*---------Gateway-----------*/
+    public function GetAllGateway($page=0)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->GetAllGateway($page));
+    }
+
 }
