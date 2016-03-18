@@ -18,9 +18,9 @@ class Script extends Controller
         echo 'is script';
     }
 
-    public function Get()
+    public function Get($name)
     {
-        $name='';
+        /*$name='';
         if ($_SERVER['HTTP_REFERER'])
         {
             $name=md5($_SERVER['HTTP_REFERER']);
@@ -28,8 +28,8 @@ class Script extends Controller
         else
         {
             $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
-
+        }*/
+        //$name=md5($name);
         $model = new \app\client\models\script();
         $data =$model->Get($name);
         $data = str_replace('{host}',HOST_NAME,$data);
