@@ -1,4 +1,29 @@
-var BlinkCBModulePost  = function(object, callback) {
+function BlinkCBModule() {
+    var that = this;
+    var xhr = new XMLHttpRequest();
+    //var currentUrl = md5(document.location.origin);
+
+    xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState!= 4) return;
+
+        var template = this.responseText,
+            body = document.getElementsByTagName('body')[0];
+
+        if(template !== false) {
+            var htmlObject = document.createElement('div');
+            htmlObject.innerHTML = template;
+
+            document.body.appendChild(htmlObject);
+
+            that.loadJS();
+        }
+    };
+}
+
+BlinkCBModule.prototype.post = function (object, callback) {
     var data = "";
 
     for(var i=0; i < object.length -1; i++) {
@@ -23,7 +48,7 @@ var BlinkCBModulePost  = function(object, callback) {
     };
 };
 
-var showIconsInterval = function(element, position, iteration, deleteClass, addClass) {
+BlinkCBModule.prototype.showIconsInterval = function(element, position, iteration, deleteClass, addClass) {
     setTimeout(function() {
         element.classList.remove('blink-cb-hidden');
         element.classList.remove(deleteClass);
@@ -33,7 +58,7 @@ var showIconsInterval = function(element, position, iteration, deleteClass, addC
     }, iteration*200);
 };
 
-var hideIconsInterval = function(element, position, iteration, deleteClass, addClass) {
+BlinkCBModule.prototype.hideIconsInterval = function(element, position, iteration, deleteClass, addClass) {
     setTimeout(function() {
 
         element.classList.remove(deleteClass);
@@ -46,8 +71,9 @@ var hideIconsInterval = function(element, position, iteration, deleteClass, addC
     }, iteration*200);
 };
 
-var loadTmpJS = function() {
-    var swticherAnchor = document.getElementsByClassName('blink-cb-switcher-btn'),
+BlinkCBModule.prototype.loadJS = function() {
+    var that = this,
+        swticherAnchor = document.getElementsByClassName('blink-cb-switcher-btn'),
         swticherBlocks = document.getElementsByClassName('blink-cb-block'),
         openBlockBtn = document.getElementById('blink-cb-main-btn'),
         openBlock = document.getElementsByClassName('blink-cb-container')[0],
@@ -99,12 +125,12 @@ var loadTmpJS = function() {
             switcherActiveButon.classList.add('active');
         }, false);
     }
-/*
+
     iconsContainer.addEventListener('mouseover', function(event) {
         var iconsPos = 0;
 
         for (var i = 0; i < icons.length; i++) {
-            showIconsInterval(icons[i], iconsPos, i, 'blink-cb-fadeOutRight', 'blink-cb-fadeInRight');
+            that.showIconsInterval(icons[i], iconsPos, i, 'blink-cb-fadeOutRight', 'blink-cb-fadeInRight');
             iconsPos -= 37;
         }
 
@@ -115,12 +141,11 @@ var loadTmpJS = function() {
 
     iconsContainer.addEventListener('mouseleave', function(event) {
         for (var i = 0; i < icons.length; i++) {
-            hideIconsInterval(icons[i], 0, i, 'blink-cb-fadeInRight', 'blink-cb-fadeOutRight');
+            that.hideIconsInterval(icons[i], 0, i, 'blink-cb-fadeInRight', 'blink-cb-fadeOutRight');
         }
 
         iconsContainer.style.width = 80 + 'px';
     });
-*/
 
     exitBtn.addEventListener('click', function() {
         openBlock.classList.remove('blink-cb-fadeInRight');
@@ -139,31 +164,10 @@ var loadTmpJS = function() {
         event.preventDefault();
         var formElements = event.target, data = "";
 
-        BlinkCBModulePost(formElements, function(response) {
+        that.post(formElements, function(response) {
             console.log(response);
         });
     });
 };
 
-
-var BlinkCBModule = {
-    IpxModule: function () {
-        var xhr = new XMLHttpRequest();
-        //var currentUrl = md5(document.location.origin);
-
-        xhr.open('GET', '{host}/client/Template/Get/966128519f610498a7df19b1aa045b6f/style', true);
-        xhr.send();
-
-        xhr.onreadystatechange = function() {
-            if (this.readyState!= 4) return;
-
-            var template = this.responseText,
-                body = document.getElementsByTagName('body')[0];
-
-            if(template !== false) {
-                body.innerHTML += template;
-                loadTmpJS();
-            }
-        };
-    }
-};
+new BlinkCBModule();
