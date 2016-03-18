@@ -32,27 +32,9 @@ class callback extends Models
         $this->save_message($rest);
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
-            //$str=str_replace('{host}',HOST_NAME,$str);
-            //$image = file_get_contents(PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'images'.DS.'mail'.DS.'001.png');
-
-            $url = explode('<img src="{host}',$str);
-            $image='';
-            unset($url[0]);
-            foreach ($url as $key =>$value)
-            {
-                $i=stripos($value,'"');
-                $src = substr($value,0,$i);
-                $j=stripos($src,'.');
-                $e=strripos($src,'/')+1;
-                $cid = substr($src,$e,$j-$e);
-                $type= substr($src,strripos($src,'.')+1,strlen($src));
-                $mime= 'image/'.$type;
-
-                $image[$key]=["url"=>PUBLIC_PATH.$src,'cid'=>$cid,'name'=>$cid.'.'.$type,'type'=>$type,'mime'=>$mime];
-                $host ='{host}'.$src;
-                $str=str_replace($host,'cid:'.$cid,$str);
-            }
-            //$str=str_replace('{001}','src="data:image/png;base64,'.base64_encode($image).'"',$str);
+            $res=$this->image_replace($str);
+            $image=$res['image'];
+            $str=$res['str'];
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
@@ -85,32 +67,26 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
-            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail.html'); //$this->db->insert('email_massage',$rest);
-            //$str=str_replace('{host}',HOST_NAME,$str);
-            //$image = file_get_contents(PUBLIC_PATH.DS.'resources'.DS.'callback'.DS.'images'.DS.'mail'.DS.'001.png');
-
-            $url = explode('<img src="{host}',$str);
-            $image='';
-            unset($url[0]);
-            foreach ($url as $key =>$value)
-            {
-                $i=stripos($value,'"');
-                $src = substr($value,0,$i);
-                $j=stripos($src,'.');
-                $e=strripos($src,'/')+1;
-                $cid = substr($src,$e,$j-$e);
-                $type= substr($src,strripos($src,'.')+1,strlen($src));
-                $mime= 'image/'.$type;
-
-                $image[$key]=["url"=>PUBLIC_PATH.$src,'cid'=>$cid,'name'=>$cid.'.'.$type,'type'=>$type,'mime'=>$mime];
-                $host ='{host}'.$src;
-                $str=str_replace($host,'cid:'.$cid,$str);
-            }
-            //$str=str_replace('{001}','src="data:image/png;base64,'.base64_encode($image).'"',$str);
+            $mail_c=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
+            //$mail_cc=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
+            $res=$this->image_replace($mail_c);
+            $image=$res['image'];
+            $mail_c=$res['str'];
             foreach ($rest as $key=>$value) {
-                if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
+                if ($key!='md5') $mail_c=str_replace('{'.$key.'}',$value,$mail_c);
             }
-            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
+            $result[] =$this->send_smtp_html($mail_c,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
+
+            $mail_c=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_cc.html'); //$this->db->insert('email_massage',$rest);
+            //$mail_cc=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
+            $res=$this->image_replace($mail_c);
+            $image=$res['image'];
+            $mail_c=$res['str'];
+            foreach ($rest as $key=>$value) {
+                if ($key!='md5') $mail_c=str_replace('{'.$key.'}',$value,$mail_c);
+            }
+            $result[] =$this->send_smtp_html($mail_c,[$rest['email']], 'TEST', $siteData[0],$image);
+
             return $result;
         }
         else
@@ -161,6 +137,28 @@ class callback extends Models
     function save_message($data)
     {
         return $this->db->insert('email_massage',$data);
+    }
+
+    function image_replace($str)
+    {
+        $url = explode('<img src="{host}',$str);
+        $image='';
+        unset($url[0]);
+        foreach ($url as $key =>$value)
+        {
+            $i=stripos($value,'"');
+            $src = substr($value,0,$i);
+            $j=stripos($src,'.');
+            $e=strripos($src,'/')+1;
+            $cid = substr($src,$e,$j-$e);
+            $type= substr($src,strripos($src,'.')+1,strlen($src));
+            $mime= 'image/'.$type;
+
+            $image[$key]=["url"=>PUBLIC_PATH.$src,'cid'=>$cid,'name'=>$cid.'.'.$type,'type'=>$type,'mime'=>$mime];
+            $host ='{host}'.$src;
+            $str=str_replace($host,'cid:'.$cid,$str);
+        }
+        return ['image'=>$image,'str'=>$str];
     }
 
 }
