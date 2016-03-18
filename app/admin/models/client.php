@@ -39,6 +39,50 @@ class client extends Models
         ];
     }
 
+    public function GetSite($id)
+    {
+        $siteData = $this->db->select('site',
+            [
+                "[>]email" => ["email" => "id"]
+            ],
+            [
+                'site.*',
+                'email.login',
+                'email.password',
+            ]
+            ,
+            [
+                'site.id'=>$id
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
+
+    }
+
+    public function EditSite($id,$value)
+    {
+        $result = $this->db->update('site',$value,[
+            'id'=>$id
+        ]);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
+    public function AddSite ($value)
+    {
+        $result  = $this->db->insert('site',$value);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
+/*--------------Gateway----------------*/
 
     public function GetAllGateway($page)
     {

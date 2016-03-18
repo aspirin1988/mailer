@@ -25,11 +25,11 @@ class Client extends Controller
         $this->response->json($model->GetSite($id));
     }
 
-    public  function EditSite ($id)
+    public  function EditSite ()
     {
         $value = $this->request->rest();
         $model = new \app\admin\models\client();
-        $this->response->json($model->EditSite($id,$value));
+        $this->response->json($model->EditSite($value['id'],$value));
     }
 
     public function AddSite ()
@@ -38,6 +38,7 @@ class Client extends Controller
         $model = new \app\admin\models\client();
         $this->response->json($model->AddSite($value));
     }
+
 /*---------Gateway-----------*/
     public function GetAllGateway($page=0)
     {
