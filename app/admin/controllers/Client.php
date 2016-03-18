@@ -40,10 +40,31 @@ class Client extends Controller
     }
 
 /*---------Gateway-----------*/
+
     public function GetAllGateway($page=0)
     {
         $model = new \app\admin\models\client();
         $this->response->json($model->GetAllGateway($page));
+    }
+
+    public  function GetGateway ($id)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->GetGateway($id));
+    }
+
+    public  function EditGateway ($id)
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->EditGateway($id,$value));
+    }
+
+    public function AddGateway ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->AddGateway($value));
     }
 
 }

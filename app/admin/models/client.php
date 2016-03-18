@@ -19,13 +19,9 @@ class client extends Models
         $countSite = $this->db->count('site');
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
-        $siteData = $this->db->select('site', [
-            "[>]email" => ["email" => "id"]
-        ],
+        $siteData = $this->db->select('site',
             [
                 'site.*',
-                'email.login',
-                'email.password',
             ],
             [
                 'LIMIT' => [$offset, $limit],
@@ -103,6 +99,44 @@ class client extends Models
         return [
             'data' => $companyData,
             'count' => $countPage
+        ];
+    }
+
+    public function GetGateway($id)
+    {
+        $siteData = $this->db->select('email',
+            [
+                'email.*',
+            ]
+            ,
+            [
+                'email.id'=>$id
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
+
+    }
+
+    public function EditGateway($id,$value)
+    {
+        $result = $this->db->update('email',$value,[
+            'id'=>$id
+        ]);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
+    public function AddGateway ($value)
+    {
+        $result  = $this->db->insert('email',$value);
+
+        return [
+            'data'=>$result
         ];
     }
 
