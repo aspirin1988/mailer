@@ -83,9 +83,11 @@ class Client extends Controller
         $this->response->json($model->GetGateway($id));
     }
 
-    public  function EditGateway ($id)
+    public  function EditGateway ()
     {
         $value = $this->request->rest();
+        $id=$value['id'];
+        unset($value['id']);
         $model = new \app\admin\models\client();
         $this->response->json($model->EditGateway($id,$value));
     }

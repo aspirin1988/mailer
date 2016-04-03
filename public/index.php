@@ -11,6 +11,8 @@ include (BASE_PATH.DS.'bootstrap.php');
 
 $container = new \core\Container();
 
+$ignore=IGNORE_AUTH;
+
 $database = new \core\Database([
     'database_type' => DATABASE_TYPE,
     'database_name' => DATABASE_NAME,
