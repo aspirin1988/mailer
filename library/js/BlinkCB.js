@@ -14,6 +14,8 @@ function BlinkCBModule() {
 
         if(template !== false) {
             var htmlObject = document.createElement('div');
+            htmlObject.style.position = 'relative';
+            htmlObject.style.zIndex = '9999';
             htmlObject.innerHTML = template;
 
             document.body.appendChild(htmlObject);

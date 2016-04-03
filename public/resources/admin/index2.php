@@ -344,6 +344,10 @@
             <li><a href="#"><i class="fa fa-th"></i> Сервисы</a></li>
             <li class="active">Mailer</li>
           </ol>
+          <hr>
+          <div class="text-right">
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Добавить клиента</button>
+          </div>
         </section>
 
         <!-- Main content -->
@@ -402,6 +406,37 @@
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <form action="" ng-submit="addNewClient()">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Добавление пользователя</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Email клиента:</label>
+                  <input type="text" name="cc_mail" placeholder="clien@client.smg" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Хост клиента:</label>
+                  <input type="text" name="cc_mail" placeholder="http://host.smg/" class="form-control">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Добавить">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0

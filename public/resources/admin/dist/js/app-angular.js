@@ -1,6 +1,10 @@
 var app = angular.module('app', []);
 
 app.controller('blinkMainController', function($scope, $http) {
+    $scope.getMailerTemplate = function () {
+
+    };
+
     $scope.getMailerClients = function () {
         $http({
             method: 'GET',
@@ -48,7 +52,7 @@ app.controller('blinkMainController', function($scope, $http) {
 
     };
 
-    $scope.getMailerTemplate = function () {
-        console.log('yeah');
+    $scope.addNewClient = function() {
+        console.log('yeahhh');
     };
 });
