@@ -32,7 +32,7 @@ class Callback extends Controller
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
         $rest['email'] = $_POST['email'];  //= $this->request;
-        $rest['messange'] = $_POST['messange'];  //= $this->request;
+        $rest['mess'] = $_POST['mess'];  //= $this->request;
         $model = new \app\client\models\callback();
         $this->response->json($model->Query($rest,$name));
     }

@@ -15,6 +15,15 @@ class template extends Models
 {
     public function Get($name, $style)
     {
+        $name='';
+        if ($_SERVER['HTTP_REFERER'])
+        {
+            $name=md5($_SERVER['HTTP_REFERER']);
+        }
+        else
+        {
+            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
+        }
         if ($this->permission($name)['data']) {
 
             $path = CALLBACK . DS . 'html' . DS . 'index.html';

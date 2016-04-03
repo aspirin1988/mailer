@@ -140,6 +140,9 @@ class client extends Models
     public function AddSite ($value)
     {
         $value['md5']=md5($value['name']);
+
+
+
         $result  = $this->db->insert('site',$value);
 
         return [
@@ -204,5 +207,15 @@ class client extends Models
         ];
     }
 
+
+
+
+    /*-----Create-New-CSS-----*/
+    function NewCSS ($name)
+    {
+        $data = file_get_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-style.css');
+        $data = str_replace('{host}', 'http' . HOST_NAME, $data);
+        file_put_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS .$name.'blink-sb-style.css',$data);
+    }
 
 }

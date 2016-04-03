@@ -18,7 +18,7 @@ class Script extends Controller
         echo 'is script';
     }
 
-    public function Get($name)
+    public function Get()
     {
         $name='';
         if ($_SERVER['HTTP_REFERER'])
