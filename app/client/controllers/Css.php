@@ -23,7 +23,7 @@ class Css extends Controller
         $user =$this->session->getUser();
         $model = new \app\client\models\css();
         $data =$model->Get($name,$style);
-        $data = str_replace('{host}',HOST_NAME,$data);
+        $data = str_replace('{host}','http'.HOST_NAME,$data);
         $this->response->css($data);
     }
 }

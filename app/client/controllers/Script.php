@@ -32,7 +32,7 @@ class Script extends Controller
         //$name=md5($name);
         $model = new \app\client\models\script();
         $data =$model->Get($name);
-        $data = str_replace('{host}',HOST_NAME,$data);
+        $data = str_replace('{host}','http'.HOST_NAME,$data);
         $data = str_replace('{name}',$name,$data);
         $this->response->js($data);
     }
