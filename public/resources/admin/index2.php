@@ -421,11 +421,11 @@
               <div class="modal-body">
                 <div class="form-group">
                   <label>Email клиента:</label>
-                  <input type="text" name="cc_mail" placeholder="clien@client.smg" class="form-control">
+                  <input type="text" ng-model="newClientInfo['cc_mail']" placeholder="clien@client.smg" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <label>Хост клиента:</label>
-                  <input type="text" name="cc_mail" placeholder="http://host.smg/" class="form-control">
+                  <input type="text" ng-model="newClientInfo['name']" placeholder="http://host.smg/" class="form-control" required>
                 </div>
               </div>
               <div class="modal-footer">

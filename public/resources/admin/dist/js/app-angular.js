@@ -1,6 +1,8 @@
 var app = angular.module('app', []);
 
 app.controller('blinkMainController', function($scope, $http) {
+    $scope.newClientInfo = {};
+
     $scope.getMailerTemplate = function () {
 
     };
@@ -53,7 +55,12 @@ app.controller('blinkMainController', function($scope, $http) {
     };
 
     $scope.addNewClient = function(event) {
-
-        console.log('yeahhh');
+        $http({
+            method: 'POST',
+            url: '/admin/client/AddSite',
+            data: $scope.newClientInfo
+        }).then(function success(response) {
+            console.log('added');
+        }, function error(response) {});
     };
 });
