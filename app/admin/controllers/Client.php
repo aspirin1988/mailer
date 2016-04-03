@@ -13,6 +13,36 @@ use core\Controller;
 
 class Client extends Controller
 {
+/*---------Client-----------*/
+
+    public function GetAllClient($page)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->GetAllClient($page));
+    }
+
+    public function GetClient($page)
+        {
+            $model = new \app\admin\models\client();
+            $this->response->json($model->GetClient($page));
+        }
+
+    public  function EditClient ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->EditClient($value['id'],$value));
+    }
+
+    public function AddClient ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\client();
+        $this->response->json($model->AddSite($value));
+    }
+
+/*---------Site-----------*/
+
     public function GetAllSite($page=0)
     {
         $model = new \app\admin\models\client();
