@@ -35,12 +35,12 @@ define("TEMPLATE_HEADER_FILE", TEMPLATE_PATH . DS . DEFAULT_TEMPLATE . DS . 'hea
 define("TEMPLATE_FOOTER_FILE", TEMPLATE_PATH . DS . DEFAULT_TEMPLATE . DS . 'footer.php');
 
 // DB config
-/*define('DATABASE_TYPE', 'pgsql');
-define('DATABASE_NAME', 'mailer');
-define('DATABASE_SERVER', '192.168.1.104');
-define('DATABASE_USERNAME', 'crm');
-define('DATABASE_PASSWORD', 'crm_user');
-define('DATABASE_CHARSET', 'utf8');*/
+//define('DATABASE_TYPE', 'pgsql');
+//define('DATABASE_NAME', 'mailer');
+//define('DATABASE_SERVER', '192.168.1.104');
+//define('DATABASE_USERNAME', 'crm');
+//define('DATABASE_PASSWORD', 'crm_user');
+//define('DATABASE_CHARSET', 'utf8');
 
 define('DATABASE_TYPE', 'pgsql');
 define('DATABASE_NAME', 'blink');
