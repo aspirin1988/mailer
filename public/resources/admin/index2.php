@@ -346,7 +346,8 @@
           </ol>
           <hr>
           <div class="text-right"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Добавить клиента</button></div>
-          <div class="alert alert-success" ng-show="addNewClientResponse">Клиент был успешно добавлен</div>
+          <br>
+          <div class="text-right"><button class="btn btn-default btn-sm" ng-click="getMailerClients()"><i class="fa fa-refresh"></i></button></div>
         </section>
 
         <!-- Main content -->
@@ -361,43 +362,72 @@
               </div>
             </div><!-- /.box-header -->
             <div class="box-body">
-              <div class="row">
-                <div class="col-md-6">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>md5</label>
+                  <input id="md5" class="form-control" type="text" placeholder="{{ val.md5 }}" readonly="readonly">
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                  <label>Название сайта</label>
+                  <input id="name" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="mailerClients[key].name">
+                </div>
+                <div class="form-froup">
+                  <label>Название компании</label>
+                  <input id="company" class="form-control" type="text" placeholder="Название компании" ng-model="mailerClients[key].company">
+                </div><!-- /.form-group -->
+              </div><!-- /.col -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>ID</label>
+                  <input id="id" class="form-control" type="text" placeholder="ID" ng-model="mailerClients[key].id" readonly="readonly">
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                  <label>Адрес получателя</label>
+                  <input id="cc_mail" class="form-control" type="text" placeholder="Адрес получателя" ng-model="mailerClients[key].cc_mail">
+                </div>
+                <div class="form-group">
                   <div class="form-group">
-                    <label>md5</label>
-                    <input id="md5" class="form-control" type="text" placeholder="{{ val.md5 }}" readonly="readonly">
-                  </div><!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Название сайта</label>
-                    <input id="name" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="mailerClients[key].name">
+                    <label>Email отправки</label>
+                    <select class="form-control" ng-model="mailerClients[key].email" ng-options="email as email.login for email in mailerEmails track by email.id">
+                    </select>
                   </div>
-                  <div class="form-froup">
-                    <label>Название компании</label>
-                    <input id="company" class="form-control" type="text" placeholder="Название компании" ng-model="mailerClients[key].company">
-                  </div><!-- /.form-group -->
-                </div><!-- /.col -->
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>ID</label>
-                    <input id="id" class="form-control" type="text" placeholder="ID" ng-model="mailerClients[key].id" readonly="readonly">
-                  </div><!-- /.form-group -->
-                  <div class="form-group">
-                    <label>Адрес получателя</label>
-                    <input id="cc_mail" class="form-control" type="text" placeholder="Адрес получателя" ng-model="mailerClients[key].cc_mail">
-                  </div>
-                  <div class="form-group">
+                </div>
+                <!-- /.form-group -->
+              </div><!-- /.col -->
+              <div class="col-md-12" ng-if="mailerClientOwnSettings">
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label>Email отправки</label>
-                      <select class="form-control" ng-model="mailerClients[key].email" ng-options="email as email.login for email in mailerEmails track by email.id">
-                      </select>
+                      <label>SMTP шлюз</label>
+                      <input class="form-control" type="text" placeholder="SMTP шлюз" ng-model="mailerClientsOwn.host">
+                    </div>
+                    <div class="form-group">
+                      <label>Логин</label>
+                      <input class="form-control" type="text" placeholder="Логин" ng-model="mailerClientsOwn.login">
                     </div>
                   </div>
-                  <!-- /.form-group -->
-                </div><!-- /.col -->
-                <div class="col-md-12">
-                  <button class="btn btn-primary pull-right" ng-click="updateMailerClients(key)">Обновить</button>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Пароль</label>
+                      <input class="form-control" type="text" placeholder="Пароль" ng-model="mailerClientsOwn.password">
+                    </div>
+                    <div class="form-group">
+                      <label>Порт</label>
+                      <input class="form-control" type="text" placeholder="Порт" ng-model="mailerClientsOwn.port">
+                    </div>
+                  </div>
                 </div>
-              </div><!-- /.row -->
+              </div>
+              <div class="col-md-12">
+                <div class="text-right">
+                  <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="editHosts(mailerClients[key].email.id)"><i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="addNewHost()"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="text-right"><button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings !== false" ng-click="addNewHostExit()"><i class="fa fa-times"></i></button></div>
+                <hr>
+                <div class="text-right"><button class="btn btn-primary btn-sm" ng-click="updateMailerClients(key)">Обновить</button></
+              </div>
             </div><!-- /.box-body -->
             <div class="box-footer">
             </div>
