@@ -49,7 +49,7 @@ class Router
         ];
 
 
-        if (!$session->User() && $route[0] != 'auth' && $route[0] != 'client') {
+        if (!$session->User() && $route[0] != 'auth' &&  !IGNORE_AUTH[$route[0]]) {
             $response->redirect('/auth');
             exit;
         }

@@ -15,16 +15,16 @@ class Client extends Controller
 {
 /*---------Client-----------*/
 
-    public function GetAllClient($page)
+    public function GetAllClient($page=0)
     {
         $model = new \app\admin\models\client();
         $this->response->json($model->GetAllClient($page));
     }
 
-    public function GetClient($page)
+    public function GetClient($id)
         {
             $model = new \app\admin\models\client();
-            $this->response->json($model->GetClient($page));
+            $this->response->json($model->GetClient($id));
         }
 
     public  function EditClient ()

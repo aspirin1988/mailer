@@ -34,6 +34,9 @@ define('DEFAULT_SESSION_LIFE_TIME', 300000);
 define("TEMPLATE_HEADER_FILE", TEMPLATE_PATH . DS . DEFAULT_TEMPLATE . DS . 'header.php');
 define("TEMPLATE_FOOTER_FILE", TEMPLATE_PATH . DS . DEFAULT_TEMPLATE . DS . 'footer.php');
 
+// Ignore auth module
+define("IGNORE_AUTH",['client'=>true]);
+
 // DB config
 //define('DATABASE_TYPE', 'pgsql');
 //define('DATABASE_NAME', 'mailer');
