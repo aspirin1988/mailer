@@ -1,68 +1,110 @@
-<div id="blink-cb-html-container">
-    <div class="blink-cb-container blink-cb-animated">
-        <div class="blink-cb-exit-btn-wraper">
-            <img src="{host}/resources/callback/images/close.png" alt="" class="blink-cb-exit-btn">
-        </div>
-        <div class="blink-cb-wrapper">
-            <div class="blink-cb-head">
-                <ul>
-                    <li><a href="#" class="blink-cb-switcher-btn active" data="blink-cb-block-recall" id="blink-cb-recall" data-id="blink-cb-recall"><span class="blink-cb-icon-phone"></span><br>Звонок</a></li>
-                    <li><a href="#" class="blink-cb-switcher-btn" data="blink-cb-block-messange" id="blink-cb-messange" data-id="blink-cb-messange"><span class="blink-cb-icon-email"></span><br>Письмо</a></li>
-                </ul>
-            </div>
-            <div class="blink-cb-content">
-                <div id="blink-cb-block-recall" class="blink-cb-block blink-cb-visible">
-                    <h4 class="blink-cb-header-text blink-cb-animated">Оставьте номер, и мы вам перезвоним</h4>
-                    <div class="blink-cb-header-content blink-cb-animated">
-                        <form action="http://mailer.tes/client/callback/Recall/966128519f610498a7df19b1aa045b6f" class="blink-cb-recall-form">
-                            <input type="text" name="fullname" id="" placeholder="ФИО" required>
-                            <input type="text" name="phone" id="blink-cb-phone-recall" placeholder="Ваш телефон" required>
-                            <div class="blink-cb-response-success">
-                                <small>Ваш запрос принять на обработку. <br> Мы свяжемся с Вами в ближайшее время.</small>
+<div class="blink-cb-module-container">
+    <div class="blink-cb-module-main-body animated fadeInRight">
+        <div class="blink-cb-module-main-body-container">
+            <a href="#" class="blink-cb-module-exit-body-btn"><i class="fa fa-close"></i></a>
+            <ul class="blink-cb-module-main-body-header-btns">
+                <li class="blink-cb-open-popup" id="blink-cb-module-to-recall">
+                    <a href="#recall"><i class="fa fa-phone"></i><span>Звонок</span></a>
+                </li>
+                <li class="blink-cb-open-popup" id="blink-cb-module-to-messange">
+                    <a href="#messange"><i class="fa fa-envelope"></i><span>Письмо</span></a>
+                </li>
+                <!--li class="blink-cb-open-popup">
+                    <a href="#comments"><i class="fa fa-comments"></i><span>Чат</span></a>
+                </li-->
+            </ul>
+            <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
+                <div class="blink-cb-module-flipper">
+                    <div class="blink-cb-module-flip-front">
+                        <h4 class="animated fadeInDown">Оставьте номер, и мы вам перезвоним</h4>
+                        <div class="animated fadeInUp">
+                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall" id="Recall">
+                                <input type="text" name="fullname" placeholder="ФИО" >
+                                <input type="text" name="phone" placeholder="Ваш телефон" >
+                                <input type="submit" value="Жду жвонка">
+                            </form>
+                            <small>Мы отправим sms с вашим номером менеджеру и начальнику отдела продаж. Конфиденциально. Без спама.</small>
+                        </div>
+                    </div>
+                    <div class="blink-cb-module-flip-back">
+                        <div class="blink-cb-module-messange-box blink-cb-module-success-messange">
+                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
+                                <i class="fa fa-close"></i>
+                            </a>
+                            <div class="blink-cb-module-popup-recall-success">
+                                <strong>Success!</strong> This alert box indicates a successful or positive action.
                             </div>
-                            <div class="blink-cb-response-error">
-                                <small>Возникла ошибка при отправке запроса. <br> Прверте правильность заполнения полей.</small>
+                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">Назад</button>
+                        </div>
+                        <div class="blink-cb-module-messange-box blink-cb-module-error-messange">
+                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
+                                <i class="fa fa-close"></i>
+                            </a>
+                            <div class="blink-cb-module-popup-recall-error">
+                                <strong>Danger!</strong> This alert box indicates a dangerous or potentially negative action.
                             </div>
-                            <input type="submit" value="Жду звонка!">
-                        </form>
-                        <small>
-                            Мы отправим sms с вашим номером менеджеру и начальнику отдела продаж. Конфиденциально. Без спама.
-                        </small>
+                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">Назад</button>
+                        </div>
                     </div>
                 </div>
-                <div id="blink-cb-block-messange" class="blink-cb-block blink-cb-hidden">
-                    <h4 class="blink-cb-header-text blink-cb-animated">
-                        Сделаю все, чтобы Вы получили ответ в течение 45 минутпосле начала рабочего дня. Пишите!
-                    </h4>
-                    <form action="" class="blink-cb-header-content blink-cb-animated blink-cb-messange-form">
-                        <input type="text" name="fullname" placeholder="ФИО" required>
-                        <input type="text" name="phone" id="blink-cb-phone-messange" placeholder="Ваш телефон" required>
-                        <input type="email" name="email" placeholder="Ваш E-mail" required>
-                        <textarea name="messange" placeholder="Напишите вопрос" required></textarea>
-                        <div class="blink-cb-response-success">
-                            <small>Ваш запрос принять на обработку. <br> Мы свяжемся с Вами в ближайшее время.</small>
+            </div>
+            <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-messange">
+                <div class="blink-cb-module-flipper">
+                    <div class="blink-cb-module-flip-front">
+                        <h4 class="animated fadeInDown">СДЕЛАЮ ВСЕ, ЧТОБЫ ВЫ ПОЛУЧИЛИ ОТВЕТ В ТЕЧЕНИЕ 45 МИНУТ ПОСЛЕ НАЧАЛА РАБОЧЕГО ДНЯ. ПИШИТЕ!</h4>
+                        <div class="animated fadeInUp">
+                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-messange" id="Query">
+                                <input type="text" name="fullname" placeholder="ФИО" >
+                                <input type="text" name="phone" placeholder="Ваш телефон" >
+                                <input type="text" name="email" placeholder="Ваш email" >
+                                <textarea name="mess" placeholder="Напишите вопрос"></textarea>
+                                <input type="submit" value="Жду жвонка">
+                            </form>
+                            <small>Мы отправим sms с вашим номером менеджеру и начальнику отдела продаж. Конфиденциально. Без спама.</small>
                         </div>
-                        <div class="blink-cb-response-error">
-                            <small>Возникла ошибка при отправке запроса. <br> Прверте правильность заполнения полей.</small>
+                    </div>
+                    <div class="blink-cb-module-flip-back">
+                        <div class="blink-cb-module-messange-box blink-cb-module-success-messange">
+                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">
+                                <i class="fa fa-close"></i>
+                            </a>
+                            <div class="blink-cb-module-popup-messange-success">
+                                <strong>Success!</strong> This alert box indicates a successful or positive action.
+                            </div>
+                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">Назад</button>
                         </div>
-                        <input type="submit" value="Отправить">
-                    </form>
+                        <div class="blink-cb-module-messange-box blink-cb-module-error-messange">
+                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">
+                                <i class="fa fa-close"></i>
+                            </a>
+                            <div class="blink-cb-module-popup-messange-error">
+                                <strong>Danger!</strong> This alert box indicates a dangerous or potentially negative action.
+                            </div>
+                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">Назад</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="blink-cb-main-btn" class="blink-cb-animated blink-cb-bounceInRight blink-cb-switcher-btn" data="blink-cb-block-recall" data-id="blink-cb-recall">
-        <div class="blink-cb-small-icons">
-            <div class="blink-cb-small-icons-cont">
-              <span class="blink-cb-icon-wrapper blink-cb-animated blink-cb-hidden blink-cb-switcher-btn" data="blink-cb-block-messange" data-id="blink-cb-messange">
-                <i class="blink-cb-fa blink-cb-fa-envelope"></i>
-              </span>
+    <div class="blink-cb-module-main-btns active">
+        <div class="blink-cb-module-btns-container">
+            <div class="blink-cb-module-main-btn-container animated">
+                <div class="blink-cb-open-popup blink-cb-module-main-btn"><a href="#recall"><i class="fa fa-phone"></i></a></div>
             </div>
-            <i class="blink-cb-fa blink-cb-fa-phone"></i>
+            <ul class="blink-cb-module-other-btn-container hidden">
+                <!--li class="blink-cb-open-popup animated"><a href="#recall"><i class="fa fa-phone"></i></a></li-->
+                <li class="blink-cb-open-popup animated"><a href="#messange"><i class="fa fa-envelope"></i></a></li>
+                <!--li class="blink-cb-open-popup animated"><a href="#comments"><i class="fa fa-comments"></i></a></li-->
+            </ul>
         </div>
     </div>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{css}">
+    <div>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+        <link rel="stylesheet" href="{css}">
+    </div>
 </div>

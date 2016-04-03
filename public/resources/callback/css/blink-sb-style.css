@@ -1,810 +1,287 @@
-@font-face {
-    font-family: 'FontAwesome';
-    src: url("{host}/resources/callback/fonts/fontawesome-webfont.eot?v=4.5.0");
-    src: url("{host}/resources/callback/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("{host}/resources/callback/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("{host}/resources/callback/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("{host}/resources/callback/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("{host}/resources/callback/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
-    font-weight: normal;
-    font-style: normal;
+.blink-cb-module-container {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-#blink-cb-html-container {
-    position: relative;
-    z-index: 9999;
-}
-
-#blink-cb-html-container {
-    font-family: 'Roboto', sans-serif;
-    z-index: 999999999;
-}
-
-#blink-cb-html-container * {
-    outline: none;
-}
-
-#blink-cb-main-btn {
-    width: 80px;
-    height: 80px;
-    background: rgba(57, 63, 72, 0.4);
-    border-radius: 50%;
-    color: #ffffff;
-    font-size: 40px;
-    text-align: center;
-    position: fixed;
-    bottom: 30px;
-    right: 40px;
-    cursor: pointer;
-    z-index: 5000;
-}
-
-#blink-cb-main-btn #blink-cb-main-btn * {
-    margin: 0;
+.blink-cb-module-container * {
     padding: 0;
+    margin: 0;
     outline: none;
     box-sizing: border-box;
+    line-height: 1;
 }
 
-#blink-cb-main-btn .blink-cb-fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.blink-cb-module-container input, textarea {
+    font-size: 14px;
 }
 
-#blink-cb-main-btn .blink-cb-fa-phone:before {
-    content: "\f095";
-}
-
-#blink-cb-main-btn .blink-cb-fa-envelope:before {
-    content: "\f0e0";
-}
-
-#blink-cb-main-btn .blink-cb-small-icons {
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons .blink-cb-small-icons-cont {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    z-index: 5001;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons .blink-cb-icon-wrapper {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    top: 50%;
-    left: 0;
-    margin-top: -15px;
-    border-radius: 50%;
-    background: rgba(57, 63, 72, 0.4);
-    color: #ffffff;
-    font-size: 15px;
-    z-index: 5002;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons .blink-cb-icon-wrapper i {
-    margin-top: 6.5px;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons > i {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -18px;
-    margin-left: -15px;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons .blink-cb-hidden {
-    display: none;
-}
-
-#blink-cb-main-btn .blink-cb-small-icons .blink-cb-visible {
-    display: block;
-}
-
-.blink-cb-container {
-    display: none;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    width: 330px;
-    padding: 15px 0;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #393f48;
-    border-left: 31px solid #434a54;
-    color: #ffffff;
-}
-
-.blink-cb-container .blink-cb-container * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.blink-cb-container .blink-cb-hidden {
-    visibility: hidden;
-    height: 0;
-}
-
-.blink-cb-container .blink-cb-visible {
-    visibility: visible;
-}
-
-.blink-cb-content .blink-cb-success-hidden {
-    display: none;
-}
-
-.blink-cb-container h4 {
-    text-transform: uppercase;
-    font-weight: normal;
-}
-
-.blink-cb-container .blink-cb-content .blink-cb-response-success {
-    display: none;
-}
-
-.blink-cb-container .blink-cb-content .blink-cb-response-error {
-    display: none;
-}
-
-.blink-cb-container .blink-cb-content .blink-cb-response-success small {
-    display: block;
-    margin-bottom: 10px;
-    color: #27ae60;
-}
-
-.blink-cb-container .blink-cb-content .blink-cb-response-error small {
-    display: block;
-    margin-bottom: 10px;
-    color: #cf5664;
-}
-
-.blink-cb-container .blink-cb-header-text {
+.blink-cb-module-container h1, h2, h3, h4, h5, h6 {
     color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
 }
 
-.blink-cb-container #blink-cb-block-recall {
-    margin-top: 115px;
+.blink-cb-module-container * a {
+    text-decoration: none;
+}
+.blink-cb-module-container * a:hover {
+    text-decoration: none;
+}
+.blink-cb-module-container * ul {
+    list-style: none;
 }
 
-.blink-cb-container #blink-cb-block-messange {
-    margin-top: -40px;
+.blink-cb-module-main-body {
+    position: fixed;
+    width: 360px;
+    height: 100%;
+    background: #393f48;
+    right: 0;
+    top: 0;
+    border-left: 32px solid #434a54;
+    padding: 30px 0;
+    color: #e2e3e7;
+    display: none;
 }
-
-.blink-cb-container .blink-cb-exit-btn-wraper {
+.blink-cb-module-main-body .blink-cb-module-main-body-container {
     position: relative;
-}
-
-.blink-cb-container .blink-cb-exit-btn-wraper img.blink-cb-exit-btn {
-    position: absolute;
-    top: -5px;
-    left: -23px;
-    cursor: pointer;
-}
-
-.blink-cb-container .blink-cb-wrapper {
     width: 250px;
     margin: 0 auto;
 }
-
-.blink-cb-container .blink-cb-head {
-    padding: 0;
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-exit-body-btn {
+    position: absolute;
+    color: #e2e3e7;
+    top: -20px;
+    left: -60px;
 }
-
-.blink-cb-container .blink-cb-head ul {
-    list-style: none;
-    padding: 0;
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns {
     text-align: center;
 }
-
-.blink-cb-container .blink-cb-head ul li {
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li {
+    text-align: center;
     display: inline-block;
-    margin-right: 20px;
+    margin: 0 10px;
 }
-
-.blink-cb-container .blink-cb-head ul li:last-child {
-    margin-right: 0;
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li a {
+    color: #e2e3e7;
+    font-size: 24px;
 }
-
-.blink-cb-container .blink-cb-head ul li a {
-    color: #ffffff;
-    text-decoration: none;
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li a i {
+    display: block;
+}
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li a span {
+    display: block;
     font-size: 12px;
+    margin: 6px 0 0 0;
+    text-transform: uppercase;
+}
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li.active a {
+    color: #cf5664;
+}
+.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li:hover a {
+    color: #cf5664;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container {
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    top: 50%;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front, .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front {
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text], .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
+    margin-top: 7px;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 5px;
+    border: 2px solid #e2e3e7;
+    color: #e2e3e7;
+    background: #434a54;
+    width: 100%;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
+    padding: 7px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text] {
+    height: 40px;
+    padding: 0 7px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit] {
+    margin-top: 7px;
+    background: #cf5664;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    padding: 0 15px;
+    border-radius: 5px;
+    color: #e2e3e7;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit]:hover {
+    background: #a7424e;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front small {
+    display: block;
+    margin-top: 20px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box {
+    width: 100%;
+    padding: 40px 20px 20px 20px;
+    border: 2px solid #eee;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box a {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box button {
+    border: none;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #e2e3e7;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 20px;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange {
+    color: #3c763d;
+    background-color: #e2e3e7;
+    display: none;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange a {
+    color: #3c763d;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange button {
+    background: #3c763d;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange {
+    color: #a94442;
+    background-color: #e2e3e7;
+    display: none;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange a {
+    color: #a94442;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange button {
+    background: #a94442;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container.active {
+    display: block;
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-back {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-front {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.blink-cb-module-main-body #blink-cb-module-popup-recall {
+    margin-top: 50%;
+}
+.blink-cb-module-main-body #blink-cb-module-popup-messange {
+    margin-top: 30%;
+}
+.blink-cb-module-main-body.active {
     display: block;
 }
 
-.blink-cb-container .blink-cb-head ul li a:hover {
-    text-decoration: none;
+.blink-cb-module-main-btns {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 99999;
+    color: #e2e3e7;
+    display: none;
 }
-
-.blink-cb-container .blink-cb-head ul li a:hover .blink-cb-icon-phone {
-    background-image: url({host}/resources/callback/images/phone-hover.png);
+.blink-cb-module-main-btns a {
+    color: #e2e3e7;
 }
-
-.blink-cb-container .blink-cb-head ul li a:hover .blink-cb-icon-email {
-    background-image: url({host}/resources/callback/images/mail-hover.png);
+.blink-cb-module-main-btns .blink-cb-module-btns-container {
+    position: relative;
+    height: 80px;
+    width: 80px;
 }
-
-.blink-cb-container .blink-cb-head ul li a.active .blink-cb-icon-phone {
-    background-image: url({host}/resources/callback/images/phone-hover.png);
-}
-
-.blink-cb-container .blink-cb-head ul li a.active .blink-cb-icon-email {
-    background-image: url({host}/resources/callback/images/mail-hover.png);
-}
-
-.blink-cb-container .blink-cb-head ul li a img {
-    height: 25px;
-    margin-bottom: 5px;
-}
-
-.blink-cb-container .blink-cb-head ul li a .blink-cb-icon-phone {
-    display: block;
-    height: 25px;
-    background-image: url({host}/resources/callback/images/phone.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 25px 25px;
-    margin-bottom: -10px;
-}
-
-.blink-cb-container .blink-cb-head ul li a .blink-cb-icon-email {
-    display: block;
-    height: 25px;
-    background-image: url({host}/resources/callback/images/mail.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 32px 25px;
-    margin-bottom: -10px;
-}
-
-.blink-cb-container .blink-cb-content {
+.blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-main-btn-container {
+    width: 80px;
+    height: 80px;
+    background: #393f48;
+    border-radius: 50%;
+    cursor: pointer;
     text-align: center;
 }
-
-.blink-cb-container .blink-cb-content form {
-    margin-top: 40px;
+.blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-main-btn-container .blink-cb-module-main-btn {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 21px;
 }
-
-.blink-cb-container .blink-cb-content form input {
-    background-color: #434a54;
-    border-radius: 5px;
-    border: 2px solid #e2e3e7;
-    color: #e2e3e7;
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 7px;
-    padding: 0 7px;
+.blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container {
+    position: absolute;
+    width: auto;
     height: 40px;
+    right: 80px;
+    top: 20px;
+    padding: 2.5px 0 0 0;
 }
-
-.blink-cb-container .blink-cb-content form input[type=text] {
-    width: 100%;
-}
-
-.blink-cb-container .blink-cb-content form input[type=email] {
-    width: 100%;
-}
-
-.blink-cb-container .blink-cb-content form input[type=submit] {
-    background-color: #cf5664;
-    color: #ffffff;
+.blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container li {
+    float: right;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background: #393f48;
+    text-align: center;
+    font-size: 15px;
+    padding: 9px 0 0 0;
+    margin: 0 7px 0 0;
     cursor: pointer;
-    border: none;
-    padding: 0 15px;
 }
-
-.blink-cb-container .blink-cb-content form input[type=submit]:hover {
-    background-color: #a7424e;
+.blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container.hidden {
+    display: none;
 }
-
-.blink-cb-container .blink-cb-content form textarea {
-    padding: 3px 7px;
-    color: #e2e3e7;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #434a54;
-    min-height: 95px;
-    border-radius: 5px;
-    border: 2px solid #e2e3e7;
+.blink-cb-module-main-btns.active {
     display: block;
-    width: 100%;
-    margin-bottom: 7px;
-}
-
-.blink-cb-container.blink-cb-visible {
-    display: block;
-}
-
-.blink-cb-animated {
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes blink-cb-fadeInLeft {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInLeft {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInLeft {
-    -webkit-animation-name: blink-cb-fadeInLeft;
-    animation-name: blink-cb-fadeInLeft;
-}
-
-@-webkit-keyframes blink-cb-fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInRight {
-    -webkit-animation-name: blink-cb-fadeInRight;
-    animation-name: blink-cb-fadeInRight;
-}
-
-@-webkit-keyframes blink-cb-fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInDown {
-    -webkit-animation-name: blink-cb-fadeInDown;
-    animation-name: blink-cb-fadeInDown;
-}
-
-@-webkit-keyframes blink-cb-fadeInUp {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInUp {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInUp {
-    -webkit-animation-name: blink-cb-fadeInUp;
-    animation-name: blink-cb-fadeInUp;
-}
-
-@-webkit-keyframes blink-cb-fadeInUpBig {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 2000px, 0);
-        transform: translate3d(0, 2000px, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@-webkit-keyframes blink-cb-bounceInRight {
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(3000px, 0, 0);
-        transform: translate3d(3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translate3d(-25px, 0, 0);
-        transform: translate3d(-25px, 0, 0);
-    }
-    75% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
-    }
-    90% {
-        -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0);
-    }
-    to {
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-bounceInRight {
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(3000px, 0, 0);
-        transform: translate3d(3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translate3d(-25px, 0, 0);
-        transform: translate3d(-25px, 0, 0);
-    }
-    75% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
-    }
-    90% {
-        -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0);
-    }
-    to {
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-bounceInRight {
-    -webkit-animation-name: blink-cb-bounceInRight;
-    animation-name: blink-cb-bounceInRight;
-}
-
-@-webkit-keyframes blink-cb-fadeOutRight {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-}
-
-@keyframes blink-cb-fadeOutRight {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-}
-
-.blink-cb-fadeOutRight {
-    -webkit-animation-name: blink-cb-fadeOutRight;
-    animation-name: blink-cb-fadeOutRight;
-}
-
-.blink-cb-animated {
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes blink-cb-fadeInLeft {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInLeft {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInLeft {
-    -webkit-animation-name: blink-cb-fadeInLeft;
-    animation-name: blink-cb-fadeInLeft;
-}
-
-@-webkit-keyframes blink-cb-fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInRight {
-    -webkit-animation-name: blink-cb-fadeInRight;
-    animation-name: blink-cb-fadeInRight;
-}
-
-@-webkit-keyframes blink-cb-fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInDown {
-    -webkit-animation-name: blink-cb-fadeInDown;
-    animation-name: blink-cb-fadeInDown;
-}
-
-@-webkit-keyframes blink-cb-fadeInUp {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-fadeInUp {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-fadeInUp {
-    -webkit-animation-name: blink-cb-fadeInUp;
-    animation-name: blink-cb-fadeInUp;
-}
-
-@-webkit-keyframes blink-cb-fadeInUpBig {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 2000px, 0);
-        transform: translate3d(0, 2000px, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@-webkit-keyframes blink-cb-bounceInRight {
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(3000px, 0, 0);
-        transform: translate3d(3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translate3d(-25px, 0, 0);
-        transform: translate3d(-25px, 0, 0);
-    }
-    75% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
-    }
-    90% {
-        -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0);
-    }
-    to {
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes blink-cb-bounceInRight {
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(3000px, 0, 0);
-        transform: translate3d(3000px, 0, 0);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translate3d(-25px, 0, 0);
-        transform: translate3d(-25px, 0, 0);
-    }
-    75% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate3d(10px, 0, 0);
-    }
-    90% {
-        -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0);
-    }
-    to {
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.blink-cb-bounceInRight {
-    -webkit-animation-name: blink-cb-bounceInRight;
-    animation-name: blink-cb-bounceInRight;
-}
-
-@-webkit-keyframes blink-cb-fadeOutRight {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-}
-
-@keyframes blink-cb-fadeOutRight {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-}
-
-.blink-cb-fadeOutRight {
-    -webkit-animation-name: blink-cb-fadeOutRight;
-    animation-name: blink-cb-fadeOutRight;
 }
