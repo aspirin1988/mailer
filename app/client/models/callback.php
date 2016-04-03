@@ -87,6 +87,14 @@ class callback extends Models
             }
             $result[] =$this->send_smtp_html($mail_c,[$rest['email']], 'TEST', $siteData[0],$image);
 
+            if ($result[0]['code']){
+
+                $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+            }
+            else
+            {
+                $result[0]['text']='Ваше сообщение не было отправленно!';
+            }
             return $result;
         }
         else
