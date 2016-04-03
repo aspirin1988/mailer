@@ -56,178 +56,303 @@ BlinkCBModule.prototype.clearForm = function (object) {
     }
 };
 
-BlinkCBModule.prototype.blockInputs = function (object) {
-    for(var i=0; i < object.length -1; i++) {
-        //object[i].setAttribute('disabled', true);
-    }
-};
-
-BlinkCBModule.prototype.showIconsInterval = function(element, position, iteration, deleteClass, addClass) {
-    setTimeout(function() {
-        element.classList.remove('blink-cb-hidden');
-        element.classList.remove(deleteClass);
-        element.classList.add('blink-cb-visible');
-        element.classList.add(addClass);
-        element.style.left = position + "px";
-    }, iteration*200);
-};
-
-BlinkCBModule.prototype.hideIconsInterval = function(element, position, iteration, deleteClass, addClass) {
-    setTimeout(function() {
-
-        element.classList.remove(deleteClass);
-        element.classList.add(addClass);
-        element.style.left = position + "px";
-        setTimeout(function() {
-            element.classList.remove('blink-cb-visible');
-            element.classList.add('blink-cb-hidden');
-        }, iteration*400);
-    }, iteration*200);
-};
-
 BlinkCBModule.prototype.loadJS = function() {
-    var that = this,
-        swticherAnchor = document.getElementsByClassName('blink-cb-switcher-btn'),
-        swticherBlocks = document.getElementsByClassName('blink-cb-block'),
-        openBlockBtn = document.getElementById('blink-cb-main-btn'),
-        openBlock = document.getElementsByClassName('blink-cb-container')[0],
-        exitBtn = document.getElementsByClassName('blink-cb-exit-btn')[0],
-        icons = document.getElementsByClassName('blink-cb-icon-wrapper'),
-        iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0],
-        recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0],
-        messangeFormSubmit = document.getElementsByClassName('blink-cb-messange-form')[0],
-        successDiv = document.getElementsByClassName('blink-cb-response-success'),
-        errorDiv =  document.getElementsByClassName('blink-cb-response-error');
+    var doc = document,
+        that = this,
+        allBtnContainer = doc.getElementsByClassName('blink-cb-module-btns-container')[0],
+        mainOpenBtn = doc.getElementsByClassName('blink-cb-module-main-btns')[0],
+        mainBody = doc.getElementsByClassName('blink-cb-module-main-body')[0],
+        mainCloseBtn = doc.getElementsByClassName('blink-cb-module-exit-body-btn'),
+        allBtns = doc.getElementsByClassName('blink-cb-open-popup'),
+        mainBtnContainer = doc.getElementsByClassName('blink-cb-module-main-btn-container')[0],
+        otherBtnsContainer = doc.getElementsByClassName('blink-cb-module-other-btn-container')[0],
+        otherBtns = otherBtnsContainer.children;
 
-    VMasker(document.getElementById("blink-cb-phone-recall")).maskPattern('(999) 999-9999');
-    VMasker(document.getElementById("blink-cb-phone-messange")).maskPattern('(999) 999-9999');
-
-    for (var i = 0; i < swticherAnchor.length; i++) {
-        swticherAnchor[i].addEventListener('click', function(event) {
+    for (var i = 0; i < mainCloseBtn.length; i++) {
+        mainCloseBtn[i].addEventListener('click', function(event) {
             event.preventDefault();
-            event.stopPropagation();
-            if(openBlockBtn.style.display !== 'none') {
-                openBlockBtn.style.display = 'none';
 
-                openBlock.classList.remove('blink-cb-fadeOutRight');
-                openBlock.classList.add('blink-cb-visible');
-                openBlock.classList.add('blink-cb-fadeInRight');
-            }
-
-            var data = this.getAttribute('data'),
-                buttonId = this.getAttribute('data-id'),
-                switcherOpenBlock = document.getElementById(data),
-                headerText = switcherOpenBlock.getElementsByClassName('blink-cb-header-text')[0],
-                contentText = switcherOpenBlock.getElementsByClassName('blink-cb-header-content')[0],
-                switcherActiveButon = document.getElementById(buttonId);
-
-            for (var i = 0; i < swticherAnchor.length; i++) {
-                swticherAnchor[i].classList.remove('active');
-            }
-
-            for (var y = 0; y < swticherBlocks.length; y++) {
-                var element = swticherBlocks[y];
-
-                element.classList.remove('blink-cb-visible');
-                element.classList.add('blink-cb-hidden');
-            }
-
-            headerText.classList.remove('blink-cb-fadeInDown');
-            contentText.classList.remove('blink-cb-fadeInUp');
-
-            switcherOpenBlock.classList.remove('blink-cb-hidden');
+            mainOpenBtn.classList.add('active');
+            mainBody.style.animationDuration = '0.3s';
+            mainBody.classList.remove('fadeInRight');
+            mainBody.classList.add('fadeOutRight');
 
             setTimeout(function() {
-                switcherOpenBlock.classList.add('blink-cb-visible');
-                headerText.classList.add('blink-cb-fadeInDown');
-                contentText.classList.add('blink-cb-fadeInUp');
-            }, 1);
-            switcherActiveButon.classList.add('active');
-        }, false);
+                mainBody.classList.remove('active');
+            }, 300);
+        });
     }
 
-    iconsContainer.addEventListener('mouseover', function(event) {
-        var iconsPos = 0;
-
-        for (var i = 0; i < icons.length; i++) {
-            that.showIconsInterval(icons[i], iconsPos, i, 'blink-cb-fadeOutRight', 'blink-cb-fadeInRight');
-            iconsPos -= 37;
-        }
-
-        var width  = 80 - iconsPos;
-
-        iconsContainer.style.width = width + 'px';
-    });
-
-    iconsContainer.addEventListener('mouseleave', function(event) {
-        for (var i = 0; i < icons.length; i++) {
-            that.hideIconsInterval(icons[i], 0, i, 'blink-cb-fadeInRight', 'blink-cb-fadeOutRight');
-        }
-
-        iconsContainer.style.width = 80 + 'px';
-    });
-
-    exitBtn.addEventListener('click', function() {
-        for(var i=0; i < errorDiv.length; i++) {
-            errorDiv[i].style.display = 'none';
-        }
-
-        for(var i=0; i < successDiv.length; i++) {
-            successDiv[i].style.display = 'none';
-        }
-
-        openBlock.classList.remove('blink-cb-fadeInRight');
-        openBlock.classList.add('blink-cb-fadeOutRight');
-        setTimeout(function() {
-            openBlock.classList.remove('blink-cb-visible');
-
-        }, 500);
-
-        setTimeout(function() {
-            openBlockBtn.style.display = 'block';
-        }, 300);
-    });
-
-    recallFormSubmit.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var formElements = event.target, data = "";
-
-        that.post(formElements, 'Recall', function(response) {
-            that.blockInputs(formElements);
-            if(response !== false) {
-                that.clearForm(formElements);
-                errorDiv[0].style.display = 'none';
-                successDiv[0].style.display = 'block';
-            } else {
-                successDiv[0].style.display = 'none';
-                errorDiv[0].style.display = 'block';
+    (function() {
+        var animations = {
+            mainBtn: 'bounceInRight',
+            otherBtn: {
+                in: 'fadeInRight',
+                out: 'fadeOutRight'
             }
-        });
-    });
+        };
 
-    messangeFormSubmit.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var formElements = event.target, data = "";
+        mainBtnContainer.classList.add(animations.mainBtn);
 
-        that.post(formElements, 'Query', function(response) {
-            that.blockInputs(formElements);
+        allBtnContainer.addEventListener('mouseenter', function(event) {
+            var i = 0, delayTime = 0;
 
-            if(response !== false) {
-                that.clearForm(formElements);
-                errorDiv[1].style.display = 'none';
-                successDiv[1].style.display = 'block';
-            } else {
-                successDiv[1].style.display = 'none';
-                errorDiv[1].style.display = 'block';
+            otherBtnsContainer.classList.remove('hidden');
+            otherBtnsContainer.style.width = (otherBtnsContainer.clientWidth * otherBtns.length) + 'px';
+
+            for (i = 0; i < otherBtns.length; i++) {
+                otherBtns[i].classList.remove(animations.otherBtn.out);
+                otherBtns[i].classList.add(animations.otherBtn.in);
+                otherBtns[i].style.animationDelay = '0.' + delayTime + 's';
+                otherBtns[i].style.animationDuration = '0.3s';
+                delayTime++;
             }
+
         });
-    });
+
+        allBtnContainer.addEventListener('mouseleave', function(event) {
+            var i = 0, delayTime = 0;
+
+            for (i = otherBtns.length; i > 0; i--) {
+                otherBtns[i - 1].classList.remove(animations.otherBtn.in);
+                otherBtns[i - 1].classList.add(animations.otherBtn.out);
+                otherBtns[i - 1].style.animationDelay = '0.' + delayTime + 's';
+                otherBtns[i - 1].style.animationDuration = '0.2s';
+                delayTime++;
+            }
+
+            setTimeout(function() {
+                otherBtnsContainer.classList.add('hidden');
+                otherBtnsContainer.style.width = 'auto';
+            }, 200);
+        });
+
+    })();
+
+    (function() {
+        for (var i = 0; i < allBtns.length; i++) {
+            allBtns[i].addEventListener('click', function(event) {
+                event.preventDefault();
+
+                var	popupToOpenId = this.children[0].getAttribute('href').replace("#", ''),
+                    popupToOpen = doc.getElementById('blink-cb-module-popup-' + popupToOpenId),
+                    allPopups = doc.getElementsByClassName('blink-cb-module-flip-container');
+
+                if(!mainBody.classList.contains('active')) {
+                    mainBody.style.animationDuration = '0.5s';
+                    mainBody.classList.add('active');
+                    mainBody.classList.remove('fadeOutRight');
+                    mainBody.classList.add('fadeInRight');
+
+                    mainOpenBtn.classList.remove('active');
+                }
+
+                for (var y = 0; y < allBtns.length; y++) {
+                    allBtns[y].classList.remove('active');
+                }
+
+                for (var i = 0; i < allPopups.length; i++) {
+                    allPopups[i].classList.remove('active');
+                }
+
+                popupToOpen.classList.add('active');
+                doc.getElementById('blink-cb-module-to-'  + popupToOpenId).classList.add('active');
+            });
+        }
+    })();
+
+    (function() {
+        var form = doc.getElementsByClassName('blink-cb-module-popup-form');
+
+        for (var i = 0; i < form.length; i++) {
+            form[i].addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var parentId = this.getAttribute('data'),
+                    query = this.getAttribute('id'),
+                    parentDiv = doc.getElementById(parentId),
+                    errMessAll = doc.getElementsByClassName('blink-cb-module-error-messange'),
+                    succMessAll = doc.getElementsByClassName('blink-cb-module-success-messange'),
+                    errorMessange = parentDiv.getElementsByClassName('blink-cb-module-error-messange')[0],
+                    successMessange = parentDiv.getElementsByClassName('blink-cb-module-success-messange')[0];
+
+                for(var i=0; i < errMessAll.length; i++) {
+                    errMessAll[i].style.display = 'none';
+                    succMessAll[i].style.display = 'none';
+                }
+
+                that.post(event.target, query, function(response) {
+                    console.log(response);
+
+                    successMessange.style.display = 'block';
+                    parentDiv.classList.add('active-flip');
+                });
+
+            });
+        }
+    })();
+
+    (function() {
+        var btns = doc.getElementsByClassName('blink-cb-module-popup-flip-back-btns');
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function(event) {
+                event.preventDefault();
+
+                var parentId = this.getAttribute('data'),
+                    parentDiv = doc.getElementById(parentId);
+
+                parentDiv.classList.remove('active-flip');
+            });
+        }
+    })();
+
+    /*
+     var that = this,
+     swticherAnchor = document.getElementsByClassName('blink-cb-switcher-btn'),
+     swticherBlocks = document.getElementsByClassName('blink-cb-block'),
+     openBlockBtn = document.getElementById('blink-cb-main-btn'),
+     openBlock = document.getElementsByClassName('blink-cb-container')[0],
+     exitBtn = document.getElementsByClassName('blink-cb-exit-btn')[0],
+     icons = document.getElementsByClassName('blink-cb-icon-wrapper'),
+     iconsContainer = document.getElementsByClassName('blink-cb-small-icons-cont')[0],
+     recallFormSubmit = document.getElementsByClassName('blink-cb-recall-form')[0],
+     messangeFormSubmit = document.getElementsByClassName('blink-cb-messange-form')[0],
+     successDiv = document.getElementsByClassName('blink-cb-response-success'),
+     errorDiv =  document.getElementsByClassName('blink-cb-response-error');
+
+     VMasker(document.getElementById("blink-cb-phone-recall")).maskPattern('(999) 999-9999');
+     VMasker(document.getElementById("blink-cb-phone-messange")).maskPattern('(999) 999-9999');
+
+     for (var i = 0; i < swticherAnchor.length; i++) {
+     swticherAnchor[i].addEventListener('click', function(event) {
+     event.preventDefault();
+     event.stopPropagation();
+     if(openBlockBtn.style.display !== 'none') {
+     openBlockBtn.style.display = 'none';
+
+     openBlock.classList.remove('blink-cb-fadeOutRight');
+     openBlock.classList.add('blink-cb-visible');
+     openBlock.classList.add('blink-cb-fadeInRight');
+     }
+
+     var data = this.getAttribute('data'),
+     buttonId = this.getAttribute('data-id'),
+     switcherOpenBlock = document.getElementById(data),
+     headerText = switcherOpenBlock.getElementsByClassName('blink-cb-header-text')[0],
+     contentText = switcherOpenBlock.getElementsByClassName('blink-cb-header-content')[0],
+     switcherActiveButon = document.getElementById(buttonId);
+
+     for (var i = 0; i < swticherAnchor.length; i++) {
+     swticherAnchor[i].classList.remove('active');
+     }
+
+     for (var y = 0; y < swticherBlocks.length; y++) {
+     var element = swticherBlocks[y];
+
+     element.classList.remove('blink-cb-visible');
+     element.classList.add('blink-cb-hidden');
+     }
+
+     headerText.classList.remove('blink-cb-fadeInDown');
+     contentText.classList.remove('blink-cb-fadeInUp');
+
+     switcherOpenBlock.classList.remove('blink-cb-hidden');
+
+     setTimeout(function() {
+     switcherOpenBlock.classList.add('blink-cb-visible');
+     headerText.classList.add('blink-cb-fadeInDown');
+     contentText.classList.add('blink-cb-fadeInUp');
+     }, 1);
+     switcherActiveButon.classList.add('active');
+     }, false);
+     }
+
+     iconsContainer.addEventListener('mouseover', function(event) {
+     var iconsPos = 0;
+
+     for (var i = 0; i < icons.length; i++) {
+     that.showIconsInterval(icons[i], iconsPos, i, 'blink-cb-fadeOutRight', 'blink-cb-fadeInRight');
+     iconsPos -= 37;
+     }
+
+     var width  = 80 - iconsPos;
+
+     iconsContainer.style.width = width + 'px';
+     });
+
+     iconsContainer.addEventListener('mouseleave', function(event) {
+     for (var i = 0; i < icons.length; i++) {
+     that.hideIconsInterval(icons[i], 0, i, 'blink-cb-fadeInRight', 'blink-cb-fadeOutRight');
+     }
+
+     iconsContainer.style.width = 80 + 'px';
+     });
+
+     exitBtn.addEventListener('click', function() {
+     for(var i=0; i < errorDiv.length; i++) {
+     errorDiv[i].style.display = 'none';
+     }
+
+     for(var i=0; i < successDiv.length; i++) {
+     successDiv[i].style.display = 'none';
+     }
+
+     openBlock.classList.remove('blink-cb-fadeInRight');
+     openBlock.classList.add('blink-cb-fadeOutRight');
+     setTimeout(function() {
+     openBlock.classList.remove('blink-cb-visible');
+
+     }, 500);
+
+     setTimeout(function() {
+     openBlockBtn.style.display = 'block';
+     }, 300);
+     });
+
+     recallFormSubmit.addEventListener('submit', function (event) {
+     event.preventDefault();
+     var formElements = event.target, data = "";
+
+     that.post(formElements, 'Recall', function(response) {
+     that.blockInputs(formElements);
+     if(response !== false) {
+     that.clearForm(formElements);
+     errorDiv[0].style.display = 'none';
+     successDiv[0].style.display = 'block';
+     } else {
+     successDiv[0].style.display = 'none';
+     errorDiv[0].style.display = 'block';
+     }
+     });
+     });
+
+     messangeFormSubmit.addEventListener('submit', function (event) {
+     event.preventDefault();
+     var formElements = event.target, data = "";
+
+     that.post(formElements, 'Query', function(response) {
+     that.blockInputs(formElements);
+
+     if(response !== false) {
+     that.clearForm(formElements);
+     errorDiv[1].style.display = 'none';
+     successDiv[1].style.display = 'block';
+     } else {
+     successDiv[1].style.display = 'none';
+     errorDiv[1].style.display = 'block';
+     }
+     });
+     });
+
+     */
 };
+
 
 new BlinkCBModule();
 
 /*
-Input Masks
+ Input Masks
  */
 
 (function(root, factory) {
