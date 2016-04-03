@@ -58,7 +58,6 @@ class callback extends Models
 
     public function Query ($rest,$name)
     {
-
         $siteData = $this->db->select('site', [
             "[>]email" => ["email" => "id"]
         ],
