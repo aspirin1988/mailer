@@ -20,7 +20,7 @@ class Script extends Controller
 
     public function Get($name)
     {
-        /*$name='';
+        $name='';
         if ($_SERVER['HTTP_REFERER'])
         {
             $name=md5($_SERVER['HTTP_REFERER']);
@@ -28,7 +28,7 @@ class Script extends Controller
         else
         {
             $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }*/
+        }
         //$name=md5($name);
         $model = new \app\client\models\script();
         $data =$model->Get($name);
