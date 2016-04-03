@@ -39,6 +39,14 @@ class callback extends Models
                 if ($key!='md5') $str=str_replace('{'.$key.'}',$value,$str);
             }
             $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
+            if ($result[0]['code']){
+
+                $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+            }
+            else
+            {
+                $result[0]['text']='Ваше сообщение не было отправленно!';
+            }
             return $result;
         }
         else
