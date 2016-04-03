@@ -2,6 +2,7 @@ var app = angular.module('app', []);
 
 app.controller('blinkMainController', function($scope, $http) {
     $scope.newClientInfo = {};
+    $scope.addNewClientResponse = false;
 
     $scope.getMailerTemplate = function () {
 
@@ -60,7 +61,14 @@ app.controller('blinkMainController', function($scope, $http) {
             url: '/admin/client/AddSite',
             data: $scope.newClientInfo
         }).then(function success(response) {
-            console.log('added');
+            $('#myModal').modal('toggle');
+            $scope.addNewClientResponse = true;
+            $scope.newClientInfo = {};
+
+            setTimeout(function() {
+                $scope.addNewClientResponse = false;
+            }, 2500);
+
         }, function error(response) {});
     };
 });

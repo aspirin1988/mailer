@@ -345,9 +345,8 @@
             <li class="active">Mailer</li>
           </ol>
           <hr>
-          <div class="text-right">
-            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Добавить клиента</button>
-          </div>
+          <div class="text-right"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Добавить клиента</button></div>
+          <div class="alert alert-success" ng-if="addNewClientResponse">Клиент был успешно добавлен</div>
         </section>
 
         <!-- Main content -->
