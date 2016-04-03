@@ -52,7 +52,8 @@ app.controller('blinkMainController', function($scope, $http) {
 
     };
 
-    $scope.addNewClient = function() {
+    $scope.addNewClient = function(event) {
+
         console.log('yeahhh');
     };
 });

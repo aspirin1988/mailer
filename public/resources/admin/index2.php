@@ -413,7 +413,7 @@
 
           <!-- Modal content-->
           <div class="modal-content">
-            <form action="" ng-submit="addNewClient()">
+            <form ng-submit="addNewClient()">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Добавление пользователя</h4>
