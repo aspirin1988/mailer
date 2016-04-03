@@ -13,7 +13,7 @@ app.controller('blinkMainController', function($scope, $http) {
                     method: 'GET',
                     url: '/admin/client/GetAllGateway'
                 }).then(function success(response) {
-                    if(response.data !== false) {
+                    if(response.data.data !== false) {
                         $scope.mailerEmails = response.data.data;
 
                         var data = {};
