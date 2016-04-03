@@ -191,13 +191,8 @@ class client extends Models
 
     public function EditGateway($id,$value)
     {
-        $result = $this->db->update('email',$value,[
-            'id'=>$id
-        ]);
+        if($result = $this->db->update('email',$value,['id'=>$id])) {return ['data'=>$id];} else {return ['data'=>false];}
 
-        return [
-            'data'=>$result
-        ];
     }
 
     public function AddGateway ($value)
