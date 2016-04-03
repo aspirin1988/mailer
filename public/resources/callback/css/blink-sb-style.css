@@ -8,6 +8,7 @@
 
 #blink-cb-html-container {
     font-family: 'Roboto', sans-serif;
+    z-index: 999999999;
 }
 
 #blink-cb-html-container * {
