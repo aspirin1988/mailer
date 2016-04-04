@@ -35,6 +35,7 @@ class Callback extends Controller
         $model = new \app\client\models\callback();
         $this->response->json($model->Recall($rest,$name));
     }
+
     public function Query()
     {
         $name='';
