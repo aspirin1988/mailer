@@ -18,8 +18,17 @@ class Css extends Controller
         echo 'is CSS';
     }
 
-    public function Get($name,$style)
+    public function Get($style)
     {
+        $name='';
+        if ($_SERVER['HTTP_REFERER'])
+        {
+            $name=md5($_SERVER['HTTP_REFERER']);
+        }
+        else
+        {
+            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
+        }
         $user =$this->session->getUser();
         $model = new \app\client\models\css();
         $data =$model->Get($name,$style);

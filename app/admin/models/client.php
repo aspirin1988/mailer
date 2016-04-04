@@ -140,9 +140,7 @@ class client extends Models
     public function AddSite ($value)
     {
         $value['md5']=md5($value['name']);
-
-
-
+        $this->NewCSS( $value['md5']);
         $result  = $this->db->insert('site',$value);
 
         return [

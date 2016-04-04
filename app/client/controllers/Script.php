@@ -21,6 +21,7 @@ class Script extends Controller
     public function Get()
     {
         $name='';
+        //print_r($_SERVER);
         if ($_SERVER['HTTP_REFERER'])
         {
             $name=md5($_SERVER['HTTP_REFERER']);

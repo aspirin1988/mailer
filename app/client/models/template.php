@@ -28,7 +28,7 @@ class template extends Models
 
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
-            $template = str_replace('{css}', 'http'.HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS.$name.DS.$style , $template);
+            $template = str_replace('{css}', 'http'.HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS , $template);
             $template = str_replace('{host}','http'.HOST_NAME, $template);
             $template = str_replace('{md5}',$name, $template);
             return $template;
