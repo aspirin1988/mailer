@@ -18,8 +18,17 @@ class Template extends Controller
         echo 'is template';
     }
 
-    public function Get($name,$style)
+    public function Get($style)
     {
+        $name='';
+        if ($_SERVER['HTTP_REFERER'])
+        {
+            $name=md5($_SERVER['HTTP_REFERER']);
+        }
+        else
+        {
+            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
+        }
         $model = new \app\client\models\template();
         //print_r($_SERVER);
         header('Access-Control-Allow-Origin: *');

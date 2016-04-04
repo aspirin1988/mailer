@@ -18,16 +18,34 @@ class Callback extends Controller
         echo 'is Callback';
     }
 
-    public function Recall($name)
+    public function Recall()
     {
+        $name='';
+        if ($_SERVER['HTTP_REFERER'])
+        {
+            $name=md5($_SERVER['HTTP_REFERER']);
+        }
+        else
+        {
+            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
+        }
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
         $model = new \app\client\models\callback();
         $this->response->json($model->Recall($rest,$name));
     }
-    public function Query($name)
+    public function Query()
     {
+        $name='';
+        if ($_SERVER['HTTP_REFERER'])
+        {
+            $name=md5($_SERVER['HTTP_REFERER']);
+        }
+        else
+        {
+            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
+        }
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;

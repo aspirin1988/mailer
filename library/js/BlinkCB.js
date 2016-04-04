@@ -3,7 +3,7 @@ function BlinkCBModule() {
     var xhr = new XMLHttpRequest();
     //var currentUrl = md5(document.location.origin);
 
-    xhr.open('GET', '{host}/client/Template/Get/{name}/style', true);
+    xhr.open('GET', '{host}/client/Template/Get/', true);
     xhr.send();
 
     xhr.onreadystatechange = function() {
@@ -39,7 +39,7 @@ BlinkCBModule.prototype.post = function (object, url, callback) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', '{host}/client/callback/'+ url +'/{name}', true);
+    xhr.open('POST', '{host}/client/callback/'+ url +'/', true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
 
