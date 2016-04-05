@@ -35,7 +35,8 @@ class Script extends Controller
         $data =$model->Get($name);
         $data = str_replace('{host}','http'.HOST_NAME,$data);
         $data = str_replace('{name}',$name,$data);
-        $this->response->js($data);
+        $this->response->json($_SERVER);
+        //$this->response->js($data);
     }
 
 

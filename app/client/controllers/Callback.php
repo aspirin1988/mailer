@@ -21,9 +21,9 @@ class Callback extends Controller
     public function Recall()
     {
         $name='';
-        if ($_SERVER['HTTP_REFERER'])
+        if ($_SERVER['HTTP_ORIGIN'])
         {
-            $name=md5($_SERVER['HTTP_REFERER']);
+            $name=md5($_SERVER['HTTP_ORIGIN']);
         }
         else
         {
@@ -39,9 +39,9 @@ class Callback extends Controller
     public function Query()
     {
         $name='';
-        if ($_SERVER['HTTP_REFERER'])
+        if ($_SERVER['HTTP_ORIGIN'])
         {
-            $name=md5($_SERVER['HTTP_REFERER']);
+            $name=md5($_SERVER['HTTP_ORIGIN']);
         }
         else
         {
@@ -54,5 +54,23 @@ class Callback extends Controller
         $rest['mess'] = $_POST['mess'];  //= $this->request;
         $model = new \app\client\models\callback();
         $this->response->json($model->Query($rest,$name));
+
+    }
+
+    public function SendForm()
+    {
+        $name='';
+        if ($_SERVER['HTTP_ORIGIN'])
+        {
+            $name=md5($_SERVER['HTTP_ORIGIN']);
+        }
+        else
+        {
+            $name=md5($name);
+        }
+        $rest='';
+        $rest=$_POST;  //= $this->request;
+        $model = new \app\client\models\callback();
+        $this->response->json($model->SendForm($rest,$name));
     }
 }

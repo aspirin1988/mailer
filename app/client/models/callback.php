@@ -110,6 +110,53 @@ class callback extends Models
         }
     }
 
+    public function SendForm ($rest,$name)
+    {
+        $siteData = $this->db->select('site', [
+            "[>]email" => ["email" => "id"]
+        ],
+            [
+                'site.*',
+                'email.login',
+                'email.password',
+                'email.port',
+                'email.host',
+            ],
+            [
+                'md5'=>$name
+            ]
+        );
+        //$this->save_message($rest);
+        if ($siteData) {
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'form.html'); //$this->db->insert('email_massage',$rest);
+            $tr='';
+            foreach ($rest as $key=>$value) {
+              if ('title'!=$key)  {$tr.='
+        <tr>
+        <td style="border: 1px solid #e5e5e5; padding: 7px; font-family: \'Roboto Condensed\', sans-serif; background: #eee;" align="left">'.$key.'</td>
+        <td style="border: 1px solid #e5e5e5; padding: 7px; font-family: \'Roboto Condensed\', sans-serif; background: #eee;" align="left">'.$value.'</td>
+        </tr>';}
+
+            }
+            $str=str_replace('{tr}',$tr,$str);
+            $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], $rest['title'], $siteData[0],[]);
+            if ($result[0]['code']){
+
+                $result[0]['text']='Ваше сообщение отправленно,<br>наши специалисты свяжутся с вами<br> в ближайшее время!';
+            }
+            else
+            {
+                $result[0]['text']='Ваше сообщение не было отправленно!';
+            }
+            return $result;
+        }
+        else
+        {
+            return [];
+        }
+
+    }
+
     function send_smtp_html($str,$email,$subject,$config,$image){
         $mail = new \library\mailer\PHPMailer();
         $to=array();

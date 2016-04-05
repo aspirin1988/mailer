@@ -21,9 +21,9 @@ class Template extends Controller
     public function Get($style)
     {
         $name='';
-        if ($_SERVER['HTTP_REFERER'])
+        if ($_SERVER['HTTP_ORIGIN'])
         {
-            $name=md5($_SERVER['HTTP_REFERER']);
+            $name=md5($_SERVER['HTTP_ORIGIN']);
         }
         else
         {

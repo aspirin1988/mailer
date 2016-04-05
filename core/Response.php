@@ -89,7 +89,7 @@ class Response
     public function json($array)
     {
         header('Content-Type: application/json',true);
-        echo json_encode($array, true);
+        echo json_encode($array);
     }
 
     public function js($data)
