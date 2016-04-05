@@ -15,21 +15,13 @@ class template extends Models
 {
     public function Get($name, $style)
     {
-        $name='';
-        if ($_SERVER['HTTP_REFERER'])
-        {
-            $name=md5($_SERVER['HTTP_REFERER']);
-        }
-        else
-        {
-            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
+
         if ($this->permission($name)['data']) {
 
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
-            $template = str_replace('{css}', 'http'.HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS , $template);
-            $template = str_replace('{host}','http'.HOST_NAME, $template);
+            $template = str_replace('{css}', 'https'.HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS , $template);
+            $template = str_replace('{host}','https'.HOST_NAME, $template);
             $template = str_replace('{md5}',$name, $template);
             return $template;
         } else {

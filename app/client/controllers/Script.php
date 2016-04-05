@@ -20,25 +20,22 @@ class Script extends Controller
 
     public function Get()
     {
-        $name='';
-        //print_r($_SERVER);
-        if ($_SERVER['HTTP_REFERER'])
-        {
-            $name=md5($_SERVER['HTTP_REFERER']);
-        }
-        else
-        {
-            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
-        //$name=md5($name);
+        $name=$this->get_name();
         $model = new \app\client\models\script();
         $data =$model->Get($name);
-        $data = str_replace('{host}','http'.HOST_NAME,$data);
+        $data = str_replace('{host}','https'.HOST_NAME,$data);
         $data = str_replace('{name}',$name,$data);
-        $this->response->json($_SERVER);
-        //$this->response->js($data);
+
+//        $this->response->json( $name );
+        $this->response->js($data);
     }
 
 
+ function get_name()
+ {
+     $name = explode('//',$_SERVER['HTTP_REFERER']);
+     $name=explode('/',$name[1])[0];
+     return md5($name);
+ }
 
 }

@@ -20,15 +20,7 @@ class Callback extends Controller
 
     public function Recall()
     {
-        $name='';
-        if ($_SERVER['HTTP_ORIGIN'])
-        {
-            $name=md5($_SERVER['HTTP_ORIGIN']);
-        }
-        else
-        {
-            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
+        $name=$this->get_name();
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
@@ -38,15 +30,7 @@ class Callback extends Controller
 
     public function Query()
     {
-        $name='';
-        if ($_SERVER['HTTP_ORIGIN'])
-        {
-            $name=md5($_SERVER['HTTP_ORIGIN']);
-        }
-        else
-        {
-            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
+        $name=$this->get_name();
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
         $rest['phone'] = $_POST['phone'];  //= $this->request;
@@ -59,18 +43,17 @@ class Callback extends Controller
 
     public function SendForm()
     {
-        $name='';
-        if ($_SERVER['HTTP_ORIGIN'])
-        {
-            $name=md5($_SERVER['HTTP_ORIGIN']);
-        }
-        else
-        {
-            $name=md5($name);
-        }
+        $name=$this->get_name();
         $rest='';
         $rest=$_POST;  //= $this->request;
         $model = new \app\client\models\callback();
         $this->response->json($model->SendForm($rest,$name));
+    }
+
+    function get_name()
+    {
+        $name = explode('//',$_SERVER['HTTP_REFERER']);
+        $name=explode('/',$name[1])[0];
+        return md5($name);
     }
 }

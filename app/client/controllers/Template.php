@@ -20,19 +20,18 @@ class Template extends Controller
 
     public function Get($style)
     {
-        $name='';
-        if ($_SERVER['HTTP_ORIGIN'])
-        {
-            $name=md5($_SERVER['HTTP_ORIGIN']);
-        }
-        else
-        {
-            $name=md5($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/');
-        }
+        $name=$this->get_name();
         $model = new \app\client\models\template();
         //print_r($_SERVER);
         header('Access-Control-Allow-Origin: *');
         $this->response->html($model->Get($name,$style));
+    }
+
+    function get_name()
+    {
+        $name = explode('//',$_SERVER['HTTP_REFERER']);
+        $name=explode('/',$name[1])[0];
+        return md5($name);
     }
 
 }

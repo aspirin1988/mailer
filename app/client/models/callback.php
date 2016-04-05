@@ -82,7 +82,7 @@ class callback extends Models
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $mail_c=str_replace('{'.$key.'}',$value,$mail_c);
             }
-            $result[] =$this->send_smtp_html($mail_c,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
+            $result1 =$this->send_smtp_html($mail_c,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
 
             $mail_c=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_cc.html'); //$this->db->insert('email_massage',$rest);
             //$mail_cc=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
@@ -92,8 +92,8 @@ class callback extends Models
             foreach ($rest as $key=>$value) {
                 if ($key!='md5') $mail_c=str_replace('{'.$key.'}',$value,$mail_c);
             }
-            $result[] =$this->send_smtp_html($mail_c,[$rest['email']], 'TEST', $siteData[0],$image);
-
+            $result2 =$this->send_smtp_html($mail_c,[$rest['email']], 'TEST', $siteData[0],$image);
+            $result = array_merge($result1,$result2);
             if ($result[0]['code']){
 
                 $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
