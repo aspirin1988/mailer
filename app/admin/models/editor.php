@@ -26,4 +26,24 @@ class editor extends Models
         ];
     }
 
+    function GetOptions($id)
+        {
+            $siteData = $this->db->select('site_options',
+                [
+                    'site_options.*'
+                ],
+                [
+                    'site'=>$id,
+                ]
+            );
+            if ($siteData)
+            {
+                $siteData[0]['color']=json_decode( $siteData[0]['color'],true);
+                $siteData[0]['text']=json_decode( $siteData[0]['text'],true);
+            }
+            return [
+                'data' => $siteData,
+            ];
+        }
+
 }
