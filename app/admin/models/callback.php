@@ -161,5 +161,23 @@ class callback extends Models
         file_put_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS .$name.'blink-sb-style.css',$data);
     }
 
+    function permission_s ($id,$user)
+    {
+        $countSite = $this->db->count('site',
+            [
+                "[>]permission_s" => ["id" => "site"]
+            ],
+            [
+                'site.id'
+            ],
+
+            [
+                'AND'=>['site.id'=>$id,
+                    "permission_s.user"=>$user['id'],]
+            ]
+        );
+        return $countSite;
+    }
+
 
 }

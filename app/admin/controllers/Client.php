@@ -25,14 +25,14 @@ class Client extends Controller
     public function GetClient($id)
         {
             $model = new \app\admin\models\client();
-            $this->response->json($model->GetClient($id));
+            $this->response->json($model->GetClient($id,$this->session->getUser()));
         }
 
     public  function EditClient ()
     {
         $value = $this->request->rest();
         $model = new \app\admin\models\client();
-        $this->response->json($model->EditClient($value['id'],$value));
+        $this->response->json($model->EditClient($value['id'],$value,$this->session->getUser()));
     }
 
     public function AddClient ()
