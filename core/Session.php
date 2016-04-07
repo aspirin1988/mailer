@@ -274,7 +274,7 @@ class Session
 
         if (isset($this->user['access']) && $this->user['access']==999)
         {
-            $this->user['template']='/site/';
+            $this->user['template']='/admin/';
         }
 
         if (!isset($this->user['language'])||$this->user['language']==null)
