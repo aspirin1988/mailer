@@ -16,17 +16,33 @@ class client extends Models
 
 /*--------------Client----------------*/
 
-    public function GetAllClient($page)
+    public function GetAllClient($page,$user)
     {
         $limit = PAGE_SIZE;
-        $countSite = $this->db->count('company');
+        $countSite = $this->db->count('company',
+            [
+                "[>]permission_c" => ["id" => "company"]
+            ],
+            [
+                'company.id'
+            ],
+
+            [
+                "permission_c.user"=>$user['id'],
+            ]
+        );
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
         $siteData = $this->db->select('company',
             [
-                'id','name','legal_address','ph_address'
+                "[>]permission_c" => ["id" => "company"]
             ],
             [
+                'company.id','name','legal_address','ph_address'
+            ],
+
+            [
+                "permission_c.user"=>$user['id'],
                 'LIMIT' => [$offset, $limit],
                 'ORDER' => ['id ASC']
             ]

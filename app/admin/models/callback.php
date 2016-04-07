@@ -84,6 +84,15 @@ class callback extends Models
         ];
     }
 
+    public function DelSite ($value)
+    {
+        $result  = $this->db->delete('site',['id'=>$value['id']]);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
     /*--------------Gateway----------------*/
 
     public function GetAllGateway($page)

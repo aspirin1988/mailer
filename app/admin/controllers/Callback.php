@@ -41,6 +41,13 @@ class Callback extends Controller
         $this->response->json($model->AddSite($value));
     }
 
+    public function DelSite ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\callback();
+        $this->response->json($model->DelSite($value));
+    }
+
     /*---------Gateway-----------*/
 
     public function GetAllGateway($page=0)
