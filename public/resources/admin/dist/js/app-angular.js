@@ -1,29 +1,29 @@
 var app = angular.module('app', []);
 
 app.controller('blinkMainController', function($scope, $http) {
-    $scope.newClientInfo = {};
+    $scope.mailerNewClientInfo = {};
     $scope.mailerClientsOwn = {};
     $scope.mailerClientOwnSettings = false;
     $scope.mailerClientEditSettings = false;
 
-    $scope.getMailerTemplate = function () {
+    $scope.mailerGetTemplate = function () {
 
     };
 
-    $scope.getMailerClients = function () {
+    $scope.mailerGetClients = function () {
         $scope.mailerClientOwnSettings = false;
         $scope.mailerClientEditSettings = false;
 
         $http({
             method: 'GET',
-            url: '/admin/client/GetAllSite'
+            url: '/admin/callback/GetAllSite'
         }).then(function success(response) {
             if(response.data !== false) {
                 $scope.mailerClients = response.data.data;
 
                 $http({
                     method: 'GET',
-                    url: '/admin/client/GetAllGateway'
+                    url: '/admin/callback/GetAllGateway'
                 }).then(function success(response) {
                     if(response.data.data !== false) {
                         $scope.mailerEmails = response.data.data;
@@ -43,32 +43,32 @@ app.controller('blinkMainController', function($scope, $http) {
         }, function error() {});
     };
 
-    $scope.getMailerClients();
+    $scope.mailerGetClients();
 
-    $scope.updateMailerClients = function(mailerClient) {
-        $scope.updateMailerClientsInnerFunc = function(id) {
+    $scope.mailerUpdateClients = function(mailerClient) {
+        $scope.mailerUpdateClientsInnerFunc = function(id) {
             if(!id) $scope.mailerClients[mailerClient].email = $scope.mailerClients[mailerClient].email.id;
             else $scope.mailerClients[mailerClient].email = id;
 
             $http({
                 method: 'POST',
-                url: '/admin/client/EditSite',
+                url: '/admin/callback/EditSite',
                 data: $scope.mailerClients[mailerClient]
             }).then(function success(response) {
                 if(response.data.data !== false) {
-                    $scope.getMailerClients();
+                    $scope.mailerGetClients();
                 }
             }, function error(response) {});
         };
 
-        $scope.updateMailerClientsInnerFunc2 = function(route) {
+        $scope.mailerUpdateClientsInnerFunc2 = function(route) {
             $http({
                 method: 'POST',
                 url: route,
                 data: $scope.mailerClientsOwn
             }).then(function success(response) {
                 if(response.data.data !== false) {
-                    $scope.updateMailerClientsInnerFunc(response.data.data);
+                    $scope.mailerUpdateClientsInnerFunc(response.data.data);
                     $scope.mailerClientOwnSettings = false;
                     $scope.mailerClientEditSettings = false;
                 }
@@ -76,41 +76,41 @@ app.controller('blinkMainController', function($scope, $http) {
         };
 
         if ($scope.mailerClientOwnSettings === false) {
-            $scope.updateMailerClientsInnerFunc();
+            $scope.mailerUpdateClientsInnerFunc();
         } else if ($scope.mailerClientOwnSettings === true && $scope.mailerClientEditSettings !== true) {
-            $scope.updateMailerClientsInnerFunc2('/admin/client/AddGateway');
+            $scope.mailerUpdateClientsInnerFunc2('/admin/callback/AddGateway');
         } else if ($scope.mailerClientOwnSettings === true && $scope.mailerClientEditSettings === true) {
-            $scope.updateMailerClientsInnerFunc2('/admin/client/EditGateway');
+            $scope.mailerUpdateClientsInnerFunc2('/admin/callback/EditGateway');
         }
     };
 
-    $scope.addNewClient = function(event) {
+    $scope.mailerAddNewClient = function(event) {
         $http({
             method: 'POST',
-            url: '/admin/client/AddSite',
-            data: $scope.newClientInfo
+            url: '/admin/callback/AddSite',
+            data: $scope.mailerNewClientInfo
         }).then(function success(response) {
             if(response.data.data !== false) {
                 $('#myModal').modal('toggle');
-                $scope.newClientInfo = {};
-                $scope.getMailerClients();
+                $scope.mailerNewClientInfo = {};
+                $scope.mailerGetClients();
             }
 
         }, function error(response) {});
     };
 
-    $scope.addNewHost = function() {
+    $scope.mailerAddNewHost = function() {
         $scope.mailerClientOwnSettings = true;
     };
 
-    $scope.addNewHostExit = function() {
+    $scope.mailerAddNewHostExit = function() {
         $scope.mailerClientOwnSettings = false;
     };
 
-    $scope.editHosts = function(id) {
+    $scope.mailerEditHosts = function(id) {
         $http({
             method: 'GET',
-            url: '/admin/client/getgateway/' + id
+            url: '/admin/callback/getgateway/' + id
         }).then(function success(response) {
             if(response.data.data !== false) {
                 $scope.mailerClientEditSettings = true;
@@ -119,4 +119,17 @@ app.controller('blinkMainController', function($scope, $http) {
             }
         }, function error() {});
     };
+
+    $scope.mailerRemoveHosts = function (id) {
+        $http({
+            method: 'POST',
+            url: '/admin/callback/DelSite',
+            data: {id: id}
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                $scope.mailerGetClients();
+            }
+
+        }, function error(response) {});
+    }
 });
