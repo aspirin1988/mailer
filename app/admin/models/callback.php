@@ -16,17 +16,29 @@ class callback extends Models
 
     /*--------------Site----------------*/
 
-    public function GetAllSite($page)
+    public function GetAllSite($page,$user)
     {
         $limit = PAGE_SIZE;
-        $countSite = $this->db->count('site');
+        $countSite = $this->db->count('site',[
+            "[>]permission_s" => ["id" => "site"]
+            ],
+            [
+                'site.id'
+            ],
+            [
+                "permission_s.user"=>$user['id'],
+            ]);
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
         $siteData = $this->db->select('site',
             [
-                'site.*',
+                "[>]permission_s" => ["id" => "site"]
             ],
             [
+                'site.*','permission_s.permission'
+            ],
+            [
+                "permission_s.user"=>$user['id'],
                 'LIMIT' => [$offset, $limit],
                 'ORDER' => ['id ASC']
             ]

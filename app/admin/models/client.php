@@ -54,6 +54,51 @@ class client extends Models
         ];
     }
 
+    public function GetAllSiteClient($id,$page,$user)
+    {
+        $limit = PAGE_SIZE;
+        if ($this->permission_c($id,$user)) {
+            $countSite = $this->db->count('site',
+                [
+                    "[>]permission_s" => ["id" => "site"]
+                ],
+                [
+                    'site.id'
+                ],
+
+                [
+                   'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id]
+                ]
+            );
+            $countPage = ceil($countSite / $limit);
+            $offset = (int)$page * $limit;
+            $siteData = $this->db->select('site',
+                [
+                    "[>]permission_s" => ["id" => "site"]
+                ],
+                [
+                    'site.*'
+                ],
+
+                [
+                    'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id],
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
+
+
+            return [
+                'data' => $siteData,
+                'count' => $countPage
+            ];
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function GetClient($id,$user)
     {
         $siteData = $this->db->select('company',

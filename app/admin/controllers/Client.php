@@ -22,6 +22,13 @@ class Client extends Controller
         $this->response->json($model->GetAllClient($page,$this->session->getUser()));
     }
 
+    public function GetAllSiteClient($id,$page=0)
+    {
+        $model = new \app\admin\models\client();
+
+        $this->response->json($model->GetAllSiteClient($id,$page,$this->session->getUser()));
+    }
+
     public function GetClient($id)
         {
             $model = new \app\admin\models\client();
