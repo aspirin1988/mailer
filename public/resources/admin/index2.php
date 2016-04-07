@@ -421,7 +421,7 @@
               </div>
               <div class="col-md-12">
                 <div class="text-right">
-                  <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="mailerRemoveHosts(mailerClients[key])"><i class="fa fa-remove"></i></button>
+                  <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="mailerRemoveHosts(mailerClients[key].id)"><i class="fa fa-remove"></i></button>
                   <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="mailerEditHosts(mailerClients[key].email.id)"><i class="fa fa-pencil"></i></button>
                   <button class="btn btn-default btn-sm" ng-if="mailerClientOwnSettings === false" ng-click="mailerAddNewHost()"><i class="fa fa-plus"></i></button>
                 </div>
