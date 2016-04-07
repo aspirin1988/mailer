@@ -20,7 +20,7 @@
 .blink-cb-module-container * a:hover {
     text-decoration: none;
 }
-.blink-cb-module-container * ul {
+.blink-cb-module-container ul {
     list-style: none;
 }
 
@@ -278,4 +278,10 @@
 }
 .blink-cb-module-main-btns.active {
     display: block;
+}
+
+@media only screen and (max-width : 480px) {
+    .blink-cb-module-container {
+        display: none;
+    }
 }
