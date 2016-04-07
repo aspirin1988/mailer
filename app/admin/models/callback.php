@@ -32,10 +32,11 @@ class callback extends Models
         $offset = (int)$page * $limit;
         $siteData = $this->db->select('site',
             [
-                "[>]permission_s" => ["id" => "site"]
+                "[>]permission_s" => ["id" => "site"],
+                "[>]company" => ["company" => "id"]
             ],
             [
-                'site.*','permission_s.permission'
+                'site.*','permission_s.permission','company.name(c_name)'
             ],
             [
                 "permission_s.user"=>$user['id'],

@@ -38,7 +38,7 @@ class client extends Models
                 "[>]permission_c" => ["id" => "company"]
             ],
             [
-                'company.id','name','legal_address','ph_address','permission_c.permission'
+                'company.id','name','site','ph_address','date_create','permission_c.permission'
             ],
 
             [
