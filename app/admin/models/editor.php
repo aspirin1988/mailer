@@ -183,11 +183,11 @@ class editor extends Models
             'color' => [
                 'default' => [
                     'm_cl' => "#393f48",
-                    'm_cl_br' => "#ffffff",
-                    'h_f_cl' => "#ffffff",
-                    'f_f_cl' => "#ffffff",
+                    'm_cl_br' => "#434a54",
+                    'h_f_cl' => "#fff",
+                    'f_f_cl' => "##e2e3e7",
                     'sub_btn_cl' => "#ffffff",
-                    'sub_btn_cl=>hover' => "#ffffff",
+                    'sub_btn_cl:hover' => "#ffffff",
                     'fields_f_cl' => "#ffffff",
                     'fields_bg_cl' => "#ffffff",
                     'fields_br_cl' => "#ffffff",
@@ -301,8 +301,10 @@ class editor extends Models
             $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
             $res = file_get_contents($path);
 
-            foreach ($siteData[0]['color'][$siteData[0]['directory']] as $key=>$val) {
-                $res=str_replace('{'.$key.'}',$val,$res);
+            foreach ($siteData['color'][$siteData['directory']] as $key=>$val) {
+                $res=str_replace('{'.$key.'}',$val.'/*edit*/',$res);
+                //echo $key.''.$val;
+                //if ($key='m_cl_br') echo 111;
             }
 
             return $res;
