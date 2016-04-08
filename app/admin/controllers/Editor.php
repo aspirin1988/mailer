@@ -27,6 +27,19 @@ class Editor extends Controller
         $this->response->json($model->GetOptions($id));
     }
 
+    function SetOptions($id)
+    {
+        $value=$this->request->rest();
+        $model = new \app\admin\models\editor();
+        $this->response->json($model->SetOptions($id,$value));
+    }
+    function GetEditCSS($id)
+    {
+        $value=$this->request->rest();
+        $model = new \app\admin\models\editor();
+        $this->response->css($model->GetEditCSS($id,$value));
+    }
+
 
 
 
