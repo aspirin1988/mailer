@@ -18,7 +18,7 @@ class Callback extends Controller
     public function GetAllSite($page=0)
     {
         $model = new \app\admin\models\callback();
-        $this->response->json($model->getAllSite($page));
+        $this->response->json($model->getAllSite($page,$this->session->getUser()));
     }
 
     public function GetSite($id)
@@ -39,6 +39,13 @@ class Callback extends Controller
         $value = $this->request->rest();
         $model = new \app\admin\models\callback();
         $this->response->json($model->AddSite($value));
+    }
+
+    public function DelSite ()
+    {
+        $value = $this->request->rest();
+        $model = new \app\admin\models\callback();
+        $this->response->json($model->DelSite($value));
     }
 
     /*---------Gateway-----------*/

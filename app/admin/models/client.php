@@ -16,17 +16,33 @@ class client extends Models
 
 /*--------------Client----------------*/
 
-    public function GetAllClient($page)
+    public function GetAllClient($page,$user)
     {
         $limit = PAGE_SIZE;
-        $countSite = $this->db->count('company');
+        $countSite = $this->db->count('company',
+            [
+                "[>]permission_c" => ["id" => "company"]
+            ],
+            [
+                'company.id'
+            ],
+
+            [
+                "permission_c.user"=>$user['id'],
+            ]
+        );
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
         $siteData = $this->db->select('company',
             [
-                'id','name','legal_address','ph_address'
+                "[>]permission_c" => ["id" => "company"]
             ],
             [
+                'company.id','name','site','ph_address','date_create','permission_c.permission'
+            ],
+
+            [
+                "permission_c.user"=>$user['id'],
                 'LIMIT' => [$offset, $limit],
                 'ORDER' => ['id ASC']
             ]
@@ -38,42 +54,118 @@ class client extends Models
         ];
     }
 
-    public function GetClient($id)
+    public function GetAllSiteClient($id,$page,$user)
+    {
+        $limit = PAGE_SIZE;
+        if ($this->permission_c($id,$user)) {
+            $countSite = $this->db->count('site',
+                [
+                    "[>]permission_s" => ["id" => "site"]
+                ],
+                [
+                    'site.id'
+                ],
+
+                [
+                   'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id]
+                ]
+            );
+            $countPage = ceil($countSite / $limit);
+            $offset = (int)$page * $limit;
+            $siteData = $this->db->select('site',
+                [
+                    "[>]permission_s" => ["id" => "site"]
+                ],
+                [
+                    'site.*'
+                ],
+
+                [
+                    'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id],
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
+
+
+            return [
+                'data' => $siteData,
+                'count' => $countPage
+            ];
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function GetClient($id,$user)
     {
         $siteData = $this->db->select('company',
             [
-                'company.*',
+                "[>]permission_c" => ["id" => "company"]
+            ],
+            [
+                'company.*','permission_c.permission'
             ]
             ,
             [
-                'company.id'=>$id
+                'AND'=>['company.id'=>$id,
+                "permission_c.user"=>$user['id'],]
             ]
         );
-
+        if (!$siteData)
+        {
+            $siteData[0]=false;
+        }
         return [
-            'data' => $siteData,
+            'data' => $siteData[0],
         ];
 
     }
 
-    public function EditClient($id,$value)
+    public function EditClient($id,$value,$user)
     {
-        $result = $this->db->update('company',$value,[
-            'id'=>$id
-        ]);
+        if ($this->permission_c($id, $user)) {
+            $result = $this->db->update('company', $value, [
+                'id' => $id
+            ]);
+        } else {
+            $result = false;
+        }
 
         return [
-            'data'=>$result
+            'data' => $result
         ];
     }
 
-    public function AddClient ($value)
+    public function AddClient ($value,$user)
     {
         $result  = $this->db->insert('company',$value);
 
         return [
             'data'=>$result
         ];
+    }
+
+
+    /*---Проверка доступа к клиенту---*/
+    function permission_c ($id,$user)
+    {
+        $countSite = $this->db->count('company',
+            [
+                "[>]permission_c" => ["id" => "company"]
+            ],
+            [
+                'company.id'
+            ],
+
+            [
+                'AND'=>['company.id'=>$id,
+                    "permission_c.user"=>$user['id'],]
+            ]
+        );
+        return $countSite;
     }
 
 }

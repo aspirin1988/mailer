@@ -16,17 +16,30 @@ class callback extends Models
 
     /*--------------Site----------------*/
 
-    public function GetAllSite($page)
+    public function GetAllSite($page,$user)
     {
         $limit = PAGE_SIZE;
-        $countSite = $this->db->count('site');
+        $countSite = $this->db->count('site',[
+            "[>]permission_s" => ["id" => "site"]
+            ],
+            [
+                'site.id'
+            ],
+            [
+                "permission_s.user"=>$user['id'],
+            ]);
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
         $siteData = $this->db->select('site',
             [
-                'site.*',
+                "[>]permission_s" => ["id" => "site"],
+                "[>]company" => ["company" => "id"]
             ],
             [
+                'site.*','permission_s.permission','company.name(c_name)'
+            ],
+            [
+                "permission_s.user"=>$user['id'],
                 'LIMIT' => [$offset, $limit],
                 'ORDER' => ['id ASC']
             ]
@@ -78,6 +91,15 @@ class callback extends Models
         $value['md5']=md5($value['name']);
         $this->NewCSS( $value['md5']);
         $result  = $this->db->insert('site',$value);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
+    public function DelSite ($value)
+    {
+        $result  = $this->db->delete('site',['id'=>$value['id']]);
 
         return [
             'data'=>$result
@@ -150,6 +172,24 @@ class callback extends Models
         $data = file_get_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-style.css');
         $data = str_replace('{host}', 'http' . HOST_NAME, $data);
         file_put_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS .$name.'blink-sb-style.css',$data);
+    }
+
+    function permission_s ($id,$user)
+    {
+        $countSite = $this->db->count('site',
+            [
+                "[>]permission_s" => ["id" => "site"]
+            ],
+            [
+                'site.id'
+            ],
+
+            [
+                'AND'=>['site.id'=>$id,
+                    "permission_s.user"=>$user['id'],]
+            ]
+        );
+        return $countSite;
     }
 
 
