@@ -179,7 +179,7 @@ class editor extends Models
             'template' => 1,
             'color' => [
                 'default' => [
-                    'm_cl' => "#fewfew",
+                    'm_cl' => "#222d32",
                     'm_cl_br' => "#ffffff",
                     'h_f_cl' => "#ffffff",
                     'f_f_cl' => "#ffffff",
@@ -277,6 +277,7 @@ class editor extends Models
             'site' => 4,
             'services' => null
         ];
+
         $siteData = $this->db->select('site_options',
             [
                 "[>]template_site" => ["template" => "id"]
@@ -291,6 +292,7 @@ class editor extends Models
         if ($siteData) {
             $siteData[0]['color'] = json_decode($siteData[0]['color'], true);
             $siteData[0]['text'] = json_decode($siteData[0]['text'], true);
+            $siteData=array_merge($siteData[0],$data);
 
 
             $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
@@ -300,7 +302,7 @@ class editor extends Models
                 $res=str_replace('{'.$key.'}',$val,$res);
             }
 
-            return $res;
+            return $siteData;
         }
         return false;
     }
