@@ -53,25 +53,27 @@ class editor extends Models
                 'template' => 1,
                 'color' => [
                     'default' => [
-                        'm_cl' => "#fewfew",
-                        'm_cl_br' => "#ffffff",
-                        'h_f_cl' => "#ffffff",
-                        'f_f_cl' => "#ffffff",
-                        'sub_btn_cl' => "#ffffff",
-                        'sub_btn_cl=>hover' => "#ffffff",
-                        'fields_f_cl' => "#ffffff",
-                        'fields_bg_cl' => "#ffffff",
-                        'fields_br_cl' => "#ffffff",
-                        'res_suc_bg_cl' => "#ffffff",
-                        'res_err_bg_cl' => "#ffffff",
-                        'res_suc_f_cl' => "#ffffff",
-                        'res_err_f_cl' => "#ffffff",
-                        'res_suc_btn_f_cl' => "#ffffff",
+                        'm_cl' => "#393f48",
+                        'm_cl_br' => "#434a54",
+                        'h_f_cl' => "#fff",
+                        'f_f_cl' => "#e2e3e7",
+                        'sub_btn_cl' => "#cf5664",
+                        'sub_btn_cl_hover' => "#a7424e",
+                        'fields_f_cl' => "#e2e3e7",
+                        'fields_bg_cl' => "#434a54",
+                        'fields_br_cl' => "#e2e3e7",
+                        'res_suc_bg_cl' => "#e2e3e7",
+                        'res_err_bg_cl' => "#e2e3e7",
+                        'res_suc_f_cl' => "#3c763d",
+                        'res_err_f_cl' => "#a94442",
+                        'res_suc_btn_f_cl' => "#e2e3e7",
                         'res_err_btn_f_cl' => "#ffffff",
-                        'res_suc_btn_bg_cl' => "#ffffff",
-                        'res_err_btn_bg_cl' => "#ffffff",
-                        'main_btn_f_cl' => "#ffffff",
-                        'main_btn_br_cl' => "#ffffff"
+                        'res_suc_btn_bg_cl' => "#3c763d",
+                        'res_err_btn_bg_cl' => "#a94442",
+                        'main_btn_f_cl' => "#e2e3e7",
+                        'main_btn_bg_cl' => "#393f48",
+                        'main_btn_sel_cl' => "#cf5664",
+                        'main_btn_hover_cl' => "#cf5664",
                     ],
                     'custom' => [
                         'm_cl' => "#ffffff",
@@ -79,7 +81,7 @@ class editor extends Models
                         'h_f_cl' => "#ffffff",
                         'f_f_cl' => "#ffffff",
                         'sub_btn_cl' => "#ffffff",
-                        'sub_btn_cl:hover' => "#ffffff",
+                        'sub_btn_cl_hover' => "#ffffff",
                         'fields_f_cl' => "#ffffff",
                         'fields_bg_cl' => "#ffffff",
                         'fields_br_cl' => "#ffffff",
@@ -100,7 +102,7 @@ class editor extends Models
                         'h_f_cl' => "#ffffff",
                         'f_f_cl' => "#ffffff",
                         'sub_btn_cl' => "#ffffff",
-                        'sub_btn_cl:hover' => "#ffffff",
+                        'sub_btn_cl_hover' => "#ffffff",
                         'fields_f_cl' => "#ffffff",
                         'fields_bg_cl' => "#ffffff",
                         'fields_br_cl' => "#ffffff",
@@ -151,7 +153,6 @@ class editor extends Models
                 'site' => 4,
                 'services' => null
             ];
-
             $siteData = $this->db->select('site_options',
                 [
                     "[>]template_site" => ["template" => "id"]
@@ -168,7 +169,7 @@ class editor extends Models
                 $siteData[0]['color']=json_decode( $siteData[0]['color'],true);
                 $siteData[0]['text']=json_decode( $siteData[0]['text'],true);
 
-                $siteData=array_merge($siteData[0],$data);
+                    $siteData = array_merge($siteData[0], $data);
 
                 return $siteData;
             }
@@ -185,22 +186,24 @@ class editor extends Models
                     'm_cl' => "#393f48",
                     'm_cl_br' => "#434a54",
                     'h_f_cl' => "#fff",
-                    'f_f_cl' => "##e2e3e7",
-                    'sub_btn_cl' => "#ffffff",
-                    'sub_btn_cl:hover' => "#ffffff",
-                    'fields_f_cl' => "#ffffff",
-                    'fields_bg_cl' => "#ffffff",
-                    'fields_br_cl' => "#ffffff",
-                    'res_suc_bg_cl' => "#ffffff",
-                    'res_err_bg_cl' => "#ffffff",
-                    'res_suc_f_cl' => "#ffffff",
-                    'res_err_f_cl' => "#ffffff",
-                    'res_suc_btn_f_cl' => "#ffffff",
+                    'f_f_cl' => "#e2e3e7",
+                    'sub_btn_cl' => "#cf5664",
+                    'sub_btn_cl_hover' => "#a7424e",
+                    'fields_f_cl' => "#e2e3e7",
+                    'fields_bg_cl' => "#434a54",
+                    'fields_br_cl' => "#e2e3e7",
+                    'res_suc_bg_cl' => "#e2e3e7",
+                    'res_err_bg_cl' => "#e2e3e7",
+                    'res_suc_f_cl' => "#3c763d",
+                    'res_err_f_cl' => "#a94442",
+                    'res_suc_btn_f_cl' => "#e2e3e7",
                     'res_err_btn_f_cl' => "#ffffff",
-                    'res_suc_btn_bg_cl' => "#ffffff",
-                    'res_err_btn_bg_cl' => "#ffffff",
-                    'main_btn_f_cl' => "#ffffff",
-                    'main_btn_br_cl' => "#ffffff"
+                    'res_suc_btn_bg_cl' => "#3c763d",
+                    'res_err_btn_bg_cl' => "#a94442",
+                    'main_btn_f_cl' => "#e2e3e7",
+                    'main_btn_bg_cl' => "#393f48",
+                    'main_btn_sel_cl' => "#cf5664",
+                    'main_btn_hover_cl' => "#cf5664",
                 ],
                 'custom' => [
                     'm_cl' => "#ffffff",
@@ -208,7 +211,7 @@ class editor extends Models
                     'h_f_cl' => "#ffffff",
                     'f_f_cl' => "#ffffff",
                     'sub_btn_cl' => "#ffffff",
-                    'sub_btn_cl:hover' => "#ffffff",
+                    'sub_btn_cl_hover' => "#ffffff",
                     'fields_f_cl' => "#ffffff",
                     'fields_bg_cl' => "#ffffff",
                     'fields_br_cl' => "#ffffff",
@@ -229,7 +232,7 @@ class editor extends Models
                     'h_f_cl' => "#ffffff",
                     'f_f_cl' => "#ffffff",
                     'sub_btn_cl' => "#ffffff",
-                    'sub_btn_cl:hover' => "#ffffff",
+                    'sub_btn_cl_hover' => "#ffffff",
                     'fields_f_cl' => "#ffffff",
                     'fields_bg_cl' => "#ffffff",
                     'fields_br_cl' => "#ffffff",
@@ -279,7 +282,7 @@ class editor extends Models
             ],
             'site' => 4,
             'services' => null
-        ];
+        ]; $data=$value;
 
         $siteData = $this->db->select('site_options',
             [
@@ -295,10 +298,16 @@ class editor extends Models
         if ($siteData) {
             $siteData[0]['color'] = json_decode($siteData[0]['color'], true);
             $siteData[0]['text'] = json_decode($siteData[0]['text'], true);
-            $siteData=array_merge($siteData[0],$data);
-
+            if($value) {
+                $siteData = array_merge($siteData[0], $data);
+            }
+            else
+            {
+                $siteData=$siteData[0];
+            }
 
             $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
+
             $res = file_get_contents($path);
 
             foreach ($siteData['color'][$siteData['directory']] as $key=>$val) {
