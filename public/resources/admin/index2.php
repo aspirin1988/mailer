@@ -37,6 +37,11 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery 2.1.4 -->
+    <script src="/resources/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="/resources/admin/dist/css/bootstrap-colorpicker.min.css">
+    <script src="/resources/admin/dist/js/bootstrap-colorpicker.min.js"></script>
 
     <!-- Angular -->
     <script src="/libs/angular/angular.min.js"></script>
@@ -90,10 +95,10 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Редактор текста</h3>
                 </div>
-                <div class="box-body">
-                  <div class="form-group">
+                <div class="box-body" ng-repeat="(key, val) in defaultCssValues.text">
+                  <div class="form-group" ng-repeat="(key1, val1) in val">
                     <label>Какой-то элемент</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" ng-model="defaultCssValues.text[key][key1]" ng-change="console(defaultCssValues.text[key][key1])">
                   </div>
                 </div>
               </div>
@@ -102,11 +107,20 @@
                   <h3 class="box-title">Редактор стилей</h3>
                 </div>
                 <div class="box-body">
-                  <div class="form-group">
+                  <div class="form-group" ng-repeat="(key, val) in defaultCssValues.color.default">
                     <label>Какой-то элемент</label>
-                    <div class="input-group colorpicker-element">
-                      <input type="text" class="form-control">
-                      <div class="input-group-addon"><i></i></div>
+                    <div class="input-group colorpicker-component" id="color-picker-{{key}}">
+                      <input type="text" class="form-control" ng-model="defaultCssValues.color.default[key]" ng-change="console(defaultCssValues.color.default[key])">
+                      <span class="input-group-addon"><i style="background-color: {{defaultCssValues.color.default[key]}};"></i></span>
+                    </div>
+                    <div class="form-group">
+                      <button type="button" id="btn-color-picker-{{key}}" class="btn btn-primary btn-xs">Применить</button>
+                      <script>
+                        $('[id^="color-picker-"]').colorpicker();
+                        $('[id^="btn-color-picker-"]').click(function (event) {
+                          $('[id^="color-picker-"]').change();
+                        });
+                      </script>
                     </div>
                   </div>
                 </div>
@@ -131,8 +145,7 @@
 
 
     <div>
-      <!-- jQuery 2.1.4 -->
-      <script src="/resources/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+
       <!-- jQuery UI 1.11.4 -->
       <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
       <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -168,11 +181,6 @@
       <!-- AdminLTE for demo purposes -->
       <script src="/resources/admin/dist/js/demo.js"></script>
     </div>
-    <link rel="stylesheet" href="/resources/admin/dist/css/bootstrap-colorpicker.min.css">
-    <script src="/resources/admin/dist/js/bootstrap-colorpicker.min.js"></script>
-    <script>
-      $('.colorpicker-element').colorpicker();
-    </script>
   </body>
 </html>
 

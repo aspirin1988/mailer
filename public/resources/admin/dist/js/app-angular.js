@@ -202,13 +202,46 @@ app.controller('blinkMainController', function($scope, $http) {
             }
 
         }, function error(response) {});
-    }
+    };
 
     $scope.mailerGetClients();
 
     $scope.recallHeaderWidget = false;
     $scope.messangeHeaderWidget = false;
     $scope.chatHeaderWidget = false;
+
+    $scope.defaultCssValues = {};
+
+    $scope.changeCss = function() {
+        $http({
+            method: 'GET',
+            url: '/admin/editor/GetEditCSS/4'
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+
+        }, function error(response) {});
+    };
+
+    $scope.changeCss();
+
+    $scope.getDefaultCss = function() {
+        $http({
+            method: 'GET',
+            url: '/admin/editor/SetOptions/4'
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.defaultCssValues = response.data;
+            }
+        }, function error(response) {});
+    };
+
+    $scope.getDefaultCss();
+
+    $scope.console = function (object) {
+        console.log(object);
+    }
 });
 
 /* ==================================================================================================
