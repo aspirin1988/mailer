@@ -31,11 +31,18 @@
     background: {m_cl};
     right: 0;
     top: 0;
-    border-left: 32px solid #434a54;
+    border-left: 32px solid {m_cl_br};
     padding: 30px 0;
-    color: #e2e3e7;
+    color: {f_f_cl};
     display: none;
 }
+
+.blink-cb-module-main-body.not-fixed {
+    position: absolute;
+    z-index: 2;
+    display: block;
+}
+
 .blink-cb-module-main-body .blink-cb-module-main-body-container {
     position: relative;
     width: 250px;
@@ -50,6 +57,7 @@
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns {
     text-align: center;
 }
+
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li {
     text-align: center;
     display: inline-block;
@@ -113,7 +121,7 @@
     font-weight: normal;
     text-transform: uppercase;
     margin-bottom: 40px;
-    color: #fff;
+    color: {h_f_cl}
     font-family: 'Roboto Condensed', sans-serif;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text], .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
@@ -122,7 +130,7 @@
     border-radius: 5px;
     border: 2px solid #e2e3e7;
     color: #e2e3e7;
-    background: #434a54;
+    background: {m_cl_br};
     width: 100%;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
@@ -134,7 +142,7 @@
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit] {
     margin-top: 7px;
-    background: #cf5664;
+    background: {sub_btn_cl};
     border: none;
     height: 40px;
     cursor: pointer;
@@ -232,6 +240,14 @@
     color: #e2e3e7;
     display: none;
 }
+
+.blink-cb-module-main-btns.not-fixed {
+    position: absolute;
+    right: 380px;
+    top: 20px;
+    z-index: 2;
+}
+
 .blink-cb-module-main-btns a {
     color: #e2e3e7;
 }
