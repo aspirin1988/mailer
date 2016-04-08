@@ -154,7 +154,10 @@ class editor extends Models
 
             $siteData = $this->db->select('site_options',
                 [
-                    'site_options.*'
+                    "[>]template_site" => ["template" => "id"]
+                ],
+                [
+                    'site_options.*','template_site.name(t_name)','template_site.directory'
                 ],
                 [
                     'site'=>$id,

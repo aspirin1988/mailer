@@ -28,7 +28,7 @@
     position: fixed;
     width: 360px;
     height: 100%;
-    background: {m_cl};
+    background: #393f48;
     right: 0;
     top: 0;
     border-left: 32px solid #434a54;
@@ -36,6 +36,13 @@
     color: #e2e3e7;
     display: none;
 }
+
+.blink-cb-module-main-body.not-fixed {
+    position: absolute;
+    z-index: 2;
+    display: block;
+}
+
 .blink-cb-module-main-body .blink-cb-module-main-body-container {
     position: relative;
     width: 250px;
@@ -50,6 +57,7 @@
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns {
     text-align: center;
 }
+
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li {
     text-align: center;
     display: inline-block;
@@ -232,6 +240,14 @@
     color: #e2e3e7;
     display: none;
 }
+
+.blink-cb-module-main-btns.not-fixed {
+    position: absolute;
+    right: 380px;
+    top: 20px;
+    z-index: 2;
+}
+
 .blink-cb-module-main-btns a {
     color: #e2e3e7;
 }
@@ -266,7 +282,7 @@
     border-radius: 50%;
     height: 35px;
     width: 35px;
-    background: {m_cl};
+    background: #393f48;
     text-align: center;
     font-size: 15px;
     padding: 9px 0 0 0;
