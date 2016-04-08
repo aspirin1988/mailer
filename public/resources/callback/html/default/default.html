@@ -3,9 +3,9 @@
         <div class="blink-cb-module-main-body-container">
             <a href="#" class="blink-cb-module-exit-body-btn"><i class="fa fa-close"></i></a>
             <ul class="blink-cb-module-main-body-header-btns" style="list-style: none;">
-                <div ng-if="recallHeaderWidget" recall-header-widget></div>
-                <div ng-if="messangeHeaderWidget" messange-header-widget></div>
-                <div ng-if="chatHeaderWidget" chat-header-widget></div>
+                <li class="blink-cb-open-popup" id="blink-cb-module-to-recall" ng-if="recallHeaderWidget" recall-header-widget></li>
+                <li class="blink-cb-open-popup" id="blink-cb-module-to-messange" ng-if="messangeHeaderWidget" messange-header-widget></li>
+                <li class="blink-cb-open-popup" id="blink-cb-module-to-chat" ng-if="chatHeaderWidget" chat-header-widget></li>
             </ul>
             <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
                 <div class="blink-cb-module-flipper">

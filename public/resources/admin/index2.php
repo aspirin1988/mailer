@@ -80,9 +80,9 @@
                       <option>Washington</option>
                     </select>
                   </div>
-                  <div class="checkbox"><label><input type="checkbox" ng-click="recallHeaderWidget = true">Звонок</label></div>
-                  <div class="checkbox"><label><input type="checkbox" ng-click="">Письмо</label></div>
-                  <div class="checkbox"><label><input type="checkbox" ng-click="">Чат</label></div>
+                  <div class="checkbox"><label><input type="checkbox" ng-model="recallHeaderWidget">Звонок</label></div>
+                  <div class="checkbox"><label><input type="checkbox" ng-model="messangeHeaderWidget">Письмо</label></div>
+                  <div class="checkbox"><label><input type="checkbox" ng-model="chatHeaderWidget">Чат</label></div>
                 </div>
               </div>
 
