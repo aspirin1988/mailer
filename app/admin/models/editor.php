@@ -296,9 +296,9 @@ class editor extends Models
             ]
         );
         if ($siteData) {
-            $siteData[0]['color'] = json_decode($siteData[0]['color'], true);
-            $siteData[0]['text'] = json_decode($siteData[0]['text'], true);
-            if($value) {
+            $siteData[0]['color'] = json_decode($siteData[0]['default_cl'], true);
+            $siteData[0]['text'] = json_decode($siteData[0]['default_text'], true);
+            if($data) {
                 $siteData = array_merge($siteData[0], $data);
             }
             else
