@@ -80,6 +80,11 @@ BlinkCBModule.prototype.loadJS = function() {
         otherBtnsContainer = doc.getElementsByClassName('blink-cb-module-other-btn-container')[0],
         otherBtns = otherBtnsContainer.children;
 
+
+    if(document.getElementsByClassName('search-blink-cb-module-btn').length >= 2 ) {
+        document.getElementById('blink-cb-module-own-btn').style.display = 'none';
+    }
+
     for (var i = 0; i < mainCloseBtn.length; i++) {
         mainCloseBtn[i].addEventListener('click', function(event) {
             event.preventDefault();
@@ -234,7 +239,24 @@ BlinkCBModule.prototype.loadJS = function() {
     })();
 };
 
-new BlinkCBModule();
+var loadTemplate = function () {
+    new BlinkCBModule();
+};
+
+var loadLocalFunc = function(evt) {
+    window.onload(evt);
+    loadTemplate(evt);
+};
+
+if(window.attachEvent) {
+    window.attachEvent('onload', loadTemplate);
+} else {
+    if(window.onload) {
+        window.onload = loadLocalFunc;
+    } else {
+        window.onload = loadTemplate;
+    }
+}
 
 /*
  Input Masks

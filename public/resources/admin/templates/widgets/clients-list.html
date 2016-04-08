@@ -1,0 +1,52 @@
+<section class="content-header">
+    <h1>
+        Список клиентов
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-th"></i> Список клиентов</a></li>
+    </ol>
+</section>
+<div class="row">
+    <section class="invoice">
+        <!-- title row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="page-header">
+                    <i class="fa fa-globe"></i> Сервисы "B-Link"
+                    <small class="pull-right">{{date | date:'dd-MM-yyyy'}}</small>
+                </h2>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- Table row -->
+        <div class="row">
+            <div class="col-xs-12 table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Название</th>
+                        <th>Дата регистраций</th>
+                        <th>Адресс</th>
+                        <th>Сайт</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="(key, val) in allClients">
+                        <td>{{key + 1}}</td>
+                        <td>{{val.name}}</td>
+                        <td>{{val.date_create}}1</td>
+                        <td>{{val.ph_address}}</td>
+                        <td>{{val.site}}</td>
+                        <td><button type="button" class="btn btn-primary btn-xs" ng-click="clientsGetCurrentSites(val.id)">Инфо</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+</div>

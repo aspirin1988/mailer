@@ -1,17 +1,11 @@
 <div class="blink-cb-module-container">
-    <div class="blink-cb-module-main-body animated fadeInRight">
+    <div class="blink-cb-module-main-body not-fixed">
         <div class="blink-cb-module-main-body-container">
             <a href="#" class="blink-cb-module-exit-body-btn"><i class="fa fa-close"></i></a>
             <ul class="blink-cb-module-main-body-header-btns" style="list-style: none;">
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-recall">
-                    <a href="#recall"><i class="fa fa-phone"></i><span>Звонок</span></a>
-                </li>
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-messange">
-                    <a href="#messange"><i class="fa fa-envelope"></i><span>Письмо</span></a>
-                </li>
-                <!--li class="blink-cb-open-popup">
-                    <a href="#comments"><i class="fa fa-comments"></i><span>Чат</span></a>
-                </li-->
+                <div ng-if="recallHeaderWidget" recall-header-widget></div>
+                <div ng-if="messangeHeaderWidget" messange-header-widget></div>
+                <div ng-if="chatHeaderWidget" chat-header-widget></div>
             </ul>
             <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
                 <div class="blink-cb-module-flipper">
@@ -84,7 +78,7 @@
         </div>
     </div>
 
-    <div class="blink-cb-module-main-btns active search-blink-cb-module-btn" id="blink-cb-module-own-btn">
+    <div class="blink-cb-module-main-btns active search-blink-cb-module-btn not-fixed" id="blink-cb-module-own-btn">
         <div class="blink-cb-module-btns-container">
             <div class="blink-cb-module-main-btn-container animated">
                 <div class="blink-cb-open-popup blink-cb-module-main-btn"><a href="#recall"><i class="fa fa-phone"></i></a></div>
@@ -101,7 +95,7 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-        <link rel="stylesheet" href="{css}">
+        <link rel="stylesheet" href="/resources/callback/css/default/default.css">
     </div>
 </div>
 

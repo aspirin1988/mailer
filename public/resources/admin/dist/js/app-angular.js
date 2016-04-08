@@ -1,6 +1,79 @@
+/* ==================================================================================================
+ ** LOADING PAGE EVENT...
+ =================================================================================================== */
+
+var loadTemplate = function () {
+    document.getElementById('main-container').style.visibility = 'visible';
+};
+
+var loadLocalFunc = function(evt) {
+    window.onload(evt);
+    loadTemplate(evt);
+};
+
+if(window.attachEvent) {
+    window.attachEvent('onload', loadTemplate);
+} else {
+    if(window.onload) {
+        window.onload = loadLocalFunc;
+    } else {
+        window.onload = loadTemplate;
+    }
+}
+
+/* ==================================================================================================
+ ** WEBSITE CAPTURE...
+ =================================================================================================== */
+
+/* ==================================================================================================
+** ANGULAR STARTS HERE...
+=================================================================================================== */
+
 var app = angular.module('app', []);
 
 app.controller('blinkMainController', function($scope, $http) {
+    $scope.date = new Date();
+
+    $scope.authGetUserInfo = (function () {
+        $http({
+            method: 'GET',
+            url: '/helper/user/getUser'
+        }).then(function success(response) {
+            if(response.data[0] !== false) {
+                $scope.authUserInfo = response.data[0];
+            }
+        }, function error(response) {});
+    })();
+
+    $scope.allClients = {};
+    $scope.clientCurrentSites = {};
+
+    $scope.clientsGetCurrentSites = function(id) {
+        $http({
+            method: 'GET',
+            url: '/admin/client/GetAllSiteClient/' + id
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                $scope.clientCurrentSites = response.data.data;
+            }
+        }, function error(response) {});
+
+    };
+
+    $scope.getAllClients = function () {
+        $http({
+            method: 'GET',
+            url: '/admin/client/GetAllClient'
+        }).then(function success(response) {
+            if(response.data.data !== false){
+                $scope.allClients = response.data.data;
+            }
+
+        }, function error(response) {});
+    };
+
+    $scope.getAllClients();
+
     $scope.mailerNewClientInfo = {};
     $scope.mailerClientsOwn = {};
     $scope.mailerClientOwnSettings = false;
@@ -42,8 +115,6 @@ app.controller('blinkMainController', function($scope, $http) {
             }
         }, function error() {});
     };
-
-    $scope.mailerGetClients();
 
     $scope.mailerUpdateClients = function(mailerClient) {
         $scope.mailerUpdateClientsInnerFunc = function(id) {
@@ -131,5 +202,67 @@ app.controller('blinkMainController', function($scope, $http) {
             }
 
         }, function error(response) {});
+    }
+
+    $scope.mailerGetClients();
+
+    $scope.recallHeaderWidget = false;
+    $scope.messangeHeaderWidget = false;
+    $scope.chatHeaderWidget = false;
+});
+
+/* ==================================================================================================
+ ** ANGULAR DIRECTIVES...
+ =================================================================================================== */
+
+app.directive('getHeader', function () {
+    return {
+        templateUrl: '/resources/admin/templates/header.html'
+    }
+});
+
+app.directive('getSidebar', function () {
+    return {
+        templateUrl: '/resources/admin/templates/sidebar.html'
+    }
+});
+
+app.directive('getFooter', function () {
+    return {
+        templateUrl: '/resources/admin/templates/footer.html'
+    }
+});
+
+app.directive('getModal', function () {
+    return {
+        templateUrl: '/resources/admin/templates/modal.html'
+    }
+});
+
+app.directive('defaultTemplateDirectory', function () {
+    return {
+        templateUrl: '/resources/callback/html/default/default.html'
+    }
+});
+
+/* ==================================================================================================
+ ** WIDGETS...
+ =================================================================================================== */
+
+app.directive('recallHeaderWidget', function () {
+    return {
+        templateUrl: '/resources/callback/html/default/widgets/recall-header-widget.html'
+    }
+});
+
+app.directive('messangeHeaderWidget', function () {
+    return {
+        templateUrl: '/resources/callback/html/default/widgets/messange-header-widget.html'
+    }
+});
+
+app.directive('chatHeaderWidget', function () {
+    return {
+        templateUrl: '/resources/callback/html/default/widgets/chat-header-widget.html'
     }
 });

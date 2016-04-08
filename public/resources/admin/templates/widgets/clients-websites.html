@@ -1,0 +1,59 @@
+<section class="content-header">
+    <h1>
+        Список сайтов
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-th"></i> Список клиентов</a></li>
+        <li class="active">Список сайтов</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-default collapsed-box" ng-repeat="(key, val) in clientCurrentSites">
+        <div class="box-header with-border">
+            <h3 class="box-title">Данные о сайте {{val.name }}</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <!--button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button-->
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>md5</label>
+                    <input id="md5" class="form-control" type="text" placeholder="{{ val.md5 }}" readonly="readonly">
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label>Название сайта</label>
+                    <input id="name" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="mailerClients[key].name" readonly="readonly">
+                </div>
+                <div class="form-froup">
+                    <label>Название компании</label>
+                    <input id="company" class="form-control" type="text" placeholder="Название компании" ng-model="mailerClients[key].company" readonly="readonly">
+                </div><!-- /.form-group -->
+            </div><!-- /.col -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input id="id" class="form-control" type="text" placeholder="ID" ng-model="mailerClients[key].id" readonly="readonly">
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    <label>Адрес получателя</label>
+                    <input id="cc_mail" class="form-control" type="text" placeholder="Адрес получателя" ng-model="mailerClients[key].cc_mail" readonly="readonly">
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>Email отправки</label>
+                        <select class="form-control" ng-model="mailerClients[key].email" ng-options="email as email.login for email in mailerEmails track by email.id" readonly="readonly">
+                        </select>
+                    </div>
+                </div>
+                <!-- /.form-group -->
+            </div><!-- /.col -->
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <div class="col-md-12 text-right">
+                <button class="btn btn-primary btn-sm" ng-click="mailerUpdateClients(key)">Настройка</button>
+            </div>
+        </div><!-- /.box -->
+</section>
