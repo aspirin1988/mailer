@@ -179,7 +179,7 @@ class editor extends Models
             'template' => 1,
             'color' => [
                 'default' => [
-                    'm_cl' => "#222d32",
+                    'm_cl' => "#393f48",
                     'm_cl_br' => "#ffffff",
                     'h_f_cl' => "#ffffff",
                     'f_f_cl' => "#ffffff",
@@ -302,7 +302,7 @@ class editor extends Models
                 $res=str_replace('{'.$key.'}',$val,$res);
             }
 
-            return $siteData;
+            return $res;
         }
         return false;
     }

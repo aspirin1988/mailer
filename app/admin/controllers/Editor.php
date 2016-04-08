@@ -37,7 +37,7 @@ class Editor extends Controller
     {
         $value=$this->request->rest();
         $model = new \app\admin\models\editor();
-        $this->response->json($model->GetEditCSS($id,$value));
+        $this->response->css($model->GetEditCSS($id,$value));
     }
 
 
