@@ -47,8 +47,8 @@ class Editor extends Controller
     {
 
 
-        //$str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
-        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
+        $str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
+//        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
         $str=str_replace('\r','',$str);
         $str=str_replace('\n','',$str);
 
