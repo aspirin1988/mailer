@@ -48,25 +48,40 @@ class Editor extends Controller
 
 
         $res1=[
-            'm_cl'=>'#ffffff',
-            'm_cl_br'=>'#ffffff',
-            'h_f_cl'=>'#ffffff',
-            'f_f_cl'=>'#ffffff',
-            'sub_btn_cl'=>'#ffffff',
-            'sub_btn_cl:hover'=>'#ffffff',
-            'fields_f_cl'=>'#ffffff',
-            'fields_bg_cl'=>'#ffffff',
-            'fields_br_cl'=>'#ffffff',
-            'res_suc_bg_cl'=>'#ffffff',
-            'res_err_bg_cl'=>'#ffffff',
-            'res_suc_f_cl'=>'#ffffff',
-            'res_err_f_cl'=>'#ffffff',
-            'res_suc_btn_f_cl'=>'#ffffff',
-            'res_err_btn_f_cl'=>'#ffffff',
-            'res_suc_btn_bg_cl'=>'#ffffff',
-            'res_err_btn_bg_cl'=>'#ffffff',
-            'main_btn_f_cl'=>'#ffffff',
-            'main_btn_br_cl'=>'#ffffff',
+            'class'=>'main-container',
+            'inner_text'=>false,
+            'outer_text'=>'Подложка',
+            'style'=>[
+                [
+                'key'=>'background-color',
+                'Outer_text'=>'Цвет фона',
+                'value'=>'#eee',
+                'editable'=>true,
+                'removable'=>false,
+                ],
+                [
+                'key'=>'border-color',
+                'Outer_text'=>'Цвет обводки',
+                'value'=>'#fafafa',
+                'editable'=>true,
+                'removable'=>false,
+                ],
+                [
+                'key'=>'color',
+                'Outer_text'=>'Цвет шрифта',
+                'value'=>'#ffa500',
+                'editable'=>true,
+                'removable'=>false,
+                ],
+                [
+                'key'=>'border-radius',
+                'Outer_text'=>'Цвет шрифта',
+                'value'=>'5px',
+                'editable'=>false,
+                'removable'=>false,
+                ],
+
+            ]
         ];
 
         $data = [
@@ -189,6 +204,6 @@ class Editor extends Controller
         //$res=['default'=>$res1];
 
 
-        $this->response->json($data['color']);
+        $this->response->json($res1);
     }
 }
