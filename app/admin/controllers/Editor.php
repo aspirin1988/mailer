@@ -47,6 +47,11 @@ class Editor extends Controller
     {
 
 
+        //$str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
+        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
+        $str=str_replace('\r','',$str);
+        $str=str_replace('\n','',$str);
+
         $res1=[
             'class'=>'main-container',
             'inner_text'=>false,
@@ -203,7 +208,38 @@ class Editor extends Controller
 
         //$res=['default'=>$res1];
 
+        $str= explode('}',$str);
+        //unset($str[0]);
+        $str1='';
+        foreach($str as $key=>$val)
+        {
+            $str1[$key] = explode('{',$val);
+        }
+        $str=[];
+        for($i=0; $i<count($str1); $i++)
+        {
+            $str[$i]['class']=trim($str1[$i][0]);
+            $str[$i]['inner_text']=false;
+            $str[$i]['outer_text']='';
+            $str[$i]['config']=explode(';',$str1[$i][1]);
+            unset($str[$i]['config'][count($str[$i]['config'])-1]);
+            foreach($str[$i]['config'] as $key=>$val)
+            {
+                $s=explode(':',$val);
+                $str[$i]['config'][$key]=[];
+                $str[$i]['config'][$key]['key']=trim($s[0]);
+                $str[$i]['config'][$key]['value']=trim($s[1]);
+                $str[$i]['config'][$key]['Outer_text']='';
+                if (strripos($s[0],'color')){
+                    $str[$i]['config'][$key]['editable'] = true;
+            }
+                else{
+                    $str[$i]['config'][$key]['editable'] = false;
+                }
+                $str[$i]['config'][$key]['removable'] = false;
+            }
 
-        $this->response->json($res1);
+        }
+        $this->response->json($str);
     }
 }

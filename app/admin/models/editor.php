@@ -28,9 +28,12 @@ class editor extends Models
 
     function GetOptions($id)
         {
-            $siteData = $this->db->select('log_options',
+            $siteData = $this->db->select('site_options',
                 [
-                    'log_options.*'
+                    "[>]template_site" => ["template" => "id"]
+                ],
+                [
+                    'site_options.*','template_site.name(t_name)','template_site.directory'
                 ],
                 [
                     'site'=>$id,
@@ -38,12 +41,10 @@ class editor extends Models
             );
             if ($siteData)
             {
-                $siteData[0]['options']=json_decode( $siteData[0]['options'],true);
+                unset($siteData[0]['options']);
                 $siteData[0]['options_default']=json_decode( $siteData[0]['options_default'],true);
             }
-            return [
-                'data' => $siteData,
-            ];
+            return $siteData[0];
         }
 
     function SetOptions($id,$value)
@@ -166,7 +167,7 @@ class editor extends Models
             );
             if ($siteData)
             {
-                $siteData[0]['options']=json_decode( $siteData[0]['options'],true);
+                unset($siteData[0]['options']);
                 $siteData[0]['options_default']=json_decode( $siteData[0]['options_default'],true);
 
                     $siteData = array_merge($siteData[0], $data);
@@ -178,7 +179,7 @@ class editor extends Models
 
     function GetEditCSS($id,$value)
     {
-        $data = [
+        /*$data = [
             'class'=>'main-container',
             'inner_text'=>false,
             'outer_text'=>'Подложка',
@@ -213,10 +214,11 @@ class editor extends Models
                 ],
 
             ]
-        ];
+        ];*/
 
         $data=$value;
 
+        print_r($value);
         $siteData = $this->db->select('site_options',
             [
                 "[>]template_site" => ["template" => "id"]
@@ -230,8 +232,8 @@ class editor extends Models
         );
 
         if ($siteData) {
-            $siteData[0]['color'] = json_decode($siteData[0]['default_cl'], true);
-            $siteData[0]['text'] = json_decode($siteData[0]['default_text'], true);
+            $siteData[0]['options'] = json_decode($siteData[0]['options'], true);
+            $siteData[0]['options_default'] = json_decode($siteData[0]['options_default'], true);
             if($data) {
                 $siteData = array_merge($siteData[0], $data);
             }
@@ -242,10 +244,16 @@ class editor extends Models
 
             $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
 
-            $res = file_get_contents($path);
+            $res =''; //file_get_contents($path);
 
-            foreach ($siteData['color'][$siteData['directory']] as $key=>$val) {
-                $res=str_replace('{'.$key.'}',$val.'/*edit*/',$res);
+            foreach ($siteData['options'] as $key=>$val) {
+                $res.=$val['class'].'{';
+                foreach($val['config'] as $key1=>$val1)
+                {
+                    $res.=$val1['key'].":".$val1['value'].';';
+                }
+                $res.='}';
+                //$res=str_replace('{'.$key.'}',$val.'/*edit*/',$res);
             }
 
             return $res;
