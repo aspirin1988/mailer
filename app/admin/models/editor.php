@@ -28,9 +28,9 @@ class editor extends Models
 
     function GetOptions($id)
         {
-            $siteData = $this->db->select('site_options',
+            $siteData = $this->db->select('log_options',
                 [
-                    'site_options.*'
+                    'log_options.*'
                 ],
                 [
                     'site'=>$id,
