@@ -1,6 +1,6 @@
 .html-wrapper {
     position: relative;
-    min-height: 600px;
+    min-height: 655px;
 }
 
 .html-wrapper .iframe {
@@ -9,4 +9,11 @@
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.to-fixed-on-scroll-active {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    width: 670px;
 }

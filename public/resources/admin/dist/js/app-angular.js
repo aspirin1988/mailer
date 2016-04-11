@@ -21,6 +21,16 @@ if(window.attachEvent) {
     }
 }
 
+$(document).scroll(function (event) {
+    if ($(document).scrollTop() >= 98) {
+        $('.to-fixed-on-scroll').addClass('to-fixed-on-scroll-active');
+    }
+    else {
+        $('.to-fixed-on-scroll').removeClass('to-fixed-on-scroll-active');
+    }
+});
+
+
 /* ==================================================================================================
  ** WEBSITE CAPTURE...
  =================================================================================================== */
@@ -29,50 +39,147 @@ if(window.attachEvent) {
 ** ANGULAR STARTS HERE...
 =================================================================================================== */
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRoute', 'colorpicker.module']);
 
-app.controller('blinkMainController', function($scope, $http) {
-    $scope.date = new Date();
+app.config(function ($routeProvider) {
+    $routeProvider
+        .when('/', {
+            template: '<p>Hello this is main page</p>'
+        })
+        .when('/clients-list', {
+            templateUrl: '/resources/admin/templates/widgets/clients-list.html',
+            controller: 'clientsCtrl'
+        })
+        .when('/client-sites/:id', {
+            templateUrl: '/resources/admin/templates/widgets/client-sites.html',
+            controller: 'clientCtrl'
+        })
+        .when('/mailer', {
+            templateUrl: '/resources/admin/templates/widgets/all-websites.html'
+        })
+        .when('/mailer-settings/:siteId', {
+            templateUrl: '/resources/admin/templates/widgets/mailer-settings.html',
+            controller: 'mailerCtrl'
+        });
+});
 
-    $scope.authGetUserInfo = (function () {
+app.factory('authUser', function ($http) {
+    var factory = {};
+
+    factory.getAuthUserInfo = function (callback) {
         $http({
             method: 'GET',
             url: '/helper/user/getUser'
         }).then(function success(response) {
             if(response.data[0] !== false) {
-                $scope.authUserInfo = response.data[0];
+                 callback(response.data[0]);
             }
         }, function error(response) {});
-    })();
-
-    $scope.allClients = {};
-    $scope.clientCurrentSites = {};
-
-    $scope.clientsGetCurrentSites = function(id) {
-        $http({
-            method: 'GET',
-            url: '/admin/client/GetAllSiteClient/' + id
-        }).then(function success(response) {
-            if(response.data.data !== false) {
-                $scope.clientCurrentSites = response.data.data;
-            }
-        }, function error(response) {});
-
     };
 
-    $scope.getAllClients = function () {
+    return factory;
+});
+
+app.factory('clientsFactory', function ($http) {
+    var factory = {};
+
+    factory.getAllClients = function (callback) {
         $http({
             method: 'GET',
             url: '/admin/client/GetAllClient'
         }).then(function success(response) {
             if(response.data.data !== false){
-                $scope.allClients = response.data.data;
+                callback(response.data.data);
             }
 
         }, function error(response) {});
     };
 
-    $scope.getAllClients();
+    return factory;
+});
+
+app.factory('clientFactory', function ($http) {
+    var factory = {};
+
+    factory.getSites = function (id, callback) {
+        $http({
+            method: 'GET',
+            url: '/admin/client/GetAllSiteClient/' + id
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                callback(response.data.data);
+            }
+        }, function error(response) {});
+    };
+
+    return factory;
+});
+
+app.factory('mailerFactory', function ($http) {
+    var factory = {};
+
+    factory.getSettings = function (id, callback) {
+        $http({
+            method: 'GET',
+            url: '/admin/editor/GetOptions/' + id
+        }).then(function success(response) {
+            if(response.data !== false) {
+                callback(response.data);
+            }
+        }, function error(response) {});
+    };
+
+    return factory;
+});
+
+app.controller('clientsCtrl', function ($scope, clientsFactory) {
+    $scope.allClients = {};
+
+    clientsFactory.getAllClients(function (data) {
+        $scope.allClients = data;
+    });
+});
+
+app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
+    $scope.sites = {};
+
+    clientFactory.getSites($routeParams.id, function(data) {
+        $scope.sites = data;
+    });
+});
+
+app.controller('mailerCtrl', function ($scope, $routeParams, mailerFactory) {
+    mailerFactory.getSettings($routeParams.siteId, function (data) {
+        $scope.mailerSettings = data.options_default;
+    });
+
+    $scope.addingNewItem = false;
+    $scope.newItem = {};
+
+    $scope.addProperty = function(key, editing, object) {
+        if(!object) {
+            if(editing === true) $scope.addingNewItem = true;
+            else $scope.addingNewItem = false;
+        } else {
+            if(editing === true) $scope.addingNewItem = true;
+            else $scope.addingNewItem = false;
+
+            $scope.mailerSettings[key].style.push(object);
+            $scope.newItem = {};
+        }
+    };
+
+    $scope.removeProperty = function(keyObject, keyStyle) {
+        $scope.mailerSettings[keyObject].style.splice(keyStyle, 1);
+    }
+});
+
+app.controller('blinkMainController', function($scope, $http, authUser) {
+    $scope.date = new Date();
+
+    authUser.getAuthUserInfo(function (data) {
+        $scope.authUserInfo = data;
+    });
 
     $scope.mailerNewClientInfo = {};
     $scope.mailerClientsOwn = {};
@@ -214,8 +321,9 @@ app.controller('blinkMainController', function($scope, $http) {
 
     $scope.changeCss = function() {
         $http({
-            method: 'GET',
-            url: '/admin/editor/GetEditCSS/4'
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/4',
+            data: false
         }).then(function success(response) {
             if(response.data !== false) {
                 $scope.widgetStylesheets = response.data;
@@ -226,22 +334,17 @@ app.controller('blinkMainController', function($scope, $http) {
 
     $scope.changeCss();
 
-    $scope.getDefaultCss = function() {
+    $scope.console = function (object) {
         $http({
-            method: 'GET',
-            url: '/admin/editor/SetOptions/4'
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/4',
+            data: $scope.defaultCssValues
         }).then(function success(response) {
             if(response.data !== false) {
-                $scope.defaultCssValues = response.data;
+                $scope.widgetStylesheets = response.data;
             }
         }, function error(response) {});
     };
-
-    $scope.getDefaultCss();
-
-    $scope.console = function (object) {
-        console.log(object);
-    }
 });
 
 /* ==================================================================================================

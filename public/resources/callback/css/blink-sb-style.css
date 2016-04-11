@@ -17,9 +17,11 @@
 .blink-cb-module-container * a {
     text-decoration: none;
 }
+
 .blink-cb-module-container * a:hover {
     text-decoration: none;
 }
+
 .blink-cb-module-container ul {
     list-style: none;
 }
@@ -28,25 +30,29 @@
     position: fixed;
     width: 360px;
     height: 100%;
-    background: #393f48;
+    background-color: #393f48; /*editable*/
     right: 0;
     top: 0;
-    border-left: 32px solid #434a54;
+    border-left: 32px solid;
+    border-color: #434a54; /*editable*/
     padding: 30px 0;
-    color: #e2e3e7;
+    color: #e2e3e7; /*editable*/
     display: none;
 }
-.blink-cb-module-main-body .blink-cb-module-main-body-container {
+
+.blink-cb-module-main-body-container {
     position: relative;
     width: 250px;
     margin: 0 auto;
 }
-.blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-exit-body-btn {
+
+.blink-cb-module-exit-body-btn {
     position: absolute;
     color: #e2e3e7;
     top: -20px;
     left: -60px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns {
     text-align: center;
 }
@@ -125,13 +131,16 @@
     background: #434a54;
     width: 100%;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
     padding: 7px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text] {
     height: 40px;
     padding: 0 7px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit] {
     margin-top: 7px;
     background: #cf5664;
@@ -143,17 +152,21 @@
     color: #e2e3e7;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit]:hover {
     background: #a7424e;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front small {
     display: block;
     margin-top: 20px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box {
     width: 100%;
     padding: 40px 20px 20px 20px;
@@ -162,11 +175,13 @@
     text-align: center;
     border-radius: 5px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box a {
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box button {
     border: none;
     background: #000;
@@ -178,45 +193,57 @@
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 20px;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange {
     color: #3c763d;
     background-color: #e2e3e7;
     display: none;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange a {
     color: #3c763d;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange button {
     background: #3c763d;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange {
     color: #a94442;
     background-color: #e2e3e7;
     display: none;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange a {
     color: #a94442;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange button {
     background: #a94442;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container.active {
     display: block;
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-back {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
+
 .blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-front {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
+
 .blink-cb-module-main-body #blink-cb-module-popup-recall {
     margin-top: 50%;
 }
+
 .blink-cb-module-main-body #blink-cb-module-popup-messange {
     margin-top: 30%;
 }
+
 .blink-cb-module-main-body.active {
     display: block;
 }
@@ -232,14 +259,17 @@
     color: #e2e3e7;
     display: none;
 }
+
 .blink-cb-module-main-btns a {
     color: #e2e3e7;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container {
     position: relative;
     height: 80px;
     width: 80px;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-main-btn-container {
     width: 80px;
     height: 80px;
@@ -248,11 +278,13 @@
     cursor: pointer;
     text-align: center;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-main-btn-container .blink-cb-module-main-btn {
     text-align: center;
     font-size: 40px;
     padding-top: 21px;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container {
     position: absolute;
     width: auto;
@@ -261,6 +293,7 @@
     top: 20px;
     padding: 2.5px 0 0 0;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container li {
     float: right;
     border-radius: 50%;
@@ -273,9 +306,11 @@
     margin: 0 7px 0 0;
     cursor: pointer;
 }
+
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-other-btn-container.hidden {
     display: none;
 }
+
 .blink-cb-module-main-btns.active {
     display: block;
 }
