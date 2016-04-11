@@ -45,8 +45,6 @@ class Editor extends Controller
 
     function GetArray()
     {
-
-
         $str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
 //        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
         $str=str_replace('\r','',$str);
@@ -221,6 +219,7 @@ class Editor extends Controller
             $str[$i]['class']=trim($str1[$i][0]);
             $str[$i]['inner_text']=false;
             $str[$i]['outer_text']='';
+            $str[$i]['for_user']=false;
             $str[$i]['config']=explode(';',$str1[$i][1]);
             unset($str[$i]['config'][count($str[$i]['config'])-1]);
             foreach($str[$i]['config'] as $key=>$val)
@@ -232,6 +231,7 @@ class Editor extends Controller
                 $str[$i]['config'][$key]['Outer_text']='';
                 if (strripos($s[0],'color')){
                     $str[$i]['config'][$key]['editable'] = true;
+                    $str[$i]['for_user']=true;
             }
                 else{
                     $str[$i]['config'][$key]['editable'] = false;
