@@ -64,7 +64,7 @@
     margin: 0 10px;
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li a {
-    color: #e2e3e7;
+    color: {main_btn_f_cl};
     font-size: 24px;
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li a i {
@@ -77,10 +77,10 @@
     text-transform: uppercase;
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li.active a {
-    color: #cf5664;
+    color: {main_btn_sel_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns li:hover a {
-    color: #cf5664;
+    color: {main_btn_hover_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container {
     -webkit-perspective: 1000;
@@ -121,16 +121,16 @@
     font-weight: normal;
     text-transform: uppercase;
     margin-bottom: 40px;
-    color: {h_f_cl}
+    color: {h_f_cl};
     font-family: 'Roboto Condensed', sans-serif;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text], .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
     margin-top: 7px;
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 5px;
-    border: 2px solid #e2e3e7;
-    color: #e2e3e7;
-    background: {m_cl_br};
+    border: 2px solid {fields_br_cl};
+    color: {fields_f_cl};
+    background: {fields_bg_cl};
     width: 100%;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
@@ -152,7 +152,7 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=submit]:hover {
-    background: #a7424e;
+    background: {sub_btn_cl_hover};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front small {
     display: block;
@@ -181,32 +181,44 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    color: #e2e3e7;
+    color: {res_suc_btn_f_cl};
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 20px;
 }
+
+/*.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box button {
+    border: none;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: {/res_err_btn_f_cl};
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+margin-top: 20px;
+}*/
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange {
-    color: #3c763d;
-    background-color: #e2e3e7;
+    color: {res_suc_f_cl};
+    background-color: {res_suc_bg_cl};
     display: none;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange a {
-    color: #3c763d;
+    color: {res_suc_f_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-success-messange button {
-    background: #3c763d;
+    background: {res_suc_btn_bg_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange {
-    color: #a94442;
-    background-color: #e2e3e7;
+    color: {res_err_f_cl};
+    background-color: {res_err_bg_cl};
     display: none;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange a {
-    color: #a94442;
+    color: {res_err_f_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-error-messange button {
-    background: #a94442;
+    background: {res_err_btn_bg_cl};
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container.active {
     display: block;
@@ -237,7 +249,7 @@
     height: 80px;
     border-radius: 50%;
     z-index: 99999;
-    color: #e2e3e7;
+    color: {main_btn_f_cl};
     display: none;
 }
 
@@ -259,7 +271,7 @@
 .blink-cb-module-main-btns .blink-cb-module-btns-container .blink-cb-module-main-btn-container {
     width: 80px;
     height: 80px;
-    background: {m_cl};
+    background: {main_btn_bg_cl};
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -282,7 +294,7 @@
     border-radius: 50%;
     height: 35px;
     width: 35px;
-    background: {m_cl};
+    background: {main_btn_bg_cl};
     text-align: center;
     font-size: 15px;
     padding: 9px 0 0 0;
