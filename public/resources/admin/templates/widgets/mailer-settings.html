@@ -1,0 +1,131 @@
+<div>
+    <section class="content-header">
+        <h1>
+            Редактирование виджета
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-th"></i> Редактирование виджета</a></li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Редактор темплейта</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Выбор темплейта</label>
+                            <select class="form-control">
+                                <option selected="selected">Alabama</option>
+                                <option>Alaska</option>
+                                <option>California</option>
+                                <option>Delaware</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                        <div class="checkbox"><label><input type="checkbox" ng-model="recallHeaderWidget">Звонок</label></div>
+                        <div class="checkbox"><label><input type="checkbox" ng-model="messangeHeaderWidget">Письмо</label></div>
+                        <div class="checkbox"><label><input type="checkbox" ng-model="chatHeaderWidget">Чат</label></div>
+                    </div>
+                    <div class="box-footer">
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab_1" onclick="return false;" data-toggle="tab" aria-expanded="true">Продвинутое</a></li>
+                                <li class=""><a href="#tab_2" onclick="return false;" data-toggle="tab" aria-expanded="false">Обычное</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_1">
+                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings">
+                                        <div class="box-header with-border">
+                                            <h4 class="box-title">{{val.class}}</h4>
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div ng-repeat="(keyStyle, valStyle) in val.config">
+                                                <div class="form-group">
+                                                    <label>{{valStyle.key}} : </label>
+                                                    <input ng-if="valStyle.removable === false" type="text" class="form-control input-sm" ng-model="valStyle.value" ng-change="console(val.config)">
+                                                    <div class="input-group" ng-if="valStyle.removable">
+                                                        <input type="text" class="form-control input-sm" ng-model="valStyle.value" ng-change="console(val.config)">
+                              <span class="input-group-addon" style="cursor: pointer;" ng-click="removeProperty(key, keyStyle)">
+                                <i class="fa fa-remove"></i>
+                              </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-footer">
+                                            <div ng-if="addingNewItem" class="text-left">
+                                                <form ng-submit="addProperty(key, false, newItem)">
+                                                    <div class="form-group">
+                                                        <label>Название свойство</label>
+                                                        <input type="text" class="form-control input-sm" ng-model="newItem.key">
+                                                        <input type="hidden" ng-model="newItem.outer_text" ng-init="newItem.outer_text = null">
+                                                        <input type="hidden" ng-model="newItem.value" ng-init="newItem.value = ''">
+                                                        <input type="hidden" ng-model="newItem.editable" ng-init="newItem.editable = false">
+                                                        <input type="hidden" ng-model="newItem.removable" ng-init="newItem.removable = true">
+                                                    </div>
+                                                    <div class="form-group text-right">
+                                                        <input type="submit" class="btn btn-success btn-sm" value="Добавить">
+                                                        <button type="button" class="btn btn-danger btn-sm" ng-click="addProperty(key, false)">Отмена</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="clearfix" ng-if="!addingNewItem">
+                                                <button type="button" class="btn btn-success btn-sm pull-left">Применить</button>
+                                                <button type="button" class="btn btn-primary btn-sm pull-right" ng-click="addProperty(key, true)"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="tab_2">
+                                    <div class="box box-info" ng-repeat="cssInfo in mailerSettings">
+                                        <div class="box-header with-border">
+                                            <h4 class="box-title">{{cssInfo.outer_text}}</h4>
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div ng-repeat="styleProp in cssInfo.config" ng-if="styleProp.editable === true">
+                                                <div class="form-group">
+                                                    <label>{{styleProp.outer_text}}</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control input-sm" ng-model="styleProp.value" ng-change="console(cssInfo.style)">
+                                                        <span class="input-group-addon" colorpicker="hex" ng-model="styleProp.value" style="cursor: pointer; color: {{styleProp.value}}"><i class="fa fa-square"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 to-fixed-on-scroll">
+                <div class="box box-default html-wrapper">
+                    <div class="client-website-bg">
+                    </div>
+                    <div class="default-service-template">
+                        <div default-template-directory></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

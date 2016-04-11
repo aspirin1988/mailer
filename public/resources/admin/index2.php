@@ -39,13 +39,11 @@
     <![endif]-->
     <!-- jQuery 2.1.4 -->
     <script src="/resources/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-
-    <link rel="stylesheet" href="/resources/admin/dist/css/bootstrap-colorpicker.min.css">
-    <script src="/resources/admin/dist/js/bootstrap-colorpicker.min.js"></script>
-
     <!-- Angular -->
     <script src="/libs/angular/angular.min.js"></script>
-    <script src="/resources/dist/js/angular-route.min.js"></script>
+    <link rel="stylesheet" href="/resources/admin/dist/css/colorpicker.min.css">
+    <script src="/resources/admin/dist/js/bootstrap-colorpicker-module.min.js"></script>
+    <script src="/resources/admin/dist/js/angular-route.min.js"></script>
     <!-- Blink app-angular.js -->
     <script src="/resources/admin/dist/js/app-angular.js"></script>
   </head>
@@ -53,88 +51,11 @@
     <div class="wrapper" id="main-container" style="visibility: hidden;">
       <header class="main-header" get-header></header>
       <aside class="main-sidebar" get-sidebar></aside>
-
       <div class="content-wrapper">
-        <ng-view></ng-view>
+          <ng-view></ng-view>
       </div>
 
-      <div class="content-wrapper">
-        <section class="content-header">
-          <h1>
-            Редактирование виджета
-            <small></small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-th"></i> Редактирование виджета</a></li>
-          </ol>
-        </section>
-
-        <section class="content">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="box box-default">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Редактор темплейта</h3>
-                </div>
-                <div class="box-body">
-                  <div class="form-group">
-                    <label>Выбор темплейта</label>
-                    <select class="form-control">
-                      <option selected="selected">Alabama</option>
-                      <option>Alaska</option>
-                      <option>California</option>
-                      <option>Delaware</option>
-                      <option>Tennessee</option>
-                      <option>Texas</option>
-                      <option>Washington</option>
-                    </select>
-                  </div>
-                  <div class="checkbox"><label><input type="checkbox" ng-model="recallHeaderWidget">Звонок</label></div>
-                  <div class="checkbox"><label><input type="checkbox" ng-model="messangeHeaderWidget">Письмо</label></div>
-                  <div class="checkbox"><label><input type="checkbox" ng-model="chatHeaderWidget">Чат</label></div>
-                </div>
-              </div>
-
-              <div class="box box-default">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Редактор текста</h3>
-                </div>
-                <div class="box-body" ng-repeat="(key, val) in defaultCssValues.text">
-                  <div class="form-group" ng-repeat="(key1, val1) in val">
-                    <label>Какой-то элемент</label>
-                    <input type="text" class="form-control" ng-model="defaultCssValues.text[key][key1]" ng-change="console(defaultCssValues.text[key][key1])">
-                  </div>
-                </div>
-              </div>
-              <div class="box box-default">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Редактор стилей</h3>
-                </div>
-                <div class="box-body">
-                  <div class="form-group" ng-repeat="(key, val) in defaultCssValues.color.default">
-                    <label>Какой-то элемент</label>
-                    <div class="input-group" >
-                      <input type="color" id="colorToUpdate-{{key}}" style="width:200px;" class="form-control" ng-model="defaultCssValues.color.default[key]" ng-change="console(defaultCssValues.color.default[key])">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8 to-fixed-on-scroll">
-              <div class="box box-default html-wrapper">
-                <div class="client-website-bg">
-                </div>
-                <div class="default-service-template">
-                  <div default-template-directory></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <get-modal></get-modal>
-      <footer get-footer></footer>
+      <footer class="main-footer" get-footer></footer>
     </div><!-- ./wrapper -->
 
 
