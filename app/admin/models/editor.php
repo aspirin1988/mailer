@@ -42,7 +42,9 @@ class editor extends Models
             if ($siteData)
             {
                 unset($siteData[0]['options']);
+                unset($siteData[0]['text']);
                 $siteData[0]['options_default']=json_decode( $siteData[0]['options_default'],true);
+                $siteData[0]['text_default']=json_decode( $siteData[0]['text_default'],true);
             }
             return $siteData[0];
         }
@@ -218,7 +220,6 @@ class editor extends Models
 
         $data=$value;
 
-        print_r($value);
         $siteData = $this->db->select('site_options',
             [
                 "[>]template_site" => ["template" => "id"]
@@ -242,11 +243,11 @@ class editor extends Models
                 $siteData=$siteData[0];
             }
 
-            $path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
+            //$path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'blink-sb-edit.css';
 
             $res =''; //file_get_contents($path);
 
-            foreach ($siteData['options'] as $key=>$val) {
+            foreach ($siteData['options_default'] as $key=>$val) {
                 $res.=$val['class'].'{';
                 foreach($val['config'] as $key1=>$val1)
                 {
@@ -260,5 +261,75 @@ class editor extends Models
         }
         return false;
     }
+
+    function GetEditContent($id,$value)
+        {
+            /*$data = [
+                'class'=>'main-container',
+                'inner_text'=>false,
+                'outer_text'=>'Подложка',
+                'style'=>[
+                    [
+                        'key'=>'background-color',
+                        'outer_text'=>'Цвет фона',
+                        'value'=>'#eee',
+                        'editable'=>true,
+                        'removable'=>false,
+                    ],
+                    [
+                        'key'=>'border-color',
+                        'outer_text'=>'Цвет обводки',
+                        'value'=>'#fafafa',
+                        'editable'=>true,
+                        'removable'=>false,
+                    ],
+                    [
+                        'key'=>'color',
+                        'outer_text'=>'Цвет шрифта',
+                        'value'=>'#ffa500',
+                        'editable'=>true,
+                        'removable'=>false,
+                    ],
+                    [
+                        'key'=>'border-radius',
+                        'outer_text'=>'Цвет шрифта',
+                        'value'=>'5px',
+                        'editable'=>false,
+                        'removable'=>false,
+                    ],
+
+                ]
+            ];*/
+
+            $data=$value;
+
+            $siteData = $this->db->select('site_options',
+                [
+                    "[>]template_site" => ["template" => "id"]
+                ],
+                [
+                    'site_options.*','template_site.name(t_name)','template_site.directory'
+                ],
+                [
+                    'site' => $id,
+                ]
+            );
+
+            if ($siteData) {
+                $siteData[0]['text'] = json_decode($siteData[0]['text'], true);
+                $siteData[0]['text_default'] = json_decode($siteData[0]['text_default'], true);
+                if($data) {
+                    $siteData = array_merge($siteData[0], $data);
+                }
+                else
+                {
+                    $siteData=$siteData[0];
+                }
+
+                return $siteData['text_default'];
+            }
+            return false;
+        }
+
 
 }

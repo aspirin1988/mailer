@@ -33,11 +33,19 @@ class Editor extends Controller
         $model = new \app\admin\models\editor();
         $this->response->json($model->SetOptions($id,$value));
     }
+
     function GetEditCSS($id)
     {
         $value=$this->request->rest();
         $model = new \app\admin\models\editor();
         $this->response->css($model->GetEditCSS($id,$value));
+    }
+
+    function GetEditContent($id)
+    {
+        $value=$this->request->rest();
+        $model = new \app\admin\models\editor();
+        $this->response->json($model->GetEditContent($id,$value));
     }
 
 
@@ -204,7 +212,38 @@ class Editor extends Controller
             'err_btn_txt'=>'Lorem ipsum.',
         ];*/
 
-        //$res=['default'=>$res1];
+        $text = [
+        'recall' => [
+            'h_txt' => "Lorem ipsum.",
+            'f_txt' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, rem.",
+            'sb_txt' => "Lorem ipsum.",
+            'icon_txt' => "Lorem ipsum.",
+            'suc_res_txt' => "Lorem ipsum.",
+            'err_res_txt' => "Lorem ipsum.",
+            'suc_btn_txt' => "Lorem ipsum.",
+            'err_btn_txt' => "Lorem ipsum."
+        ],
+        'message' => [
+            'h_txt' => "Lorem ipsum.",
+            'f_txt' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, rem.",
+            'sb_txt' => "Lorem ipsum.",
+            'icon_txt' => "Lorem ipsum.",
+            'suc_res_txt' => "Lorem ipsum.",
+            'err_res_txt' => "Lorem ipsum.",
+            'suc_btn_txt' => "Lorem ipsum.",
+            'err_btn_txt' => "Lorem ipsum."
+        ],
+        'chat' => [
+            'h_txt' => "Lorem ipsum.",
+            'f_txt' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, rem.",
+            'sb_txt' => "Lorem ipsum.",
+            'icon_txt' => "Lorem ipsum.",
+            'suc_res_txt' => "Lorem ipsum.",
+            'err_res_txt' => "Lorem ipsum.",
+            'suc_btn_txt' => "Lorem ipsum.",
+            'err_btn_txt' => "Lorem ipsum."
+        ]
+    ];
 
         $str= explode('}',$str);
         //unset($str[0]);
@@ -228,11 +267,15 @@ class Editor extends Controller
                 $str[$i]['config'][$key]=[];
                 $str[$i]['config'][$key]['key']=trim($s[0]);
                 $str[$i]['config'][$key]['value']=trim($s[1]);
-                $str[$i]['config'][$key]['Outer_text']='';
+                $str[$i]['config'][$key]['outer_text']='';
+                if (strripos($s[0],'color')) $str[$i]['config'][$key]['outer_text'] = 'Цвет шрифта';
+                if (strripos($s[0] ,'background-color')) $str[$i]['config'][$key]['outer_text'] = 'Цвет фона';
+                if (strripos($s[0] , 'border-color')) $str[$i]['config'][$key]['outer_text'] = 'Цвет обводки';
+
                 if (strripos($s[0],'color')){
                     $str[$i]['config'][$key]['editable'] = true;
                     $str[$i]['for_user']=true;
-            }
+                }
                 else{
                     $str[$i]['config'][$key]['editable'] = false;
                 }
@@ -240,6 +283,6 @@ class Editor extends Controller
             }
 
         }
-        $this->response->json($str);
+        $this->response->json($text);
     }
 }
