@@ -39,7 +39,11 @@ $(document).scroll(function (event) {
 ** ANGULAR STARTS HERE...
 =================================================================================================== */
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRoute']);
+
+app.config(function ($routeProvider) {
+    
+});
 
 app.controller('blinkMainController', function($scope, $http) {
     $scope.date = new Date();
