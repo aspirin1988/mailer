@@ -48,6 +48,18 @@ class Editor extends Controller
         $this->response->json($model->GetEditContent($id,$value));
     }
 
+    function SaveConfig($id)
+    {
+        $model = new \app\admin\models\editor();
+        $this->response->json($model->SaveConfig($id));
+    }
+
+    function CancelConfig($id)
+    {
+        $model = new \app\admin\models\editor();
+        $this->response->json($model->CancelConfig($id));
+    }
+
 
 
 
