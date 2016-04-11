@@ -45,6 +45,7 @@
 
     <!-- Angular -->
     <script src="/libs/angular/angular.min.js"></script>
+    <script src="/resources/dist/js/angular-route.min.js"></script>
     <!-- Blink app-angular.js -->
     <script src="/resources/admin/dist/js/app-angular.js"></script>
   </head>
@@ -53,6 +54,9 @@
       <header class="main-header" get-header></header>
       <aside class="main-sidebar" get-sidebar></aside>
 
+      <div class="content-wrapper">
+        <ng-view></ng-view>
+      </div>
 
       <div class="content-wrapper">
         <section class="content-header">
@@ -109,24 +113,14 @@
                 <div class="box-body">
                   <div class="form-group" ng-repeat="(key, val) in defaultCssValues.color.default">
                     <label>Какой-то элемент</label>
-                    <div class="input-group colorpicker-component" id="color-picker-{{key}}">
-                      <input type="text" class="form-control" ng-model="defaultCssValues.color.default[key]" ng-change="console(defaultCssValues.color.default[key])">
-                      <span class="input-group-addon"><i style="background-color: {{defaultCssValues.color.default[key]}};"></i></span>
-                    </div>
-                    <div class="form-group">
-                      <button type="button" id="btn-color-picker-{{key}}" class="btn btn-primary btn-xs">Применить</button>
-                      <script>
-                        $('[id^="color-picker-"]').colorpicker();
-                        $('[id^="btn-color-picker-"]').click(function (event) {
-                          $('[id^="color-picker-"]').change();
-                        });
-                      </script>
+                    <div class="input-group" >
+                      <input type="color" id="colorToUpdate-{{key}}" style="width:200px;" class="form-control" ng-model="defaultCssValues.color.default[key]" ng-change="console(defaultCssValues.color.default[key])">
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 to-fixed-on-scroll">
               <div class="box box-default html-wrapper">
                 <div class="client-website-bg">
                 </div>

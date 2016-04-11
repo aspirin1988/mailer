@@ -21,6 +21,16 @@ if(window.attachEvent) {
     }
 }
 
+$(document).scroll(function (event) {
+    if ($(document).scrollTop() >= 98) {
+        $('.to-fixed-on-scroll').addClass('to-fixed-on-scroll-active');
+    }
+    else {
+        $('.to-fixed-on-scroll').removeClass('to-fixed-on-scroll-active');
+    }
+});
+
+
 /* ==================================================================================================
  ** WEBSITE CAPTURE...
  =================================================================================================== */
@@ -214,8 +224,9 @@ app.controller('blinkMainController', function($scope, $http) {
 
     $scope.changeCss = function() {
         $http({
-            method: 'GET',
-            url: '/admin/editor/GetEditCSS/4'
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/4',
+            data: false
         }).then(function success(response) {
             if(response.data !== false) {
                 $scope.widgetStylesheets = response.data;
@@ -240,8 +251,16 @@ app.controller('blinkMainController', function($scope, $http) {
     $scope.getDefaultCss();
 
     $scope.console = function (object) {
-        console.log(object);
-    }
+        $http({
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/4',
+            data: $scope.defaultCssValues
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+        }, function error(response) {});
+    };
 });
 
 /* ==================================================================================================
