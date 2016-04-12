@@ -237,7 +237,8 @@ class editor extends Models
             $siteData[0]['options_default'] = json_decode($siteData[0]['options_default'], true);
             if($data) {
                 $siteData = array_merge($siteData[0], $data);
-                $this->UpdateConfig($id,$value);
+                $vl['options_default']=$data['options_default'];
+                $this->UpdateConfig($id,$vl);
             }
             else
             {
@@ -321,7 +322,8 @@ class editor extends Models
                 $siteData[0]['text_default'] = json_decode($siteData[0]['text_default'], true);
                 if($data) {
                     $siteData = array_merge($siteData[0], $data);
-                    $this->UpdateConfig($id,$value);
+                    $vl['text_default']=$data['text_default'];
+                    $this->UpdateConfig($id,$vl);
                 }
                 else
                 {
@@ -377,7 +379,8 @@ class editor extends Models
         unset($value['text']);
         $value['options_default']=json_encode($value['options_default']);
         $value['text_default']=json_encode($value['text_default']);
-        $siteData = $this->db->update('site_options',$value,['id'=>$id]);
+        print_r($value);
+        $siteData = $this->db->update('site_options',$value,['site'=>$id]);
         return $siteData;
     }
 

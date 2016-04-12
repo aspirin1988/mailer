@@ -19,6 +19,7 @@ class client extends Models
     public function GetAllClient($page,$user)
     {
         $limit = PAGE_SIZE;
+        if ($user['access']!=999) {
         $countSite = $this->db->count('company',
             [
                 "[>]permission_c" => ["id" => "company"]
@@ -31,22 +32,46 @@ class client extends Models
                 "permission_c.user"=>$user['id'],
             ]
         );
+        }
+        else
+        {
+            $countSite = $this->db->count('company',
+                [
+                    'company.id'
+                ]
+            );
+        }
         $countPage = ceil($countSite / $limit);
         $offset = (int)$page * $limit;
-        $siteData = $this->db->select('company',
-            [
-                "[>]permission_c" => ["id" => "company"]
-            ],
-            [
-                'company.id','name','site','ph_address','date_create','permission_c.permission'
-            ],
+        if ($user['access']!=999) {
+            $siteData = $this->db->select('company',
+                [
+                    "[>]permission_c" => ["id" => "company"]
+                ],
+                [
+                    'company.id', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
+                ],
 
-            [
-                "permission_c.user"=>$user['id'],
-                'LIMIT' => [$offset, $limit],
-                'ORDER' => ['id ASC']
-            ]
-        );
+                [
+                    "permission_c.user" => $user['id'],
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
+        }
+        else
+        {
+            $siteData = $this->db->select('company',
+                [
+                    'company.id', 'name', 'site', 'ph_address', 'date_create'
+                ],
+
+                [
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
+        }
 
         return [
             'data' => $siteData,
@@ -57,7 +82,48 @@ class client extends Models
     public function GetAllSiteClient($id,$page,$user)
     {
         $limit = PAGE_SIZE;
-        if ($this->permission_c($id,$user)) {
+        if ($user['access']!=999) {
+            if ($this->permission_c($id, $user)) {
+                $countSite = $this->db->count('site',
+                    [
+                        "[>]permission_s" => ["id" => "site"]
+                    ],
+                    [
+                        'site.id'
+                    ],
+
+                    [
+                        'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id]
+                    ]
+                );
+                $countPage = ceil($countSite / $limit);
+                $offset = (int)$page * $limit;
+                $siteData = $this->db->select('site',
+                    [
+                        "[>]permission_s" => ["id" => "site"]
+                    ],
+                    [
+                        'site.*'
+                    ],
+
+                    [
+                        'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id],
+                        'LIMIT' => [$offset, $limit],
+                        'ORDER' => ['id ASC']
+                    ]
+                );
+
+
+                return [
+                    'data' => $siteData,
+                    'count' => $countPage
+                ];
+            } else {
+                return false;
+            }
+        }
+        else
+        {
             $countSite = $this->db->count('site',
                 [
                     "[>]permission_s" => ["id" => "site"]
@@ -65,9 +131,8 @@ class client extends Models
                 [
                     'site.id'
                 ],
-
                 [
-                   'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id]
+                    'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id]
                 ]
             );
             $countPage = ceil($countSite / $limit);
@@ -81,7 +146,7 @@ class client extends Models
                 ],
 
                 [
-                    'AND'=>["permission_s.user" => $user['id'],'site.company'=>$id],
+                    'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id],
                     'LIMIT' => [$offset, $limit],
                     'ORDER' => ['id ASC']
                 ]
@@ -92,10 +157,6 @@ class client extends Models
                 'data' => $siteData,
                 'count' => $countPage
             ];
-        }
-        else
-        {
-            return false;
         }
     }
 

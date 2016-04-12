@@ -19,36 +19,61 @@ class callback extends Models
     public function GetAllSite($page,$user)
     {
         $limit = PAGE_SIZE;
-        $countSite = $this->db->count('site',[
-            "[>]permission_s" => ["id" => "site"]
+        if ($user['access']!=999) {
+            $countSite = $this->db->count('site', [
+                "[>]permission_s" => ["id" => "site"]
             ],
-            [
-                'site.id'
-            ],
-            [
-                "permission_s.user"=>$user['id'],
-            ]);
-        $countPage = ceil($countSite / $limit);
-        $offset = (int)$page * $limit;
-        $siteData = $this->db->select('site',
-            [
-                "[>]permission_s" => ["id" => "site"],
-                "[>]company" => ["company" => "id"]
-            ],
-            [
-                'site.*','permission_s.permission','company.name(c_name)'
-            ],
-            [
-                "permission_s.user"=>$user['id'],
-                'LIMIT' => [$offset, $limit],
-                'ORDER' => ['id ASC']
-            ]
-        );
+                [
+                    'site.id'
+                ],
+                [
+                    "permission_s.user" => $user['id'],
+                ]);
+            $countPage = ceil($countSite / $limit);
+            $offset = (int)$page * $limit;
+            $siteData = $this->db->select('site',
+                [
+                    "[>]permission_s" => ["id" => "site"],
+                    "[>]company" => ["company" => "id"]
+                ],
+                [
+                    'site.*', 'permission_s.permission', 'company.name(c_name)'
+                ],
+                [
+                    "permission_s.user" => $user['id'],
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
 
-        return [
-            'data' => $siteData,
-            'count' => $countPage
-        ];
+            return [
+                'data' => $siteData,
+                'count' => $countPage
+            ];
+        }
+        else
+        {
+            $countSite = $this->db->count('site');
+            $countPage = ceil($countSite / $limit);
+            $offset = (int)$page * $limit;
+            $siteData = $this->db->select('site',
+                [
+                    "[>]company" => ["company" => "id"]
+                ],
+                [
+                    'site.*', 'company.name(c_name)'
+                ],
+                [
+                    'LIMIT' => [$offset, $limit],
+                    'ORDER' => ['id ASC']
+                ]
+            );
+
+            return [
+                'data' => $siteData,
+                'count' => $countPage
+            ];
+        }
     }
 
     public function GetSite($id)
