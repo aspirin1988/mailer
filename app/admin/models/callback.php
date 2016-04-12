@@ -188,9 +188,6 @@ class callback extends Models
         ];
     }
 
-
-
-
     /*-----Create-New-CSS-----*/
     function NewCSS ($name)
     {
