@@ -337,15 +337,36 @@ class editor extends Models
 
     function SaveConfig($id)
     {
-        $result = $this->db->query('update site_options set "text"="text_default","options"="options_default" where "site"='.$id)->fetchAll();
-        if($result)
-        {
+        $result = $this->db->query('update site_options set "text"="text_default","options"="options_default" where "site"=' . $id)->fetchAll();
+        if ($result) {
+            $siteData = $this->db->select('site',
+                [
+                    "[>]site_options" => ["id" => "site"],
+                ],
+                [
+                    'site.md5', 'site_options.*'
+                ],
+                [
+                    'site.id' => $id,
+                ]
+            );
+            $siteData[0]['options'] = json_decode($siteData[0]['options'], true);
+            $siteData = $siteData[0];
+            $res = '';
+            $path = PUBLIC_PATH . DS . 'css' . DS . 'cache' . DS . 'blink-sb-' . $siteData['md5'] . 'style.css';
+            foreach ($siteData['options'] as $key => $val) {
+                $res .= $val['class'] . '{';
+                foreach ($val['config'] as $key1 => $val1) {
+                    $res .= $val1['key'] . ":" . $val1['value'] . ';';
+                }
+                $res .= '}';
+            }
+            file_put_contents($path, $res);
+
             return [
                 'data' => true
             ];
-        }
-        else
-        {
+        } else {
             return [
                 'data' => false
             ];
