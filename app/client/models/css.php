@@ -157,38 +157,45 @@ class css extends Models
 
 //            file_get_contents($path);
 
-        if ( $this-> permission($name)['data'])
-        {
-            $siteData = $this->db->select('site',
-                [
-                    "[>]site_options" => ["id" => "site"],
-                ],
-                [
-                    'site_options.*'
-                ],
-                [
-                    'md5' => $name,
-                ]
-            );
+        if ( $this-> permission($name)['data']) {
+            $path = PUBLIC_PATH . DS . 'css' . DS . 'cache' . DS . 'blink-sb-' . $name . 'style.css';
+            if (!file_exists($path)) {
+                $siteData = $this->db->select('site',
+                    [
+                        "[>]site_options" => ["id" => "site"],
+                    ],
+                    [
+                        'site_options.*'
+                    ],
+                    [
+                        'md5' => $name,
+                    ]
+                );
 
-            if ($siteData) {
-                $siteData[0]['options'] = json_decode($siteData[0]['options'], true);
-                $siteData[0]['options_default'] = json_decode($siteData[0]['options_default'], true);
-                    $siteData=$siteData[0];
+                if ($siteData) {
+                    $siteData[0]['options'] = json_decode($siteData[0]['options'], true);
+                    $siteData[0]['options_default'] = json_decode($siteData[0]['options_default'], true);
+                    $siteData = $siteData[0];
                 }
-                $res =''; //file_get_contents($path);
+                $res = ''; //file_get_contents($path);
 
-                foreach ($siteData['options'] as $key=>$val) {
-                    $res.=$val['class'].'{';
-                    foreach($val['config'] as $key1=>$val1)
-                    {
-                        $res.=$val1['key'].":".$val1['value'].';';
+                foreach ($siteData['options'] as $key => $val) {
+                    $res .= $val['class'] . '{';
+                    foreach ($val['config'] as $key1 => $val1) {
+                        $res .= $val1['key'] . ":" . $val1['value'] . ';';
                     }
-                    $res.='}';
+                    $res .= '}';
                 }
-
+                file_put_contents($path,$res);
                 return $res;
+            }
+            else
+            {
+                $res='@import "https'.HOST_NAME . DS . 'css' . DS . 'cache' . DS . 'blink-sb-' . $name . 'style.css"';
+                return $res;
+            }
         }
+
         else
         {
             return false;
