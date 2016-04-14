@@ -34,11 +34,11 @@ class Callback extends Controller
         $this->response->json($model->EditSite($value['id'],$value));
     }
 
-    public function AddSite ()
+    public function AddSite ($company)
     {
         $value = $this->request->rest();
         $model = new \app\admin\models\callback();
-        $this->response->json($model->AddSite($value));
+        $this->response->json($model->AddSite($value,$this->session->getUser()),$company);
     }
 
     public function DelSite ()

@@ -46,7 +46,7 @@ class Client extends Controller
     {
         $value = $this->request->rest();
         $model = new \app\admin\models\client();
-        $this->response->json($model->AddSite($value));
+        $this->response->json($model->AddClient($value,$this->session->getUser() ));
     }
 
 

@@ -111,12 +111,16 @@ class callback extends Models
         ];
     }
 
-    public function AddSite ($value)
+    public function AddSite ($value,$user,$company=0)
     {
         $value['md5']=md5($value['name']);
+        $value['company']=$company;
         $this->NewCSS( $value['md5']);
         $result  = $this->db->insert('site',$value);
-
+        if($result)
+        {
+            $this->CratePermission_s($result,$user);
+        }
         return [
             'data'=>$result
         ];
@@ -125,7 +129,6 @@ class callback extends Models
     public function DelSite ($value)
     {
         $result  = $this->db->delete('site',['id'=>$value['id']]);
-
         return [
             'data'=>$result
         ];
@@ -212,6 +215,20 @@ class callback extends Models
             ]
         );
         return $countSite;
+    }
+
+    /*--Create-Permission-&-Config--*/
+
+    function CratePermission_s($id,$user)
+    {
+        $value =array();
+
+        $value['site']=$id;
+        $value['user']=$user['id'];
+        $value['permission']=3;
+        $result  = $this->db->insert('permission_s',$value);
+
+        return $result;
     }
 
 
