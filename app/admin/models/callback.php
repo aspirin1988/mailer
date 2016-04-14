@@ -115,15 +115,23 @@ class callback extends Models
     {
         $value['md5']=md5($value['name']);
         $value['company']=$company;
-        $this->NewCSS( $value['md5']);
-        $result  = $this->db->insert('site',$value);
-        if($result)
-        {
-            $this->CratePermission_s($result,$user);
+        if (!$this->ChecksSite($value['md5'])) {
+            $result = $this->db->insert('site', $value);
+            if ($result) {
+                $this->CratePermission_s($result, $user);
+                $this->CrateOptions_s($result);
+            }
+            return [
+                'data' => $result
+            ];
         }
-        return [
-            'data'=>$result
-        ];
+        else
+        {
+            return [
+                'data' => false,
+                'error'=> 'Site isset',
+            ];
+        }
     }
 
     public function DelSite ($value)
@@ -184,11 +192,20 @@ class callback extends Models
 
     public function AddGateway ($value)
     {
-        $result  = $this->db->insert('email',$value);
+        if (!$this->ChecksGateway($value['login'])) {
+            $result = $this->db->insert('email', $value);
 
-        return [
-            'data'=>$result
-        ];
+            return [
+                'data' => $result
+            ];
+        }
+        else
+        {
+            return [
+                'data' => false,
+                'error'=> 'Gateway isset',
+            ];
+        }
     }
 
     /*-----Create-New-CSS-----*/
@@ -198,6 +215,8 @@ class callback extends Models
         $data = str_replace('{host}', 'http' . HOST_NAME, $data);
         file_put_contents($path = PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS .$name.'blink-sb-style.css',$data);
     }
+
+    /*--Checks--*/
 
     function permission_s ($id,$user)
     {
@@ -217,6 +236,33 @@ class callback extends Models
         return $countSite;
     }
 
+    function ChecksSite($name)
+    {
+        $count=$this->db->count('site',['site.md5'=>$name]);
+        if ($count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function ChecksGateway($name)
+    {
+        $count=$this->db->count('email',['email.login'=>$name]);
+        if ($count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
     /*--Create-Permission-&-Config--*/
 
     function CratePermission_s($id,$user)
@@ -228,6 +274,14 @@ class callback extends Models
         $value['permission']=3;
         $result  = $this->db->insert('permission_s',$value);
 
+        return $result;
+    }
+
+    function CrateOptions_s($id)
+    {
+        $value =array();
+        $value['site']=$id;
+        $result  = $this->db->insert('site_options',$value);
         return $result;
     }
 
