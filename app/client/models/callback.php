@@ -157,6 +157,49 @@ class callback extends Models
 
     }
 
+    public function SendFormTo ($rest,$name)
+    {
+        $siteData = $this->db->select('site', [
+            "[>]email" => ["email" => "id"]
+        ],
+            [
+                'site.*',
+                'email.login',
+                'email.password',
+                'email.port',
+                'email.host',
+            ],
+            [
+                'md5'=>$name
+            ]
+        );
+        //$this->save_message($rest);
+        if ($siteData) {
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html'); //$this->db->insert('email_massage',$rest);
+            $tr='';
+            foreach ($rest as $key=>$value) {
+                $str=str_replace('{'.$key.'}',$value,$str);
+
+            }
+            //$str=str_replace('{tr}',$tr,$str);
+            $result =$this->send_smtp_html($str,[$rest['email']], $rest['title'], $siteData[0],[]);
+            if ($result[0]['code']){
+
+                $result[0]['text']='Ваше сообщение отправленно,<br>наши специалисты свяжутся с вами<br> в ближайшее время!';
+            }
+            else
+            {
+                $result[0]['text']='Ваше сообщение не было отправленно!';
+            }
+            return $result;
+        }
+        else
+        {
+            return [];
+        }
+
+    }
+
     function send_smtp_html($str,$email,$subject,$config,$image){
         $mail = new \library\mailer\PHPMailer();
         $to=array();

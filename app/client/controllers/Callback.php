@@ -50,6 +50,16 @@ class Callback extends Controller
         $this->response->json($model->SendForm($rest,$name));
     }
 
+    public function SendFormTo($value)
+    {
+        $name=$this->get_name();
+        $rest='';
+        //$rest=$_POST;  //= $this->request;
+        $rest=$value;
+        $model = new \app\client\models\callback();
+        return $model->SendFormTo($rest,$name);
+    }
+
     function get_name()
     {
         $name = explode('//',$_SERVER['HTTP_REFERER']);
