@@ -202,7 +202,9 @@ class client extends Models
 
     public function AddClient ($value,$user)
     {
-        $result  = $this->db->insert('company',$value);
+        if ($result  = $this->db->insert('company',$value)) {
+          $this->CratePermission_s($result,$user);
+        }
 
         return [
             'data'=>$result
@@ -227,6 +229,18 @@ class client extends Models
             ]
         );
         return $countSite;
+    }
+
+    function CratePermission_s($id,$user)
+    {
+        $value =array();
+
+        $value['company']=$id;
+        $value['user']=$user['id'];
+        $value['permission']=3;
+        $result  = $this->db->insert('permission_c',$value);
+
+        return $result;
     }
 
 }

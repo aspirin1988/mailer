@@ -14,16 +14,17 @@ use core\Controller;
 class Registration extends Controller
 {
 
-    public function Reg($name,$login,$email)
+    public function Reg($email)
     {
         $model = new \app\auth\models\registration();
-        $this->response->json($model->Reg($name,$login,$email));
+        $this->response->json($model->Reg($email));
 
     }
-    public function Confirm($act_string,$ps1,$ps2)
+    public function Confirm()
     {
         $model = new \app\auth\models\registration();
-        $this->response->json($model->Confirm($act_string,$ps1,$ps2));
+        $value=$this->request->rest();
+        $this->response->json($model->Confirm($value));
 
     }
 

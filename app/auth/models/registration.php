@@ -13,51 +13,43 @@ use core\Models;
 
 class registration extends Models
 {
-    function Reg($name,$login,$email)
+    function Reg($email)
     {
         $mail_res=[];
         $mail= new \app\client\controllers\Callback();
-        $new_user['first_name']= $name;
-        $new_user['login_crm']= $login;
-        $new_user['password_crm']=password_hash(123456,PASSWORD_DEFAULT);
-        $str=$name.$new_user['password_crm'];
-        $new_user['activation_string']=md5($str).time();
-        $new_user['email']=json_encode([$email]);
-        $this->db->insert('users',$new_user);
-            $value['name'] = $name;
-            $value['login'] = $login;
-            $value['email'] = $email;
-            $value['url'] = 'https' . HOST_NAME . '/auth/registration/confirm/' . $new_user['activation_string'];
-            $mail_res=$mail->SendFormTo($value);
+//        $new_user['first_name']= $name;
+//        $new_user['login_crm']= $login;
+//        $new_user['password_crm']=password_hash(123456,PASSWORD_DEFAULT);
+//        $str=$name.$new_user['password_crm'];
+//        $new_user['activation_string']=md5($str).time();
+//
+//            $value['name'] = $name;
+//            $value['login'] = $login;
+        $value['email'] = $email;
+        $value['url'] = mt_rand(10000, 99999);
+        $new_user['email']=$email;
+        $new_user['code']=$value['url'];
+        $this->db->insert('temp_user',$new_user);
+        $mail_res=$mail->SendFormTo($value);
         return ['mail'=>$mail_res];
     }
 
-    function Confirm($act_string,$ps1,$ps2)
+    function Confirm($value)
     {
+
         $result=[];
-        if (isset($ps1)&&isset($ps2)&&($ps1==$ps2)){
-            $result = $this->db->update('users',
-                [
-                    'password_crm'=>password_hash($ps1,PASSWORD_DEFAULT),
-                ],
-                [
-                    'users.activation_string' => $act_string
-                ]
-            );
-        }
-        else {
-            $result = $this->db->select('users',
-                [
-                    'users.id', 'users.first_name', 'users.last_name'
-                ],
-                [
-                    'users.activation_string' => $act_string
-                ]
-            );
-            if (!$result) {
-                $result = ['error' => 1, 'message' => 'invalid activation string'];
+        if ($this->db->count('temp_user',['temp_user.id'],['temp_user.code'=>$value['confirmCode']])) {
+            $this->db->delete('temp_user',['temp_user.code'=>$value['confirmCode']]);
+            $val['first_name']=$value['data']['first_name'];
+            $val['login_crm']=$value['data']['email'];
+            $val['email']=json_encode([$value['data']['email']]);
+            $val['password_crm']=password_hash($value['data']['password'], PASSWORD_DEFAULT);
+            $this->db->insert('users',$val);
+            return true;
             }
+        else
+        {
+            return false;
         }
-    return $result;
     }
 }
