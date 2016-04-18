@@ -207,7 +207,7 @@ class client extends Models
         }
 
         return [
-            'data'=>$result
+            'data'=>$value
         ];
     }
 
