@@ -220,6 +220,26 @@ class client extends Models
         ];
     }
 
+    public function SearchClient ($value)
+    {
+        /*$result  = $this->db->select('company',
+            [
+                "[>]site" => ["id" => "company"]
+            ],
+            [
+                'company.id', 'company.name', 'site.id(site)', 'company.ph_address', 'company.date_create',
+            ],
+            [
+                "OR"=>['company.name[~]'=>$value,'#site.name[~]'=>$value]
+            ]
+            );*/
+        $result = $this->db->query('SELECT "company"."id","company"."name","site"."id" AS "site","company"."ph_address","company"."date_create" FROM "company" LEFT JOIN "site" ON "company"."id" = "site"."company" WHERE upper("company"."name") LIKE upper(\'%'.$value.'%\') OR upper("site"."name") LIKE upper(\'%'.$value.'%\')')->fetchAll(3);
+
+        return [
+            'data'=>$result
+        ];
+    }
+
 
     /*---Проверка доступа к клиенту---*/
     function permission_c ($id,$user)

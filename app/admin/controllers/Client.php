@@ -55,6 +55,12 @@ class Client extends Controller
         $this->response->json($model->DelClient($id));
     }
 
+    public function SearchClient($value)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->SearchClient($value));
+    }
+
 
 
 
