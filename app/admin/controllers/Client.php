@@ -49,6 +49,12 @@ class Client extends Controller
         $this->response->json($model->AddClient($value,$this->session->getUser() ));
     }
 
+    public function DelClient ($id)
+    {
+        $model = new \app\admin\models\client();
+        $this->response->json($model->DelClient($id));
+    }
+
 
 
 

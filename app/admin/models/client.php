@@ -211,6 +211,15 @@ class client extends Models
         ];
     }
 
+    public function DelClient ($id)
+    {
+        $result  = $this->db->delete('company',['id'=>$id]);
+        $this->db->delete('permission_c',['company'=>$id]);
+        return [
+            'data'=>$result
+        ];
+    }
+
 
     /*---Проверка доступа к клиенту---*/
     function permission_c ($id,$user)

@@ -38,7 +38,7 @@ class Callback extends Controller
     {
         $value = $this->request->rest();
         $model = new \app\admin\models\callback();
-        $this->response->json($model->AddSite($value,$this->session->getUser()),$company);
+        $this->response->json($model->AddSite($value,$this->session->getUser(),$company));
     }
 
     public function DelSite ()
