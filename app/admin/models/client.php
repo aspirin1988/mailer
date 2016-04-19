@@ -233,7 +233,7 @@ class client extends Models
                 "OR"=>['company.name[~]'=>$value,'#site.name[~]'=>$value]
             ]
             );*/
-        $result = $this->db->query('SELECT "company"."id","company"."name","site"."id" AS "site","company"."ph_address","company"."date_create" FROM "company" LEFT JOIN "site" ON "company"."id" = "site"."company" WHERE upper("company"."name") LIKE upper(\'%'.$value.'%\') OR upper("site"."name") LIKE upper(\'%'.$value.'%\')')->fetchAll(3);
+        $result = $this->db->query('SELECT DISTINCT "company"."id","company"."name" ,"company"."ph_address","company"."date_create" FROM "company" LEFT JOIN "site" ON "company"."id" = "site"."company" WHERE upper("company"."name") LIKE upper(\'%'.$value.'%\') OR upper("site"."name") LIKE upper(\'%'.$value.'%\') order by "company"."id"')->fetchAll(2);
 
         return [
             'data'=>$result
