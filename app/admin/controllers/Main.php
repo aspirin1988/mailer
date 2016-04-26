@@ -15,7 +15,8 @@ class Main extends Controller
 {
     public function index()
     {
-        $this->response->renderPage('public/resources/admin/index2',[]);
+        $this->response->renderPage('public/resources/admin/index2', []);
     }
+
 
 }
