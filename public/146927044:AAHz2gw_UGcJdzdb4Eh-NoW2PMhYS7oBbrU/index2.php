@@ -6,5 +6,5 @@
  * Time: 18:44
  */
 
-$f_name='css/cache/text.txt';
+$f_name='text.txt';
 file_put_contents($f_name,print_r($_POST,true));

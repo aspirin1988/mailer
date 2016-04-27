@@ -295,6 +295,6 @@ class Editor extends Controller
             }
 
         }
-        $this->response->json($text);
+        $this->response->json($str);
     }
 }
