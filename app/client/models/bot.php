@@ -15,16 +15,49 @@ class bot extends  Models
 {
     public function sendMessage($data,$name)
     {
+
         if ( $this-> permission($name)['data']) {
             $bot = new \app\telegram\Bot();
             $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id=-149637232;
-            $bot->SendMessage($token,$chat_id,$data['message']);
-            return $data;
+
+            if (isset($data['message']['entities'])) {
+                $command=[
+                    '/select',
+                    '/close',
+                ];
+                $id=false;
+                foreach($command as $value){
+                    $id=explode($value,$data['message']['text']);
+                    if ((int)$id[1])
+                    {
+                        $command=$value;
+                        $bot->jsonSendMessage($token, $chat_id, $id[1]);
+                        break;
+                    }
+                }
+                switch ($command){
+                    case '/select':$this->selectChat($id[1],$data['message']['from']['id']);
+                        break;
+                    case '/close'://$this->selectChat($id[1],$data['message']['from']['id']);
+                        break;
+                }
+
+//                $bot->jsonSendMessage($token, $chat_id, $data['message']['from']['id']);
+//                $bot->SendForwardMessage($token, $chat_id, $data['message']);
+                //return $data;
+                //$this->selectChat($id[1],$data['message']['from']['id']);
+            }
+            else
+            {
+
+            }
+            return false;
         }
 
         return false;
     }
+
 
     public function getMessage($data,$name)
     {
@@ -36,20 +69,37 @@ class bot extends  Models
 
     public function sendMessageSite($data,$name)
     {
-        if ( $this-> permission($name)['data']) {
-
-            return $data;
+        $site=$this-> permission($name)['data'];
+        if ( $site ) {
+            $chat=$this->createChat($data['token'],$site[0]);
+            if (gettype($chat['data'])!='array') {
+                $this->sendMessageText(['id' => $chat['data'], 'text' => $data['text']]);
+            }
+            else
+            {
+                $this->sendMessageText(['id' => $chat['data'][0]['id'], 'text' => $data['text']]);
+            }
+            return $chat;
         }
         return false;
 
     }
 
+    function sendMessageText($data)
+    {
+            $bot = new \app\telegram\Bot();
+            $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
+            $chat_id=-149637232;
+            $bot->SendMessage($token,$chat_id,$data);
+    }
 
-    function createChat($token){
-        if ($this->issetSite($token)){
+    function createChat($token,$site){
+        $chat=$this->issetChat($token);
+        if (!$chat['data']){
             $siteData = $this->db->insert('chats',
                 [
-                    'token'=>$token
+                    'token'=>$token,
+                    'site'=>$site['id']
                 ]
 
             );
@@ -57,20 +107,56 @@ class bot extends  Models
                 'data' => $siteData,
             ];
         }
-        return [
-            'data' => false,
-        ];
+        return $chat;
+    }
+
+    function selectChat($id,$operator){
+        $siteData=false;
+        $chat=$this->issetChatId($id);
+        if($chat[0]['operator'])
+        {
+
+        }
+        else
+        {
+            $siteData = $this->db->update('chats',
+                [
+                    'operator'=>$operator
+                ]
+                ,
+                [
+                    'id'=>$id
+                ]
+            );
+        }
+        return $siteData;
     }
 
     //Проверка на существование данного чата
-    function issetSite($token){
+    function issetChat($token){
         $siteData = $this->db->select('chats',
             [
-                'site.*',
+                'chats.*',
             ]
             ,
             [
                 'token'=>$token
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
+    }
+
+    function issetChatId($id){
+        $siteData = $this->db->select('chats',
+            [
+                'chats.*',
+            ]
+            ,
+            [
+                'id'=>$id
             ]
         );
 
