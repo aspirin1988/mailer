@@ -20,7 +20,7 @@ class bot extends  Models
             $bot = new \app\telegram\Bot();
             $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id=-149637232;
-
+            $this->SaveMessage(5,$data['message']['from']['id'],json_encode($data));
             if (isset($data['message']['entities'])) {
                 $command=[
                     '/select',
@@ -69,15 +69,37 @@ class bot extends  Models
 
     public function sendMessageSite($data,$name)
     {
+    $patern=[
+        'update_id' => '',
+        'message' =>[
+            'message_id' => '',
+            'from' => [
+                'id' => '',
+                'first_name' => '',
+                'last_name' => '',
+                'username' => ''
+                    ],
+            'chat' => [
+                'id' => '',
+                'title' => '',
+                'type' => '',
+                        ],
+            'date' => time(),
+            'text' => $data['text'],
+        ],
+            ];
         $site=$this-> permission($name)['data'];
         if ( $site ) {
             $chat=$this->createChat($data['token'],$site[0]);
-            if (gettype($chat['data'])!='array') {
+            if (gettype($chat['data'])!='array'&&$chat['data'][0]['operator']!='') {
                 $this->sendMessageText(['id' => $chat['data'], 'text' => $data['text']]);
+                $this->SaveMessage($chat['data'],$data['token'],json_encode($patern));
+
             }
             else
             {
-                $this->sendMessageText(['id' => $chat['data'][0]['id'], 'text' => $data['text']]);
+                $this->sendMessageText(['id' => $chat['data'][0]['id'], 'text' => $data['text']],$chat['data'][0]['operator']);
+                $this->SaveMessage($chat['data'][0]['id'],$data['token'],json_encode($patern));
             }
             return $chat;
         }
@@ -85,11 +107,11 @@ class bot extends  Models
 
     }
 
-    function sendMessageText($data)
+    function sendMessageText($data,$operator=-149637232)
     {
             $bot = new \app\telegram\Bot();
             $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
-            $chat_id=-149637232;
+            $chat_id=$operator;
             $bot->SendMessage($token,$chat_id,$data);
     }
 
@@ -133,9 +155,12 @@ class bot extends  Models
     }
 
     function deleteChat($id,$operator){
-            $siteData = $this->db->delete('chats',
+            $siteData = $this->db->update('chats',
                 [
-                    'id' => $id
+                    'operator' => ''
+                ],
+                [
+                    'id'=>$id
                 ]
             );
         return $siteData;
@@ -174,6 +199,14 @@ class bot extends  Models
         ];
     }
 
+    function SaveMessage($id_chat,$from,$message){
+        $data=[
+            'id_chat'=>$id_chat,
+            'from'=>$from,
+            'data'=>$message,
+        ];
+    $this->db->insert('chat_data',$data);
+    }
 
 
     //Проверка на существование данного сайта и истечение срока его подписки
