@@ -32,14 +32,14 @@ class bot extends  Models
                     if ((int)$id[1])
                     {
                         $command=$value;
-                        $bot->jsonSendMessage($token, $chat_id, $id[1]);
+                        $bot->jsonSendMessage($token, $chat_id, $id[1].' '.$data['message']['from']['id']);
                         break;
                     }
                 }
                 switch ($command){
                     case '/select':$this->selectChat($id[1],$data['message']['from']['id']);
                         break;
-                    case '/close'://$this->selectChat($id[1],$data['message']['from']['id']);
+                    case '/close':$this->deleteChat($id[1],$data['message']['from']['id']);
                         break;
                 }
 
@@ -129,6 +129,15 @@ class bot extends  Models
                 ]
             );
         }
+        return $siteData;
+    }
+
+    function deleteChat($id,$operator){
+            $siteData = $this->db->delete('chats',
+                [
+                    'id' => $id
+                ]
+            );
         return $siteData;
     }
 
