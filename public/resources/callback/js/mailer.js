@@ -1,16 +1,20 @@
-
 function BMModule() {}
-BMModule.prototype.submitForm = function(e, t) {
-    for (var o = this, n = document.getElementsByClassName("blink-mailer"), r = 0; r < n.length; r++) n[r].addEventListener("submit", function(n) {
-        n.preventDefault();
-        var r = e.target;
-        o.post(r, "SendForm", function(n) {
-            if (n) {
-                var l = JSON.parse(n);
-                "1" === l[0].code ? (o.clearForm(r), e(l[0].text)) : (t(l[0].text))
-            }
-        })
-    })
+
+BMModule.prototype.submitForm = function(ea, t) {
+    var o = this;
+    for (var n = document.getElementsByClassName("blink-mailer"), r = 0; r < n.length; r++) {
+
+        n[r].addEventListener("submit", function(e) {
+            e.preventDefault();
+            var r = e.target;
+            o.post(r, "SendForm", function(n) {
+                if (n) {
+                    var l = JSON.parse(n);
+                    "1" === l[0].code ? (o.clearForm(r), ea(l[0].text)) : (t(l[0].text))
+                }
+            });
+        });
+    }
 };
 
 BMModule.prototype.clearForm = function(e) {
@@ -25,9 +29,12 @@ BMModule.prototype.post = function(e, t, o) {
     }
     n = n.slice(0, -1);
     var c = new XMLHttpRequest;
-    c.open("POST", "https://callback.blink.kz/client/callback/" + t, !0), c.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), c.send(n), c.onreadystatechange = function() {
-        4 == this.readyState && o(this.responseText)
-    }
+    c.open("POST", "https://callback.blink.kz/client/callback/" + t, !0);
+    c.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    c.send(n);
+    c.onreadystatechange = function() {
+        if(4 == this.readyState) { o(this.responseText); }
+    };
 };
 
 

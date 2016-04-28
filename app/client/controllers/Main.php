@@ -16,9 +16,9 @@ class Main extends Controller
 
     public function bot()
     {
-        $f_name=PUBLIC_PATH.'/css/cache/text.txt';
-        file_put_contents($f_name,print_r($_POST,true));
-        $token='146927044:AHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
+        //$f_name=PUBLIC_PATH.'/css/cache/text.txt';
+        //file_put_contents($f_name,print_r($_POST,true));
+        $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
         //$last=$this->getLastMessage($token);
         //echo json_encode($last);
         $this->SendMessage($token,169105432,'blabalbal');
@@ -31,6 +31,8 @@ class Main extends Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "$Peremenaya");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_exec($ch);
         curl_close($ch);
@@ -42,6 +44,8 @@ class Main extends Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "$Peremenaya");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         $message=curl_exec($ch);
         $message=json_decode($message,true);
