@@ -91,8 +91,8 @@ class bot extends  Models
         $site=$this-> permission($name)['data'];
         if ( $site ) {
             $chat=$this->createChat($data['token'],$site[0]);
-            if (gettype($chat['data'])!='array'&&$chat['data'][0]['operator']!='') {
-                $this->sendMessageText(['id' => $chat['data'], 'text' => $data['text']]);
+            if (gettype($chat['data'])!='array'&&$chat['data'][0]['operator']=='') {
+                $this->sendMessageText(['id' => $chat['data'], 'text' => $data['text']],$command);
                 $this->SaveMessage($chat['data'],$data['token'],json_encode($patern));
 
             }
@@ -107,12 +107,12 @@ class bot extends  Models
 
     }
 
-    function sendMessageText($data,$operator=-149637232)
+    function sendMessageText($data,$operator=-149637232,$command='')
     {
             $bot = new \app\telegram\Bot();
             $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id=$operator;
-            $bot->SendMessage($token,$chat_id,$data);
+            $bot->SendMessage($token,$chat_id,$data,$command);
     }
 
     function createChat($token,$site){

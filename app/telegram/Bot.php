@@ -26,9 +26,16 @@ class Bot
         //$this->jsonSendMessage($token,$chat_id,$message);
     }
 
-    public function SendMessage($token,$chat_id,$message)
+    public function SendMessage($token,$chat_id,$message,$command)
     {
-        $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text=/select{$message['id']}  {$message['text']}";
+        if ($command){
+            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$command}{$message['id']}  {$message['text']}";
+
+        }
+        else
+        {
+            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']}<br>{$message['text']}";
+        }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
