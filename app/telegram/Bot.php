@@ -34,7 +34,22 @@ class Bot
         }
         else
         {
-            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']}<br>{$message['text']}";
+            $replyMarkup = array(
+                'keyboard' => [
+                    ['7', '8', '9'],
+                    ['4', '5', '6'],
+                    ['1', '2', '3'],
+                    ['0']
+                ]
+            );
+            $encodedMarkup = json_encode($replyMarkup);
+            $content = array(
+                'chat_id' => 169105432,
+                'reply_markup' => $encodedMarkup,
+                'text' => "Test"
+            );
+            $replyMarkup=json_encode($replyMarkup);
+            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']} {$message['text']}&reply_markup={$replyMarkup}";
         }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");

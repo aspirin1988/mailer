@@ -112,6 +112,7 @@ class bot extends  Models
             $bot = new \app\telegram\Bot();
             $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id=$operator;
+
             $bot->SendMessage($token,$chat_id,$data,$command);
     }
 
