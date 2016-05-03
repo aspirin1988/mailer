@@ -26,15 +26,12 @@ class Bot
         //$this->jsonSendMessage($token,$chat_id,$message);
     }
 
-    public function SendMessage($token,$chat_id,$message,$command)
+    public function SendMessage1($token,$chat_id,$message)
     {
-        if ($command){
-            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$command}{$message['id']}  {$message['text']}";
 
-        }
-        else
-        {
-            $replyMarkup = array(
+            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['text']}";
+            file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$Peremenaya);
+            /*$replyMarkup = array(
                 'keyboard' => [
                     ['7', '8', '9'],
                     ['4', '5', '6'],
@@ -49,8 +46,7 @@ class Bot
                 'text' => "Test"
             );
             $replyMarkup=json_encode($replyMarkup);
-            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']} {$message['text']}&reply_markup={$replyMarkup}";
-        }
+            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']} {$message['text']}&reply_markup={$replyMarkup}";*/
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -72,6 +68,33 @@ class Bot
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_exec($ch);
         curl_close($ch);
+    }
+
+    public function SendMessage($token,$chat_id=-149637232,$message,$keyboard=false)
+    {
+        $url = "https://api.telegram.org/bot{$token}/sendMessage";
+        if ($keyboard) {
+            $replyMarkup = ['keyboard' => [$keyboard],
+                'resize_keyboard'=>true,
+                'selective'=>true,
+            ];
+            $encodedMarkup = json_encode($replyMarkup);
+        }
+        $content = array(
+            'chat_id' => $chat_id,
+            'text' => $message['text']
+        );
+        if ($keyboard){$content['reply_markup'] = $encodedMarkup;}
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($content));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //fix http://unitstep.net/blog/2009/05/05/using-curl-in-php-to-access-https-ssltls-protected-sites/
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_exec ($ch);
+        curl_close ($ch);
     }
 
 }
