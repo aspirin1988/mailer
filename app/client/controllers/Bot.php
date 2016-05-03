@@ -57,3 +57,4 @@ class Bot extends Controller
         return json_decode(file_get_contents('php://input'),true);
     }
 }
+

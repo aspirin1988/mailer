@@ -29,8 +29,7 @@ class Bot
     public function SendMessage1($token,$chat_id,$message)
     {
 
-            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['text']}";
-            file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$Peremenaya);
+
             /*$replyMarkup = array(
                 'keyboard' => [
                     ['7', '8', '9'],
@@ -47,6 +46,8 @@ class Bot
             );
             $replyMarkup=json_encode($replyMarkup);
             $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']} {$message['text']}&reply_markup={$replyMarkup}";*/
+        $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['text']}";
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$Peremenaya);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -73,18 +74,17 @@ class Bot
     public function SendMessage($token,$chat_id=-149637232,$message,$keyboard=false)
     {
         $url = "https://api.telegram.org/bot{$token}/sendMessage";
-        if ($keyboard) {
-            $replyMarkup = ['keyboard' => [$keyboard],
-                'resize_keyboard'=>true,
-                'selective'=>true,
-            ];
-            $encodedMarkup = json_encode($replyMarkup);
-        }
         $content = array(
             'chat_id' => $chat_id,
             'text' => $message['text']
         );
-        if ($keyboard){$content['reply_markup'] = $encodedMarkup;}
+        if ($keyboard){
+            $replyMarkup = ['keyboard' => $keyboard,
+                'resize_keyboard'=>true,
+                'selective'=>true,
+            ];
+            $encodedMarkup = json_encode($replyMarkup);
+            $content['reply_markup'] = $encodedMarkup;}
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $url);
