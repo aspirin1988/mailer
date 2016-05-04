@@ -19,7 +19,6 @@ class template extends Models
         if ($site['data']) {
             $text =$this->getOptions($site['data'][0]['id']);
             $text=json_decode($text['data'][0]['text'],true);
-            print_r($text);
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
             foreach($text as $key => $value)

@@ -42,11 +42,12 @@ class bot extends  Models
                     break;
                 }
                 $argument = explode($key, $data['message']['text']);
+                file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',(int)$argument);
                 if (isset($argument[1]))
                 {
                     $command=$key;
                     $argument=settype($argument[1],$value);
-                    file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$argument);
+
 
                 }
                 /*if ((int)$id[1]) {
@@ -94,9 +95,22 @@ class bot extends  Models
                     ], $this->CreateKeyboard($command));
                     break;
                 case '🔁Передать':
-                    $argument=(int)$argument;
-                    $bot->SendMessage($token, $chat_id, ['text' =>$argument
-                    ], $this->CreateKeyboard($command));
+
+                    if ($argument<>1){
+                        $bot->SendMessage($token, $chat_id, ['text' =>$argument
+                        ], $this->CreateKeyboard($command));
+                        $current_chat=$this->GetChatList($chat_id);
+                        if (isset($current_chat['current_chat']))
+                        {
+                            $current_chat=$current_chat['current_chat'];
+                            $this->TransferChat($current_chat['id'],$argument);
+                        }
+                    }
+                    else{
+                        $bot->SendMessage($token, $chat_id, ['text' =>$argument
+                        ], $this->CreateKeyboard($command));
+                    }
+
                     break;
 
                 case '/select':
@@ -187,6 +201,13 @@ class bot extends  Models
                     ['👁Список чатов','Ⓜ️Тебю'],
                     ['🔚Закрыть чат','Ⓜ️Тебю'],
                     ['Ⓜ️Меню']
+                ];
+                break;
+            case '🔁Передать':
+                return [
+                    [
+                        'Ⓜ️Меню'
+                    ]
                 ];
                 break;
             default:
