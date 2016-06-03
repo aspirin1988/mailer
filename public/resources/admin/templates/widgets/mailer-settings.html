@@ -38,11 +38,10 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab_1" onclick="return false;" data-toggle="tab" aria-expanded="true">Продвинутое</a></li>
                                 <li class=""><a href="#tab_2" onclick="return false;" data-toggle="tab" aria-expanded="false">Обычное</a></li>
-                                <li class=""><a href="#tab_3" onclick="return false;" data-toggle="tab" aria-expanded="false">Текст</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1">
-                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings.options_default">
+                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings">
                                         <div class="box-header with-border">
                                             <h4 class="box-title">{{val.class}}</h4>
                                             <div class="box-tools pull-right">
@@ -90,10 +89,10 @@
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2">
-                                    <div class="box box-info" ng-repeat="cssInfo in mailerSettings.options_default" ng-if="cssInfo.for_user===true" >
-                                        {{cssInfo}}
+                                    <div class="box box-info" ng-repeat="cssInfo in mailerSettings" ng-if="cssInfo.for_user===true" >
                                         <div class="box-header with-border">
-                                            <h4 class="box-title">{{cssInfo.outer_text}}</h4>
+                                            {{cssInfo}}
+                                            <h4 class="box-title">{{cssInfo.class}}</h4>
                                             <div class="box-tools pull-right">
                                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                                 </button>
@@ -104,31 +103,7 @@
                                                 <div class="form-group">
                                                     <label>{{styleProp.outer_text}}</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" ng-model="styleProp.value" ng-change="console(cssInfo.style)">
-                                                        <span class="input-group-addon" colorpicker="hex" ng-model="styleProp.value" style="cursor: pointer; color: {{styleProp.value}}"><i class="fa fa-square"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane" id="tab_3">
-                                    <div class="box box-info" ng-repeat="(key, val)  in mailerSettings.text_default">
-
-                                        <div class="box-header with-border">
-                                            <h4 class="box-title">{{key}}</h4>
-                                            <div class="box-tools pull-right">
-                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="box-body">
-                                            <div ng-repeat="(key1,val1) in val" >
-                                                <div class="form-group">
-                                                    <label>{{key1}}</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" ng-model="val1" ng-change="console(cssInfo.style)">
+                                                        <input type="text" class="form-control input-sm" ng-model="styleProp.value" ng-change="console(cssInfo.value)">
                                                         <span class="input-group-addon" colorpicker="hex" ng-model="styleProp.value" style="cursor: pointer; color: {{styleProp.value}}"><i class="fa fa-square"></i></span>
                                                     </div>
                                                 </div>

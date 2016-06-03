@@ -334,7 +334,8 @@ app.controller('blinkMainController', function($scope, $http, authUser) {
 
     $scope.changeCss();
 
-    $scope.console = function (object) {
+    $scope.console = function (obj) {
+        console.info($scope.mailerSettings);
         $http({
             method: 'POST',
             url: '/admin/editor/GetEditCSS/4',
