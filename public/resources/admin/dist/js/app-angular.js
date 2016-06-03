@@ -1,7 +1,6 @@
 /* ==================================================================================================
  ** LOADING PAGE EVENT...
  =================================================================================================== */
-
 var loadTemplate = function () {
     document.getElementById('main-container').style.visibility = 'visible';
 };
@@ -148,9 +147,9 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
     });
 });
 
-app.controller('mailerCtrl', function ($scope, $routeParams, mailerFactory) {
+app.controller('mailerCtrl', function ($scope, $http, $routeParams, mailerFactory) {
     mailerFactory.getSettings($routeParams.siteId, function (data) {
-        $scope.mailerSettings = data.options_default;
+        $scope.mailerSettings = data;
     });
 
     $scope.addingNewItem = false;
@@ -171,10 +170,61 @@ app.controller('mailerCtrl', function ($scope, $routeParams, mailerFactory) {
 
     $scope.removeProperty = function(keyObject, keyStyle) {
         $scope.mailerSettings[keyObject].style.splice(keyStyle, 1);
-    }
+    };
+
+    $scope.console = function (obj) {
+        $http({
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/'+$routeParams.siteId,
+            data: $scope.mailerSettings
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+        }, function error(response) {});
+    };
+
+    $scope.saveSettings = function (obj) {
+        $http({
+            method: 'GET',
+            url: '/admin/editor/SaveConfig/'+$routeParams.siteId
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+        }, function error(response) {});
+    };
+
+    $scope.cancelSettings = function (obj) {
+        $http({
+            method: 'GET',
+            url: '/admin/editor/CancelConfig/'+$routeParams.siteId
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+        }, function error(response) {});
+    };
+
+    $scope.changeCss = function() {
+        console.log($routeParams);
+        $http({
+            method: 'POST',
+            url: '/admin/editor/GetEditCSS/'+$routeParams.siteId,
+            data: false
+        }).then(function success(response) {
+            if(response.data !== false) {
+                $scope.widgetStylesheets = response.data;
+            }
+
+        }, function error(response) {});
+    };
+
+    $scope.changeCss();
+
 });
 
-app.controller('blinkMainController', function($scope, $http, authUser) {
+app.controller('blinkMainController', function($scope, $http, authUser, $routeParams) {
     $scope.date = new Date();
 
     authUser.getAuthUserInfo(function (data) {
@@ -320,9 +370,10 @@ app.controller('blinkMainController', function($scope, $http, authUser) {
     $scope.defaultCssValues = {};
 
     $scope.changeCss = function() {
+        console.log($routeParams);
         $http({
             method: 'POST',
-            url: '/admin/editor/GetEditCSS/4',
+            url: '/admin/editor/GetEditCSS/'+$routeParams.siteId,
             data: false
         }).then(function success(response) {
             if(response.data !== false) {
@@ -334,18 +385,6 @@ app.controller('blinkMainController', function($scope, $http, authUser) {
 
     $scope.changeCss();
 
-    $scope.console = function (obj) {
-        console.info($scope.mailerSettings);
-        $http({
-            method: 'POST',
-            url: '/admin/editor/GetEditCSS/4',
-            data: $scope.defaultCssValues
-        }).then(function success(response) {
-            if(response.data !== false) {
-                $scope.widgetStylesheets = response.data;
-            }
-        }, function error(response) {});
-    };
 });
 
 /* ==================================================================================================

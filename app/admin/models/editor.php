@@ -219,7 +219,6 @@ class editor extends Models
         ];*/
 
         $data=$value;
-
         $siteData = $this->db->select('site_options',
             [
                 "[>]template_site" => ["template" => "id"]
@@ -238,6 +237,7 @@ class editor extends Models
             if($data) {
                 $siteData = array_merge($siteData[0], $data);
                 $vl['options_default']=$data['options_default'];
+                $vl['text_default']=$data['text_default'];
                 $this->UpdateConfig($id,$vl);
             }
             else
@@ -400,7 +400,7 @@ class editor extends Models
         unset($value['text']);
         $value['options_default']=json_encode($value['options_default']);
         $value['text_default']=json_encode($value['text_default']);
-        print_r($value);
+        //print_r($value);
         $siteData = $this->db->update('site_options',$value,['site'=>$id]);
         return $siteData;
     }
