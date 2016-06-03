@@ -411,7 +411,7 @@ app.directive('getModal', function () {
 
 app.directive('defaultTemplateDirectory', function () {
     return {
-        templateUrl: '/resources/callback/html/default/default.html'
+        templateUrl: '/resources/callback/html/default/main.html'
     }
 });
 
