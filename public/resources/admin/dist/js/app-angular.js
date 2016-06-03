@@ -189,9 +189,7 @@ app.controller('mailerCtrl', function ($scope, $http, $routeParams, mailerFactor
             method: 'GET',
             url: '/admin/editor/SaveConfig/'+$routeParams.siteId
         }).then(function success(response) {
-            if(response.data !== false) {
-                $scope.widgetStylesheets = response.data;
-            }
+            
         }, function error(response) {});
     };
 
@@ -200,14 +198,11 @@ app.controller('mailerCtrl', function ($scope, $http, $routeParams, mailerFactor
             method: 'GET',
             url: '/admin/editor/CancelConfig/'+$routeParams.siteId
         }).then(function success(response) {
-            if(response.data !== false) {
-                $scope.widgetStylesheets = response.data;
-            }
+
         }, function error(response) {});
     };
 
     $scope.changeCss = function() {
-        console.log($routeParams);
         $http({
             method: 'POST',
             url: '/admin/editor/GetEditCSS/'+$routeParams.siteId,
@@ -370,7 +365,6 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
     $scope.defaultCssValues = {};
 
     $scope.changeCss = function() {
-        console.log($routeParams);
         $http({
             method: 'POST',
             url: '/admin/editor/GetEditCSS/'+$routeParams.siteId,

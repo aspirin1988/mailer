@@ -51,13 +51,13 @@ class Editor extends Controller
     function SaveConfig($id)
     {
         $model = new \app\admin\models\editor();
-        $this->response->json($model->SaveConfig($id));
+        $this->response->css($model->SaveConfig($id));
     }
 
     function CancelConfig($id)
     {
         $model = new \app\admin\models\editor();
-        $this->response->json($model->CancelConfig($id));
+        $this->response->css($model->CancelConfig($id));
     }
 
 

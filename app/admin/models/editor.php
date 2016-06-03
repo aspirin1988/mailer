@@ -363,32 +363,16 @@ class editor extends Models
             }
             file_put_contents($path, $res);
 
-            return [
-                'data' => true
-            ];
-        } else {
-            return [
-                'data' => false
-            ];
-        }
 
+        }
+        return $this->GetEditCSS($id, array());
     }
 
     function CancelConfig($id)
     {
         $result = $this->db->query('update site_options set "text_default"="text","options_default"="options" where "site"='.$id)->fetchAll();
-        if($result)
-        {
-            return [
-                'data' => true
-            ];
-        }
-        else
-        {
-            return [
-                'data' => false
-            ];
-        }
+
+        return $this->GetEditCSS($id, array());
 
     }
 

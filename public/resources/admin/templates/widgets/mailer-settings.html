@@ -112,8 +112,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_3">
+                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings.text_default">
+                                        <div class="box-header with-border">
+                                            <h4 class="box-title">{{key}}</h4>
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div ng-repeat="(keyText, valText) in val">
+                                                <div class="form-group">
+                                                    <label>{{keyText}} : </label>
+                                                    <input type="text" class="form-control input-sm" ng-model="val[keyText]" ng-change="console(valText)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                                <!--<div class="tab-pane" id="tab_3">
                                     <div class="box box-info" ng-repeat="(key, val)  in mailerSettings.text_default">
                                         <div class="box-header with-border">
                                             <h4 class="box-title">{{key}}</h4>
@@ -133,7 +152,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             <!-- /.tab-content -->
                         </div>
