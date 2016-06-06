@@ -147,9 +147,14 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
     });
 });
 
-app.controller('mailerCtrl', function ($scope, $http, $routeParams, mailerFactory) {
+app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailerFactory) {
     mailerFactory.getSettings($routeParams.siteId, function (data) {
         $scope.mailerSettings = data;
+
+        $scope.mailerSettings.text_default.recall.main_icon = function() {
+            return $sce.trustAsHtml($scope.mailerSettings.text_default.recall.main_icon);
+        };
+
     });
 
     $scope.addingNewItem = false;
