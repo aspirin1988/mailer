@@ -8,12 +8,49 @@
         <li class="active">Список сайтов</li>
     </ol>
 </section>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <!-- Box Comment -->
+            <div class="box box-widget collapsed-box">
+                <form ng-submit="mailerAddNewClient()">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">Добавить сайт</h4>
+                        <div class="box-tools">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label>Почта</label>
+                            <input type="text" class="form-control" ng-model="mailerNewClientInfo.cc_mail" placeholder="example@exam.ex">
+                        </div>
+                        <div class="form-group">
+                            <label>Название сайта</label>
+                            <input type="text" class="form-control" ng-model="mailerNewClientInfo.name" placeholder="example.kz">
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer text-right">
+                        <p class="pull-left" ng-if="newSiteMsg">Новый сайт был добавлен</p>
+                        <button type="submit" class="btn btn-success btn-sm" data-dismiss="modal">Добавить</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</div>
 <section class="content">
     <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites">
         <div class="box-header with-border">
             <h3 class="box-title">Данные о сайте {{val.name }}</h3>
             <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                 <!--button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button-->
             </div>
         </div><!-- /.box-header -->
@@ -25,31 +62,63 @@
                 </div><!-- /.form-group -->
                 <div class="form-group">
                     <label>Название сайта</label>
-                    <input id="name" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="mailerClients[key].name" readonly="readonly">
+                    <input id="name" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="val.name" readonly="readonly">
                 </div>
                 <div class="form-froup">
                     <label>Название компании</label>
-                    <input id="company" class="form-control" type="text" placeholder="Название компании" ng-model="mailerClients[key].company" readonly="readonly">
+                    <input id="company" class="form-control" type="text" placeholder="Название компании" ng-model="val.company" readonly="readonly">
                 </div><!-- /.form-group -->
             </div><!-- /.col -->
             <div class="col-md-6">
                 <div class="form-group">
                     <label>ID</label>
-                    <input id="id" class="form-control" type="text" placeholder="ID" ng-model="mailerClients[key].id" readonly="readonly">
+                    <input id="id" class="form-control" type="text" placeholder="ID" ng-model="val.id" readonly="readonly">
                 </div><!-- /.form-group -->
                 <div class="form-group">
                     <label>Адрес получателя</label>
-                    <input id="cc_mail" class="form-control" type="text" placeholder="Адрес получателя" ng-model="mailerClients[key].cc_mail" readonly="readonly">
+                    <input id="cc_mail" class="form-control" type="text" placeholder="Адрес получателя" ng-model="val.cc_mail" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <div class="form-group">
                         <label>Email отправки</label>
-                        <select class="form-control" ng-model="mailerClients[key].email" ng-options="email as email.login for email in mailerEmails track by email.id" readonly="readonly">
+                        <select class="form-control" ng-model="val.email" ng-options="email as email.login for email in emails track by email.id" readonly="readonly">
                         </select>
                     </div>
                 </div>
                 <!-- /.form-group -->
             </div><!-- /.col -->
+            <div class="col-md-12" ng-if="hostSettingsVisibility">
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>SMTP шлюз</label>
+                            <input class="form-control" type="text" placeholder="SMTP шлюз" ng-model="hostSettings.host">
+                        </div>
+                        <div class="form-group">
+                            <label>Логин</label>
+                            <input class="form-control" type="text" placeholder="Логин" ng-model="hostSettings.login">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Пароль</label>
+                            <input class="form-control" type="text" placeholder="Пароль" ng-model="hostSettings.password">
+                        </div>
+                        <div class="form-group">
+                            <label>Порт</label>
+                            <input class="form-control" type="text" placeholder="Порт" ng-model="hostSettings.port">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="text-right">
+                    <button class="btn btn-default btn-sm" ng-if="!siteSettings" ng-click="removeHosts(val.id)"><i class="fa fa-remove"></i></button>
+                    <button class="btn btn-default btn-sm" ng-if="!siteSettings" ng-click="editHosts(val.email.id)"><i class="fa fa-pencil"></i></button>
+                    <button class="btn btn-default btn-sm" ng-if="!siteSettings" ng-click="addNewHost()"><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
         </div><!-- /.box-body -->
         <div class="box-footer">
             <div class="col-md-12 text-right">

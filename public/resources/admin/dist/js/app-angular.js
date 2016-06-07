@@ -313,9 +313,10 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
     };
 
     $scope.mailerAddNewClient = function(event) {
+        //console.info($routeParams);
         $http({
             method: 'POST',
-            url: '/admin/callback/AddSite',
+            url: '/admin/callback/AddSite/'+$routeParams.id,
             data: $scope.mailerNewClientInfo
         }).then(function success(response) {
             if(response.data.data !== false) {
