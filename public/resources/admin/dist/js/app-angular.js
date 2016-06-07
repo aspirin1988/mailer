@@ -232,6 +232,7 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
     });
 
     $scope.mailerNewClientInfo = {};
+    $scope.newCompany = {};
     $scope.mailerClientsOwn = {};
     $scope.mailerClientOwnSettings = false;
     $scope.mailerClientEditSettings = false;
@@ -312,7 +313,7 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
         }
     };
 
-    $scope.mailerAddNewClient = function(event) {
+    $scope.AddSite = function(event) {
         //console.info($routeParams);
         $http({
             method: 'POST',
@@ -323,6 +324,24 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
                 $('#myModal').modal('toggle');
                 $scope.mailerNewClientInfo = {};
                 $scope.mailerGetClients();
+                location.reload();
+            }
+
+        }, function error(response) {});
+    };
+
+    $scope.addNewCompany = function(event) {
+        //console.info($routeParams);
+        $http({
+            method: 'POST',
+            url: '/admin/Client/AddClient/',
+            data: $scope.newCompany
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                $('#myModal').modal('toggle');
+                $scope.newCompany = {};
+                $scope.mailerGetClients();
+                // location.reload();
             }
 
         }, function error(response) {});
