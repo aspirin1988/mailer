@@ -176,7 +176,14 @@ class bot extends  Models
                 $this->sendMessageText(['id' => $chat['data'], 'text' => $data['text']]);
                 $this->SaveMessage($chat['data'],$data['token'],json_encode($patern));
             }
-            return $chat;
+            $chat=$this->issetChat($data['token']);
+            $chat_data=$this->GetChatText($chat['data'][0]['id'])['data'];
+            foreach ($chat_data as $key=> $value){
+                $chat_data[$key]['data']=json_decode($value['data']);
+            }
+            
+
+            return $chat_data;
         }
         return false;
 
@@ -218,6 +225,23 @@ class bot extends  Models
                 ];
                 break;
         }
+    }
+
+    function GetChatText($id){
+        $siteData = $this->db->select('chat_data',
+            [
+                'chat_data.*',
+            ]
+            ,
+            [
+                'id_chat'=>(string)$id,
+                'LIMIT'=>10
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ]; 
     }
 
     function GetChatList ($chat_id){

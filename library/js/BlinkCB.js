@@ -193,7 +193,7 @@ BlinkCBModule.prototype.loadJS = function() {
                     succMessAll = doc.getElementsByClassName('blink-cb-module-success-messange'),
                     errorMessange = parentDiv.getElementsByClassName('blink-cb-module-error-messange')[0],
                     successMessange = parentDiv.getElementsByClassName('blink-cb-module-success-messange')[0];
-
+                    console.log(query);
                 for(var i=0; i < errMessAll.length; i++) {
                     errMessAll[i].style.display = 'none';
                     succMessAll[i].style.display = 'none';

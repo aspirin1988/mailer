@@ -41,6 +41,18 @@ class Callback extends Controller
 
     }
 
+    public function Chat()
+    {
+        $name=$this->get_name();
+        $data=[
+            'token'=>$_POST['token'],
+            'text'=>$_POST['text'],
+        ];
+
+        $model = new \app\client\models\bot();
+        $this->response->json($model->sendMessageSite($data,$name));
+    }
+
     public function SendForm()
     {
         $name=$this->get_name();
