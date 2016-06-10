@@ -1,3 +1,106 @@
+<style>
+    #Chat-text{
+        margin-top: 7px;
+        font-family: 'Roboto Condensed', sans-serif;
+        border-radius: 5px;
+        border: 2px solid;
+        border-color: #fff;
+        color: #fff;
+        background-color: #434a54;
+        width: 100%;
+        overflow-x: hidden ;
+        overflow-y: scroll ;
+        max-height: 200px;
+    }
+
+    #Chat-text::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    #Chat-text::-webkit-scrollbar-track-piece  {
+        background-color: #C2D2E4;
+    }
+
+    #Chat-text::-webkit-scrollbar-thumb:vertical {
+        height: 30px;
+        background-color: #0A4C95;
+    }
+
+    .operator{
+        text-align: left;
+        float: left;
+        width: 100%;
+    }
+    .site{
+        text-align: left;
+        float: right;
+        right: 0;
+        width: 100%;
+    }
+
+    .site p {
+        padding: 12px;
+        color: #000;
+        margin: 2px 4px 2px 8px;
+    }
+    .operator p {
+        padding: 12px;
+        color: #000;
+        margin: 2px 4px 2px 18px;
+    }
+
+    .bubble
+    {
+        position: relative;
+        width: 220px;
+        padding: 6px 0 0 0 ;
+        background: #FFFFFF;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+    .bubble:after
+    {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 9px 0 9px 18px;
+        border-color: transparent #FFFFFF;
+        display: block;
+        width: 0;
+        z-index: 1;
+        right: -18px;
+        top: 12px;
+    }
+
+    .bubble1
+    {
+        position: relative;
+        width: 220px;
+        padding: 6px;
+        background: #FFFFFF;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+
+    .bubble1:after
+    {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 9px 18px 9px 0;
+        border-color: transparent #FFFFFF;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -18px;
+        top: 12px;
+    }
+
+</style>
 <div class="blink-cb-module-container">
     <div class="blink-cb-module-main-body animated fadeInRight">
         <div class="blink-cb-module-main-body-container">
@@ -12,19 +115,19 @@
                         <span>{message:icon_txt}</span>
                     </a>
                 </li>
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-comments">
+                <!--<li class="blink-cb-open-popup" id="blink-cb-module-to-comments">
                 <a href="#comments" class="tab-blink" data-target="#blink-cb-module-popup-comments">
                         <i class="fa fa-comments"></i>
                         <span>{chat:icon_txt}</span>
                     </a>
-                </li>
+                </li>-->
             </ul>
             <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
                 <div class="blink-cb-module-flipper">
                     <div class="blink-cb-module-flip-front">
                         <h4 class="animated fadeInDown">{recall:h_txt}</h4>
                         <div class="animated fadeInUp">
-                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall" id="Recall">
+                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall"  data-clear="true" id="Recall">
                                 <input type="text" name="fullname" placeholder="ФИО" required>
                                 <input type="text" name="phone" placeholder="Ваш телефон" required>
                                 <input type="submit" value="{recall:sb_txt}">
@@ -59,7 +162,7 @@
                     <div class="blink-cb-module-flip-front">
                         <h4 class="animated fadeInDown">{message:h_txt}</h4>
                         <div class="animated fadeInUp">
-                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-messange" id="Query">
+                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-messange" data-clear="true" id="Query">
                                 <input type="text" name="fullname" placeholder="ФИО" required>
                                 <input type="text" name="phone" placeholder="Ваш телефон" required>
                                 <input type="text" name="email" placeholder="Ваш email" required>
@@ -91,26 +194,36 @@
                     </div>
                 </div>
             </div>
-            <div  class="blink-cb-module-flip-container" style="margin-top: 20%;" id="blink-cb-module-popup-comments">
-                <div class="blink-cb-module-flipper">
-                    <div class="blink-cb-module-flip-front">
-                        <h4 class="animated fadeInDown">{chat:h_txt}</h4>
-                        <div class="animated fadeInUp">
-                            <form action="https://callback.blink.kz/client/bot/sendMessageSite" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall"  data-target="#blink-cb-module-popup-comments" id="Chat">
-                                <input type="hidden" name="token" value="123456789">
-                                <textarea style="min-height: 200px"  placeholder="Текст чата"></textarea>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <input type="text" name="text" placeholder="Задайте вопрос" required>
-                                <input type="submit"  data-target="#blink-cb-module-popup-comments" value="{chat:sb_txt}">
-                            </form>
-                            <small>{chat:f_txt}</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--<div  class="blink-cb-module-flip-container" style="margin-top: 20%;" id="blink-cb-module-popup-comments">-->
+                <!--<div class="blink-cb-module-flipper">-->
+                    <!--<div class="blink-cb-module-flip-front">-->
+                        <!--<h4 class="animated fadeInDown">{chat:h_txt}</h4>-->
+                        <!--<div class="animated fadeInUp">-->
+                            <!--<form style="    display: flex; flex-wrap: wrap;" action="https://callback.blink.kz/client/bot/sendMessageSite" class="blink-cb-module-popup-form" data-clear="false"  data="blink-cb-module-popup-recall"  data-target="#blink-cb-module-popup-comments" id="Chat">-->
+                                <!--<input type="hidden" id="chat-token" name="token">-->
+                                <!--<div class="" id="Chat-text">-->
+                                    <!--<div class="site "  ><p class="bubble">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eius omnis. Cum fugiat itaque laboriosam magni maxime obcaecati rerum sunt voluptatum! Dignissimos dolorem excepturi explicabo neque provident quam, tenetur vel?</p></div>-->
+                                    <!--<div class="operator"><p class="bubble1" >test2</p></div>-->
+                                    <!--<div class="site "  ><p class="bubble">test1</p></div>-->
+                                    <!--<div class="operator"><p class="bubble1" >test2</p></div>-->
+                                    <!--<div class="site "  ><p class="bubble">test1</p></div>-->
+                                <!--</div>-->
+                                <!--<br>-->
+                                <!--<br>-->
+                                <!--<br>-->
+                                <!--<br>-->
+                                <!--<div class="blink-cb-module-popup-form" style="top:200px;" >-->
+
+                                <!--<input type="text" name="text" placeholder="Задайте вопрос" id="chat-clear-text" required>-->
+                                <!--<input type="submit"  data-target="#blink-cb-module-popup-comments" value="{chat:sb_txt}">-->
+                                <!--</div>-->
+
+                            <!--</form>-->
+                            <!--<small>{chat:f_txt}</small>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
 
@@ -121,7 +234,7 @@
             </div>
             <ul class="blink-cb-module-other-btn-container hidden" style="list-style: none;">
                 <li class="blink-cb-open-popup animated"><a href="#messange"><i class="fa fa-envelope"></i></a></li>
-                <li class="blink-cb-open-popup animated"><a href="#comments"><i class="fa fa-comments"></i></a></li>
+                <!--<li class="blink-cb-open-popup animated"><a href="#comments"><i class="fa fa-comments"></i></a></li>-->
             </ul>
         </div>
     </div>

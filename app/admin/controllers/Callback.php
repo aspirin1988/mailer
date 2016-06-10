@@ -42,6 +42,7 @@ class Callback extends Controller
         $this->response->json($model->AddSite($value,$this->session->getUser(),$company));
     }
 
+
     public function DelSite ()
     {
         $value = $this->request->rest();

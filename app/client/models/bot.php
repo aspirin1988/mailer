@@ -21,7 +21,7 @@ class bot extends  Models
             $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id = $data['message']['from']['id'];
 //            $chat_id = -149637232;
-            $this->SaveMessage(5, $data['message']['from']['id'], json_encode($data));
+            $this->SaveMessage(6, $data['message']['from']['id'], json_encode($data));
 
             $command = [
                 '/start'=>'string',
@@ -189,6 +189,20 @@ class bot extends  Models
 
     }
 
+    public function GetChatData($data,$name)
+    {
+        $site=$this-> permission($name)['data'];
+        if ( $site ) {
+            $chat = $this->issetChat($data['token']);
+            $chat_data = $this->GetChatText($chat['data'][0]['id'])['data'];
+            foreach ($chat_data as $key => $value) {
+                $chat_data[$key]['data'] = json_decode($value['data']);
+            }
+        }
+
+        return $chat_data;
+    }
+
     //Создание и отправка клавиотур
 
     function CreateKeyboard ($command){
@@ -235,7 +249,8 @@ class bot extends  Models
             ,
             [
                 'id_chat'=>(string)$id,
-                'LIMIT'=>10
+                'LIMIT'=>10,
+                'ORDER'=> ['id DESC'],
             ]
         );
 

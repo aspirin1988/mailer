@@ -1,3 +1,20 @@
+function get_cookie ( cookie_name )
+{
+    var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+    if ( results )
+        return ( encodeURIComponent ( results[2] ) );
+    else
+        return null;
+}
+
+function gen_cookie() {
+    var one=Math.random().toString(36),
+        second=Math.random().toString(36);
+    document.cookie = "blinkChat="+second+one;
+    return second+one;
+}
+
 function BlinkCBModule() {
     var that = this;
     var xhr = new XMLHttpRequest();
@@ -5,6 +22,39 @@ function BlinkCBModule() {
 
     xhr.open('GET', '{host}/client/Template/Get/', true);
     xhr.send();
+
+    var token = get_cookie ( "blinkChat" );
+    if (!token)
+    {
+        token=gen_cookie();
+    }
+
+
+
+    setInterval(function () {
+        setTimeout(function () {
+            var toSendObject=document.getElementById('Chat');
+            document.getElementById('chat-token').value = token;
+
+            that.post(toSendObject, 'GetChat', function(response) {
+                var currentResutlt = JSON.parse(response);
+                var Content='';
+                var count_obj=Object.keys(currentResutlt).length;
+                for(i=count_obj-1; i>=0; i--)
+                {
+                    if (currentResutlt[i].from=='123456789')
+                    {
+                        Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
+                    }
+                    else {
+                        Content = Content + '<div class="operator"><p class="bubble1" >' + currentResutlt[i].data.message.text + '</p></div>';
+                    }
+                }
+                document.getElementById('Chat-text').innerHTML=Content;
+
+            });
+        },1);
+    },3000);
 
     xhr.onreadystatechange = function() {
         if (this.readyState!= 4) return;
@@ -52,7 +102,7 @@ BlinkCBModule.prototype.post = function (object, url, callback) {
 
 BlinkCBModule.prototype.clearForm = function (object) {
     for(var i=0; i < object.length -1; i++) {
-        object[i].value = '';
+            object[i].value = '';
     }
 };
 
@@ -187,13 +237,13 @@ BlinkCBModule.prototype.loadJS = function() {
 
                 var parentId = this.getAttribute('data'),
                     query = this.getAttribute('id'),
+                    dataClear = this.getAttribute('data-clear'),
                     toSendObject = event.target,
                     parentDiv = doc.getElementById(parentId),
                     errMessAll = doc.getElementsByClassName('blink-cb-module-error-messange'),
                     succMessAll = doc.getElementsByClassName('blink-cb-module-success-messange'),
                     errorMessange = parentDiv.getElementsByClassName('blink-cb-module-error-messange')[0],
                     successMessange = parentDiv.getElementsByClassName('blink-cb-module-success-messange')[0];
-                    console.log(query);
                 for(var i=0; i < errMessAll.length; i++) {
                     errMessAll[i].style.display = 'none';
                     succMessAll[i].style.display = 'none';
@@ -203,19 +253,41 @@ BlinkCBModule.prototype.loadJS = function() {
 
                 that.post(toSendObject, query, function(response) {
                     var currentResutlt = JSON.parse(response);
+                    if(dataClear==='false'){
+                        var Content='';
+                        var count_obj=Object.keys(currentResutlt).length;
+                        console.info(typeof dataClear);
 
-                    if(currentResutlt[0].code === '1') {
-                        console.log(currentResutlt);
-                        successMessange.style.display = 'block';
-                        successMessange.children[0].innerHTML = currentResutlt[0].text;
-                        parentDiv.classList.add('active-flip');
+
+
+                            for(i=count_obj-1; i>=0; i--)
+                            {
+                                if (currentResutlt[i].from=='123456789')
+                                {
+                                    Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
+                                }
+                                else {
+                                    Content = Content + '<div class="operator"><p class="bubble1" >' + currentResutlt[i].data.message.text + '</p></div>';
+                                }
+                            }
                         that.unBlockForm(toSendObject);
-                        that.clearForm(toSendObject);
-                    } else {
-                        errorMessange.style.display = 'block';
-                        errorMessange.children[0].innerHTML = currentResutlt[0].text;
-                        parentDiv.classList.add('active-flip');
-                        that.unBlockForm(toSendObject);
+                        setTimeout(function(){document.getElementById('chat-clear-text').value='';  },1);
+                            document.getElementById('Chat-text').innerHTML=Content;
+                        //that.clearForm(toSendObject);
+                    }
+                    else {
+                        if (currentResutlt[0].code === '1') {
+                            successMessange.style.display = 'block';
+                            successMessange.children[0].innerHTML = currentResutlt[0].text;
+                            parentDiv.classList.add('active-flip');
+                            that.unBlockForm(toSendObject);
+                            that.clearForm(toSendObject);
+                        } else {
+                            errorMessange.style.display = 'block';
+                            errorMessange.children[0].innerHTML = currentResutlt[0].text;
+                            parentDiv.classList.add('active-flip');
+                            that.unBlockForm(toSendObject);
+                        }
                     }
                 });
 
