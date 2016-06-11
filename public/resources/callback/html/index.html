@@ -106,15 +106,12 @@
         <div class="blink-cb-module-main-body-container">
             <a href="#" class="blink-cb-module-exit-body-btn"><i class="fa fa-close"></i></a>
             <ul class="blink-cb-module-main-body-header-btns" style="list-style: none;">
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-recall">
+                <!--<li class="blink-cb-open-popup" id="blink-cb-module-to-recall">
                     <a href="#recall"><i class="fa fa-phone"></i><span>{recall:icon_txt}</span></a>
-                </li>
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-messange">
-                    <a href="#messange">
-                        <i class="fa fa-envelope"></i>
-                        <span>{message:icon_txt}</span>
-                    </a>
-                </li>
+                </li>-->
+                {widgets:recall-popup-btn}
+                {widgets:message-popup-btn}
+                {widgets:chat-popup-btn}
                 <!--<li class="blink-cb-open-popup" id="blink-cb-module-to-comments">
                 <a href="#comments" class="tab-blink" data-target="#blink-cb-module-popup-comments">
                         <i class="fa fa-comments"></i>
@@ -122,119 +119,20 @@
                     </a>
                 </li>-->
             </ul>
-            <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
-                <div class="blink-cb-module-flipper">
-                    <div class="blink-cb-module-flip-front">
-                        <h4 class="animated fadeInDown">{recall:h_txt}</h4>
-                        <div class="animated fadeInUp">
-                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall"  data-clear="true" id="Recall">
-                                <input type="text" name="fullname" placeholder="ФИО" required>
-                                <input type="text" name="phone" placeholder="Ваш телефон" required>
-                                <input type="submit" value="{recall:sb_txt}">
-                            </form>
-                            <small>{recall:f_txt}</small>
-                        </div>
-                    </div>
-                    <div class="blink-cb-module-flip-back">
-                        <div class="blink-cb-module-messange-box blink-cb-module-success-messange">
-                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
-                                {recall:suc_res_txt}
-                                <i class="fa fa-close"></i>
-                            </a>
-                            <div class="blink-cb-module-popup-recall-success"></div>
-                            <br>
-                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">{recall:suc_btn_txt}</button>
-                        </div>
-                        <div class="blink-cb-module-messange-box blink-cb-module-error-messange">
-                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
-                                {recall:err_res_txt}
-                                <i class="fa fa-close"></i>
-                            </a>
-                            <div class="blink-cb-module-popup-recall-error"></div>
-                            <br>
-                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">{recall:err_btn_txt}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blink-cb-module-flip-container" id="blink-cb-module-popup-messange">
-                <div class="blink-cb-module-flipper">
-                    <div class="blink-cb-module-flip-front">
-                        <h4 class="animated fadeInDown">{message:h_txt}</h4>
-                        <div class="animated fadeInUp">
-                            <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-messange" data-clear="true" id="Query">
-                                <input type="text" name="fullname" placeholder="ФИО" required>
-                                <input type="text" name="phone" placeholder="Ваш телефон" required>
-                                <input type="text" name="email" placeholder="Ваш email" required>
-                                <textarea name="mess" placeholder="Напишите вопрос" required></textarea>
-                                <input type="submit" value="{message:sb_txt}">
-                            </form>
-                            <small>{message:f_txt}</small>
-                        </div>
-                    </div>
-                    <div class="blink-cb-module-flip-back">
-                        <div class="blink-cb-module-messange-box blink-cb-module-success-messange">
-                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">
-                                {message:suc_res_txt}
-                                <i class="fa fa-close"></i>
-                            </a>
-                            <div class="blink-cb-module-popup-messange-success"></div>
-                            <br>
-                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">Назад</button>
-                        </div>
-                        <div class="blink-cb-module-messange-box blink-cb-module-error-messange">
-                            <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">
-                                {message:err_res_txt}
-                                <i class="fa fa-close"></i>
-                            </a>
-                            <div class="blink-cb-module-popup-messange-error"></div>
-                            <br>
-                            <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-messange">Назад</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--<div  class="blink-cb-module-flip-container" style="margin-top: 20%;" id="blink-cb-module-popup-comments">-->
-                <!--<div class="blink-cb-module-flipper">-->
-                    <!--<div class="blink-cb-module-flip-front">-->
-                        <!--<h4 class="animated fadeInDown">{chat:h_txt}</h4>-->
-                        <!--<div class="animated fadeInUp">-->
-                            <!--<form style="    display: flex; flex-wrap: wrap;" action="https://callback.blink.kz/client/bot/sendMessageSite" class="blink-cb-module-popup-form" data-clear="false"  data="blink-cb-module-popup-recall"  data-target="#blink-cb-module-popup-comments" id="Chat">-->
-                                <!--<input type="hidden" id="chat-token" name="token">-->
-                                <!--<div class="" id="Chat-text">-->
-                                    <!--<div class="site "  ><p class="bubble">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, eius omnis. Cum fugiat itaque laboriosam magni maxime obcaecati rerum sunt voluptatum! Dignissimos dolorem excepturi explicabo neque provident quam, tenetur vel?</p></div>-->
-                                    <!--<div class="operator"><p class="bubble1" >test2</p></div>-->
-                                    <!--<div class="site "  ><p class="bubble">test1</p></div>-->
-                                    <!--<div class="operator"><p class="bubble1" >test2</p></div>-->
-                                    <!--<div class="site "  ><p class="bubble">test1</p></div>-->
-                                <!--</div>-->
-                                <!--<br>-->
-                                <!--<br>-->
-                                <!--<br>-->
-                                <!--<br>-->
-                                <!--<div class="blink-cb-module-popup-form" style="top:200px;" >-->
+            {widgets:recall-main-widgets}
+            {widgets:message-main-widgets}
+            {widgets:chat-main-widgets}
 
-                                <!--<input type="text" name="text" placeholder="Задайте вопрос" id="chat-clear-text" required>-->
-                                <!--<input type="submit"  data-target="#blink-cb-module-popup-comments" value="{chat:sb_txt}">-->
-                                <!--</div>-->
-
-                            <!--</form>-->
-                            <!--<small>{chat:f_txt}</small>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
     </div>
 
     <div class="blink-cb-module-main-btns active search-blink-cb-module-btn" id="blink-cb-module-own-btn">
         <div class="blink-cb-module-btns-container">
-            <div class="blink-cb-module-main-btn-container animated">
-                <div class="blink-cb-open-popup blink-cb-module-main-btn"><a href="#recall"><i class="fa fa-phone"></i></a></div>
-            </div>
+
+            {widgets:recall-main-icon}
             <ul class="blink-cb-module-other-btn-container hidden" style="list-style: none;">
-                <li class="blink-cb-open-popup animated"><a href="#messange"><i class="fa fa-envelope"></i></a></li>
-                <!--<li class="blink-cb-open-popup animated"><a href="#comments"><i class="fa fa-comments"></i></a></li>-->
+                {widgets:message-main-icon}
+                {widgets:chat-main-icon}
             </ul>
         </div>
     </div>

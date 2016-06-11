@@ -1,0 +1,35 @@
+<div class="blink-cb-module-flip-container" id="blink-cb-module-popup-recall">
+    <div class="blink-cb-module-flipper">
+        <div class="blink-cb-module-flip-front">
+            <h4 class="animated fadeInDown">{recall:h_txt}</h4>
+            <div class="animated fadeInUp">
+                <form action="" class="blink-cb-module-popup-form" data="blink-cb-module-popup-recall"  data-clear="true" id="Recall">
+                    <input type="text" name="fullname" placeholder="ФИО" required>
+                    <input type="text" name="phone" placeholder="Ваш телефон" required>
+                    <input type="submit" value="{recall:sb_txt}">
+                </form>
+                <small>{recall:f_txt}</small>
+            </div>
+        </div>
+        <div class="blink-cb-module-flip-back">
+            <div class="blink-cb-module-messange-box blink-cb-module-success-messange">
+                <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
+                    {recall:suc_res_txt}
+                    <i class="fa fa-close"></i>
+                </a>
+                <div class="blink-cb-module-popup-recall-success"></div>
+                <br>
+                <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">{recall:suc_btn_txt}</button>
+            </div>
+            <div class="blink-cb-module-messange-box blink-cb-module-error-messange">
+                <a href="#" class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">
+                    {recall:err_res_txt}
+                    <i class="fa fa-close"></i>
+                </a>
+                <div class="blink-cb-module-popup-recall-error"></div>
+                <br>
+                <button class="blink-cb-module-popup-flip-back-btns" data="blink-cb-module-popup-recall">{recall:err_btn_txt}</button>
+            </div>
+        </div>
+    </div>
+</div>
