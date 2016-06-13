@@ -21,7 +21,6 @@ class template extends Models
             $text=json_decode($data['data'][0]['text'],true);
             $widgets = json_decode($data['data'][0]['widgets'],true);
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
-            print_r($widgets);
             $template = file_get_contents($path);
 
             foreach($widgets as $key => $value)
