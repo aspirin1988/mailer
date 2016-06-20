@@ -13,114 +13,104 @@ use core\Models;
 
 class bot extends  Models
 {
-    public function sendMessage($data,$name)
+    public function sendMessage($data)
     {
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
 
-        if ($this->permission($name)['data']) {
+        $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
+
             $bot = new \app\telegram\Bot();
             $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id = $data['message']['from']['id'];
 //            $chat_id = -149637232;
-            $this->SaveMessage(6, $data['message']['from']['id'], json_encode($data));
-
             $command = [
-                '/start'=>'string',
-                '/help'=>'string',
-                'Ⓜ️Меню'=>'string',
-                '👁Текущий чат'=>'string',
-                '/select'=>'integer',
-                '🔚Закрыть чат'=>'integer',
-                '🔁Передать'=>'integer',
+                '/operator' => 'string',
+                '/start' => 'string',
+                '/help' => 'string',
+                'Ⓜ️Меню' => 'string',
+                '👁Текущий чат' => 'string',
+                '/select' => 'integer',
+                '🔚Закрыть чат' => 'integer',
+                '🔁Передать' => 'integer',
 
             ];
-            $argument=false;
+            $is_bot_command = false;
+            $argument = false;
             $id = false;
 
-            foreach ($command as $key=>$value) {
-                if ($key == $data['message']['text']) {
+            foreach ($command as $key => $value) {
+                if ($key ==isset($data['message']['text'],$key)) {
+                    $argument = explode($key, $data['message']['text']);
                     $command = $key;
+                    $is_bot_command = true;
+                    if (isset($argument[1]))
+                    {
+                        $argument=ltrim($argument[1]);
+                    }
+                    //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',print_r($argument));
+
                     break;
                 }
-                $argument = explode($key, $data['message']['text']);
-                file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',(int)$argument);
-                if (isset($argument[1]))
-                {
-                    $command=$key;
-                    $argument=settype($argument[1],$value);
+            }
 
+            if ($is_bot_command) {
+                switch ($command) {
+                    case '/start':
+                        $bot->SendMessage($token, $chat_id, ['text' =>
+                            'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!'
+                        ], $this->CreateKeyboard($command));
+                        break;
+                    case '/operator':
+                        $bot->SendMessage($token, $chat_id, ['text' =>
+                            'Здравствуйте '.$user_name.'! Вы добавлены как оператор для сайта '.$argument
+                        ], $this->CreateKeyboard($command));
+                        break;
+                    case '/help':
+                        $bot->SendMessage($token, $chat_id, ['text' =>
+                            'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!'
+                        ], $this->CreateKeyboard($command));
+                        break;
+                    case 'Ⓜ️Меню':
+                        $bot->SendMessage($token, $chat_id, ['text' =>
+                            'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!'
+                        ], $this->CreateKeyboard($command));
+                        break;
+                    case '👁Текущий чат':
+                        $bot->SendMessage($token, $chat_id, ['text' => json_encode($this->GetChatList($chat_id))
+                        ], $this->CreateKeyboard($command));
+                        break;
+                    case '🔁Передать':
 
-                }
-                /*if ((int)$id[1]) {
-                    $id[1]=(int)$id[1];
-                    $command = $value;
-                    switch ($command) {
-                        case '/select':
-                            $bot->jsonSendMessage($token, $chat_id, $id[1] . ' ' . $data['message']['from']['id']);
-                            break;
-                        case '🔁Передать':
-                            $current_chat=$this->GetChatList($chat_id);
-                            if (isset($current_chat['current_chat']))
-                            {
-                                $current_chat=$current_chat['current_chat'];
-                                $this->TransferChat($current_chat['id'],$id[1]);
+                        if ($argument <> 1) {
+                            $bot->SendMessage($token, $chat_id, ['text' => $argument
+                            ], $this->CreateKeyboard($command));
+                            $current_chat = $this->GetChatList($chat_id);
+                            if (isset($current_chat['current_chat'])) {
+                                $current_chat = $current_chat['current_chat'];
+                                $this->TransferChat($current_chat['id'], $argument);
                             }
-                            break;
-                    }
-                    break;
-                }*/
-            }
-
-//            file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$data['message']['text']);
-            switch ($command) {
-                case '/start':
-                    $bot->SendMessage($token, $chat_id, ['text' =>
-                        'Здравствуйте я бот компании Business link.
-    Я помогу вам наладить связи между вами и вашими клиентами!'
-                    ], $this->CreateKeyboard($command));
-                    break;
-                case '/help':
-                    $bot->SendMessage($token, $chat_id, ['text' =>
-                        'Здравствуйте я бот компании Business link.
-    Я помогу вам наладить связи между вами и вашими клиентами!'
-                    ], $this->CreateKeyboard($command));
-                    break;
-                case 'Ⓜ️Меню':
-                    $bot->SendMessage($token, $chat_id, ['text' =>
-                        'Здравствуйте я бот компании Business link.
-    Я помогу вам наладить связи между вами и вашими клиентами!'
-                    ], $this->CreateKeyboard($command));
-                    break;
-                case '👁Текущий чат':
-                    $bot->SendMessage($token, $chat_id, ['text' =>json_encode($this->GetChatList($chat_id))
-                    ], $this->CreateKeyboard($command));
-                    break;
-                case '🔁Передать':
-
-                    if ($argument<>1){
-                        $bot->SendMessage($token, $chat_id, ['text' =>$argument
-                        ], $this->CreateKeyboard($command));
-                        $current_chat=$this->GetChatList($chat_id);
-                        if (isset($current_chat['current_chat']))
-                        {
-                            $current_chat=$current_chat['current_chat'];
-                            $this->TransferChat($current_chat['id'],$argument);
+                        } else {
+                            $bot->SendMessage($token, $chat_id, ['text' => $argument
+                            ], $this->CreateKeyboard($command));
                         }
-                    }
-                    else{
-                        $bot->SendMessage($token, $chat_id, ['text' =>$argument
-                        ], $this->CreateKeyboard($command));
-                    }
 
-                    break;
+                        break;
 
-                case '/select':
-                    $this->selectChat($id[1], $data['message']['from']['id']);
-                    break;
-                case '/close':
-                    $this->deleteChat($id[1], $data['message']['from']['id']);
-                    break;
+                    case '/select':
+                        $this->selectChat($id[1], $data['message']['from']['id']);
+                        break;
+                    case '/close':
+                        $this->deleteChat($id[1], $data['message']['from']['id']);
+                        break;
+                }
+
             }
-
+        else
+        {
+            $this->SaveMessage(6, $data['message']['from']['id'], json_encode($data));
         }
 
         return false;
@@ -404,6 +394,10 @@ class bot extends  Models
     $this->db->insert('chat_data',$data);
     }
 
+    function addOperator($data)
+    {
+
+    }
 
     //Проверка на существование данного сайта и истечение срока его подписки
     function permission($name)

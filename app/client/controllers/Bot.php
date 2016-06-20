@@ -15,10 +15,9 @@ class Bot extends Controller
 {
     public function sendMessage()
     {
-        $name=$this->get_name();
         $rest=$this->rest();
         $model = new \app\client\models\bot();
-        $model->sendMessage($rest,$name);
+        $model->sendMessage($rest);
         $this->response->json($rest);
     }
 
@@ -49,7 +48,7 @@ class Bot extends Controller
     {
         $name = explode('//',$_SERVER['HTTP_REFERER']);
         $name=explode('/',$name[1])[0];
-        return md5($name);
+        return $name;
     }
 
     function rest()
