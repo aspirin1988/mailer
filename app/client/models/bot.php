@@ -15,16 +15,20 @@ class bot extends  Models
 {
     public function sendMessage($data)
     {
-        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
+        //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
 
         $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
 
             $bot = new \app\telegram\Bot();
             $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id = $data['message']['from']['id'];
+            $site_chat_id = $data['message']['chat']['id'];
+            $site_chat_title=$data['message']['chat']['title'];
+            $message=$data['message']['text'];
 //            $chat_id = -149637232;
             $command = [
                 '/operator' => 'string',
+                '/chat' => 'string',
                 '/start' => 'string',
                 '/help' => 'string',
                 'Ⓜ️Меню' => 'string',
@@ -39,32 +43,65 @@ class bot extends  Models
             $id = false;
 
             foreach ($command as $key => $value) {
-                if ($key ==isset($data['message']['text'],$key)) {
-                    $argument = explode($key, $data['message']['text']);
+                if (stristr($message,$key)) {
+                    $argument = explode($key, $message);
                     $command = $key;
                     $is_bot_command = true;
                     if (isset($argument[1]))
                     {
                         $argument=ltrim($argument[1]);
                     }
-                    //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',print_r($argument));
+                    file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
 
                     break;
                 }
             }
 
             if ($is_bot_command) {
+                //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
                 switch ($command) {
                     case '/start':
-                        $bot->SendMessage($token, $chat_id, ['text' =>
+                        $bot->SendMessage($token, $site_chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ], $this->CreateKeyboard($command));
                         break;
+                    case '/chat':
+
+                        $site=$this->permission(md5($argument));
+                        if ($site['data']) {
+                            $site=$site['data'][0]['id'];
+                            if($this->editSiteChar($site_chat_id,$site)) {
+                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                    'Здравствуйте я бот компании Business link.
+    Чат вашего сайта был в @'.$site_chat_title  .' '
+                                ], $this->CreateKeyboard($command));
+                            }
+                        }
+                        break;
                     case '/operator':
-                        $bot->SendMessage($token, $chat_id, ['text' =>
-                            'Здравствуйте '.$user_name.'! Вы добавлены как оператор для сайта '.$argument
-                        ], $this->CreateKeyboard($command));
+                        $site=$this->permission(md5($argument));
+                        if ($site['data']) {
+                            $site=$site['data'][0]['id'];
+                            $addOperator=$this->addOperator($chat_id,$user_name,$site);
+                            if ($addOperator) {
+                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument
+                                ], $this->CreateKeyboard($command));
+                            }
+                            else
+                            {
+                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                    'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument
+                                ], $this->CreateKeyboard($command));
+                            }
+                        }
+                        else
+                        {
+                            $bot->SendMessage($token, $chat_id, ['text' =>
+                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument . ' не сеществует в нашей базе!'
+                            ], $this->CreateKeyboard($command));
+                        }
                         break;
                     case '/help':
                         $bot->SendMessage($token, $chat_id, ['text' =>
@@ -394,9 +431,47 @@ class bot extends  Models
     $this->db->insert('chat_data',$data);
     }
 
-    function addOperator($data)
+    function editSiteChar($chat_id,$site)
     {
+        $ins=array(
+            'chat_id'=>$chat_id,
+        );
+            return $this->db->update('site', $ins,[ 'id'=>$site]);
+    }
 
+    function addOperator($chat_id,$user_name,$site)
+    {
+        $ins=array(
+                    'telegramm_id'=>$chat_id,
+                    'display_name'=>$user_name,
+                    'site_id'=>$site
+        );
+        $find_site=$this->findOperator($chat_id,$user_name,$site);
+        if (!$find_site['data']) {
+            return $this->db->insert('operators', $ins);
+        }
+        return false;
+    }
+
+    function findOperator($chat_id,$user_name,$site)
+    {
+        $siteData = $this->db->select('operators',
+            [
+                'operators.*',
+            ]
+            ,
+            [
+                'AND'=>[
+                'telegramm_id'=>$chat_id,
+                'display_name'=>$user_name,
+                'site_id'=>$site
+                ]
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
     }
 
     //Проверка на существование данного сайта и истечение срока его подписки
