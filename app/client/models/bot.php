@@ -193,7 +193,7 @@ class bot extends  Models
                 }
                 else
                 {
-                    $this->sendMessageText(['id' => $chat['data'][0]['id'], 'text' => $data['text']]);
+                    $this->sendMessageText(['id' => $site['data'][0]['chat_id'], 'text' => $data['text']]);
                     $this->SaveMessage($chat['data'][0]['id'], $data['token'], json_encode($patern));
                 }
 
