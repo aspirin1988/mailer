@@ -112,6 +112,7 @@ class callback extends Models
 
     public function SendForm ($rest,$name)
     {
+
         $siteData = $this->db->select('site', [
             "[>]email" => ["email" => "id"]
         ],
@@ -126,7 +127,11 @@ class callback extends Models
                 'md5'=>$name
             ]
         );
-        //$this->save_message($rest);
+        if (isset($rest['cc_mail']))
+        {
+            $siteData[0]['cc_mail']=$rest['cc_mail'];
+            unset($rest['cc_mail']);
+        }
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'form.html'); //$this->db->insert('email_massage',$rest);
             $tr='';

@@ -15,7 +15,7 @@ class bot extends  Models
 {
     public function sendMessage($data)
     {
-        //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
 
         $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
 
