@@ -193,7 +193,7 @@ class bot extends  Models
                 }
                 else
                 {
-                    $this->sendMessageText(['id' => $site['data'][0]['chat_id'], 'text' => $data['text']]);
+                    $this->sendMessageText(['id' => $chat['data'][0]['id'], 'text' => $data['text']]);
                     $this->SaveMessage($chat['data'][0]['id'], $data['token'], json_encode($patern));
                 }
 
@@ -208,7 +208,7 @@ class bot extends  Models
             foreach ($chat_data as $key=> $value){
                 $chat_data[$key]['data']=json_decode($value['data']);
             }
-            
+
 
             return $chat_data;
         }
