@@ -32,28 +32,28 @@ function BlinkCBModule() {
 
 
     setInterval(function () {
-        setTimeout(function () {
-            var toSendObject=document.getElementById('Chat');
-            document.getElementById('chat-token').value = token;
+        if (document.getElementById('blink-cb-module-popup-comments')) {
+            setTimeout(function () {
+                var toSendObject = document.getElementById('Chat');
+                document.getElementById('chat-token').value = token;
 
-            that.post(toSendObject, 'GetChat', function(response) {
-                var currentResutlt = JSON.parse(response);
-                var Content='';
-                var count_obj=Object.keys(currentResutlt).length;
-                for(i=count_obj-1; i>=0; i--)
-                {
-                    if (currentResutlt[i].from=='123456789')
-                    {
-                        Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
+                that.post(toSendObject, 'GetChat', function (response) {
+                    var currentResutlt = JSON.parse(response);
+                    var Content = '';
+                    var count_obj = Object.keys(currentResutlt).length;
+                    for (i = count_obj - 1; i >= 0; i--) {
+                        if (currentResutlt[i].from == '123456789') {
+                            Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
+                        }
+                        else {
+                            Content = Content + '<div class="operator"><p class="bubble1" >' + currentResutlt[i].data.message.text + '</p></div>';
+                        }
                     }
-                    else {
-                        Content = Content + '<div class="operator"><p class="bubble1" >' + currentResutlt[i].data.message.text + '</p></div>';
-                    }
-                }
-                document.getElementById('Chat-text').innerHTML=Content;
+                    document.getElementById('Chat-text').innerHTML = Content;
 
-            });
-        },1);
+                });
+            }, 1);
+        }
     },3000);
 
     xhr.onreadystatechange = function() {
