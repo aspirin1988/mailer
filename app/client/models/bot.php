@@ -13,8 +13,6 @@ use core\Models;
 
 class bot extends  Models
 {
-    var $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
-
     public function sendMessage($data)
     {
         file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
@@ -26,7 +24,6 @@ class bot extends  Models
             $site_chat_id = $data['message']['chat']['id'];
             $site_chat_title=$data['message']['chat']['title'];
             $message=$data['message']['text'];
-//            $chat_id = -149637232;
             $command = [
                 '/operator' => 'string',
                 '/chat' => 'string',
@@ -37,7 +34,6 @@ class bot extends  Models
                 '/select' => 'integer',
                 '🔚Закрыть чат' => 'integer',
                 '🔁Передать' => 'integer',
-
             ];
             $is_bot_command = false;
             $argument = false;
@@ -59,7 +55,6 @@ class bot extends  Models
             }
 
             if ($is_bot_command) {
-                //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
                 switch ($command) {
                     case '/start':
                         $bot->SendMessage($site_chat_id, ['text' =>
@@ -68,7 +63,6 @@ class bot extends  Models
                         ], $this->CreateKeyboard($command));
                         break;
                     case '/chat':
-
                         $site=$this->permission(md5($argument));
                         if ($site['data']) {
                             $site=$site['data'][0]['id'];
