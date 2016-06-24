@@ -112,7 +112,7 @@ class callback extends Models
 
     public function SendForm ($rest,$name)
     {
-
+        $approve=true;
         $siteData = $this->db->select('site', [
             "[>]email" => ["email" => "id"]
         ],
@@ -127,12 +127,38 @@ class callback extends Models
                 'md5'=>$name
             ]
         );
+        $siteEmail = $this->db->select('site_approve_emails',
+            [
+                'site_approve_emails.*',
+            ],
+            [
+                'site_id'=>$siteData[0]['id']
+            ]
+        );
+        $emails=array();
+        foreach ($siteEmail as $email)
+        {
+            $emails[]=$email['cc_mail'];
+        }
+        $emails[]=$siteData[0]['cc_mail'];
+
+
         if (isset($rest['cc_mail']))
         {
-            $siteData[0]['cc_mail']=$rest['cc_mail'];
-            unset($rest['cc_mail']);
+            if (in_array($rest['cc_mail'],$emails))
+            {
+                $siteData[0]['cc_mail']=$rest['cc_mail'];
+                unset($rest['cc_mail']);
+                $approve=true;
+            }
+            else
+            {
+                $approve=false;
+            }
+
         }
-        if ($siteData) {
+
+        if ($siteData&&$approve) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'form.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
