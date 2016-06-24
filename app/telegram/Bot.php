@@ -11,10 +11,11 @@ namespace app\telegram;
 
 class Bot
 {
+    var $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
 
-    public function SendForwardMessage($token,$chat_id,$message)
+    public function SendForwardMessage($chat_id,$message)
     {
-        $Peremenaya="https://api.telegram.org/bot{$token}/forwardMessage?chat_id={$chat_id}&from_chat_id={$message['chat']['id']}&message_id={$message['message_id']} ";
+        $Peremenaya="https://api.telegram.org/bot{$this->token}/forwardMessage?chat_id={$chat_id}&from_chat_id={$message['chat']['id']}&message_id={$message['message_id']} ";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -23,30 +24,11 @@ class Bot
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_exec($ch);
         curl_close($ch);
-        //$this->jsonSendMessage($token,$chat_id,$message);
     }
 
-    public function SendMessage1($token,$chat_id,$message)
+    public function SendMessage1($chat_id,$message)
     {
-
-
-            /*$replyMarkup = array(
-                'keyboard' => [
-                    ['7', '8', '9'],
-                    ['4', '5', '6'],
-                    ['1', '2', '3'],
-                    ['0']
-                ]
-            );
-            $encodedMarkup = json_encode($replyMarkup);
-            $content = array(
-                'chat_id' => 169105432,
-                'reply_markup' => $encodedMarkup,
-                'text' => "Test"
-            );
-            $replyMarkup=json_encode($replyMarkup);
-            $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['id']} {$message['text']}&reply_markup={$replyMarkup}";*/
-        $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text={$message['text']}";
+        $Peremenaya="https://api.telegram.org/bot{$this->token}/sendMessage?chat_id={$chat_id}&text={$message['text']}";
         file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$Peremenaya);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
@@ -58,9 +40,9 @@ class Bot
         curl_close($ch);
     }
 
-    public function jsonSendMessage($token,$chat_id,$message)
+    public function jsonSendMessage($chat_id,$message)
     {
-        $Peremenaya="https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text=".json_encode($message);
+        $Peremenaya="https://api.telegram.org/bot{$this->token}/sendMessage?chat_id={$chat_id}&text=".json_encode($message);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "{$Peremenaya}");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -71,9 +53,9 @@ class Bot
         curl_close($ch);
     }
 
-    public function SendMessage($token,$chat_id=-149637232,$message,$keyboard=false)
+    public function SendMessage($chat_id=-149637232,$message,$keyboard=false)
     {
-        $url = "https://api.telegram.org/bot{$token}/sendMessage";
+        $url = "https://api.telegram.org/bot{$this->token}/sendMessage";
         $content = array(
             'chat_id' => $chat_id,
             'text' => $message['text'],

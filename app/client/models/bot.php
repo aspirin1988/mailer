@@ -22,7 +22,6 @@ class bot extends  Models
         $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
 
             $bot = new \app\telegram\Bot();
-            $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id = $data['message']['from']['id'];
             $site_chat_id = $data['message']['chat']['id'];
             $site_chat_title=$data['message']['chat']['title'];
@@ -63,7 +62,7 @@ class bot extends  Models
                 //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
                 switch ($command) {
                     case '/start':
-                        $bot->SendMessage($token, $site_chat_id, ['text' =>
+                        $bot->SendMessage($site_chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ], $this->CreateKeyboard($command));
@@ -74,7 +73,7 @@ class bot extends  Models
                         if ($site['data']) {
                             $site=$site['data'][0]['id'];
                             if($this->editSiteChar($site_chat_id,$site)) {
-                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                $bot->SendMessage($chat_id, ['text' =>
                                     'Здравствуйте я бот компании Business link.
     Чат вашего сайта был в @'.$site_chat_title  .' '
                                 ], $this->CreateKeyboard($command));
@@ -87,44 +86,44 @@ class bot extends  Models
                             $site=$site['data'][0]['id'];
                             $addOperator=$this->addOperator($chat_id,$user_name,$site);
                             if ($addOperator) {
-                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                $bot->SendMessage($chat_id, ['text' =>
                                     'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument
                                 ], $this->CreateKeyboard($command));
                             }
                             else
                             {
-                                $bot->SendMessage($token, $chat_id, ['text' =>
+                                $bot->SendMessage($chat_id, ['text' =>
                                     'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument
                                 ], $this->CreateKeyboard($command));
                             }
                         }
                         else
                         {
-                            $bot->SendMessage($token, $chat_id, ['text' =>
+                            $bot->SendMessage($chat_id, ['text' =>
                                 'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument . ' не сеществует в нашей базе!'
                             ], $this->CreateKeyboard($command));
                         }
                         break;
                     case '/help':
-                        $bot->SendMessage($token, $chat_id, ['text' =>
+                        $bot->SendMessage($chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ], $this->CreateKeyboard($command));
                         break;
                     case 'Ⓜ️Меню':
-                        $bot->SendMessage($token, $chat_id, ['text' =>
+                        $bot->SendMessage($chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ], $this->CreateKeyboard($command));
                         break;
                     case '👁Текущий чат':
-                        $bot->SendMessage($token, $chat_id, ['text' => json_encode($this->GetChatList($chat_id))
+                        $bot->SendMessage($chat_id, ['text' => json_encode($this->GetChatList($chat_id))
                         ], $this->CreateKeyboard($command));
                         break;
                     case '🔁Передать':
 
                         if ($argument <> 1) {
-                            $bot->SendMessage($token, $chat_id, ['text' => $argument
+                            $bot->SendMessage($chat_id, ['text' => $argument
                             ], $this->CreateKeyboard($command));
                             $current_chat = $this->GetChatList($chat_id);
                             if (isset($current_chat['current_chat'])) {
@@ -132,7 +131,7 @@ class bot extends  Models
                                 $this->TransferChat($current_chat['id'], $argument);
                             }
                         } else {
-                            $bot->SendMessage($token, $chat_id, ['text' => $argument
+                            $bot->SendMessage($chat_id, ['text' => $argument
                             ], $this->CreateKeyboard($command));
                         }
 
@@ -313,10 +312,8 @@ class bot extends  Models
     function sendMessageText($data,$operator=-149637232)
     {
             $bot = new \app\telegram\Bot();
-            $token='146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
             $chat_id=$operator;
-
-            $bot->SendMessage($token,$chat_id,$data);
+            $bot->SendMessage($chat_id,$data);
     }
 
     function createChat($token,$site){
