@@ -112,8 +112,6 @@ class client extends Models
                         'ORDER' => ['id ASC']
                     ]
                 );
-
-
                 return [
                     'data' => $siteData,
                     'count' => $countPage
@@ -151,7 +149,19 @@ class client extends Models
                     'ORDER' => ['id ASC']
                 ]
             );
+            foreach ($siteData as $key => $value){
+                $operators=$this->db->select('operators',
+                    [
+                        'operators.*',
+                    ]
+                    ,
+                    [
+                        'AND'=>['site_id'=>$value['id'],'approve'=>1]
+                    ]
+                );
 
+                $siteData[$key]['operators']=$operators;
+            }
 
             return [
                 'data' => $siteData,

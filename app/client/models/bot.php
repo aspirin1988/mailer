@@ -454,7 +454,7 @@ class bot extends  Models
             ]
             ,
             [
-                'site_id'=>$site
+                'AND'=>['site_id'=>$site,'approve'=>1]
             ]
         );
 
