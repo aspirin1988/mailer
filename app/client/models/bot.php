@@ -13,6 +13,8 @@ use core\Models;
 
 class bot extends  Models
 {
+    var $token = '146927044:AAHz2gw_UGcJdzdb4Eh-NoW2PMhYS7oBbrU';
+
     public function sendMessage($data)
     {
         file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
@@ -422,6 +424,7 @@ class bot extends  Models
         ];
     }
 
+
     function SaveMessage($id_chat,$from,$message){
         $data=[
             'id_chat'=>$id_chat,
@@ -451,6 +454,22 @@ class bot extends  Models
             return $this->db->insert('operators', $ins);
         }
         return false;
+    }
+
+    function getOperators($site){
+        $siteData = $this->db->select('operators',
+            [
+                'operators.*',
+            ]
+            ,
+            [
+                'site_id'=>$site
+            ]
+        );
+
+        return [
+            'data' => $siteData,
+        ];
     }
 
     function findOperator($chat_id,$user_name,$site)

@@ -42,6 +42,7 @@ class callback extends Models
             if ($result[0]['code']){
 
                 $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+                $this->sendToOperatorRecall($siteData,$rest);
             }
             else
             {
@@ -97,6 +98,7 @@ class callback extends Models
             if ($result[0]['code']){
 
                 $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+                $this->sendToOperatorQuery($siteData,$rest);
             }
             else
             {
@@ -174,6 +176,9 @@ class callback extends Models
             if ($result[0]['code']){
 
                 $result[0]['text']='Ваше сообщение отправленно,<br>наши специалисты свяжутся с вами<br> в ближайшее время!';
+
+                $this->sendToOperator($siteData,$rest);
+
             }
             else
             {
@@ -204,7 +209,6 @@ class callback extends Models
                 'md5'=>$name
             ]
         );
-        //$this->save_message($rest);
         if ($siteData) {
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
@@ -268,6 +272,71 @@ class callback extends Models
             }
         }
         return $mess;
+    }
+
+    function sendToOperatorRecall($siteData,$rest)
+    {
+        $model = new \app\client\models\bot();
+        $bot = new \app\telegram\MessageBot();
+        $operators = $model->getOperators($siteData[0]['id']);
+        foreach ($operators['data'] as $operator){
+            $bot->SendMessage($operator['telegramm_id'],
+                ['text' =>
+'   Ваc просят перезвонить с сайта : <b>' . $siteData[0]['name'] . '</b>
+    Клиент : '.$rest['fullname'].'
+                    
+        ☎️ +'.$rest['phone'].'
+                    '
+                ]);
+        }
+    }
+
+    function sendToOperatorQuery($siteData,$rest)
+    {
+        $model = new \app\client\models\bot();
+        $bot = new \app\telegram\MessageBot();
+        $operators = $model->getOperators($siteData[0]['id']);
+        foreach ($operators['data'] as $operator){
+            $bot->SendMessage($operator['telegramm_id'],
+                ['text' =>
+'   Вам пишут с вашего сайта : <b>' . $siteData[0]['name'] . '</b>
+    Клиент : '.$rest['fullname'].'
+    Текст сообщения: 
+<strong>'. $rest['mess'].'</strong>
+                    
+        ☎️ +'.$rest['phone'].'
+        📧️ '.$rest['email'].'
+                    '
+                ]);
+        }
+    }
+
+    function sendToOperator($siteData,$rest)
+    {
+        if (!isset($rest['email'])) $rest['email']=' Не указан';
+        $model = new \app\client\models\bot();
+        $bot = new \app\telegram\MessageBot();
+        $text='   На вашем сайте заполнена форма : <b>' . $siteData[0]['name'].'</b>
+        Данные с формы:
+        ';
+        foreach ($rest as $key=>$value)
+        {
+            if ($key!='title') {
+                if ($key != 'URL') {
+                    $text .= $key . ': ' . $value . '
+            ';
+                } else {
+                    $text .= 'Страница: <a href="' . $value . '">' . $rest['title'] . '</a>
+            ';
+                }
+            }
+        }
+        $operators = $model->getOperators($siteData[0]['id']);
+        foreach ($operators['data'] as $operator){
+            $bot->SendMessage($operator['telegramm_id'],
+                ['text' =>$text.' '.''
+                ]);
+        }
     }
 
     function save_message($data)
