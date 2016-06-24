@@ -285,7 +285,7 @@ class callback extends Models
 '   Ваc просят перезвонить с сайта : <b>' . $siteData[0]['name'] . '</b>
     Клиент : '.$rest['fullname'].'
                     
-        ☎️ +'.$rest['phone'].'
+        ☎️ <a href="tel:+'.$rest['phone'].'"> +'.$rest['phone'].'</a>
                     '
                 ]);
         }
@@ -304,8 +304,8 @@ class callback extends Models
     Текст сообщения: 
 <strong>'. $rest['mess'].'</strong>
                     
-        ☎️ +'.$rest['phone'].'
-        📧️ '.$rest['email'].'
+        ☎️ <a href="tel:+'.$rest['phone'].'" >+'.$rest['phone'].'</a>
+        📧️ <a href="mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
                     '
                 ]);
         }
