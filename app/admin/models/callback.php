@@ -134,6 +134,28 @@ class callback extends Models
         }
     }
 
+    public function OperatorEdit ($id,$approve,$sitename,$user)
+        {
+            $model = new \app\client\models\messagebot();
+            $bot = new \app\telegram\MessageBot();
+            $operator=$model->getOperatorByID($id);
+            if ($approve=='true') {
+                $bot->SendMessage($operator[0]['telegramm_id'], ['text' =>
+                    'Здравствуйте <strong>' . $operator[0]['display_name'] . '</strong>! 
+                    Ваш аккаунт активирован для сайта <b>' . $sitename.'</b> ✔️'
+                ]);
+            }
+            else
+            {
+                $bot->SendMessage($operator[0]['telegramm_id'], ['text' =>
+                    'Здравствуйте <strong>' . $operator[0]['display_name'] . '</strong>! 
+                    Ваш аккаунт деактивирован сайта <b>' . $sitename .'</b> 🚫'
+                ]);
+            }
+            $data=$this->db->update('operators',['approve'=>$approve],['id'=>$id]);
+            return $operator;
+        }
+
     public function DelSite ($value)
     {
         $result  = $this->db->delete('site',['id'=>$value['id']]);

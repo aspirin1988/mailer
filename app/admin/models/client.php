@@ -156,7 +156,7 @@ class client extends Models
                     ]
                     ,
                     [
-                        'AND'=>['site_id'=>$value['id'],'approve'=>1]
+                        'site_id'=>$value['id']
                     ]
                 );
 

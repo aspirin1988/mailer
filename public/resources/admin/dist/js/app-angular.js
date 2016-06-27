@@ -189,6 +189,8 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         }, function error(response) {});
     };
 
+
+
     $scope.saveSettings = function (obj) {
         $http({
             method: 'GET',
@@ -327,6 +329,17 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
                 location.reload();
             }
 
+        }, function error(response) {});
+    };
+
+    $scope.operatorApr = function (id,approve,sitename) {
+        console.info(id+' '+approve);
+        $http({
+            method: 'POST',
+            url: '/admin/callback/OperatorEdit/'+id+'/'+approve+'/'+sitename,
+            data: $scope.mailerNewClientInfo
+        }).then(function success(response) {
+            console.info(response);
         }, function error(response) {});
     };
 

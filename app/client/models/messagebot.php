@@ -11,7 +11,7 @@ namespace app\client\models;
 
 use core\Models;
 
-class bot extends  Models
+class messagebot extends  Models
 {
     public function sendMessage($data)
     {
@@ -19,21 +19,15 @@ class bot extends  Models
 
         $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
 
-            $bot = new \app\telegram\Bot();
+            $bot = new \app\telegram\MessageBot();
             $chat_id = $data['message']['from']['id'];
             $site_chat_id = $data['message']['chat']['id'];
             $site_chat_title=$data['message']['chat']['title'];
             $message=$data['message']['text'];
             $command = [
                 '/operator' => 'string',
-                '/chat' => 'string',
                 '/start' => 'string',
                 '/help' => 'string',
-                'Ⓜ️Меню' => 'string',
-                '👁Текущий чат' => 'string',
-                '/select' => 'integer',
-                '🔚Закрыть чат' => 'integer',
-                '🔁Передать' => 'integer',
             ];
             $is_bot_command = false;
             $argument = false;
@@ -60,19 +54,7 @@ class bot extends  Models
                         $bot->SendMessage($site_chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
-                        ], $this->CreateKeyboard($command));
-                        break;
-                    case '/chat':
-                        $site=$this->permission(md5($argument));
-                        if ($site['data']) {
-                            $site=$site['data'][0]['id'];
-                            if($this->editSiteChar($site_chat_id,$site)) {
-                                $bot->SendMessage($chat_id, ['text' =>
-                                    'Здравствуйте я бот компании Business link.
-    Чат вашего сайта был в @'.$site_chat_title  .' '
-                                ], $this->CreateKeyboard($command));
-                            }
-                        }
+                        ]);
                         break;
                     case '/operator':
                         $site=$this->permission(md5($argument));
@@ -82,60 +64,27 @@ class bot extends  Models
                             if ($addOperator) {
                                 $bot->SendMessage($chat_id, ['text' =>
                                     'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument
-                                ], $this->CreateKeyboard($command));
+                                ]);
                             }
                             else
                             {
                                 $bot->SendMessage($chat_id, ['text' =>
                                     'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument
-                                ], $this->CreateKeyboard($command));
+                                ]);
                             }
                         }
                         else
                         {
                             $bot->SendMessage($chat_id, ['text' =>
                                 'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument . ' не сеществует в нашей базе!'
-                            ], $this->CreateKeyboard($command));
+                            ]);
                         }
                         break;
                     case '/help':
                         $bot->SendMessage($chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
-                        ], $this->CreateKeyboard($command));
-                        break;
-                    case 'Ⓜ️Меню':
-                        $bot->SendMessage($chat_id, ['text' =>
-                            'Здравствуйте я бот компании Business link.
-    Я помогу вам наладить связи между вами и вашими клиентами!'
-                        ], $this->CreateKeyboard($command));
-                        break;
-                    case '👁Текущий чат':
-                        $bot->SendMessage($chat_id, ['text' => json_encode($this->GetChatList($chat_id))
-                        ], $this->CreateKeyboard($command));
-                        break;
-                    case '🔁Передать':
-
-                        if ($argument <> 1) {
-                            $bot->SendMessage($chat_id, ['text' => $argument
-                            ], $this->CreateKeyboard($command));
-                            $current_chat = $this->GetChatList($chat_id);
-                            if (isset($current_chat['current_chat'])) {
-                                $current_chat = $current_chat['current_chat'];
-                                $this->TransferChat($current_chat['id'], $argument);
-                            }
-                        } else {
-                            $bot->SendMessage($chat_id, ['text' => $argument
-                            ], $this->CreateKeyboard($command));
-                        }
-
-                        break;
-
-                    case '/select':
-                        $this->selectChat($id[1], $data['message']['from']['id']);
-                        break;
-                    case '/close':
-                        $this->deleteChat($id[1], $data['message']['from']['id']);
+                        ]);
                         break;
                 }
 
@@ -461,6 +410,20 @@ class bot extends  Models
         return [
             'data' => $siteData,
         ];
+    }
+
+    function getOperatorByID($id){
+        $siteData = $this->db->select('operators',
+            [
+                'operators.*',
+            ]
+            ,
+            [
+                'id'=>$id
+            ]
+        );
+
+        return $siteData;
     }
 
     function findOperator($chat_id,$user_name,$site)

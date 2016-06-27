@@ -41,6 +41,12 @@ class Callback extends Controller
         $model = new \app\admin\models\callback();
         $this->response->json($model->AddSite($value,$this->session->getUser(),$company));
     }
+    
+    public function OperatorEdit ($id,$approve,$sitename)
+    {
+        $model = new \app\admin\models\callback();
+        $this->response->json($model->OperatorEdit($id,$approve,$sitename,$this->session->getUser()));
+    }
 
 
     public function DelSite ()
