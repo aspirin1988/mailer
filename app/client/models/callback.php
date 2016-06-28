@@ -304,7 +304,7 @@ class callback extends Models
     Текст сообщения: 
 <strong>'. $rest['mess'].'</strong>
                     
-        ☎️ <a href="tel:+'.$rest['phone'].'" >+'.$rest['phone'].'</a>
+        ☎️ <a href="tel:+'.$rest['phone'].'" > +'.$rest['phone'].'</a>
         📧️ <a href="mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
                     '
                 ]);

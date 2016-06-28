@@ -156,6 +156,24 @@ class callback extends Models
             return $operator;
         }
 
+    public function OperatorDel ($id,$siteID,$sitename,$user)
+    {
+        if ($this->permission_s($siteID,$user)||$user['access']==999) {
+            $model = new \app\client\models\messagebot();
+            $bot = new \app\telegram\MessageBot();
+            $operator = $model->getOperatorByID($id);
+            $model->DelOperatorByID($id);
+            $bot->SendMessage($operator[0]['telegramm_id'], ['text' =>
+                'Здравствуйте <strong>' . $operator[0]['display_name'] . '</strong>! 
+                    Ваш аккаунт был удален для сайта <b>' . $sitename . '</b> 🚫️'
+            ]);
+
+            return $user;
+        }
+        return false;
+    }
+
+
     public function DelSite ($value)
     {
         $result  = $this->db->delete('site',['id'=>$value['id']]);

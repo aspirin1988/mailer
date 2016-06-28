@@ -426,6 +426,16 @@ class messagebot extends  Models
         return $siteData;
     }
 
+    function DelOperatorByID($id){
+        $siteData = $this->db->delete('operators',
+            [
+                'id'=>$id
+            ]
+        );
+
+        return $siteData;
+    }
+
     function findOperator($chat_id,$user_name,$site)
     {
         $siteData = $this->db->select('operators',

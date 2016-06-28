@@ -333,15 +333,28 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
     };
 
     $scope.operatorApr = function (id,approve,sitename) {
-        console.info(id+' '+approve);
         $http({
             method: 'POST',
             url: '/admin/callback/OperatorEdit/'+id+'/'+approve+'/'+sitename,
             data: $scope.mailerNewClientInfo
         }).then(function success(response) {
-            console.info(response);
+            
         }, function error(response) {});
     };
+
+    $scope.dellOperator = function (id,siteID,siteName) {
+        console.info(id+' '+siteID+' '+siteName);
+        var OperatorW=document.getElementById('Operator'+id);
+        $http({
+            method: 'POST',
+            url: '/admin/callback/OperatorDel/'+id+'/'+siteID+'/'+siteName,
+            data: $scope.mailerNewClientInfo
+        }).then(function success(response) {
+            OperatorW.style.display="none";
+        }, function error(response) {});
+    };
+
+
 
     $scope.addNewCompany = function(event) {
         //console.info($routeParams);

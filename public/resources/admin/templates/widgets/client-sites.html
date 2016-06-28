@@ -94,9 +94,9 @@
             <div class="col-md-12">
                 <h4 class="box-title">Операторы сайта</h4>
                 <div class="row">
-                    <div class="col-md-6" ng-repeat="(key1, val1) in sites[key].operators">
-                <div class="box box-widget collapsed-box">
-                    <div class="box-header with-border">
+                    <div class="col-md-6" ng-repeat="(key1, val1) in sites[key].operators" id="Operator{{val1.id}}" >
+                        <div class="box box-widget collapsed-box">
+                            <div class="box-header with-border">
                         <input id="approve{{val1.id}}" class="checkbox-switch" name="approve" type="checkbox" placeholder="ID" ng-change="operatorApr(val1.id,val1.approve,val.name);" ng-model="val1.approve">
                         <label for="approve{{val1.id}}" >{{ val1.display_name }}</label>
                         <div class="box-tools">
@@ -119,6 +119,13 @@
                                 <label>ID Оператора</label>
                                 <input id="operator_id" class="form-control" type="text" placeholder="Название компании" ng-model="val1.id" readonly="readonly">
                             </div><!-- /.form-group -->
+                            <div class="form-froup right">
+                                <br>
+
+                                <label for="delOperator{{val1.id}}" class="del-label" ng-click="dellOperator(val1.id,val.id,val.name)" >Удалить аккаунт
+                                    <i id="delOperator{{val1.id}}" class="fa fa-close del-button" ></i>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>

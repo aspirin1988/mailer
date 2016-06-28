@@ -48,6 +48,12 @@ class Callback extends Controller
         $this->response->json($model->OperatorEdit($id,$approve,$sitename,$this->session->getUser()));
     }
 
+    public function OperatorDel ($id,$siteID,$sitename)
+    {
+        $model = new \app\admin\models\callback();
+        $this->response->json($model->OperatorDel($id,$siteID,$sitename,$this->session->getUser()));
+    }
+
 
     public function DelSite ()
     {

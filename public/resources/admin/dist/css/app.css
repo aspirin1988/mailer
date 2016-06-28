@@ -68,3 +68,19 @@
 .checkbox-switch:focus + label:before {
     box-shadow: 0 0 0 3px rgba(255,255,0,.5);
 }
+
+.del-button{
+    font-size: 20px;
+}
+
+.del-button:hover{
+    color: red;
+}
+
+label.del-label:hover .del-button{
+    color: red;
+}
+
+.form-froup.right{
+    float: right;
+}
