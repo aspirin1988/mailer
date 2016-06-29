@@ -4,7 +4,8 @@
         <small></small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-th"></i> Список клиентов</a></li>
+        <li><a href="#/"><i class="fa fa-th"></i>Главная</a></li>
+        <li><a href="#"><i class="fa fa-th"></i>Список клиентов</a></li>
     </ol>
 </section>
 <div class="row">
@@ -19,7 +20,11 @@
             </div>
             <!-- /.col -->
         </div>
-        <!-- Table row -->
+        <div ng-if="countpage>1" class="pagination-right" >
+            <ul class="pagination">
+                <li ng-repeat='page in countpage' class="{{route.page==page ? 'active' : ''}}" ><a href="#/clients-list/{{page}}">{{page+1}}</a></li>
+            </ul>
+        </div>
         <div class="row">
             <div class="col-xs-12 table-responsive">
                 <table class="table table-striped">
@@ -40,7 +45,7 @@
                         <td>{{val.date_create}}1</td>
                         <td>{{val.ph_address}}</td>
                         <td>{{val.site}}</td>
-                        <td><a href="#/client-websites/{{val.id}}" class="btn btn-primary btn-xs">Инфо</a></td>
+                        <td><a href="#/client-sites/{{val.id}}/0" class="btn btn-primary btn-xs"><i class="fa  fa-info-circle  " ></i></a></td>
                     </tr>
                     </tbody>
                 </table>

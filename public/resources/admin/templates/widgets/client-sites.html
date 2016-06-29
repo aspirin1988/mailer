@@ -1,4 +1,4 @@
-<section class="content-header">
+<section class="content-header" >
     <h1>
         Список сайтов
         <small></small>
@@ -45,8 +45,14 @@
         </div>
     </div>
 </div>
-<section class="content">
-    <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites">
+<label>Search: <input ng-model="search"/></label>
+<div ng-if="countpage>1" class="pagination-right" >
+    <ul class="pagination">
+        <li ng-repeat='page in countpage' class="{{route.page==page ? 'active' : ''}}" ><a href="#/client-sites/1/{{page}}">{{page+1}}</a></li>
+    </ul>
+</div>
+<section id="searchTextResults" class="content">
+    <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search  ">
         <div class="box-header with-border">
             <h3 class="box-title">Данные о сайте {{val.name }}</h3>
             <div class="box-tools pull-right">
@@ -91,10 +97,10 @@
                 </div><!-- /.box-body -->
                 <!-- /.form-group -->
             </div><!-- /.col -->
-            <div class="col-md-12">
+            <div ng-if="val.operators.length" class="col-md-12">
                 <h4 class="box-title">Операторы сайта</h4>
                 <div class="row">
-                    <div class="col-md-6" ng-repeat="(key1, val1) in sites[key].operators" id="Operator{{val1.id}}" >
+                    <div class="col-md-6" ng-repeat="(key1, val1) in val.operators" id="Operator{{val1.id}}" >
                         <div class="box box-widget collapsed-box">
                             <div class="box-header with-border">
                         <input id="approve{{val1.id}}" class="checkbox-switch" name="approve" type="checkbox" placeholder="ID" ng-change="operatorApr(val1.id,val1.approve,val.name);" ng-model="val1.approve">
@@ -117,7 +123,7 @@
                             </div>
                             <div class="form-froup">
                                 <label>ID Оператора</label>
-                                <input id="operator_id" class="form-control" type="text" placeholder="Название компании" ng-model="val1.id" readonly="readonly">
+                                <input id="operator_id{{val1.id}}" class="form-control" type="text" placeholder="Название компании" ng-model="val1.id" readonly="readonly">
                             </div><!-- /.form-group -->
                             <div class="form-froup right">
                                 <br>
@@ -172,4 +178,10 @@
                 <a href="#/mailer-settings/{{val.id}}" class="btn btn-primary btn-sm">Настройка</a>
             </div>
         </div><!-- /.box -->
+    </div>
 </section>
+<div ng-if="countpage>1"  class="pagination-right" >
+    <ul class="pagination">
+        <li ng-repeat='page in countpage' class="{{route.page==page ? 'active' : ''}}" ><a href="#/client-sites/{{route.id}}/{{page}}">{{page+1}}</a></li>
+    </ul>
+</div>

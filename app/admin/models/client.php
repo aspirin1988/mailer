@@ -38,6 +38,8 @@ class client extends Models
             $countSite = $this->db->count('company',
                 [
                     'company.id'
+                ],
+                [
                 ]
             );
         }
@@ -75,7 +77,8 @@ class client extends Models
 
         return [
             'data' => $siteData,
-            'count' => $countPage
+            'count' => $countPage,
+            'company' => $countSite
         ];
     }
 
@@ -124,27 +127,22 @@ class client extends Models
         {
             $countSite = $this->db->count('site',
                 [
-                    "[>]permission_s" => ["id" => "site"]
-                ],
-                [
                     'site.id'
                 ],
                 [
-                    'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id]
+                    'site.company' => $id
                 ]
             );
             $countPage = ceil($countSite / $limit);
             $offset = (int)$page * $limit;
+
             $siteData = $this->db->select('site',
-                [
-                    "[>]permission_s" => ["id" => "site"]
-                ],
                 [
                     'site.*'
                 ],
 
                 [
-                    'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id],
+                    'site.company' => $id,
                     'LIMIT' => [$offset, $limit],
                     'ORDER' => ['id ASC']
                 ]
@@ -165,7 +163,7 @@ class client extends Models
 
             return [
                 'data' => $siteData,
-                'count' => $countPage
+                'count' => $countPage,
             ];
         }
     }

@@ -45,11 +45,11 @@ app.config(function ($routeProvider) {
         .when('/', {
             template: '<p>Hello this is main page</p>'
         })
-        .when('/clients-list', {
+        .when('/clients-list/:page', {
             templateUrl: '/resources/admin/templates/widgets/clients-list.html',
             controller: 'clientsCtrl'
         })
-        .when('/client-sites/:id', {
+        .when('/client-sites/:id/:page', {
             templateUrl: '/resources/admin/templates/widgets/client-sites.html',
             controller: 'clientCtrl'
         })
@@ -82,13 +82,14 @@ app.factory('authUser', function ($http) {
 app.factory('clientsFactory', function ($http) {
     var factory = {};
 
-    factory.getAllClients = function (callback) {
+    factory.getAllClients = function (callback,route) {
         $http({
             method: 'GET',
-            url: '/admin/client/GetAllClient'
+            url: '/admin/client/GetAllClient/'+route.page
         }).then(function success(response) {
             if(response.data.data !== false){
-                callback(response.data.data);
+
+                callback(response.data);
             }
 
         }, function error(response) {});
@@ -100,13 +101,13 @@ app.factory('clientsFactory', function ($http) {
 app.factory('clientFactory', function ($http) {
     var factory = {};
 
-    factory.getSites = function (id, callback) {
+    factory.getSites = function (id,callback,page) {
         $http({
             method: 'GET',
-            url: '/admin/client/GetAllSiteClient/' + id
+            url: '/admin/client/GetAllSiteClient/' + id+'/'+page
         }).then(function success(response) {
             if(response.data.data !== false) {
-                callback(response.data.data);
+                callback(response.data);
             }
         }, function error(response) {});
     };
@@ -131,20 +132,33 @@ app.factory('mailerFactory', function ($http) {
     return factory;
 });
 
-app.controller('clientsCtrl', function ($scope, clientsFactory) {
+app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams) {
     $scope.allClients = {};
-
     clientsFactory.getAllClients(function (data) {
-        $scope.allClients = data;
-    });
+        $scope.allClients = data.data;
+        $scope.route=$routeParams;
+        var pagination=[];
+        for (i=0; i<data.count; i++)
+        {
+            pagination[i]=i;
+        }
+        $scope.countpage = pagination;
+    },$routeParams);
 });
 
 app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
     $scope.sites = {};
 
     clientFactory.getSites($routeParams.id, function(data) {
-        $scope.sites = data;
-    });
+        $scope.sites = data.data;
+        $scope.route = $routeParams;
+        var pagination=[];
+        for (i=0; i<data.count; i++)
+        {
+            pagination[i]=i;
+        }
+        $scope.countpage = pagination;
+    },$routeParams.page);
 });
 
 app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailerFactory) {
@@ -338,7 +352,7 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
             url: '/admin/callback/OperatorEdit/'+id+'/'+approve+'/'+sitename,
             data: $scope.mailerNewClientInfo
         }).then(function success(response) {
-            
+
         }, function error(response) {});
     };
 

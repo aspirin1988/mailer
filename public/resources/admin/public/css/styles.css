@@ -1,0 +1,768 @@
+@charset "UTF-8";
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+/* НАЧАЛО подключаем шрифт 'Univers': */
+@font-face {
+  font-family: 'Univers';
+  src: url("../fonts/univers/Univers Condensed.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: 'Univers';
+  src: url("../fonts/univers/Univers Condensed Bold.ttf") format("truetype");
+  font-weight: bold; }
+/* КОНЕЦ подключаем шрифт 'Univers' */
+/* НАЧАЛО общие стили */
+body {
+  color: white;
+  font-size: 16px;
+  line-height: 1.2; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-family: "Univers", sans-serif; }
+
+h2 {
+  margin-top: 15px;
+  font-size: 32px; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 38px; } }
+
+h3 {
+  font-size: 24px; }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 28px; } }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+  a:hover, a:focus, a:active {
+    color: inherit;
+    text-decoration: none; }
+
+.uk-close-alt,
+.uk-close-alt:hover,
+.uk-modal-close {
+  color: black; }
+
+.uk-modal-dialog-lightbox .uk-modal-close.uk-close {
+  z-index: 1000;
+  background: white;
+  border-radius: 50%; }
+  .uk-modal-dialog-lightbox .uk-modal-close.uk-close:hover {
+    color: black; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* КОНЕЦ общие стили */
+/* НАЧАЛО header */
+@media (min-width: 960px) {
+  .logo-col {
+    float: left; } }
+.logo-col img {
+  display: block;
+  margin: 0 auto;
+  max-width: 269px; }
+
+.navbar-and-contacts-col {
+  font-family: "Univers", sans-serif; }
+  @media (min-width: 960px) {
+    .navbar-and-contacts-col {
+      float: right;
+      padding-top: 20px; } }
+  .navbar-and-contacts-col .contacts {
+    text-align: center; }
+    @media (min-width: 960px) {
+      .navbar-and-contacts-col .contacts {
+        text-align: right; } }
+    .navbar-and-contacts-col .contacts span + span {
+      display: block;
+      margin-top: 10px; }
+      @media (min-width: 480px) {
+        .navbar-and-contacts-col .contacts span + span {
+          margin-left: 20px;
+          margin-top: 0;
+          display: inline-block; } }
+    .navbar-and-contacts-col .contacts a {
+      color: white;
+      text-shadow: 0 0 5px black; }
+  .navbar-and-contacts-col .uk-navbar {
+    background: transparent; }
+    .navbar-and-contacts-col .uk-navbar.uk-active {
+      background: rgba(255, 255, 255, 0.9);
+      left: 0;
+      right: 0; }
+      .navbar-and-contacts-col .uk-navbar.uk-active .uk-navbar-nav li > a,
+      .navbar-and-contacts-col .uk-navbar.uk-active .uk-navbar-nav li.uk-open > a {
+        color: black;
+        text-shadow: none; }
+    .navbar-and-contacts-col .uk-navbar .uk-navbar-nav {
+      float: none;
+      text-align: center; }
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav > li {
+        float: none;
+        display: inline-block;
+        text-align: left; }
+        .navbar-and-contacts-col .uk-navbar .uk-navbar-nav > li.active > a {
+          font-weight: bold; }
+        .navbar-and-contacts-col .uk-navbar .uk-navbar-nav > li > a {
+          font-family: "Univers", sans-serif;
+          font-size: 18px;
+          text-shadow: 0 0 5px black; }
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li.uk-open a,
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li a {
+        background: transparent;
+        color: white; }
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li.uk-open ul,
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li ul {
+        font-size: 16px; }
+        .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li.uk-open ul li:hover a,
+        .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li ul li:hover a {
+          background: #00c321;
+          color: white; }
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li.uk-active > a,
+      .navbar-and-contacts-col .uk-navbar .uk-navbar-nav li:hover > a {
+        color: #00c321;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.9); }
+
+.uk-dropdown {
+  background: rgba(155, 205, 11, 0.85);
+  border-radius: 3px; }
+  @media (min-width: 767px) {
+    .uk-dropdown::after {
+      position: absolute;
+      top: -6px;
+      left: 31px;
+      display: inline-block;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid rgba(155, 205, 11, 0.85);
+      border-left: 6px solid transparent;
+      content: ''; } }
+
+.uk-offcanvas .uk-nav-sub {
+  background: rgba(255, 255, 255, 0.2); }
+  .uk-offcanvas .uk-nav-sub li a {
+    padding: 5px 0; }
+
+/* КОНЕЦ header */
+/* НАЧАЛО main-section */
+.main-section {
+  background: 50% 0/cover url("../img/main-background.jpg");
+  min-height: 100vh;
+  overflow: hidden; }
+  .main-section .slogan-and-summary:not(.uk-container) {
+    text-align: center;
+    max-width: 500px;
+    margin: 30px auto 0;
+    position: relative;
+    padding: 0 15px; }
+    @media (min-width: 960px) {
+      .main-section .slogan-and-summary:not(.uk-container)::before {
+        content: url("../img/main-girl.png");
+        position: absolute;
+        top: -55px;
+        left: -235px; } }
+    .main-section .slogan-and-summary:not(.uk-container) .slogan {
+      font-family: "Univers", sans-serif;
+      text-shadow: 0 5px 5px rgba(0, 0, 1, 0.35);
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        .main-section .slogan-and-summary:not(.uk-container) .slogan {
+          margin: 0; } }
+    .main-section .slogan-and-summary:not(.uk-container) .slogan.part-one {
+      font-size: 28px; }
+      @media (min-width: 768px) {
+        .main-section .slogan-and-summary:not(.uk-container) .slogan.part-one {
+          font-size: 50px; } }
+    .main-section .slogan-and-summary:not(.uk-container) .slogan.part-two {
+      font-size: 35px;
+      font-weight: bold; }
+      @media (min-width: 768px) {
+        .main-section .slogan-and-summary:not(.uk-container) .slogan.part-two {
+          font-size: 70px; } }
+    .main-section .slogan-and-summary:not(.uk-container) .summary {
+      color: black;
+      font-size: 18px;
+      font-family: "Univers", sans-serif;
+      max-width: 330px;
+      margin: 0 auto; }
+
+/* КОНЕЦ main-section */
+/* НАЧАЛО divider-shadow */
+.divider-shadow {
+  background: #009235;
+  text-align: center; }
+
+/* КОНЕЦ divider-shadow */
+/* НАЧАЛО about */
+.about {
+  background: #009235;
+  text-align: center;
+  padding-bottom: 25px; }
+  .about img {
+    margin-top: 25px;
+    max-width: 180px; }
+    @media (min-width: 960px) {
+      .about img {
+        max-width: 230px; } }
+
+/* КОНЕЦ about */
+/* НАЧАЛО services */
+.services {
+  background: #00a6de;
+  padding: 15px 0; }
+  .services h2 {
+    text-align: center;
+    font-weight: bold; }
+    @media (min-width: 960px) {
+      .services h2 {
+        color: #002a07;
+        max-width: 470px;
+        margin: 0 auto 15px;
+        position: relative;
+        padding: 40px 0 60px;
+        z-index: 10; }
+        .services h2:before {
+          content: url("../img/bubbles.png");
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: -1; } }
+  .services .data-uk-slider {
+    text-align: center; }
+    @media (min-width: 760px) {
+      .services .data-uk-slider {
+        padding: 0 100px; } }
+    .services .data-uk-slider li a {
+      padding: 5px;
+      display: block; }
+      .services .data-uk-slider li a img {
+        border-radius: 3px;
+        box-shadow: 0 0 5px white;
+        width: 100%; }
+    .services .data-uk-slider .uk-slidenav {
+      display: block; }
+      .services .data-uk-slider .uk-slidenav img {
+        display: none; }
+        @media (min-width: 760px) {
+          .services .data-uk-slider .uk-slidenav img {
+            display: block; } }
+    @media (min-width: 760px) {
+      .services .data-uk-slider .uk-slidenav-previous::before {
+        content: none; }
+      .services .data-uk-slider .uk-slidenav-next::before {
+        content: none; } }
+
+/* НАЧАЛО старый вид страницы services (сохранён на всякий случай)
+.services {
+  background: $background-color-light;
+  padding: 15px 0;
+  text-align: center;
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    @media (min-width: 960px) {
+      color: $main-color;
+      max-width: 470px;
+      margin: 0 auto 15px;
+      position: relative;
+      padding: 40px 0 60px;
+      z-index: 10;
+      &:before {
+        content: url("../img/bubbles.png");
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+
+  .column + .column {
+    margin-top: 15px;
+    @media (min-width: 760px) {
+      margin-top: 0;
+    }
+  }
+
+  img {
+    border: 3px $main-color solid;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 760px) {
+    .uk-width-medium-6-10 {
+      text-align: left;
+    }
+    .uk-width-medium-6-10:not(.uk-pull-4-10) {
+      text-align: right;
+    }
+  }
+}
+КОНЕЦ старый вид страницы services (сохранён на всякий случай)
+*/
+/* КОНЕЦ services */
+/* НАЧАЛО gallery */
+.gallery {
+  background: #00a6de;
+  padding: 15px 0; }
+  .gallery h2 {
+    text-align: center;
+    font-weight: bold; }
+    @media (min-width: 960px) {
+      .gallery h2 {
+        color: #002a07;
+        max-width: 470px;
+        margin: 0 auto 15px;
+        position: relative;
+        padding: 40px 0 60px;
+        z-index: 10; }
+        .gallery h2:before {
+          content: url("../img/bubbles.png");
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: -1; } }
+  .gallery .data-uk-slider {
+    text-align: center; }
+    @media (min-width: 760px) {
+      .gallery .data-uk-slider {
+        padding: 0 100px; } }
+    .gallery .data-uk-slider li a {
+      padding: 5px;
+      display: block; }
+      .gallery .data-uk-slider li a img {
+        border-radius: 3px;
+        box-shadow: 0 0 5px white;
+        width: 100%; }
+    .gallery .data-uk-slider .uk-slidenav {
+      display: block; }
+      .gallery .data-uk-slider .uk-slidenav img {
+        display: none; }
+        @media (min-width: 760px) {
+          .gallery .data-uk-slider .uk-slidenav img {
+            display: block; } }
+    @media (min-width: 760px) {
+      .gallery .data-uk-slider .uk-slidenav-previous::before {
+        content: none; }
+      .gallery .data-uk-slider .uk-slidenav-next::before {
+        content: none; } }
+
+/* КОНЕЦ gallery */
+/* НАЧАЛО reviews */
+.reviews {
+  padding: 25px 0 35px;
+  background: 100% 100%/cover url("../img/gallery-background-bubbles.png") no-repeat; }
+  .reviews h2 {
+    margin-top: 0;
+    text-align: center;
+    font-weight: bold;
+    color: #002a07; }
+  .reviews .data-uk-slider {
+    padding: 0 35px; }
+    @media (min-width: 760px) {
+      .reviews .data-uk-slider {
+        padding: 0 100px; } }
+    .reviews .data-uk-slider li > a {
+      display: block; }
+    .reviews .data-uk-slider .uk-slidenav {
+      display: block;
+      width: 20px;
+      height: 20px; }
+      @media (min-width: 760px) {
+        .reviews .data-uk-slider .uk-slidenav {
+          width: 60px;
+          height: 60px; } }
+    .reviews .data-uk-slider img {
+      display: block;
+      width: 100%;
+      border-radius: 3px; }
+    .reviews .data-uk-slider .uk-slidenav-previous {
+      left: 5px; }
+      @media (min-width: 760px) {
+        .reviews .data-uk-slider .uk-slidenav-previous {
+          left: 20px; } }
+      .reviews .data-uk-slider .uk-slidenav-previous::before {
+        content: none; }
+    .reviews .data-uk-slider .uk-slidenav-next {
+      right: 5px; }
+      @media (min-width: 760px) {
+        .reviews .data-uk-slider .uk-slidenav-next {
+          right: 20px; } }
+      .reviews .data-uk-slider .uk-slidenav-next::before {
+        content: none; }
+
+/* КОНЕЦ reviews */
+/* НАЧАЛО request */
+.request {
+  background: #00a6de;
+  font-size: 18px;
+  overflow: hidden; }
+  .request .uk-container {
+    position: relative;
+    padding: 15px;
+    text-align: center; }
+    @media (min-width: 760px) {
+      .request .uk-container {
+        text-align: left;
+        padding: 150px 25px; } }
+    .request .uk-container h2, .request .uk-container p {
+      position: relative;
+      z-index: 1; }
+  .request form {
+    max-width: 430px;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto; }
+    @media (min-width: 760px) {
+      .request form {
+        margin: 0; } }
+    .request form label {
+      display: block;
+      font-size: 16px;
+      margin-top: 10px; }
+    .request form input:not([type=submit]) {
+      display: block;
+      border: 1px solid #002a07;
+      border-radius: 3px;
+      font-size: 28px;
+      width: 100%; }
+    .request form input[type=submit] {
+      border: 1px solid #002a07;
+      border-radius: 3px;
+      background: #009235;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      padding: 10px 50px;
+      float: right; }
+      .request form input[type=submit]:hover {
+        background: #002a07; }
+  .request .hand {
+    display: none; }
+    @media (min-width: 760px) {
+      .request .hand {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0; } }
+
+/* КОНЕЦ request */
+/* НАЧАЛО news */
+.news {
+  background: #009235;
+  padding: 30px 0; }
+  .news .uk-grid-divider > [class*=uk-width-medium-]:not(.uk-width-medium-1-1):nth-child(n+2) {
+    border-left: 3px white solid; }
+  .news h2 {
+    text-transform: uppercase; }
+  .news h3 {
+    text-transform: uppercase; }
+  .news article {
+    text-align: justify;
+    margin-top: 30px; }
+  .news .show-all {
+    display: inline-block;
+    background: white;
+    color: #002a07;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    margin-top: 15px; }
+    .news .show-all:hover {
+      background: #002a07;
+      color: white; }
+
+/* КОНЕЦ news */
+/* НАЧАЛО faq */
+.faq {
+  background: #00a6de;
+  padding: 25px 0 10px; }
+  .faq h2 {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center; }
+  .faq .uk-grid .question,
+  .faq .uk-grid .answer {
+    position: relative; }
+    .faq .uk-grid .question::before,
+    .faq .uk-grid .answer::before {
+      color: #002835;
+      display: block;
+      font-family: "Univers", sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center; }
+      @media (min-width: 1200px) {
+        .faq .uk-grid .question::before,
+        .faq .uk-grid .answer::before {
+          position: absolute;
+          left: 25px;
+          top: -10px;
+          font-size: 32px;
+          text-align: left; } }
+  .faq .uk-grid .question:before {
+    content: 'В'; }
+  .faq .uk-grid .answer:before {
+    content: 'О'; }
+  .faq .flex-row {
+    display: flex;
+    align-items: center;
+    margin-top: 30px; }
+    .faq .flex-row .col-picture {
+      margin-right: 30px; }
+      .faq .flex-row .col-picture img {
+        display: none; }
+        @media (min-width: 480px) {
+          .faq .flex-row .col-picture img {
+            display: block; } }
+    .faq .flex-row .col-form {
+      flex: 1; }
+      @media (max-width: 479px) {
+        .faq .flex-row .col-form .uk-width-medium-1-2 {
+          padding-left: 0; } }
+      .faq .flex-row .col-form form label {
+        display: block;
+        font-size: 16px;
+        margin-top: 10px; }
+      .faq .flex-row .col-form form input:not([type=submit]),
+      .faq .flex-row .col-form form textarea {
+        display: block;
+        border: 1px solid #002a07;
+        border-radius: 3px;
+        font-size: 18px;
+        width: 100%;
+        padding: 6px 0; }
+      .faq .flex-row .col-form form textarea {
+        height: 85px;
+        resize: none; }
+      .faq .flex-row .col-form form input[type=submit] {
+        border: 1px solid #002a07;
+        border-radius: 3px;
+        background: #009235;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+        padding: 10px 50px;
+        float: right; }
+        .faq .flex-row .col-form form input[type=submit]:hover {
+          background: #002a07; }
+
+/* КОНЕЦ faq */
+/* НАЧАЛО footer */
+footer {
+  background: #009235;
+  padding: 15px 0 10px; }
+  @media (min-width: 768px) {
+    footer {
+      padding: 50px 0 40px; } }
+  footer .uk-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    @media (min-width: 768px) {
+      footer .uk-container {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start; } }
+    footer .uk-container .contacts h3 {
+      font-weight: bold;
+      text-transform: uppercase; }
+    footer .uk-container .contacts h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 0; }
+    footer .uk-container .contacts p {
+      margin-top: 3px; }
+    footer .uk-container .contacts .address-container,
+    footer .uk-container .contacts .phone-number-container,
+    footer .uk-container .contacts .email-container {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 20px; }
+      footer .uk-container .contacts .address-container:before,
+      footer .uk-container .contacts .phone-number-container:before,
+      footer .uk-container .contacts .email-container:before {
+        position: absolute;
+        left: 0; }
+    footer .uk-container .contacts .address-container:before {
+      content: url("../img/footer-icon-pin.png");
+      left: 5px; }
+    footer .uk-container .contacts .phone-number-container:before {
+      content: url("../img/footer-icon-phone.png");
+      left: 7px; }
+    footer .uk-container .contacts .email-container:before {
+      content: url("../img/footer-icon-mail.png"); }
+    footer .uk-container .contacts .uk-grid-divider:empty {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    footer .uk-container .contacts .social-icons {
+      margin-left: 45px; }
+      footer .uk-container .contacts .social-icons a {
+        display: inline-block; }
+      footer .uk-container .contacts .social-icons a + a {
+        margin-left: 10px; }
+
+/* КОНЕЦ footer */
+/******************************
+НАЧАЛО Страница списка статей
+*******************************/
+/* НАЧАЛО main-section */
+.main-section.articles {
+  background: 50% 100%/cover url("../img/articles-list-main-background.jpg");
+  min-height: 450px; }
+  .main-section.articles .slogan-and-summary {
+    text-align: right; }
+    .main-section.articles .slogan-and-summary::before {
+      content: ""; }
+    .main-section.articles .slogan-and-summary .slogan {
+      font-family: "Univers", sans-serif;
+      text-shadow: 0 5px 5px rgba(0, 0, 1, 0.35);
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        .main-section.articles .slogan-and-summary .slogan {
+          margin: 0; } }
+    .main-section.articles .slogan-and-summary .slogan.part-one {
+      font-size: 28px; }
+      @media (min-width: 768px) {
+        .main-section.articles .slogan-and-summary .slogan.part-one {
+          font-size: 50px; } }
+    .main-section.articles .slogan-and-summary .slogan.part-two {
+      font-size: 35px;
+      font-weight: bold; }
+      @media (min-width: 768px) {
+        .main-section.articles .slogan-and-summary .slogan.part-two {
+          font-size: 70px; } }
+    .main-section.articles .slogan-and-summary .summary {
+      color: black;
+      font-size: 18px;
+      font-family: "Univers", sans-serif;
+      max-width: 330px;
+      margin: 0 auto; }
+
+/* КОНЕЦ main-section */
+/* НАЧАЛО articles-list */
+.articles-list {
+  background: #00a6de;
+  color: white;
+  padding: 30px 0; }
+  .articles-list h1 {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase; }
+  .articles-list h3 {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25px; }
+    @media (min-width: 768px) {
+      .articles-list h3 {
+        margin-top: 0;
+        text-align: left; } }
+  .articles-list img {
+    border: 3px solid white;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto; }
+  .articles-list p {
+    text-align: justify; }
+
+/* КОНЕЦ articles-list */
+/******************************
+КОНЕЦ Страница списка статей
+*******************************/
+/******************************
+НАЧАЛО Страница единичной Статьи
+*******************************/
+/* НАЧАЛО articles-list single */
+.main-section.articles.single {
+  background: 50% 0/cover url("../img/single-article-background.jpg"); }
+
+/* КОНЕЦ articles-list single */
+/* НАЧАЛО список новостей и сама новость */
+.article-box {
+  color: black;
+  padding: 30px 0; }
+  .article-box .other-articles {
+    text-align: center;
+    display: none; }
+    @media (min-width: 768px) {
+      .article-box .other-articles {
+        display: flex; } }
+    .article-box .other-articles a {
+      display: block;
+      font-family: "Univers", sans-serif;
+      font-size: 24px; }
+      .article-box .other-articles a:hover {
+        text-decoration: underline; }
+  .article-box .article {
+    text-align: justify; }
+  .article-box .other-articles,
+  .article-box .article {
+    align-items: flex-start; }
+    .article-box .other-articles .border,
+    .article-box .article .border {
+      flex: 1; }
+      @media (min-width: 768px) {
+        .article-box .other-articles .border,
+        .article-box .article .border {
+          border: 2px solid #00a6de;
+          padding: 15px; } }
+      .article-box .other-articles .border.on-article,
+      .article-box .article .border.on-article {
+        padding-left: 25px;
+        padding-right: 25px; }
+  .article-box h2 {
+    color: #00a6de;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 24px; }
+    @media (min-width: 768px) {
+      .article-box h2 {
+        font-size: 28px; } }
+  .article-box img {
+    float: none;
+    display: block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: 3px solid #00a6de;
+    border-radius: 3px;
+    width: 100%; }
+    @media (min-width: 550px) {
+      .article-box img {
+        margin-bottom: 5px;
+        width: auto;
+        float: left; } }
+
+/* КОНЕЦ список новостей и сама новость */
+/******************************
+КОНЕЦ Страница единичной Статьи
+*******************************/
+
+/*# sourceMappingURL=styles.css.map */

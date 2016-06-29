@@ -30,6 +30,8 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="/resources/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link rel="stylesheet" href="/resources/admin/dist/css/app.css">
+    <link rel="stylesheet" href="/resources/admin/public/css/uikit.min.css">
+    <link rel="stylesheet" href="/resources/admin/public/css/components/accordion.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -92,6 +94,8 @@
       <script src="/resources/admin/plugins/fastclick/fastclick.min.js"></script>
       <!-- AdminLTE App -->
       <script src="/resources/admin/dist/js/app.min.js"></script>
+      <script src="/resources/admin/public/js/uikit.min.js"></script>
+      <script src="/resources/admin/public/js/components/accordion.min.js"></script>
       <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
       <!-- AdminLTE for demo purposes -->
       <script src="/resources/admin/dist/js/demo.js"></script>

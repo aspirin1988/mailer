@@ -7,7 +7,7 @@
         </div>
         <div class="pull-left info">
             <p>{{ authUserInfo.first_name }} {{ authUserInfo.last_name }}</p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <a href="#/"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
     </div>
     <!-- search form -->
@@ -24,7 +24,7 @@
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-            <a href="#/clients-list">
+            <a href="#/clients-list/0">
                 <i class="fa fa-database"></i>
                 <span>Список клиентов</span>
             </a>
@@ -41,5 +41,25 @@
             </ul>
         </li>
     </ul>
+    <div class="uk-accordion" data-uk-accordion="">
+        <a href="#/clients-list/0"><h3 class="uk-accordion-title">Heading 1</h3></a>
+        <div data-wrapper="true" style="height: 0px; position: relative; overflow: hidden;" aria-expanded="false">
+        </div>
+
+        <h3 class="uk-accordion-title">Heading 2</h3>
+        <div data-wrapper="true" style="height: 0px; position: relative; overflow: hidden;" aria-expanded="false">
+            <div class="uk-accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+
+        <h3 class="uk-accordion-title">Heading 3</h3>
+        <div data-wrapper="true" style="height: 0px; position: relative; overflow: hidden;" aria-expanded="false">
+            <div class="uk-accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 <!-- /.sidebar -->

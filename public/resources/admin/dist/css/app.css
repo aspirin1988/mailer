@@ -84,3 +84,9 @@ label.del-label:hover .del-button{
 .form-froup.right{
     float: right;
 }
+
+.pagination-right{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15px 15px 0;
+}
