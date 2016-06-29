@@ -82,9 +82,10 @@ class client extends Models
         ];
     }
 
-    public function GetAllSiteClient($id,$page,$user)
+
+    public function GetAllSiteClient($id,$user)
     {
-        $limit = PAGE_SIZE;
+        $limit = 999;
         if ($user['access']!=999) {
             if ($this->permission_c($id, $user)) {
                 $countSite = $this->db->count('site',
@@ -117,7 +118,8 @@ class client extends Models
                 );
                 return [
                     'data' => $siteData,
-                    'count' => $countPage
+                    'count' => $countSite,
+                    'pagesize' => PAGE_SIZE,
                 ];
             } else {
                 return false;
@@ -163,10 +165,88 @@ class client extends Models
 
             return [
                 'data' => $siteData,
-                'count' => $countPage,
+                'count' => $countSite,
+                'pagesize' => PAGE_SIZE,
             ];
         }
     }
+
+    public function GetAllSiteClientNP($id,$user)
+        {
+            $limit = PAGE_SIZE;
+            if ($user['access']!=999) {
+                if ($this->permission_c($id, $user)) {
+                    $countSite = $this->db->count('site',
+                        [
+                            "[>]permission_s" => ["id" => "site"]
+                        ],
+                        [
+                            'site.id'
+                        ],
+
+                        [
+                            'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id]
+                        ]
+                    );
+                    $siteData = $this->db->select('site',
+                        [
+                            "[>]permission_s" => ["id" => "site"]
+                        ],
+                        [
+                            'site.*'
+                        ],
+
+                        [
+                            'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id],
+                            'ORDER' => ['id ASC']
+                        ]
+                    );
+                    return [
+                        'data' => $siteData,
+                    ];
+                } else {
+                    return false;
+                }
+            }
+            else
+            {
+                $countSite = $this->db->count('site',
+                    [
+                        'site.id'
+                    ],
+                    [
+                        'site.company' => $id
+                    ]
+                );
+                $siteData = $this->db->select('site',
+                    [
+                        'site.*'
+                    ],
+
+                    [
+                        'site.company' => $id,
+                        'ORDER' => ['id ASC']
+                    ]
+                );
+                foreach ($siteData as $key => $value){
+                    $operators=$this->db->select('operators',
+                        [
+                            'operators.*',
+                        ]
+                        ,
+                        [
+                            'site_id'=>$value['id']
+                        ]
+                    );
+
+                    $siteData[$key]['operators']=$operators;
+                }
+
+                return [
+                    'data' => $siteData,
+                ];
+            }
+        }
 
     public function GetClient($id,$user)
     {

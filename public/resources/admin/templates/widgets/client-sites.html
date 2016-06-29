@@ -45,14 +45,15 @@
         </div>
     </div>
 </div>
-<label>Search: <input ng-model="search"/></label>
-<div ng-if="countpage>1" class="pagination-right" >
+<label ng-init="page=pagesize" ng-init="offset=0;" >Search: <input ng-model="search"/></label>
+<div ng-if="countpage.length>1" class="pagination-right" >
     <ul class="pagination">
-        <li ng-repeat='page in countpage' class="{{route.page==page ? 'active' : ''}}" ><a href="#/client-sites/1/{{page}}">{{page+1}}</a></li>
+        <li ng-repeat='page1 in countpage' class="{{route.page==page1 ? 'active' : ''}}" ><a href="#/client-sites/{{route.id}}/{{page1}}" >{{page1+1}}</a></li>
     </ul>
 </div>
 <section id="searchTextResults" class="content">
-    <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search  ">
+    {{search}}
+    <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search" ng-if="(key>=offset)&&(key-offset)<pagesize||(search=='')" >
         <div class="box-header with-border">
             <h3 class="box-title">Данные о сайте {{val.name }}</h3>
             <div class="box-tools pull-right">

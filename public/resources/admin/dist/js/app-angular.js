@@ -137,7 +137,9 @@ app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams) {
     clientsFactory.getAllClients(function (data) {
         $scope.allClients = data.data;
         $scope.route=$routeParams;
+
         var pagination=[];
+
         for (i=0; i<data.count; i++)
         {
             pagination[i]=i;
@@ -152,8 +154,12 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
     clientFactory.getSites($routeParams.id, function(data) {
         $scope.sites = data.data;
         $scope.route = $routeParams;
+        $scope.pagesize=data.pagesize;
+        $scope.offset=0;
+        var countpage=Math.ceil((data.count/(data.pagesize)));
+
         var pagination=[];
-        for (i=0; i<data.count; i++)
+        for (i=0; i<countpage; i++)
         {
             pagination[i]=i;
         }
@@ -344,6 +350,10 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
             }
 
         }, function error(response) {});
+    };
+
+    $scope.updatePage= function (page) {
+      console.log(page);
     };
 
     $scope.operatorApr = function (id,approve,sitename) {

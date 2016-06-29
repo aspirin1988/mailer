@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/resources/admin/dist/css/app.css">
     <link rel="stylesheet" href="/resources/admin/public/css/uikit.min.css">
     <link rel="stylesheet" href="/resources/admin/public/css/components/accordion.css">
+    <link rel="stylesheet" href="/resources/admin/public/css/components/search.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
