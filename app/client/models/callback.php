@@ -305,7 +305,7 @@ class callback extends Models
 <strong>'. $rest['mess'].'</strong>
                     
         ☎️ <a href="tel:+'.$rest['phone'].'" > +'.$rest['phone'].'</a>
-        📧️ <a href="mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
+        📧️ <a href="   mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
                     '
                 ]);
         }

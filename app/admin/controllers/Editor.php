@@ -66,9 +66,10 @@ class Editor extends Controller
     function GetArray()
     {
         $str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
+        //echo ($str);
 //        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
-        $str=str_replace('\r','',$str);
-        $str=str_replace('\n','',$str);
+        //$str=str_replace('\r','',$str);
+        //$str=str_replace('\n','',$str);
 
         $res1=[
             'class'=>'main-container',
@@ -257,8 +258,12 @@ class Editor extends Controller
         ]
     ];
 
-        $str= explode('}',$str);
-        //unset($str[0]);
+        //$str= explode('}',$str);
+        $str= explode('@media',$str);
+        print_r($str);
+        $css=$str[0];
+        unset($str[0]);
+        $media=$str;
         $str1='';
         foreach($str as $key=>$val)
         {
@@ -295,6 +300,6 @@ class Editor extends Controller
             }
 
         }
-        $this->response->json($str);
+        //$this->response->json($str);
     }
 }
