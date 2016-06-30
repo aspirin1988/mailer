@@ -30,7 +30,7 @@
     height: 100%;
     background-color: #393f48;
     right: 0;
-    top: 0;x
+    top: 0;
     border-color: #434a54;
     padding: 30px 0;
     color: #e2e3e7;
@@ -50,9 +50,10 @@
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-exit-body-btn {
     position: absolute;
-    color: #e2e3e7;
+    color: #ddd;
     top: -20px;
-    left: -60px;
+    z-index: 999;
+    left: -45px;
 }
 .blink-cb-module-main-body .blink-cb-module-main-body-container .blink-cb-module-main-body-header-btns {
     text-align: center;
@@ -229,6 +230,7 @@
 }
 .blink-cb-module-main-body.active {
     display: block;
+    overflow: auto;
 }
 
 .blink-cb-module-main-btns {
@@ -298,6 +300,15 @@
     display: block;
 }
 
+.blink-cb-left-border{
+    width: 35px;
+    background: #434a54;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
 @media (max-width: 720px){
     .no-overflow{
         overflow: hidden;
@@ -312,5 +323,7 @@
 }
 
 @media (max-width: 720px) and (orientation: landscape) {
-
+    .blink-cb-left-border{
+        height: 40em;
+    }
 }
