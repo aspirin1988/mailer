@@ -249,7 +249,7 @@ class editor extends Models
 
             $res =''; //file_get_contents($path);
 
-            foreach ($siteData['options_default'] as $key=>$val) {
+            foreach ($siteData['options_default']['css'] as $key=>$val) {
                 $res.=$val['class'].'{';
                 foreach($val['config'] as $key1=>$val1)
                 {
@@ -259,7 +259,7 @@ class editor extends Models
                 //$res=str_replace('{'.$key.'}',$val.'/*edit*/',$res);
             }
 
-            return $res;
+            return $res. ' '. $siteData['options_default']['media'];
         }
         return false;
     }
@@ -354,14 +354,14 @@ class editor extends Models
             $siteData = $siteData[0];
             $res = '';
             $path = PUBLIC_PATH . DS . 'css' . DS . 'cache' . DS . 'blink-sb-' . $siteData['md5'] . 'style.css';
-            foreach ($siteData['options'] as $key => $val) {
+            foreach ($siteData['options']['css'] as $key => $val) {
                 $res .= $val['class'] . '{';
                 foreach ($val['config'] as $key1 => $val1) {
                     $res .= $val1['key'] . ":" . $val1['value'] . ';';
                 }
                 $res .= '}';
             }
-            file_put_contents($path, $res);
+            file_put_contents($path, $res.' '.$siteData['options']['media'] );
 
 
         }

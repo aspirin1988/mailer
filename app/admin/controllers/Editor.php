@@ -303,6 +303,7 @@ class Editor extends Controller
             }
 
         }
+        unset($str[count($str)-1]);
         $media1='';
         foreach ($media as $val){
             $media1 .='@media '.$val;

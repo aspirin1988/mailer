@@ -43,7 +43,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1">
-                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings.options_default">
+                                    <div class="box box-info collapsed-box" ng-repeat="(key, val) in mailerSettings.options_default.css">
                                         <div class="box-header with-border">
                                             <h4 class="box-title">{{val.class}}</h4>
                                             <div class="box-tools pull-right">
@@ -91,7 +91,7 @@
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2">
-                                    <div class="box box-info" ng-repeat="cssInfo in mailerSettings.options_default" ng-if="cssInfo.for_user===true" >
+                                    <div class="box box-info" ng-repeat="cssInfo in mailerSettings.options_default.css" ng-if="cssInfo.for_user===true" >
                                         <div class="box-header with-border">
                                             <h4 class="box-title">{{cssInfo.class}}</h4>
                                             <div class="box-tools pull-right">
