@@ -35,6 +35,7 @@ class Script extends Controller
  {
      $name = explode('//',$_SERVER['HTTP_REFERER']);
      $name=explode('/',$name[1])[0];
+     //file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$name);
      return md5($name);
  }
 

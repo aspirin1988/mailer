@@ -1,4 +1,4 @@
-(function () {
+(function meta () {
     var meta = document.getElementsByTagName('meta');
     var head = document.getElementsByTagName('head');
     var viewport=false;
@@ -68,10 +68,9 @@ function BlinkCBModule() {
                 that.post(toSendObject, 'GetChat', function (response) {
                     var currentResutlt = JSON.parse(response);
                     var Content = '';
-                    console.info(currentResutlt);
                     var count_obj = Object.keys(currentResutlt).length;
                     for (i = count_obj - 1; i >= 0; i--) {
-                        if (currentResutlt[i].data) {
+                        if (currentResutlt[i].data&&currentResutlt[i].data.message) {
                             if (currentResutlt[i].from == token) {
                                 Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
                             }
@@ -105,6 +104,7 @@ function BlinkCBModule() {
         }
     };
 }
+
 
 BlinkCBModule.prototype.post = function (object, url, callback) {
     var data = "";
@@ -290,10 +290,6 @@ BlinkCBModule.prototype.loadJS = function() {
                     if(dataClear==='false'){
                         var Content='';
                         var count_obj=Object.keys(currentResutlt).length;
-                        console.info(typeof dataClear);
-
-
-
                             for(i=count_obj-1; i>=0; i--)
                             {
                                 if (currentResutlt[i].from=='123456789')
