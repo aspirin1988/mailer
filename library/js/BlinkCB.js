@@ -1,26 +1,22 @@
 (function () {
     var meta = document.getElementsByTagName('meta');
     var head = document.getElementsByTagName('head');
+    var viewport=false;
     for(i=0; i<Object(meta).length; i++)
     {
-        var viewport=false;
         if (meta[i].name==='viewport') {
             viewport = true;
-            console.log(meta[i].content.indexOf('width=device-width'));
-            if (head[i].content.indexOf('width=device-width')>-1) {
-                console.log(meta[i].content);
+            if (meta[i].content.indexOf('width=device-width')>-1) {
             }
             else
             {
                 meta[i].content= meta[i].content+', width=device-width';
-                console.log(meta[i].content);
             }
         }
     }
-    if (!viewport)
+    if (viewport===false)
     {
         head[0].innerHTML=head[0].innerHTML+'<meta name="viewport" content="width=device-width, initial-scale=1">';
-        console.log(head);
     }
 
     // var meta = document.createElement('meta');
