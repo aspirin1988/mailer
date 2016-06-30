@@ -299,8 +299,29 @@
     display: block;
 }
 
-@media only screen and (max-width : 480px) {
-    .blink-cb-module-container {
-        display: none;
+
+@media (max-width: 720px) {
+    .blink-cb-module-main-body {
+        width: 100%;
+        height: 100%;
     }
 }
+
+@media (max-width: 720px) {
+    .blink-cb-module-main-body {
+        width: 100%;
+        height: 100%;
+    }
+    .blink-cb-module-main-body {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    .blink-cb-module-main-body {
+        width: 100%;
+        height: 100%;
+    }
+}
+
