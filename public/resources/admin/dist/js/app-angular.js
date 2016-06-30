@@ -205,6 +205,10 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         }).then(function success(response) {
             if(response.data !== false) {
                 $scope.widgetStylesheets = response.data;
+                var overlay=document.getElementById('overlay-blink');
+                overlay.style.display = 'block';
+                overlay.style.position = 'static';
+                overlay.style.zIndex = 0;
             }
         }, function error(response) {});
     };
@@ -237,6 +241,10 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         }).then(function success(response) {
             if(response.data !== false) {
                 $scope.widgetStylesheets = response.data;
+                var overlay=document.getElementById('overlay-blink');
+                overlay.style.display = 'block';
+                overlay.style.position = 'static';
+                overlay.style.zIndex = 0;
             }
 
         }, function error(response) {});

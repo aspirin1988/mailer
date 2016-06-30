@@ -16,6 +16,7 @@
 
 .blink-cb-module-container * a {
     text-decoration: none;
+    color: #fff;
 }
 .blink-cb-module-container * a:hover {
     text-decoration: none;
@@ -310,6 +311,16 @@
     display: flex;
     justify-content: center;
     padding-top: 10px;
+}
+
+.blink-overlay-panel{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0 !important;
+    background: rgba(0,0,0,0.3);
+    left: 0;
 }
 
 @media (max-width: 720px){
