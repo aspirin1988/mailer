@@ -178,6 +178,7 @@ BlinkCBModule.prototype.loadJS = function() {
             mainBody.style.animationDuration = '0.3s';
             mainBody.classList.remove('fadeInRight');
             mainBody.classList.add('fadeOutRight');
+            document.getElementsByTagName('html')[0].classList.remove('no-overflow');
 
             setTimeout(function() {
                 mainBody.classList.remove('active');
@@ -259,6 +260,8 @@ BlinkCBModule.prototype.loadJS = function() {
 
                 popupToOpen.classList.add('active');
                 doc.getElementById('blink-cb-module-to-'  + popupToOpenId).classList.add('active');
+
+                document.getElementsByTagName('html')[0].classList.add('no-overflow');
             });
         }
     })();
