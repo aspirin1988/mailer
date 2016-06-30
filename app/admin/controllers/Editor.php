@@ -307,6 +307,8 @@ class Editor extends Controller
         foreach ($media as $val){
             $media1 .='@media '.$val;
         }
+        $media1=str_replace('\r','',$media1);
+        $media1=str_replace('\n','',$media1);
         $this->response->json(['css'=>$str , 'media'=>$media1]);
     }
 }
