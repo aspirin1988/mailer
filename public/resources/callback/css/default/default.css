@@ -240,7 +240,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    z-index: 99999;
+    z-index: 9999999;
     color: #e2e3e7;
     display: none;
 }

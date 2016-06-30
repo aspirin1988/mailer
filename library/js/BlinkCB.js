@@ -157,6 +157,7 @@ BlinkCBModule.prototype.loadJS = function() {
         mainBody = doc.getElementsByClassName('blink-cb-module-main-body')[0],
         mainCloseBtn = doc.getElementsByClassName('blink-cb-module-exit-body-btn'),
         allBtns = doc.getElementsByClassName('blink-cb-open-popup'),
+        overlay = doc.getElementById('overlay-blink'),
         mainBtnContainer = doc.getElementsByClassName('blink-cb-module-main-btn-container')[0],
         otherBtnsContainer = doc.getElementsByClassName('blink-cb-module-other-btn-container')[0],
         otherBtns = otherBtnsContainer.children;
@@ -165,11 +166,23 @@ BlinkCBModule.prototype.loadJS = function() {
     if(document.getElementsByClassName('search-blink-cb-module-btn').length >= 2 ) {
         document.getElementById('blink-cb-module-own-btn').style.display = 'none';
     }
+    /*overlay.addEventListener('click', function(event) {
+        event.preventDefault();
+        overlay.style.display = 'none';
+        mainOpenBtn.classList.add('active');
+        mainBody.style.animationDuration = '0.3s';
+        mainBody.classList.remove('fadeInRight');
+        mainBody.classList.add('fadeOutRight');
+        document.getElementsByTagName('html')[0].classList.remove('no-overflow');
 
+        setTimeout(function() {
+            mainBody.classList.remove('active');
+        }, 300);
+    });*/
     for (var i = 0; i < mainCloseBtn.length; i++) {
         mainCloseBtn[i].addEventListener('click', function(event) {
             event.preventDefault();
-
+            overlay.style.display = 'none';
             mainOpenBtn.classList.add('active');
             mainBody.style.animationDuration = '0.3s';
             mainBody.classList.remove('fadeInRight');
@@ -229,6 +242,8 @@ BlinkCBModule.prototype.loadJS = function() {
     })();
 
     (function() {
+
+
         for (var i = 0; i < allBtns.length; i++) {
             allBtns[i].addEventListener('click', function(event) {
                 event.preventDefault();
@@ -238,6 +253,7 @@ BlinkCBModule.prototype.loadJS = function() {
                     allPopups = doc.getElementsByClassName('blink-cb-module-flip-container');
 
                 if(!mainBody.classList.contains('active')) {
+                    overlay.style.display = 'block';
                     mainBody.style.animationDuration = '0.5s';
                     mainBody.classList.add('active');
                     mainBody.classList.remove('fadeOutRight');
