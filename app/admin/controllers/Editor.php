@@ -68,8 +68,8 @@ class Editor extends Controller
         $str = file_get_contents(PUBLIC_PATH . DS . 'resources' . DS . 'callback' . DS . 'css' . DS . 'default'.DS.'default.css');
         //echo ($str);
 //        $str = file_get_contents(PUBLIC_PATH . DS . 'libs' . DS . 'bootstrap' . DS . 'css' . DS .'bootstrap.min.css');
-        //$str=str_replace('\r','',$str);
-        //$str=str_replace('\n','',$str);
+        $str=str_replace('\r','',$str);
+        $str=str_replace('\n','',$str);
 
         $res1=[
             'class'=>'main-container',
@@ -260,12 +260,15 @@ class Editor extends Controller
 
         //$str= explode('}',$str);
         $str= explode('@media',$str);
-        print_r($str);
+        //print_r($str);
         $css=$str[0];
+        $css= explode('}',$css);
         unset($str[0]);
         $media=$str;
+        //print_r($media);
         $str1='';
-        foreach($str as $key=>$val)
+        $str2='';
+        foreach($css as $key=>$val)
         {
             $str1[$key] = explode('{',$val);
         }
@@ -300,6 +303,12 @@ class Editor extends Controller
             }
 
         }
-        //$this->response->json($str);
+        $media1='';
+        foreach ($media as $val){
+            $media1 .='@media '.$val;
+        }
+        $media1=str_replace('\r','',$media1);
+        $media1=str_replace('\n','',$media1);
+        $this->response->json(['css'=>$str , 'media'=>$media1]);
     }
 }
