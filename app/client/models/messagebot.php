@@ -197,12 +197,18 @@ class messagebot extends  Models
         file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
         if ($message_data=='approve=true'){
         foreach ($messageData as $value){
-                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<b>Заявка обработана! '.$full_name.'</b>'.$username);
+                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<strong color="green" >Заявка обработана! 
+    
+    '.$full_name.'</strong>
+    @'.$username);
             }
         }
         if ($message_data=='approve=false'){
             foreach ($messageData as $value){
-                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<b>Отказ!!!</b>');
+                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<strong color="green">Отказ!!!
+    
+    '.$full_name.'</strong>
+    @'.$username);
             }
         }
 
