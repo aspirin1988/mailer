@@ -222,11 +222,11 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         }).then(function success(response) {
             if (response)
             {
-                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сохранены!",{status:'success'});
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сохранены!",{status:'success',pos:'top-right'});
             }
             else
             {
-                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сохранены!",{status:'danger'});
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сохранены!",{status:'danger',pos:'top-right'});
             }
         }, function error(response) {});
     };
@@ -238,11 +238,11 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         }).then(function success(response) {
             if (response)
             {
-                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сврошены",{status:'success'});
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сврошены",{status:'success',pos:'top-right'});
             }
             else
             {
-                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сврошены",{status:'danger'});
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сврошены",{status:'danger',pos:'top-right'});
             }
         }, function error(response) {});
     };
