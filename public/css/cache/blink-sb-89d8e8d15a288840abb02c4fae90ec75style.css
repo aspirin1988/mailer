@@ -36,6 +36,23 @@
     padding: 30px 0;
     color: #e2e3e7;
     display: none;
+
+}
+
+
+.blink-cb-module-main-body::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+}
+
+.blink-cb-module-main-body::-webkit-scrollbar-track-piece  {
+    background-color: #C2D2E4;
+}
+
+.blink-cb-module-main-body::-webkit-scrollbar-thumb:vertical {
+    height: 30px;
+    border-radius: 10px;
+    background-color: #0A4C95;
 }
 
 .blink-cb-module-main-body.not-fixed {
