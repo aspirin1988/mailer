@@ -220,7 +220,14 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
             method: 'GET',
             url: '/admin/editor/SaveConfig/'+$routeParams.siteId
         }).then(function success(response) {
-            
+            if (response)
+            {
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сохранены!",{status:'success'});
+            }
+            else
+            {
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сохранены!",{status:'danger'});
+            }
         }, function error(response) {});
     };
 
@@ -229,7 +236,14 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
             method: 'GET',
             url: '/admin/editor/CancelConfig/'+$routeParams.siteId
         }).then(function success(response) {
-
+            if (response)
+            {
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки были успешно сврошены",{status:'success'});
+            }
+            else
+            {
+                UIkit.notify("<i class='uk-icon-check'></i>Настройки не были сврошены",{status:'danger'});
+            }
         }, function error(response) {});
     };
 
