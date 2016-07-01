@@ -62,7 +62,9 @@ class MessageBot
             'parse_mode' => 'html',
         );
         if ($keyboard){
-            $replyMarkup = ['keyboard' => $keyboard,
+            $replyMarkup = [
+                'inline_keyboard' => array(array(array('text' => 'Обработано', 'callback_data' => 'approve=true'),array('text' => 'Отказ', 'callback_data' => 'approve=false'))),
+                //'keyboard' => $keyboard,
                 'resize_keyboard'=>true,
                 'selective'=>true,
             ];
@@ -76,8 +78,31 @@ class MessageBot
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //fix http://unitstep.net/blog/2009/05/05/using-curl-in-php-to-access-https-ssltls-protected-sites/
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_exec ($ch);
+        $return=curl_exec ($ch);
         curl_close ($ch);
+        return json_decode($return,true);
+    }
+
+    public function EditMessage($chat_id,$message_id,$message,$add_text){
+        $url = "https://api.telegram.org/bot{$this->token}/editMessageText";
+        $content = array(
+            'chat_id' => $chat_id,
+            'message_id' => $message_id,
+            'text' => $message.'
+            '.$add_text,
+            'parse_mode' => 'html',
+        );
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($content));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //fix http://unitstep.net/blog/2009/05/05/using-curl-in-php-to-access-https-ssltls-protected-sites/
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $return=curl_exec ($ch);
+        curl_close ($ch);
+        return json_decode($return,true);
     }
 
 }

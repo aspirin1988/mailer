@@ -279,16 +279,23 @@ class callback extends Models
         $model = new \app\client\models\bot();
         $bot = new \app\telegram\MessageBot();
         $operators = $model->getOperators($siteData[0]['id']);
+        $key_message=false;
+        $return=[];
         foreach ($operators['data'] as $operator){
-            $bot->SendMessage($operator['telegramm_id'],
+            $return[] = $bot->SendMessage($operator['telegramm_id'],
                 ['text' =>
 '   Ваc просят перезвонить с сайта : <b>' . $siteData[0]['name'] . '</b>
     Клиент : '.$rest['fullname'].'
                     
         ☎️ <a href="tel:+'.$rest['phone'].'"> +'.$rest['phone'].'</a>
                     '
-                ]);
+                ],$model->CreateKeyboard('Ⓜ️Меню'));
         }
+        foreach ($return as $message)
+        {
+            $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
+        }
+        $this->db->insert('site_message',['key'=>json_encode($key_message)]);
     }
 
     function sendToOperatorQuery($siteData,$rest)
@@ -296,8 +303,10 @@ class callback extends Models
         $model = new \app\client\models\bot();
         $bot = new \app\telegram\MessageBot();
         $operators = $model->getOperators($siteData[0]['id']);
+        $key_message=false;
+        $return=[];
         foreach ($operators['data'] as $operator){
-            $bot->SendMessage($operator['telegramm_id'],
+        $return[]=$bot->SendMessage($operator['telegramm_id'],
                 ['text' =>
 '   Вам пишут с вашего сайта : <b>' . $siteData[0]['name'] . '</b>
     Клиент : '.$rest['fullname'].'
@@ -307,8 +316,13 @@ class callback extends Models
         ☎️ <a href="tel:+'.$rest['phone'].'" > +'.$rest['phone'].'</a>
         📧️ <a href="   mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
                     '
-                ]);
+                ],$model->CreateKeyboard('Ⓜ️Меню'));
         }
+        foreach ($return as $message)
+        {
+            $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
+        }
+        $this->db->insert('site_message',['key'=>json_encode($key_message)]);
     }
 
     function sendToOperator($siteData,$rest)
@@ -319,6 +333,7 @@ class callback extends Models
         $text='   На вашем сайте заполнена форма : <b>' . $siteData[0]['name'].'</b>
         Данные с формы:
         ';
+
         foreach ($rest as $key=>$value)
         {
             if ($key!='title') {

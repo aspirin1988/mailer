@@ -15,8 +15,10 @@ class messagebot extends  Models
 {
     public function sendMessage($data)
     {
-//        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
-
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
+        if ($data['callback_query']){
+            $this->FindMessage($data['callback_query']);
+        }
         $user_name=$data['message']['from']['first_name'].' '.$data['message']['from']['last_name'];
 
             $bot = new \app\telegram\MessageBot();
@@ -174,6 +176,38 @@ class messagebot extends  Models
         return $chat_data;
     }
 
+    
+    function FindMessage($data)
+    {
+        $bot = new \app\telegram\MessageBot();
+        $chat_id=$data['from']['id'];
+        $username=$data['from']['username'];
+        $full_name=$data['from']['first_name'].' '.$data['from']['last_name'];
+        $message_id=$data['message']['message_id'];
+        $message_text=$data['message']['text'];
+        $message_data=$data['data'];
+        $messageData=$this->db->select('site_message',
+        [
+        'site_message.*'
+        ],
+        [
+            "site_message.key[~]" => '"chat_id":'.$chat_id.',"message_id":'.$message_id
+        ]);
+        $messageData=json_decode($messageData[0]['key'],true);
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
+        if ($message_data=='approve=true'){
+        foreach ($messageData as $value){
+                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<b>Заявка обработана! '.$full_name.'</b>'.$username);
+            }
+        }
+        if ($message_data=='approve=false'){
+            foreach ($messageData as $value){
+                $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<b>Отказ!!!</b>');
+            }
+        }
+
+    }
+    
     //Создание и отправка клавиотур
 
     function CreateKeyboard ($command){
