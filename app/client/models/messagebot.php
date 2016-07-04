@@ -193,23 +193,25 @@ class messagebot extends  Models
         [
             "site_message.key[~]" => '"chat_id":'.$chat_id.',"message_id":'.$message_id
         ]);
-        $messageData=json_decode($messageData[0]['key'],true);
+        $operators=json_decode($messageData[0]['key'],true);
         file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
         if ($message_data=='approve=true'){
-        foreach ($messageData as $value){
+        foreach ($operators as $value){
                 $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<strong>Заявка обработана! 
     
     '.$full_name.'</strong>
     @'.$username);
             }
+            $this->db->update('site_message',['status'=>'completed'],['id'=>$messageData[0]['id']]);
         }
         if ($message_data=='approve=false'){
-            foreach ($messageData as $value){
+            foreach ($operators as $value){
                 $bot->EditMessage($value['chat_id'],$value['message_id'],$message_text,'<strong>Отказ!!!
     
     '.$full_name.'</strong>
     @'.$username);
             }
+            $this->db->update('site_message',['status'=>'renouncement'],['id'=>$messageData[0]['id']]);
         }
 
     }

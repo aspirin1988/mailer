@@ -179,7 +179,7 @@ class css extends Models
                 }
                 $res = ''; //file_get_contents($path);
 
-                foreach ($siteData['options'] as $key => $val) {
+                foreach ($siteData['options']['css'] as $key => $val) {
                     $res .= $val['class'] . '{';
                     foreach ($val['config'] as $key1 => $val1) {
                         $res .= $val1['key'] . ":" . $val1['value'] . ';';
@@ -187,7 +187,7 @@ class css extends Models
                     $res .= '}';
                 }
                 file_put_contents($path,$res);
-                return $res;
+                return $res.$siteData['options']['media'];
             }
             else
             {

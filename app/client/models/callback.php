@@ -216,7 +216,6 @@ class callback extends Models
                 $str=str_replace('{'.$key.'}',$value,$str);
 
             }
-            //$str=str_replace('{tr}',$tr,$str);
             $result =$this->send_smtp_html($str,[$rest['email']], $rest['title'], $siteData[0],[]);
             if ($result[0]['code']){
 
@@ -281,21 +280,23 @@ class callback extends Models
         $operators = $model->getOperators($siteData[0]['id']);
         $key_message=false;
         $return=[];
-        foreach ($operators['data'] as $operator){
-            $return[] = $bot->SendMessage($operator['telegramm_id'],
-                ['text' =>
-'   Ваc просят перезвонить с сайта : <b>' . $siteData[0]['name'] . '</b>
+
+        $text='   Ваc просят перезвонить с сайта : <b>' . $siteData[0]['name'] . '</b>
     Клиент : '.$rest['fullname'].'
                     
         ☎️ <a href="tel:+'.$rest['phone'].'"> +'.$rest['phone'].'</a>
-                    '
+                    ';
+
+        foreach ($operators['data'] as $operator){
+            $return[] = $bot->SendMessage($operator['telegramm_id'],
+                ['text' =>$text
                 ],$model->CreateKeyboard('Ⓜ️Меню'));
         }
         foreach ($return as $message)
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message)]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
     }
 
     function sendToOperatorQuery($siteData,$rest)
@@ -305,24 +306,26 @@ class callback extends Models
         $operators = $model->getOperators($siteData[0]['id']);
         $key_message=false;
         $return=[];
-        foreach ($operators['data'] as $operator){
-        $return[]=$bot->SendMessage($operator['telegramm_id'],
-                ['text' =>
-'   Вам пишут с вашего сайта : <b>' . $siteData[0]['name'] . '</b>
+
+        $text='   Вам пишут с вашего сайта : <b>' . $siteData[0]['name'] . '</b>
     Клиент : '.$rest['fullname'].'
     Текст сообщения: 
 <strong>'. $rest['mess'].'</strong>
                     
         ☎️ <a href="tel:+'.$rest['phone'].'" > +'.$rest['phone'].'</a>
         📧️ <a href="   mailto:+'.$rest['email'].'" >'.$rest['email'].'</a>
-                    '
-                ],$model->CreateKeyboard('Ⓜ️Меню'));
+                    ';
+
+        foreach ($operators['data'] as $operator){
+        $return[]=$bot->SendMessage($operator['telegramm_id'],
+                ['text' =>$text],$model->CreateKeyboard('Ⓜ️Меню'));
         }
         foreach ($return as $message)
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message)]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
+
     }
 
     function sendToOperator($siteData,$rest)
@@ -330,6 +333,7 @@ class callback extends Models
         if (!isset($rest['email'])) $rest['email']=' Не указан';
         $model = new \app\client\models\bot();
         $bot = new \app\telegram\MessageBot();
+        $operators = $model->getOperators($siteData[0]['id']);
         $text='   На вашем сайте заполнена форма : <b>' . $siteData[0]['name'].'</b>
         Данные с формы:
         ';
@@ -346,12 +350,18 @@ class callback extends Models
                 }
             }
         }
-        $operators = $model->getOperators($siteData[0]['id']);
+        $key_message=false;
+        $return=[];
         foreach ($operators['data'] as $operator){
-            $bot->SendMessage($operator['telegramm_id'],
-                ['text' =>$text.' '.''
-                ]);
+            $return[] = $bot->SendMessage($operator['telegramm_id'],
+                ['text' =>$text
+                ],$model->CreateKeyboard('Ⓜ️Меню'));
         }
+        foreach ($return as $message)
+        {
+            $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
+        }
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
     }
 
     function save_message($data)

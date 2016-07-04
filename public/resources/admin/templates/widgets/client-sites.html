@@ -45,7 +45,19 @@
         </div>
     </div>
 </div>
-<label ng-init="page=pagesize" ng-init="offset=0;" >Search: <input ng-model="search"/></label>
+<div class="row">
+    <div class="col-md-5">
+<form class="sidebar-form">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" ng-model="search" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+    </div>
+</form>
+    </div>
+</div>
 <div ng-if="countpage.length>1" class="pagination-right" >
     <ul class="pagination">
         <li ng-repeat='page1 in countpage' class="{{route.page==page1 ? 'active' : ''}}" ><a href="#/client-sites/{{route.id}}/{{page1}}" >{{page1+1}}</a></li>
