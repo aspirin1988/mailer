@@ -31,6 +31,17 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
+            $Content= $this->db->select('site_options',
+                [
+                    'site_options.*',
+                ],
+                [
+                    'site'=>$siteData[0]['id']
+                ]
+            );
+            $Content=json_decode($Content[0]['text'],true);
+            $suc_text=$Content['recall']['suc_res_txt'];
+            $err_text=$Content['recall']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
             $res=$this->image_replace($str);
             $image=$res['image'];
@@ -41,12 +52,12 @@ class callback extends Models
             $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], 'TEST', $siteData[0],$image);
             if ($result[0]['code']){
 
-                $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+                $result[0]['text']=$suc_text;
                 $this->sendToOperatorRecall($siteData,$rest);
             }
             else
             {
-                $result[0]['text']='Ваше сообщение не было отправленно!';
+                $result[0]['text']=$err_text;
             }
             return $result;
         }
@@ -75,6 +86,17 @@ class callback extends Models
         );
         $this->save_message($rest);
         if ($siteData) {
+            $Content= $this->db->select('site_options',
+                [
+                    'site_options.*',
+                ],
+                [
+                    'site'=>$siteData[0]['id']
+                ]
+            );
+            $Content=json_decode($Content[0]['text'],true);
+            $suc_text=$Content['message']['suc_res_txt'];
+            $err_text=$Content['message']['err_res_txt'];
             $mail_c=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
             //$mail_cc=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'mail_c.html'); //$this->db->insert('email_massage',$rest);
             $res=$this->image_replace($mail_c);
@@ -97,12 +119,12 @@ class callback extends Models
             $result = array_merge($result1,$result2);
             if ($result[0]['code']){
 
-                $result[0]['text']='Ваше сообщение отправленно, наши специалисты свяжутся с вами в ближайшее время!';
+                $result[0]['text']=$suc_text;
                 $this->sendToOperatorQuery($siteData,$rest);
             }
             else
             {
-                $result[0]['text']='Ваше сообщение не было отправленно!';
+                $result[0]['text']=$err_text;
             }
             return $result;
         }
@@ -161,6 +183,17 @@ class callback extends Models
         }
 
         if ($siteData&&$approve) {
+            $Content= $this->db->select('site_options',
+                [
+                    'site_options.*',
+                ],
+                [
+                    'site'=>$siteData[0]['id']
+                ]
+            );
+            $Content=json_decode($Content[0]['text'],true);
+            $suc_text=$Content['recall']['suc_res_txt'];
+            $err_text=$Content['recall']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'form.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
@@ -175,14 +208,14 @@ class callback extends Models
             $result =$this->send_smtp_html($str,[$siteData[0]['cc_mail']], $rest['title'], $siteData[0],[]);
             if ($result[0]['code']){
 
-                $result[0]['text']='Ваше сообщение отправленно,<br>наши специалисты свяжутся с вами<br> в ближайшее время!';
+                $result[0]['text']=$suc_text;
 
                 $this->sendToOperator($siteData,$rest);
 
             }
             else
             {
-                $result[0]['text']='Ваше сообщение не было отправленно!';
+                $result[0]['text']=$err_text;
             }
             return $result;
         }
@@ -210,6 +243,18 @@ class callback extends Models
             ]
         );
         if ($siteData) {
+            $Content=$siteData = $this->db->select('site_options',
+                [
+                    'site_options.*',
+                ],
+                [
+                    'site'=>$siteData[0]['id']
+                ]
+            );
+            print_r($Content);
+            $Content=json_decode($Content[0]['text'],true);
+            $suc_text=$Content['recall']['suc_res_txt'];
+            $err_text=$Content['recall']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
@@ -219,11 +264,11 @@ class callback extends Models
             $result =$this->send_smtp_html($str,[$rest['email']], $rest['title'], $siteData[0],[]);
             if ($result[0]['code']){
 
-                $result[0]['text']='Ваше сообщение отправленно,<br>наши специалисты свяжутся с вами<br> в ближайшее время!';
+                $result[0]['text']=$suc_text;
             }
             else
             {
-                $result[0]['text']='Ваше сообщение не было отправленно!';
+                $result[0]['text']=$err_text;
             }
             return $result;
         }

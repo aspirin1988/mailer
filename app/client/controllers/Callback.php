@@ -20,6 +20,7 @@ class Callback extends Controller
 
     public function Recall()
     {
+        $this->GetLocation();
         $name=$this->get_name();
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
@@ -90,4 +91,18 @@ class Callback extends Controller
         $name=explode('/',$name[1])[0];
         return md5($name);
     }
+
+    function GetLocation()
+    {
+
+        //$model = new \app\geolocation\models\IP2Location(BASE_PATH."/app/geolocation/model/databases/IP2LOCATION-LITE-DB1.BIN",\app\geolocation\models\IP2Location()::FILE_IO);
+
+        //$db = new \IP2Location\IP2Location('./databases/IP2LOCATION-LITE-DB1.BIN', \IP2Location\IP2Location::FILE_IO);
+
+        //$records = $model->lookup('8.8.8.8', $model::ALL);
+
+        //print_r($records);
+
+    }
+
 }
