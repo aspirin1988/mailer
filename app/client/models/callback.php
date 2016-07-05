@@ -443,7 +443,6 @@ class callback extends Models
     {
         header('Content-Type: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
         $url = 'http://ip-api.com/json/'.$ip;
-        echo $url.'<br>';
         return file_get_contents($url);
     }
 }
