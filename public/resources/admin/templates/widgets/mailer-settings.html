@@ -117,15 +117,27 @@
                                         <div class="box-header with-border">
                                             <h4 class="box-title">{{val.title}}</h4>
                                             <div class="box-tools pull-right">
-                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                    <i class="fa fa-plus"></i>
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="box-body">
+                                            <input ng-if="key=='contacts'" type="text" class="form-control input-sm" ng-model="val.text" ng-change="console(val.text)">
                                             <div ng-repeat="(keyText, valText) in val.data">
-                                                <div class="form-group">
+
+                                                <div ng-if="key!='contacts'" class="form-group">
                                                     <label>{{keyText}} : </label>
                                                     <input type="text" class="form-control input-sm" ng-model="val.data[keyText]" ng-change="console(val.data[keyText])">
+                                                </div>
+                                                <div ng-if="key=='contacts'" class="form-group" >
+                                                    <label>{{val.data[keyText].title}} : </label><br>
+                                                    <select ng-model="valText.type" >
+                                                        <option value="tel" >Телефон</option>
+                                                        <option value="mailto" >Email</option>
+                                                    </select>
+                                                    <input type="text" class="form-control input-sm" ng-model="val.data[keyText].title" ng-change="console(val.data[keyText].title)">
+                                                    <input type="text" class="form-control input-sm" ng-model="val.data[keyText].text" ng-change="console(val.data[keyText].text)">
                                                 </div>
                                             </div>
                                         </div>
