@@ -341,7 +341,8 @@ class callback extends Models
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
+
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
     }
 
     function sendToOperatorQuery($siteData,$rest)
@@ -369,7 +370,8 @@ class callback extends Models
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
+
 
     }
 
@@ -406,7 +408,8 @@ class callback extends Models
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
+
     }
 
     function save_message($data)
@@ -436,4 +439,11 @@ class callback extends Models
         return ['image'=>$image,'str'=>$str];
     }
 
+    function GetLocation($ip)
+    {
+        header('Content-Type: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
+        $url = 'http://ip-api.com/json/'.$ip;
+        echo $url.'<br>';
+        return file_get_contents($url);
+    }
 }

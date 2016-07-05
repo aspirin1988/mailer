@@ -20,7 +20,6 @@ class Callback extends Controller
 
     public function Recall()
     {
-        $this->GetLocation();
         $name=$this->get_name();
         $rest='';
         $rest['fullname']=$_POST['fullname'];  //= $this->request;
@@ -92,17 +91,51 @@ class Callback extends Controller
         return md5($name);
     }
 
-    function GetLocation()
+    function GetLocation($ip)
     {
+        header('Content-Type: text/html;charset=UTF-8');
+        $url = "https://www.nic.ru/whois/?query=" . $ip;
+        $data = @file_get_contents($url);
+        $data = explode('</div>', $data);
+        foreach ($data as $value) {
+            $preData = explode('<div class="b-whois-info__info">', $value);
+            if (count($preData) > 1) {
+                $data = $preData[1];
+                break;
+            }
+        }
+        $data = str_replace('&nbsp;', '', $data);
+        $data = explode('<br>', $data);
+        foreach ($data as $key => $value) {
+            //echo stristr($value,'%');
+            if (stristr($value, '%')) {
+                unset($data[$key]);
+            }
 
-        //$model = new \app\geolocation\models\IP2Location(BASE_PATH."/app/geolocation/model/databases/IP2LOCATION-LITE-DB1.BIN",\app\geolocation\models\IP2Location()::FILE_IO);
+        }
 
-        //$db = new \IP2Location\IP2Location('./databases/IP2LOCATION-LITE-DB1.BIN', \IP2Location\IP2Location::FILE_IO);
+        $preData = [];
+        $name = ['company', 'city', 'address', 'descr'];
+        $direct = 0;
+        foreach ($data as $key => $value) {
+            if ($value) {
+                $preData1 = explode(':', $value);
+                if (count($preData1) > 1) {
+                    $preData2 = $preData1[0];
+                    if (stristr($preData2, 'descr')) {
+                        $preData2 = $name[$direct];
+                        $direct++;
+                    }
+                    unset($preData1[0]);
+                    $preData[$preData2] = $preData1;
+                } else {
+                    //unset($preData1[0]);
+                }
+            }
+        }
+        $data = $preData;
 
-        //$records = $model->lookup('8.8.8.8', $model::ALL);
-
-        //print_r($records);
-
+        return json_encode($data);
     }
 
 }
