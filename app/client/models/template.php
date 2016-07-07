@@ -25,7 +25,7 @@ class template extends Models
 
             foreach($widgets as $key => $value)
             {
-                if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
+                /*if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
                     foreach ($value as $key1 => $value1) {
                         if ($value1 == 'true') {
                             $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-popup-btn.html';
@@ -53,7 +53,7 @@ class template extends Models
                     }
                 }
                 else
-                {
+                {*/
 
                         if ($value['value']) {
                             $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key . '-popup-btn.html';
@@ -79,10 +79,10 @@ class template extends Models
 
                         }
 
-                }
+               // }
             }
 
-            if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
+            /*if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
                 foreach ($text as $key => $value) {
                     foreach ($value as $key1 => $value1) {
                         $template = str_replace('{' . $key . ':' . $key1 . '}', $value1, $template);
@@ -93,7 +93,7 @@ class template extends Models
                 $template = str_replace('{contacts:data}', "", $template);
             }
             else
-            {
+            {*/
                 foreach ($text as $key => $value) {
                     if ($key!='contacts') {
                         foreach ($value['data'] as $key1 => $value1) {
@@ -101,19 +101,25 @@ class template extends Models
                         }
                     }
                     else{
+                        if ($value['data']) {
+                            $template = str_replace('{contacts:text}', $value['text'], $template);
+                            $contacts = '';
+                            foreach ($value['data'] as $key1 => $val1) {
+                                $contacts .= '<div>' . $val1['title'] . ' : <a href="' . $val1['type'] . ':' . $val1['text'] . '">' . $val1['text'] . '</a><br></div>';
 
-                        $template = str_replace('{contacts:text}', $value['text'], $template);
-                        $contacts='';
-                        foreach ($value['data'] as $key1=>$val1) {
-                            $contacts.='<div>'.$val1['title'].' : <a href="'.$val1['type'].':'.$val1['text'].'">'.$val1['text'].'</a><br></div>';
-
+                            }
+                            $template = str_replace('{contacts:data}', $contacts, $template);
                         }
-                        $template = str_replace('{contacts:data}', $contacts, $template);
+                        else
+                        {
+                            $template = str_replace('{contacts:text}', '', $template);
+                            $template = str_replace('{contacts:data}', '', $template);
+                        }
                     }
 
                 }
 
-            }
+            //}
             $template = str_replace('{css}', 'https'.HOST_NAME . DS . 'client' . DS . 'css' . DS . 'get'.DS , $template);
             $template = str_replace('{host}','https'.HOST_NAME, $template);
             $template = str_replace('{md5}',$name, $template);

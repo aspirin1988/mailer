@@ -204,7 +204,11 @@
     $(document).ready(function () {
         $(document).on('click','.tab-blink',function () {
             var target=$(this).data('target');
-            console.log(target);
+            var target_to=target.replace('popup','to');
+            console.log(target_to);
+            $('.blink-cb-open-popup').removeClass('active');
+            $(target_to).addClass('active');
+
             $('.blink-cb-module-flip-container').hide();
             $(target + '.blink-cb-module-flip-container').show();
         });
