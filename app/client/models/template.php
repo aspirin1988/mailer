@@ -54,7 +54,6 @@ class template extends Models
                 }
                 else
                 {
-                    print_r($value);
 
                         if ($value['value']) {
                             $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key . '-popup-btn.html';

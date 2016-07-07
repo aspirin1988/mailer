@@ -30,14 +30,11 @@
                                 <option>Washington</option>
                             </select>
                         </div>
-                        {{mailerSettings.widgets}}
                         <div ng-repeat="(key, val) in mailerSettings.widgets">
-                            <input id="Widget_{{key}}" class="checkbox-switch" name="approve" type="checkbox" placeholder="ID" ng-change="console(val.value);" ng-model="val.value">
+                            <input id="Widget_{{key}}" class="checkbox-switch-small" name="approve" type="checkbox" placeholder="ID" ng-change="console(val.value);" ng-model="val.value">
                             <label for="Widget_{{key}}" >{{ val.title }}</label>
                             <br>
                         </div>
-                        <div class="checkbox"><label><input type="checkbox" ng-model="messangeHeaderWidget">Письмо</label></div>
-                        <div class="checkbox"><label><input type="checkbox" ng-model="chatHeaderWidget">Чат</label></div>
                     </div>
                     <div class="box-footer">
                         <div class="nav-tabs-custom">

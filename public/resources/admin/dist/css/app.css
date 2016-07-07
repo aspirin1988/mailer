@@ -69,6 +69,58 @@
     box-shadow: 0 0 0 3px rgba(255,255,0,.5);
 }
 
+
+.checkbox-switch-small {
+    vertical-align: top;
+    margin: 0 3px 0 0;
+    width: 17px;
+    height: 17px;
+}
+.checkbox-switch-small + label {
+    cursor: pointer;
+}
+.checkbox-switch-small:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+.checkbox-switch-small:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 60px;
+}
+.checkbox-switch-small:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 50px;
+    height: 18px;
+    border-radius: 13px;
+    background: #CDD1DA;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+.checkbox-switch-small:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 18px;
+    height: 14px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+}
+.checkbox-switch-small:checked + label:before {
+    background: #3c8dbc;
+}
+.checkbox-switch-small:checked + label:after {
+    left: 30px;
+}
+.checkbox-switch-small:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+}
+
+
 .del-button{
     font-size: 20px;
 }

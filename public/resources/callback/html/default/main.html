@@ -11,20 +11,20 @@
         <div class="blink-cb-module-main-body-container">
             <a href="#" onclick="return false;" class="blink-cb-module-exit-body-btn"><i class="fa fa-close"></i></a>
             <ul class="blink-cb-module-main-body-header-btns" style="list-style: none;">
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-recall">
+                <li ng-if="mailerSettings.widgets.recall.value"  class="blink-cb-open-popup" id="blink-cb-module-to-recall">
                     <a href="#recall"  class="tab-blink" data-target="#blink-cb-module-popup-recall" onclick="return false;">
                         <i class="fa fa-phone"></i>
                         <span>{{mailerSettings.text_default.recall.data.icon_txt}}</span>
                     </a>
                 </li>
-                <li class="blink-cb-open-popup" id="blink-cb-module-to-messange">
+                <li ng-if="mailerSettings.widgets.message.value" class="blink-cb-open-popup" id="blink-cb-module-to-messange">
                     <a href="#messange" class="tab-blink" data-target="#blink-cb-module-popup-messange" onclick="return false;">
                         <i class="fa fa-envelope"></i>
                         <span>{{mailerSettings.text_default.message.data.icon_txt}}</span>
                     </a>
                 </li>
 
-                <li class="blink-cb-open-popup">
+                <li ng-if="mailerSettings.widgets.chat.value" class="blink-cb-open-popup">
                     <a href="#comments" class="tab-blink" data-target="#blink-cb-module-popup-comments" onclick="return false;" >
                         <i class="fa fa-comments"></i>
                         <span>{{mailerSettings.text_default.chat.data.icon_txt}}</span>
@@ -202,30 +202,30 @@
 </div>
 <script>
     $(document).ready(function () {
+        $(document).on('click','.tab-blink',function () {
+            var target=$(this).data('target');
+            console.log(target);
+            $('.blink-cb-module-flip-container').hide();
+            $(target + '.blink-cb-module-flip-container').show();
+        });
 
-       $('.tab-blink').click(function () {
-           var target=$(this).data('target');
-               console.log(target);
-               $('.blink-cb-module-flip-container').hide();
-               $(target + '.blink-cb-module-flip-container').show();
-       });
-
-        $('input[type="submit"]').click(function () {
+        $(document).on('click','input[type="submit"]',function () {
             var target = $(this).data('target');
             console.log(target);
             if (target!=='#blink-cb-module-popup-comments') {
-            $(target+' .blink-cb-module-flip-back').css('transform','rotateY(0deg)');
-            $(target+' .blink-cb-module-flip-front').css('transform','rotateY(-180deg)');
-            $(target+' .blink-cb-module-messange-box').show();
+                $(target+' .blink-cb-module-flip-back').css('transform','rotateY(0deg)');
+                $(target+' .blink-cb-module-flip-front').css('transform','rotateY(-180deg)');
+                $(target+' .blink-cb-module-messange-box').show();
             }
         });
 
-        $('button.blink-cb-module-popup-flip-back-btns').click(function () {
+        $(document).on('click','button.blink-cb-module-popup-flip-back-btns',function () {
             var target = $(this).data('target');
             console.log(target);
             $(target+' .blink-cb-module-flip-front').css('transform','rotateY(0deg)');
             $(target+' .blink-cb-module-flip-back').css('transform','rotateY(-180deg)');
         })
+
 
     });
 
