@@ -30,7 +30,12 @@
                                 <option>Washington</option>
                             </select>
                         </div>
-                        <div class="checkbox"><label><input type="checkbox" ng-model="recallHeaderWidget">Звонок</label></div>
+                        {{mailerSettings.widgets}}
+                        <div ng-repeat="(key, val) in mailerSettings.widgets">
+                            <input id="Widget_{{key}}" class="checkbox-switch" name="approve" type="checkbox" placeholder="ID" ng-change="console(val.value);" ng-model="val.value">
+                            <label for="Widget_{{key}}" >{{ val.title }}</label>
+                            <br>
+                        </div>
                         <div class="checkbox"><label><input type="checkbox" ng-model="messangeHeaderWidget">Письмо</label></div>
                         <div class="checkbox"><label><input type="checkbox" ng-model="chatHeaderWidget">Чат</label></div>
                     </div>
@@ -132,7 +137,7 @@
                                                 </div>
                                                 <div ng-if="key=='contacts'" class="form-group" >
                                                     <label>{{val.data[keyText].title}} : </label><br>
-                                                    <select ng-model="valText.type" >
+                                                    <select ng-model="valText.type" ng-change="console(valText.type)" >
                                                         <option value="tel" >Телефон</option>
                                                         <option value="mailto" >Email</option>
                                                     </select>

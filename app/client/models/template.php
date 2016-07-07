@@ -25,42 +25,93 @@ class template extends Models
 
             foreach($widgets as $key => $value)
             {
-                foreach($value as $key1 => $value1) {
-                    if ($value1=='true') {
-                        $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-popup-btn.html';
-                        $popup = file_get_contents($path);
-                        $template = str_replace('{widgets:' . $key1 . '-popup-btn}', $popup, $template);
+                if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
+                    foreach ($value as $key1 => $value1) {
+                        if ($value1 == 'true') {
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-popup-btn.html';
+                            $popup = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key1 . '-popup-btn}', $popup, $template);
 
-                        $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-main-widgets.html';
-                        $widgets = file_get_contents($path);
-                        $template = str_replace('{widgets:' . $key1 . '-main-widgets}', $widgets, $template);
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-main-widgets.html';
+                            $widgets = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key1 . '-main-widgets}', $widgets, $template);
 
-                        $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-main-icon.html';
-                        $icon = file_get_contents($path);
-                        $template = str_replace('{widgets:' . $key1 . '-main-icon}', $icon, $template);
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key1 . '-main-icon.html';
+                            $icon = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key1 . '-main-icon}', $icon, $template);
 
 
+                        } else {
+                            $popup = '';
+                            $template = str_replace('{widgets:' . $key1 . '-popup-btn}', $popup, $template);
+                            $widgets = '';
+                            $template = str_replace('{widgets:' . $key1 . '-main-widgets}', $widgets, $template);
+                            $icon = '';
+                            $template = str_replace('{widgets:' . $key1 . '-main-icon}', $icon, $template);
 
-                    }
-                    else
-                    {
-                        $popup = '';
-                        $template = str_replace('{widgets:' . $key1 . '-popup-btn}', $popup, $template);
-                        $widgets = '';
-                        $template = str_replace('{widgets:' . $key1 . '-main-widgets}', $widgets, $template);
-                        $icon = '';
-                        $template = str_replace('{widgets:' . $key1 . '-main-icon}', $icon, $template);
-
+                        }
                     }
                 }
+                else
+                {
+                    print_r($value);
 
+                        if ($value['value']) {
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key . '-popup-btn.html';
+                            $popup = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key . '-popup-btn}', $popup, $template);
+
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key . '-main-widgets.html';
+                            $widgets = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key . '-main-widgets}', $widgets, $template);
+
+                            $path = CALLBACK . DS . 'html' . DS . 'widgets' . DS . $key . '-main-icon.html';
+                            $icon = file_get_contents($path);
+                            $template = str_replace('{widgets:' . $key . '-main-icon}', $icon, $template);
+
+
+                        } else {
+                            $popup = '';
+                            $template = str_replace('{widgets:' . $key . '-popup-btn}', $popup, $template);
+                            $widgets = '';
+                            $template = str_replace('{widgets:' . $key . '-main-widgets}', $widgets, $template);
+                            $icon = '';
+                            $template = str_replace('{widgets:' . $key . '-main-icon}', $icon, $template);
+
+                        }
+
+                }
             }
 
-            foreach($text as $key => $value)
+            if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
+                foreach ($text as $key => $value) {
+                    foreach ($value as $key1 => $value1) {
+                        $template = str_replace('{' . $key . ':' . $key1 . '}', $value1, $template);
+                    }
+
+                }
+                $template = str_replace('{contacts:text}', '', $template);
+                $template = str_replace('{contacts:data}', "", $template);
+            }
+            else
             {
-                foreach($value as $key1 => $value1)
-                {
-                    $template = str_replace('{'.$key.':'.$key1.'}',$value1,$template);
+                foreach ($text as $key => $value) {
+                    if ($key!='contacts') {
+                        foreach ($value['data'] as $key1 => $value1) {
+                            $template = str_replace('{' . $key . ':' . $key1 . '}', $value1, $template);
+                        }
+                    }
+                    else{
+
+                        $template = str_replace('{contacts:text}', $value['text'], $template);
+                        $contacts='';
+                        foreach ($value['data'] as $key1=>$val1) {
+                            $contacts.='<div>'.$val1['title'].' : <a href="'.$val1['type'].':'.$val1['text'].'">'.$val1['text'].'</a><br></div>';
+
+                        }
+                        $template = str_replace('{contacts:data}', $contacts, $template);
+                    }
+
                 }
 
             }

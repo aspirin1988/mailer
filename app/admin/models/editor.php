@@ -45,6 +45,7 @@ class editor extends Models
                 unset($siteData[0]['text']);
                 $siteData[0]['options_default']=json_decode( $siteData[0]['options_default'],true);
                 $siteData[0]['text_default']=json_decode( $siteData[0]['text_default'],true);
+                $siteData[0]['widgets']=json_decode( $siteData[0]['widgets'],true);
             }
             return $siteData[0];
         }
@@ -238,6 +239,7 @@ class editor extends Models
                 $siteData = array_merge($siteData[0], $data);
                 $vl['options_default']=$data['options_default'];
                 $vl['text_default']=$data['text_default'];
+                $vl['widgets']=json_encode($data['widgets']);
                 $this->UpdateConfig($id,$vl);
             }
             else
