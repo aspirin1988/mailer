@@ -296,7 +296,7 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
 
 });
 
-app.controller('blinkMainController', function($scope, $http, authUser, $routeParams) {
+app.controller('blinkMainController',function($scope, $http, authUser, $sce, $routeParams) {
     $scope.date = new Date();
 
     authUser.getAuthUserInfo(function (data) {
@@ -305,6 +305,8 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
 
     $scope.mailerNewClientInfo = {};
     $scope.newCompany = {};
+    $scope.siteInfo = {};
+    $scope.html = {};
     $scope.mailerClientsOwn = {};
     $scope.mailerClientOwnSettings = false;
     $scope.mailerClientEditSettings = false;
@@ -401,6 +403,26 @@ app.controller('blinkMainController', function($scope, $http, authUser, $routePa
 
         }, function error(response) {});
     };
+
+    $scope.showSiteInfo= function (obj) {
+        $http({
+            method: 'POST',
+            url: '/admin/Client/GetSiteInfo/'+obj,
+            data: $scope.mailerNewClientInfo
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                //console.log(response);
+                $scope.siteInfo=response.data;
+                //return $scope.siteInfo;
+            }
+        }, function error(response) {});
+    };
+
+    $scope.ShowasHyml = function(obj) {
+        return $sce.trustAsHtml(obj);
+    };
+
+
 
     $scope.updatePage= function (page) {
       console.log(page);

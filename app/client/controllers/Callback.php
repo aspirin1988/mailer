@@ -74,9 +74,9 @@ class Callback extends Controller
         $this->response->json($model->SendForm($rest,$name));
     }
 
-    public function SendFormTo($value)
+    public function SendFormTo($value,$name=false)
     {
-        $name=$this->get_name();
+        if(!$name) $name=$this->get_name();
         $rest='';
         //$rest=$_POST;  //= $this->request;
         $rest=$value;

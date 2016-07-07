@@ -30,7 +30,7 @@ class registration extends Models
         $new_user['email']=$email;
         $new_user['code']=$value['url'];
         $this->db->insert('temp_user',$new_user);
-        $mail_res=$mail->SendFormTo($value);
+        $mail_res=$mail->SendFormTo($value,'MainServer');
         return ['mail'=>$mail_res];
     }
 

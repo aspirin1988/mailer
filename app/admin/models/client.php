@@ -171,6 +171,49 @@ class client extends Models
         }
     }
 
+    public function GetSiteInfo($id,$user)
+    {
+        if ($user['access']!=999) {
+            if ($this->permission_c($id, $user)) {
+                $infoData = $this->db->select('site_message',
+                    [
+                        'site_message.*'
+                    ],
+
+                    [
+                        "site_id" => $id
+                    ]
+                );
+                foreach ($infoData as $key=> $data){
+                    $infoData[$key]['geodata']=json_decode($data['geodata'],true);
+                }
+                return [
+                    'data' => $infoData,
+                ];
+            } else {
+                return false;
+            }
+        }
+        else
+        {
+            $infoData = $this->db->select('site_message',
+                [
+                    'site_message.*'
+                ],
+
+                [
+                    "site_id" => $id
+                ]
+            );
+            foreach ($infoData as $key=> $data){
+                $infoData[$key]['geodata']=json_decode($data['geodata'],true);
+            }
+            return [
+                'data' => $infoData,
+            ];
+        }
+    }
+
     public function GetAllSiteClientNP($id,$user)
         {
             $limit = PAGE_SIZE;

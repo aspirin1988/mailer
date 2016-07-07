@@ -243,7 +243,7 @@ class callback extends Models
             ]
         );
         if ($siteData) {
-            $Content=$siteData = $this->db->select('site_options',
+            $Content= $this->db->select('site_options',
                 [
                     'site_options.*',
                 ],
@@ -251,7 +251,7 @@ class callback extends Models
                     'site'=>$siteData[0]['id']
                 ]
             );
-            print_r($Content);
+//            print_r($siteData);
             $Content=json_decode($Content[0]['text'],true);
             $suc_text=$Content['recall']['suc_res_txt'];
             $err_text=$Content['recall']['err_res_txt'];

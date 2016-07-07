@@ -67,7 +67,8 @@
     {{search}}
     <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search" ng-if="(key>=offset)&&(key-offset)<pagesize||(search=='')" >
         <div class="box-header with-border">
-            <h3 class="box-title">Данные о сайте {{val.name }}</h3>
+            <h3 class="box-title">Данные о сайте {{val.name }}</h3> <button type="button" class="btn btn-info btn-sm" data-toggle="modal" ng-click="siteInfo=showSiteInfo(val.id)" data-target="#myModal">Open Modal</button>
+
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                 <!--button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button-->
@@ -197,4 +198,43 @@
     <ul class="pagination">
         <li ng-repeat='page in countpage' class="{{route.page==page ? 'active' : ''}}" ><a href="#/client-sites/{{route.id}}/{{page}}">{{page+1}}</a></li>
     </ul>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="box" ng-repeat="(key, val) in siteInfo.data">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">{{val.status}}</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fa fa-minus"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div ng-bind-html="ShowasHyml(val.message)" class="box-body">
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        {{val.geodata.city}}
+                    </div>
+                    <!-- /.box-footer-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
 </div>

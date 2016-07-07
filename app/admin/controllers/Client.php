@@ -29,6 +29,13 @@ class Client extends Controller
         $this->response->json($model->GetAllSiteClient($id,$this->session->getUser()));
     }
 
+    public function GetSiteInfo($id)
+    {
+        $model = new \app\admin\models\client();
+
+        $this->response->json($model->GetSiteInfo($id,$this->session->getUser()));
+    }
+
     public function GetAllSiteClientNP($id)
     {
         $model = new \app\admin\models\client();
