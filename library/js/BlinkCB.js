@@ -324,13 +324,13 @@ BlinkCBModule.prototype.loadJS = function() {
                     else {
                         if (currentResutlt[0].code === '1') {
                             successMessange.style.display = 'block';
-                            successMessange.children[0].innerHTML = currentResutlt[0].text;
+                            //successMessange.children[0].innerHTML = currentResutlt[0].text;
                             parentDiv.classList.add('active-flip');
                             that.unBlockForm(toSendObject);
                             that.clearForm(toSendObject);
                         } else {
                             errorMessange.style.display = 'block';
-                            errorMessange.children[0].innerHTML = currentResutlt[0].text;
+                            //errorMessange.children[0].innerHTML = currentResutlt[0].text;
                             parentDiv.classList.add('active-flip');
                             that.unBlockForm(toSendObject);
                         }

@@ -342,7 +342,7 @@ class callback extends Models
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
 
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR']),'time_start'=>time()]);
     }
 
     function sendToOperatorQuery($siteData,$rest)
@@ -370,7 +370,7 @@ class callback extends Models
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR']),'time_start'=>time()]);
 
 
     }
@@ -408,7 +408,7 @@ class callback extends Models
         {
             $key_message[]=['chat_id'=>$message['result']['chat']['id'],'message_id'=>$message['result']['message_id']];
         }
-        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR'])]);
+        $this->db->insert('site_message',['key'=>json_encode($key_message),'site_id'=>$siteData[0]['id'],'message'=>$text,'geodata'=>$this->GetLocation($_SERVER['REMOTE_ADDR']),'time_start'=>time()]);
 
     }
 

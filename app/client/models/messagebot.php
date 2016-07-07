@@ -202,7 +202,7 @@ class messagebot extends  Models
     '.$full_name.'</strong>
     @'.$username);
             }
-            $this->db->update('site_message',['status'=>'completed'],['id'=>$messageData[0]['id']]);
+            $this->db->update('site_message',['status'=>'completed','time_end'=>time()],['id'=>$messageData[0]['id']]);
         }
         if ($message_data=='approve=false'){
             foreach ($operators as $value){
@@ -211,7 +211,7 @@ class messagebot extends  Models
     '.$full_name.'</strong>
     @'.$username);
             }
-            $this->db->update('site_message',['status'=>'renouncement'],['id'=>$messageData[0]['id']]);
+            $this->db->update('site_message',['status'=>'renouncement','time_end'=>time()],['id'=>$messageData[0]['id']]);
         }
 
     }
