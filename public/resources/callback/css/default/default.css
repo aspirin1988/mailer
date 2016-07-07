@@ -241,10 +241,10 @@
     transform: rotateY(180deg);
 }
 .blink-cb-module-main-body #blink-cb-module-popup-recall {
-    margin-top: 50%;
+    margin-top: 20%;
 }
 .blink-cb-module-main-body #blink-cb-module-popup-messange {
-    margin-top: 30%;
+    margin-top: 20%;
 }
 .blink-cb-module-main-body.active {
     display: block;

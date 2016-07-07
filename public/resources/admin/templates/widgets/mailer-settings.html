@@ -60,9 +60,9 @@
                                                     <input ng-if="valStyle.removable === false" type="text" class="form-control input-sm" ng-model="valStyle.value" ng-change="console(val.config)">
                                                     <div class="input-group" ng-if="valStyle.removable">
                                                         <input type="text" class="form-control input-sm" ng-model="valStyle.value" ng-change="console(val.config)">
-                              <span class="input-group-addon" style="cursor: pointer;" ng-click="removeProperty(key, keyStyle)">
-                                <i class="fa fa-remove"></i>
-                              </span>
+                                                        <span class="input-group-addon" style="cursor: pointer;" ng-click="removeProperty(key, keyStyle)">
+                                                        <i class="fa fa-remove"></i>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,6 +126,8 @@
                                         </div>
                                         <div class="box-body">
                                             <input ng-if="key=='contacts'" type="text" class="form-control input-sm" ng-model="val.text" ng-change="console(val.text)">
+                                            <button type="button" class="btn btn-primary btn-sm pull-right" ng-click="mailerSettings.text_default.contacts.data=addContact()"><i class="fa fa-plus"></i></button>
+                                            <br>
                                             <div ng-repeat="(keyText, valText) in val.data">
 
                                                 <div ng-if="key!='contacts'" class="form-group">
@@ -140,6 +142,7 @@
                                                     </select>
                                                     <input type="text" class="form-control input-sm" ng-model="val.data[keyText].title" ng-change="console(val.data[keyText].title)">
                                                     <input type="text" class="form-control input-sm" ng-model="val.data[keyText].text" ng-change="console(val.data[keyText].text)">
+                                                    <button type="button" class="btn btn-danger btn-sm pull-right" ng-click="mailerSettings.text_default.contacts.data=delContact(keyText)"><i class="fa fa-minus"></i></button>
                                                 </div>
                                             </div>
                                         </div>

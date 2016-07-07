@@ -181,6 +181,9 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
     $scope.newItem = {};
 
     $scope.addProperty = function(key, editing, object) {
+        console.log(key);
+        console.log($scope.mailerSettings.options_default.css[key].config);
+
         if(!object) {
             if(editing === true) $scope.addingNewItem = true;
             else $scope.addingNewItem = false;
@@ -188,13 +191,14 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
             if(editing === true) $scope.addingNewItem = true;
             else $scope.addingNewItem = false;
 
-            $scope.mailerSettings[key].style.push(object);
+            $scope.mailerSettings.options_default.css[key].config.push(object);
             $scope.newItem = {};
         }
     };
 
     $scope.removeProperty = function(keyObject, keyStyle) {
-        $scope.mailerSettings[keyObject].style.splice(keyStyle, 1);
+        console.log($scope.mailerSettings.options_default.css[keyObject]);
+        $scope.mailerSettings.options_default.css[keyObject].config.splice(keyStyle, 1);
     };
 
     $scope.console = function (obj) {
@@ -212,6 +216,30 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
             }
         }, function error(response) {});
     };
+    $scope.addContact = function ($obj) {
+
+        console.log(Object($scope.mailerSettings.text_default.contacts.data).length);
+        if (Object($scope.mailerSettings.text_default.contacts.data).length<=3) {
+            $scope.mailerSettings.text_default.contacts.data.push({
+                "type": "tel",
+                "text": "Текст контакта",
+                "title": "Название контакта"
+            });
+        }
+        else {
+            UIkit.notify("<i class='uk-icon-check'></i>Контактов на форме может быть, не более 4-х!",{status:'warning',pos:'top-right'});
+        }
+        $scope.console($obj);
+        return $scope.mailerSettings.text_default.contacts.data;
+        
+    };
+    $scope.delContact = function ($obj) {
+            console.log($obj);
+            $scope.mailerSettings.text_default.contacts.data.splice($obj,1);
+            $scope.console($obj);
+            return $scope.mailerSettings.text_default.contacts.data;
+
+        };
 
 
 
