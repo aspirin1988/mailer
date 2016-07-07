@@ -417,7 +417,7 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             }
         }, function error(response) {});
     };
-
+        
     $scope.ShowasHyml = function(obj) {
         return $sce.trustAsHtml(obj);
     };
