@@ -422,7 +422,12 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
         return $sce.trustAsHtml(obj);
     };
 
+    $scope.messageFilter = function (obj) {
 
+            $scope.status = obj;
+            return $scope.status;
+        
+    };
 
     $scope.updatePage= function (page) {
       console.log(page);

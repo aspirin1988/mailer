@@ -206,7 +206,6 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -217,6 +216,14 @@
                 <div class="box collapsed-box">
                     <div class="box-header with-border">
                         <h3 class="box-title">Сообщения <i class="fa fa-comments-o"> {{siteInfo.data.length}}</i></h3>
+                        <ul  class="nav nav-tabs pull-right ui-sortable-handle">
+                            <li ng-repeat="(keyStatus, valStatus) in siteInfo.MessageData" class="">
+                                <a data-toggle="tab" ng-click="status=messageFilter(valStatus.status)" aria-expanded="false">{{valStatus.title}} {{valStatus.count}}</a>
+                            </li>
+
+
+                        </ul>
+                        {{status}}
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                 <i class="fa fa-plus"></i></button>
@@ -225,7 +232,7 @@
                         </div>
                     </div>
                     <div class="box-body">
-                        <div ng-repeat="(key, val) in siteInfo.data">
+                        <div ng-repeat="(key, val) in siteInfo.data | filter:status">
                             <div ng-if="val.status=='completed'" class="box  box-success box-solid" >
                             <div class="box-header with-border">
                                 <h3 class="box-title"><span>{{key+1}}</span> {{val.status}}</h3>

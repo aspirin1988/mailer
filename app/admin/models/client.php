@@ -205,11 +205,34 @@ class client extends Models
                     "site_id" => $id
                 ]
             );
+            $infoMessage = $this->db->query("select site_message.status, count(site_message.status) from site_message WHERE site_id=$id GROUP BY site_message.status")->fetchAll(2);
+            foreach ($infoMessage as $key=>$value)
+            {
+                $title='';
+                switch ($value['status']){
+                    case 'renouncement':
+                        $title='Отказ';
+                        break;
+                    case 'completed':
+                        $title='Завершенные';
+                        break;
+                    case 'new':
+                        $title='Необработанные';
+                        break;
+                }
+                $value['title']=$title;
+                $infoMessage[$key]=$value;
+            }
+            $value['title']='Все';
+            $value['status']='';
+            $value['count']='';
+            $infoMessage[]=$value;
             foreach ($infoData as $key=> $data){
                 $infoData[$key]['geodata']=json_decode($data['geodata'],true);
             }
             return [
                 'data' => $infoData,
+                'MessageData' => $infoMessage,
             ];
         }
     }
