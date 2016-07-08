@@ -40,8 +40,8 @@ class callback extends Models
                 ]
             );
             $Content=json_decode($Content[0]['text'],true);
-            $suc_text=$Content['recall']['suc_res_txt'];
-            $err_text=$Content['recall']['err_res_txt'];
+            $suc_text=$Content['recall']['data']['suc_res_txt'];
+            $err_text=$Content['recall']['data']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'recall.html'); //$this->db->insert('email_massage',$rest);
             $res=$this->image_replace($str);
             $image=$res['image'];
@@ -192,8 +192,8 @@ class callback extends Models
                 ]
             );
             $Content=json_decode($Content[0]['text'],true);
-            $suc_text=$Content['recall']['suc_res_txt'];
-            $err_text=$Content['recall']['err_res_txt'];
+            $suc_text=$Content['recall']['data']['suc_res_txt'];
+            $err_text=$Content['recall']['data']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'form.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
@@ -253,8 +253,8 @@ class callback extends Models
             );
 //            print_r($siteData);
             $Content=json_decode($Content[0]['text'],true);
-            $suc_text=$Content['recall']['suc_res_txt'];
-            $err_text=$Content['recall']['err_res_txt'];
+            $suc_text=$Content['recall']['data']['suc_res_txt'];
+            $err_text=$Content['recall']['data']['err_res_txt'];
             $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html'); //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
