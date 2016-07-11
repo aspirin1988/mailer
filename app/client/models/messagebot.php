@@ -30,6 +30,7 @@ class messagebot extends  Models
                 '/operator' => 'string',
                 '/start' => 'string',
                 '/help' => 'string',
+                '/statistic' => 'string',
             ];
             $is_bot_command = false;
             $argument = false;
@@ -43,6 +44,7 @@ class messagebot extends  Models
                     if (isset($argument[1]))
                     {
                         $argument=ltrim($argument[1]);
+                        $argument=explode(' ',$argument);
                     }
                     file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
 
@@ -58,27 +60,49 @@ class messagebot extends  Models
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ]);
                         break;
+
+                    case '/statistic':
+                        $site=$this->permission(md5($argument[0]));
+                        $operator=$this->findOperator($chat_id,$user_name,$site['data'][0]['id']);
+                        if ($site['data']) {
+                            if ($operator) {
+                                $date=$argument;
+                                unset($date[0]);
+                                $SiteInfo=$this->GetSiteInfo($site,$date);
+                                $text='<strong>Статисти по сайту '.$site['data'][0]['name'].' на '.date('Y.m.d').'</strong>
+    ';
+                                foreach ($SiteInfo['MessageData'] as $value){
+                                $text.='<b>'.$value['title'].' '.$value['count'].'</b>
+    ';
+                                }
+                                $timestamp = strtotime($date[1]);
+                                $bot->SendMessage($site_chat_id, ['text' =>$text
+                                ]);
+                            }
+                        }
+                        break;
+
                     case '/operator':
-                        $site=$this->permission(md5($argument));
+                        $site=$this->permission(md5($argument[0]));
                         if ($site['data']) {
                             $site=$site['data'][0]['id'];
                             $addOperator=$this->addOperator($chat_id,$user_name,$site);
                             if ($addOperator) {
                                 $bot->SendMessage($chat_id, ['text' =>
-                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument
+                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument[0]
                                 ]);
                             }
                             else
                             {
                                 $bot->SendMessage($chat_id, ['text' =>
-                                    'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument
+                                    'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument[0]
                                 ]);
                             }
                         }
                         else
                         {
                             $bot->SendMessage($chat_id, ['text' =>
-                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument . ' не сеществует в нашей базе!'
+                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не сеществует в нашей базе!'
                             ]);
                         }
                         break;
@@ -291,6 +315,90 @@ class messagebot extends  Models
         );
 
         return['current'=>$current_chat,'free'=>$free_chat];
+
+    }
+
+    public function GetSiteInfo($site,$date=false)
+    {
+        if ($date){
+            switch (count($date))
+            {
+                case 1:
+                    $date[1]=strtotime($date[1]);
+                    $infoData = $this->db->count('site_message',
+                        [
+                            'site_message.*'
+                        ],
+
+                        [
+                           'AND'=>[
+                               "site_id" => $site['data'][0]['id'],
+                               'time_start[>=]'=>$date[1],
+                                ]
+                        ]
+                    );
+                    $infoMessage = $this->db->query("select site_message.status, count(site_message.status) from site_message WHERE site_id={$site['data'][0]['id']} AND time_start>={$date[1]} GROUP BY site_message.status")->fetchAll(2);
+                    break;
+
+                case 2:
+                    $date[1]=strtotime($date[1]);
+                    $date[2]=strtotime($date[2]);
+                    $infoData = $this->db->count('site_message',
+                        [
+                            'site_message.*'
+                        ],
+
+                        [
+                            'AND'=>[
+                                "site_id" => $site['data'][0]['id'],
+                                'time_start[>=]'=>$date[1],
+                                'time_start[<=]'=>$date[2],
+                            ]
+                        ]
+                    );
+                    $infoMessage = $this->db->query("select site_message.status, count(site_message.status) from site_message WHERE site_id={$site['data'][0]['id']} AND time_start>={$date[1]} AND time_start<={$date[2]} GROUP BY site_message.status")->fetchAll(2);
+                    break;
+            }
+        }
+        else {
+            $infoData = $this->db->count('site_message',
+                [
+                    'site_message.*'
+                ],
+
+                [
+                    "site_id" => $site['data'][0]['id']
+                ]
+            );
+            $infoMessage = $this->db->query("select site_message.status, count(site_message.status) from site_message WHERE site_id={$site['data'][0]['id']} GROUP BY site_message.status")->fetchAll(2);
+        }
+        foreach ($infoMessage as $key => $value) {
+            $title = '';
+            switch ($value['status']) {
+                case 'renouncement':
+                    $title = '🚫Отказ';
+                    break;
+                case 'completed':
+                    $title = '✅Завершенные';
+                    break;
+                case 'new':
+                    $title = '🆕Необработанные';
+                    break;
+            }
+            $value['title'] = $title;
+            $infoMessage[$key] = $value;
+        }
+        $value['title'] = 'Все';
+        $value['status'] = '';
+        $value['count'] = $infoData;
+        $infoMessage[] = $value;
+        /*foreach ($infoData as $key => $data) {
+            $infoData[$key]['geodata'] = json_decode($data['geodata'], true);
+        }*/
+        return [
+//            'data' => $infoData,
+            'MessageData' => $infoMessage,
+        ];
 
     }
 

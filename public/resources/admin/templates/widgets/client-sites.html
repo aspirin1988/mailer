@@ -65,7 +65,7 @@
     </ul>
 </div>
 <section id="searchTextResults" class="content">
-    {{search}}
+    {{offset}}
     <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search" ng-if="(key>=offset)&&(key-offset)<pagesize||(search=='')" >
         <div class="box-header with-border">
             <button style="margin-right: 10px;" type="button" class="btn btn-info btn-sm" data-toggle="modal" ng-click="siteInfo=showSiteInfo(val.id)" data-target="#myModal">
@@ -213,6 +213,7 @@
                 <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
+
                 <div class="box collapsed-box">
                     <div class="box-header with-border">
                         <h3 class="box-title pull-left">Сообщения <i class="fa fa-comments-o"> {{siteInfo.data.length}}</i></h3>
