@@ -354,10 +354,74 @@ class client extends Models
         ];
     }
 
-    public function AddClient ($value,$user)
+    public function AddClient ($page,$value,$user)
     {
         if ($result  = $this->db->insert('company',$value)) {
           $this->CratePermission_s($result,$user);
+
+            $limit = PAGE_SIZE;
+            if ($user['access']!=999) {
+                $countSite = $this->db->count('company',
+                    [
+                        "[>]permission_c" => ["id" => "company"]
+                    ],
+                    [
+                        'company.id'
+                    ],
+
+                    [
+                        "permission_c.user"=>$user['id'],
+                    ]
+                );
+            }
+            else
+            {
+                $countSite = $this->db->count('company',
+                    [
+                        'company.id'
+                    ],
+                    [
+                    ]
+                );
+            }
+            $countPage = ceil($countSite / $limit);
+            $offset = (int)$page * $limit;
+            if ($user['access']!=999) {
+                $siteData = $this->db->select('company',
+                    [
+                        "[>]permission_c" => ["id" => "company"]
+                    ],
+                    [
+                        'company.id', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
+                    ],
+
+                    [
+                        "permission_c.user" => $user['id'],
+                        'LIMIT' => [$offset, $limit],
+                        'ORDER' => ['id ASC']
+                    ]
+                );
+            }
+            else
+            {
+                $siteData = $this->db->select('company',
+                    [
+                        'company.id', 'name', 'site', 'ph_address', 'date_create'
+                    ],
+
+                    [
+                        'LIMIT' => [$offset, $limit],
+                        'ORDER' => ['id ASC']
+                    ]
+                );
+            }
+
+            return [
+                'data' => $siteData,
+                'count' => $countPage,
+                'company' => $countSite
+            ];
+            
         }
 
         return [

@@ -13,6 +13,52 @@
         <!-- title row -->
         <div class="row">
             <div class="col-xs-12">
+                <!-- Box Comment -->
+                <div class="box box-widget collapsed-box">
+                    <form ng-submit="AddClient()">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">Добавить клиента</h4>
+                            <div class="box-tools">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Название компании</label>
+                                        <input type="text" class="form-control" ng-model="NewClient.name" placeholder="Название компании">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Физический адрес</label>
+                                        <input type="text" class="form-control" ng-model="NewClient.ph_address" placeholder="Физический адрес компании">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Юредический адрес</label>
+                                        <input type="text" class="form-control" ng-model="NewClient.legal_address" placeholder="Юредический адрес компании">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Название сайта</label>
+                                        <input type="text" class="form-control" ng-model="NewClient.site" placeholder="example.kz">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer text-right">
+                            <p class="pull-left" ng-if="newSiteMsg">Новый сайт был добавлен</p>
+                            <button type="submit" class="btn btn-success btn-sm" data-dismiss="modal">Добавить</button>
+                        </div>
+                        <!-- /.box-footer -->
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+            <div class="col-xs-12">
                 <h2 class="page-header">
                     <i class="fa fa-globe"></i> Сервисы "B-Link"
                     <small class="pull-right">{{date | date:'dd-MM-yyyy'}}</small>

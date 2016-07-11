@@ -132,7 +132,7 @@ app.factory('mailerFactory', function ($http) {
     return factory;
 });
 
-app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams) {
+app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams,$http) {
     $scope.allClients = {};
     clientsFactory.getAllClients(function (data) {
         $scope.allClients = data.data;
@@ -146,6 +146,20 @@ app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams) {
         }
         $scope.countpage = pagination;
     },$routeParams);
+
+    $scope.AddClient=function () {
+        $http({
+            method: 'POST',
+            url: '/admin/client/AddClient/'+$routeParams.page,
+            data: $scope.NewClient
+        }).then(function success(response) {
+            if(response.data.data !== false) {
+                $scope.allClients=response.data.data;
+                console.info(response);
+            }
+        }, function error(response) {});
+    };
+
 });
 
 app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
