@@ -346,7 +346,7 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
                 }).then(function success(response) {
                     if(response.data.data !== false) {
                         $scope.mailerEmails = response.data.data;
-
+                        
                         var data = {};
 
                         for(var i=0; i < $scope.mailerEmails.length; i++) {
