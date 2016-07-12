@@ -64,6 +64,7 @@
         <li ng-repeat='page1 in countpage' class="{{route.page==page1 ? 'active' : ''}}" ><a href="#/client-sites/{{route.id}}/{{page1}}" >{{page1+1}}</a></li>
     </ul>
 </div>
+{{mailerEmails}}
 <section id="searchTextResults" class="content">
     {{offset}}
     <div class="box box-default collapsed-box" ng-repeat="(key, val) in sites | filter:search" ng-if="(key>=offset)&&(key-offset)<pagesize||(search=='')" >
@@ -103,8 +104,8 @@
                 </div>
                 <div class="form-group">
                     <div class="form-group">
-                        <label>Email отправки</label>
-                        <select class="form-control" ng-model="val.email" ng-options="email as email.login for email in emails track by email.id" readonly="readonly">
+                        <label>Email отправки</label>{{val.email}}
+                        <select class="form-control" ng-model="val.email" ng-options="email as email.login for email in mailerEmails track by email.id" readonly="readonly">
                         </select>
                     </div>
                 </div>
