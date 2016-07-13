@@ -3,6 +3,7 @@
 </a>
 
 <nav class="navbar navbar-static-top" role="navigation">
+    <a class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas="{target:'#offcanvas-1'}"></a>
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
@@ -81,7 +82,7 @@
                     <li class="footer"><a href="#">See All Messages</a></li>
                 </ul>
             </li-->
-            
+
             <!-- Notifications: style can be found in dropdown.less -->
             <!--li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -123,7 +124,7 @@
                 </ul>
             </li-->
 
-            <!-- Tasks: style can be found in dropdown.less -->           
+            <!-- Tasks: style can be found in dropdown.less -->
             <!--li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-flag-o"></i>
@@ -233,4 +234,45 @@
             </li>
         </ul>
     </div>
+
 </nav>
+
+
+<div id="offcanvas-1" class="uk-offcanvas" aria-hidden="true">
+
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="">
+            <li>
+                MAIN NAVIGATION
+            </li>
+            <li>
+                <a href="#/clients-list/0">
+                    <i class="fa fa-database"></i>
+                    <span>Список клиентов</span>
+                </a>
+            </li>
+            <li class="uk-parent" aria-expanded="false">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span>Сервисы</span>
+                </a>
+                <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden">
+                    <ul class="uk-nav-sub">
+                        <li>
+                            <a href="#/mailer" ng-click="mailerGetTemplate()"><i class="fa fa-circle-o"></i> Mailer</a>
+                        </li>
+                        <li><a href="#">Sub item</a>
+                            <ul>
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
