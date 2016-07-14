@@ -118,13 +118,49 @@ class callback extends Models
         $value['company']=$company;
         if (!$this->ChecksSite($value['md5'])) {
             $result = $this->db->insert('site', $value);
+
             if ($result) {
                 $this->CratePermission_s($result, $user);
                 $this->CrateOptions_s($result);
+                $countSite = $this->db->count('site',
+                    [
+                        'site.id'
+                    ],
+                    [
+                        'site.company' => $company
+                    ]
+                );
+
+                $siteData = $this->db->select('site',
+                    [
+                        'site.*'
+                    ],
+
+                    [
+                        'site.company' => $company,
+                        'ORDER' => ['id ASC']
+                    ]
+                );
+                foreach ($siteData as $key => $value){
+                    $operators=$this->db->select('operators',
+                        [
+                            'operators.*',
+                        ]
+                        ,
+                        [
+                            'site_id'=>$value['id']
+                        ]
+                    );
+
+                    $siteData[$key]['operators']=$operators;
+                }
+
+                return [
+                    'data' => $siteData,
+                    'count' => $countSite,
+                    'pagesize' => PAGE_SIZE,
+                ];
             }
-            return [
-                'data' => $result
-            ];
         }
         else
         {

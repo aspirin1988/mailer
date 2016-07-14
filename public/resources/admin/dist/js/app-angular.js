@@ -154,6 +154,8 @@ app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams,$htt
             data: $scope.NewClient
         }).then(function success(response) {
             if(response.data.data !== false) {
+                $scope.NewClient={};
+                UIkit.notify("<i class='uk-icon-check'></i>Клиент успешно добавлен!",{status:'success',pos:'top-right'});
                 $scope.allClients=response.data.data;
                 console.info(response);
             }
@@ -162,7 +164,7 @@ app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams,$htt
 
 });
 
-app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
+app.controller('clientCtrl', function ($scope, $routeParams, clientFactory,$http) {
     $scope.sites = {};
 
     clientFactory.getSites($routeParams.id, function(data) {
@@ -179,6 +181,25 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory) {
         }
         $scope.countpage = pagination;
     },$routeParams.page);
+
+    $scope.AddSite = function(event) {
+        //console.info($routeParams);
+        $http({
+            method: 'POST',
+            url: '/admin/callback/AddSite/'+$routeParams.id,
+            data: $scope.mailerNewClientInfo
+        }).then(function success(response) {
+            $scope.sites=response.data.data;
+            if(response.data.data !== false) {
+                $scope.mailerNewClientInfo = {};
+                UIkit.notify("<i class='uk-icon-check'></i>Сайт успешно добавлен!",{status:'success',pos:'top-right'});
+                $scope.mailerGetClients();
+                //location.reload();
+            }
+
+        }, function error(response) {});
+    };
+
 });
 
 app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailerFactory) {
@@ -346,7 +367,7 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
                 }).then(function success(response) {
                     if(response.data.data !== false) {
                         $scope.mailerEmails = response.data.data;
-                        
+
                         var data = {};
 
                         for(var i=0; i < $scope.mailerEmails.length; i++) {
@@ -401,22 +422,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
         }
     };
 
-    $scope.AddSite = function(event) {
-        //console.info($routeParams);
-        $http({
-            method: 'POST',
-            url: '/admin/callback/AddSite/'+$routeParams.id,
-            data: $scope.mailerNewClientInfo
-        }).then(function success(response) {
-            if(response.data.data !== false) {
-                $('#myModal').modal('toggle');
-                $scope.mailerNewClientInfo = {};
-                $scope.mailerGetClients();
-                location.reload();
-            }
-
-        }, function error(response) {});
-    };
 
     $scope.showSiteInfo= function (obj) {
         $http({
@@ -547,18 +552,16 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
 
 
 
-    $scope.addNewCompany = function(event) {
+    $scope.addNewCompany = function() {
         //console.info($routeParams);
         $http({
             method: 'POST',
             url: '/admin/Client/AddClient/',
-            data: $scope.newCompany
+            data: $scope.NewClient
         }).then(function success(response) {
             if(response.data.data !== false) {
-                $('#myModal').modal('toggle');
-                $scope.newCompany = {};
+                $scope.NewClient={};
                 $scope.mailerGetClients();
-                // location.reload();
             }
 
         }, function error(response) {});
