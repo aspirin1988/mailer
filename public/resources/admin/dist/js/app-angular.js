@@ -431,7 +431,83 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             }
         }, function error(response) {});
     };
-        
+
+    $scope.editHosts = function(id) {
+        $http({
+            method: 'GET',
+            url: '/admin/callback/getgateway/' + id
+        }).then(function success(response) {
+            console.log(response);
+            if(response.data.data !== false) {
+                $scope.hostSettingsVisibility = true;
+                $scope.hostSettings = response.data.data[0];
+                $scope.mailerClientOwnSettings = true;
+            }
+        }, function error() {});
+    };
+
+   $scope.saveHosts = function(id) {
+        $http({
+            method: 'POST',
+            url: '/admin/callback/EditGateway/',
+            data: $scope.hostSettings
+        }).then(function success(response) {
+            console.log(response);
+            if(response.data.data !== false) {
+                $scope.hostSettingsVisibility = false;
+                $scope.mailerEmails=response.data.data;
+            }
+        }, function error() {});
+    };
+
+    $scope.addHosts = function() {
+        $scope.addhostSettingsVisibility = true;
+        $scope.hostSettings ={}
+    };
+
+    $scope.cancelHost = function() {
+        $scope.hostSettingsVisibility = false;
+        $scope.addhostSettingsVisibility = false;
+        $scope.hostSettings ={}
+    };
+
+    $scope.editSite = function() {
+        $scope.siteEdit = true;
+    };
+
+    $scope.cancelSite = function() {
+        $scope.siteEdit = false;
+    };
+
+    $scope.saveSite = function(data,key) {
+        $http({
+            method: 'POST',
+            url: '/admin/callback/EditSite/',
+            data: data
+        }).then(function success(response) {
+            console.log(response);
+            if(response.data.data !== false) {
+                $scope.siteEdit = false;
+                return response.data.data;
+            }
+        }, function error() {});
+    };
+
+    $scope.sendHosts = function() {
+        console.log($scope.hostSettings);
+        $http({
+            method: 'POST',
+            url: '/admin/callback/AddGateway/',
+            data: $scope.hostSettings
+        }).then(function success(response) {
+            console.log(response);
+            if(response.data.data !== false) {
+                $scope.addhostSettingsVisibility = false;
+                $scope.mailerEmails=response.data.data;
+            }
+        }, function error() {});
+    };
+
     $scope.ShowasHyml = function(obj) {
         return $sce.trustAsHtml(obj);
     };
@@ -496,18 +572,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
         $scope.mailerClientOwnSettings = false;
     };
 
-    $scope.mailerEditHosts = function(id) {
-        $http({
-            method: 'GET',
-            url: '/admin/callback/getgateway/' + id
-        }).then(function success(response) {
-            if(response.data.data !== false) {
-                $scope.mailerClientEditSettings = true;
-                $scope.mailerClientsOwn = response.data.data[0];
-                $scope.mailerClientOwnSettings = true;
-            }
-        }, function error() {});
-    };
 
     $scope.mailerRemoveHosts = function (id) {
         $http({

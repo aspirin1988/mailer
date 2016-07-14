@@ -22,7 +22,7 @@ class template extends Models
             $widgets = json_decode($data['data'][0]['widgets'],true);
             $path = CALLBACK . DS . 'html' . DS . 'index.html';
             $template = file_get_contents($path);
-
+            //print_r($site);
             foreach($widgets as $key => $value)
             {
                 /*if ($name!='89d8e8d15a288840abb02c4fae90ec75') {
@@ -101,6 +101,7 @@ class template extends Models
                         }
                     }
                     else{
+                        //print_r($value);
                         if ($value['data']) {
                             $template = str_replace('{contacts:text}', $value['text'], $template);
                             $contacts = '';

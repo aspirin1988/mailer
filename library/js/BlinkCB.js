@@ -1,3 +1,4 @@
+
 (function meta () {
     var meta = document.getElementsByTagName('meta');
     var head = document.getElementsByTagName('head');
@@ -18,12 +19,6 @@
     {
         head[0].innerHTML=head[0].innerHTML+'<meta name="viewport" content="width=device-width, initial-scale=1">';
     }
-
-    // var meta = document.createElement('meta');
-    // meta.httpEquiv = "X-UA-Compatible";
-    // meta.content = "IE=edge";
-    // document.getElementsByTagName('head')[0].appendChild(meta);
-
 })();
 
 function get_cookie ( cookie_name )
@@ -596,5 +591,16 @@ if(window.attachEvent) {
     };
 
     return VMasker;
+
 }));
+
+document.onreadystatechange = function () {
+    function viseble (){
+        document.getElementById('blink-main-module').style.display='block';
+
+    }
+    if (document.readyState==='complete'){
+        setTimeout(viseble,1000);
+    }
+};
 

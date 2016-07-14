@@ -101,6 +101,7 @@ class callback extends Models
 
     public function EditSite($id,$value)
     {
+        unset($value['id']);
         $value['md5']=md5($value['name']);
         $result = $this->db->update('site',$value,[
             'id'=>$id
@@ -226,15 +227,25 @@ class callback extends Models
 
     public function EditGateway($id,$value)
     {
-        if($result = $this->db->update('email',$value,['id'=>$id])) {return ['data'=>$id];} else {return ['data'=>false];}
+        if ($result = $this->db->update('email', $value, ['id' => $id])) {
+            return ['data' => $this->db->select('email',
+                [
+                    'email.*',
+                ])];
+        } else {
+            return ['data' => false];
+        }
 
     }
 
     public function AddGateway ($value)
     {
         if (!$this->ChecksGateway($value['login'])) {
-            $result = $this->db->insert('email', $value);
-
+             $this->db->insert('email', $value);
+            $result = $this->db->select('email',
+                [
+                    'email.*',
+                ]);
             return [
                 'data' => $result
             ];

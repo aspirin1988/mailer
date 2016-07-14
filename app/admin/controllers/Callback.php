@@ -30,7 +30,7 @@ class Callback extends Controller
     public  function EditSite ()
     {
         $value = $this->request->rest();
-        unset($value['c_name']);
+        unset($value['operators']);
         $model = new \app\admin\models\callback();
         $this->response->json($model->EditSite($value['id'],$value));
     }
