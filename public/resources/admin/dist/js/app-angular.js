@@ -179,7 +179,6 @@ app.controller('clientsCtrl', function ($scope, clientsFactory,$routeParams,$htt
                 $scope.NewClient={};
                 UIkit.notify("<i class='uk-icon-check'></i>Клиент успешно добавлен!",{status:'success',pos:'top-right'});
                 $scope.allClients=response.data.data;
-                console.info(response);
             }
         }, function error(response) {});
     };
@@ -205,7 +204,6 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory,$http
     },$routeParams.page);
 
     $scope.AddSite = function(event) {
-        //console.info($routeParams);
         $http({
             method: 'POST',
             url: '/admin/callback/AddSite/'+$routeParams.id,
@@ -238,8 +236,6 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
     $scope.newItem = {};
 
     $scope.addProperty = function(key, editing, object) {
-        console.log(key);
-        console.log($scope.mailerSettings.options_default.css[key].config);
 
         if(!object) {
             if(editing === true) $scope.addingNewItem = true;
@@ -254,7 +250,6 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
     };
 
     $scope.removeProperty = function(keyObject, keyStyle) {
-        console.log($scope.mailerSettings.options_default.css[keyObject]);
         $scope.mailerSettings.options_default.css[keyObject].config.splice(keyStyle, 1);
     };
 
@@ -275,7 +270,6 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
     };
     $scope.addContact = function ($obj) {
 
-        console.log(Object($scope.mailerSettings.text_default.contacts.data).length);
         if (Object($scope.mailerSettings.text_default.contacts.data).length<=3) {
             $scope.mailerSettings.text_default.contacts.data.push({
                 "type": "tel",
@@ -291,7 +285,6 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
         
     };
     $scope.delContact = function ($obj) {
-            console.log($obj);
             $scope.mailerSettings.text_default.contacts.data.splice($obj,1);
             $scope.console($obj);
             return $scope.mailerSettings.text_default.contacts.data;
@@ -361,7 +354,6 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
     });
 
     $scope.dellPerm=function (id,key1,key) {
-        console.log($scope.usersSettings[key].company[key1]);
         //delete ($scope.usersSettings[key].company[key1]);
         $scope.usersSettings[key].company.splice(key1, 1);
         $http({
@@ -379,7 +371,6 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
     };
 
     $scope.companyApr=function (id,val) {
-        console.log(val);
         $http({
             method: 'POST',
             url: '/admin/Users/approvePermission_c/'+id,
@@ -390,9 +381,6 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
     };
 
     $scope.dellPermSite=function (id,key2,key1,key) {
-        console.log(id+' '+key2+' '+key1+' '+key);
-        console.log($scope.usersSettings[key].company[key1].sites[key2]);
-        //delete ($scope.usersSettings[key].company[key1].sites[key2]);
         $scope.usersSettings[key].company[key1].sites.splice(key2, 1);
         $http({
             method: 'GET',
@@ -407,7 +395,6 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
     };
 
     $scope.siteApr=function (id,val) {
-            console.log(val);
             $http({
                 method: 'POST',
                 url: '/admin/Users/approvePermission_s/'+id,
@@ -518,7 +505,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             data: $scope.mailerNewClientInfo
         }).then(function success(response) {
             if(response.data.data !== false) {
-                //console.log(response);
                 $scope.siteInfo=response.data;
                 //return $scope.siteInfo;
             }
@@ -530,7 +516,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             method: 'GET',
             url: '/admin/callback/getgateway/' + id
         }).then(function success(response) {
-            console.log(response);
             if(response.data.data !== false) {
                 $scope.hostSettingsVisibility = true;
                 $scope.hostSettings = response.data.data[0];
@@ -545,7 +530,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             url: '/admin/callback/EditGateway/',
             data: $scope.hostSettings
         }).then(function success(response) {
-            console.log(response);
             if(response.data.data !== false) {
                 $scope.hostSettingsVisibility = false;
                 $scope.mailerEmails=response.data.data;
@@ -578,7 +562,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             url: '/admin/callback/EditSite/',
             data: data
         }).then(function success(response) {
-            console.log(response);
             if(response.data.data !== false) {
                 $scope.siteEdit = false;
                 return response.data.data;
@@ -587,13 +570,11 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
     };
 
     $scope.sendHosts = function() {
-        console.log($scope.hostSettings);
         $http({
             method: 'POST',
             url: '/admin/callback/AddGateway/',
             data: $scope.hostSettings
         }).then(function success(response) {
-            console.log(response);
             if(response.data.data !== false) {
                 $scope.addhostSettingsVisibility = false;
                 $scope.mailerEmails=response.data.data;
@@ -613,7 +594,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
     };
 
     $scope.updatePage= function (page) {
-      console.log(page);
     };
 
     $scope.operatorApr = function (id,approve,sitename) {
@@ -627,7 +607,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
     };
 
     $scope.dellOperator = function (id,siteID,siteName) {
-        console.info(id+' '+siteID+' '+siteName);
         var OperatorW=document.getElementById('Operator'+id);
         $http({
             method: 'POST',
@@ -641,7 +620,6 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
 
 
     $scope.addNewCompany = function() {
-        //console.info($routeParams);
         $http({
             method: 'POST',
             url: '/admin/Client/AddClient/',
