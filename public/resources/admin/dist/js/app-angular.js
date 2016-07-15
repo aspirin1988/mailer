@@ -43,7 +43,8 @@ var app = angular.module('app', ['ngRoute', 'colorpicker.module']);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            template: '<p>Hello this is main page</p>'
+            templateUrl: '/resources/admin/templates/widgets/main.html',
+            controller: 'mainpageCtrl'
         })
         .when('/clients-list/:page', {
             templateUrl: '/resources/admin/templates/widgets/clients-list.html',
