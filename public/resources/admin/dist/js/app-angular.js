@@ -378,16 +378,6 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
         }, function error(response) {});
     };
 
-    /*$scope.dellPerm=function (id) {
-        console.log($scope.usersSettings[key].company[key1]);
-        $http({
-            method: 'GET',
-            url: '/admin/Users/delPermission/'+id,
-        }).then(function success(response) {
-
-        }, function error(response) {});
-    };*/
-    
     $scope.companyApr=function (id,val) {
         console.log(val);
         $http({

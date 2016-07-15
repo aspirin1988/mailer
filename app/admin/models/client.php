@@ -29,7 +29,10 @@ class client extends Models
             ],
 
             [
-                "permission_c.user"=>$user['id'],
+                'AND'=>[
+                    "permission_c.user" => $user['id'],
+                    "permission_c.permission"=>'true',
+                ]
             ]
         );
         }
@@ -51,11 +54,15 @@ class client extends Models
                     "[>]permission_c" => ["id" => "company"]
                 ],
                 [
-                    'permission_c.id',  'company.id(company)', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
+                    'company.id', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
                 ],
 
                 [
-                    "permission_c.user" => $user['id'],
+                    'AND'=>
+                    [
+                        "permission_c.user" => $user['id'],
+                        "permission_c.permission"=>'true',
+                    ],
                     'LIMIT' => [$offset, $limit],
                     'ORDER' => ['id ASC']
                 ]
@@ -97,11 +104,15 @@ class client extends Models
                     ],
 
                     [
-                        'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id]
+                        'AND' =>
+                            [
+                            "permission_s.user" => $user['id'],
+                            "permission_s.permission" =>'true',
+                            'site.company' => $id
+                            ]
                     ]
                 );
-                $countPage = ceil($countSite / $limit);
-                $offset = (int)$page * $limit;
+
                 $siteData = $this->db->select('site',
                     [
                         "[>]permission_s" => ["id" => "site"]
@@ -111,8 +122,10 @@ class client extends Models
                     ],
 
                     [
-                        'AND' => ["permission_s.user" => $user['id'], 'site.company' => $id],
-                        'LIMIT' => [$offset, $limit],
+                        'AND' => [
+                            "permission_s.user" => $user['id'],
+                            "permission_s.permission" =>'true',
+                            'site.company' => $id],
                         'ORDER' => ['id ASC']
                     ]
                 );
@@ -135,8 +148,6 @@ class client extends Models
                     'site.company' => $id
                 ]
             );
-            $countPage = ceil($countSite / $limit);
-            $offset = (int)$page * $limit;
 
             $siteData = $this->db->select('site',
                 [
@@ -463,17 +474,18 @@ class client extends Models
     /*---Проверка доступа к клиенту---*/
     function permission_c ($id,$user)
     {
-        $countSite = $this->db->count('company',
+        $countSite = $this->db->count('permission_c',
             [
-                "[>]permission_c" => ["id" => "company"]
-            ],
-            [
-                'company.id'
+                'permission_c.id'
             ],
 
             [
-                'AND'=>['company.id'=>$id,
-                    "permission_c.user"=>$user['id'],]
+                'AND'=>
+                [
+                    'permission_c.company'=>$id,
+                    'permission_c.user'=>$user['id'],
+
+                ]
             ]
         );
         return $countSite;
