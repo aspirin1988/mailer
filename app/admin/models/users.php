@@ -22,43 +22,34 @@ class users extends Models
                 ]
             );
             foreach ($userData as $key=>$value){
-                $permissionData = $this->db->select('permission_s',
-                    [
-                        'permission_s.*',
-                    ],
-                    [
-                        'permission_s.user'=>$value['id']
-
-                    ]
-                );
-                $clientData=$siteData = $this->db->select('permission_c',
+                
+                $clientData=$this->db->select('permission_c',
                     [
                         "[>]company" => ["company" => "id"]
                     ],
                     [
-                        'company.id', 'name', 'date_create', 'permission_c.permission'
-                    ]);
-
-                foreach ($permissionData as $key1=>$value1) {
-                    $siteName = $this->db->select('site',
+                        'permission_c.id','company.id(company)', 'name', 'date_create', 'permission_c.permission','permission_c.user'
+                    ],
+                    [
+                        'permission_c.user'=>$value['id']
+                    ]
+                );
+                foreach ($clientData as $key1=>$value1) {
+                    $sitesData = $this->db->select('permission_s',
                         [
-                            'site.*',
+                            "[>]site" => ["site" => "id"]
                         ],
                         [
-                            'site.id'=>$value1['site']
+                            'permission_s.id', 'site.id(site)', 'name', 'permission_s.permission', 'permission_s.user', 'site.company'
+                        ],
+                        [
+                           'AND'=>['site.company' => $value1['company'],'permission_s.user'=>$value['id']]
                         ]
                     );
-                    if ($siteName)
-                    {
-                        $permissionData[$key1]['name']=$siteName[0]['name'];
-                    }
-                    else
-                    {
-                        $permissionData[$key1]['name']='Не существует!';
-                    }
+                    $clientData[$key1]['sites']=$sitesData;
                 }
 
-                $userData[$key]['permission_s']=$permissionData;
+
                 $userData[$key]['company']=$clientData;
             }
             return [
@@ -66,5 +57,47 @@ class users extends Models
             ];
         }
     }
+
+    public function delPermission($id,$user){
+
+        if($user['access']==999) {
+            return $this->db->delete('permission_c', ['id' => $id]);
+        }
+    }
+    
+    public function approvePermission_c($id,$value,$user){
+        if($user['access']==999) {
+            if ($value)
+            {
+                return $this->db->update('permission_c',['permission'=>'true'],['id' => $id]);
+            }
+            else
+            {
+                return $this->db->update('permission_c',['permission'=>'false'],['id' => $id]);
+            }
+        }
+    }
+
+    public function approvePermission_s($id,$value,$user){
+        if($user['access']==999) {
+            if ($value)
+            {
+                return $this->db->update('permission_s',['permission'=>'true'],['id' => $id]);
+            }
+            else
+            {
+                return $this->db->update('permission_s',['permission'=>'false'],['id' => $id]);
+            }
+        }
+    }
+
+    public function delPermission_s($id,$user){
+
+        if($user['access']==999) {
+            return $this->db->delete('permission_s', ['id' => $id]);
+        }
+    }
+    
+    
 
 }

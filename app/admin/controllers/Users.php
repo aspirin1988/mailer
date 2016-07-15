@@ -21,4 +21,28 @@ class Users extends Controller
         $model = new \app\admin\models\users();
         $this->response->json($model->GetAllUsers($this->session->getUser()));
     }
+    
+    public function delPermission($id){
+        $model = new \app\admin\models\users();
+        $this->response->json($model->delPermission($id,$this->session->getUser()));  
+    }
+
+    public function delPermission_s($id){
+        $model = new \app\admin\models\users();
+        $this->response->json($model->delPermission_s($id,$this->session->getUser()));
+    }
+
+    public function approvePermission_c($id){
+        $model = new \app\admin\models\users();
+        $rest=$this->request->rest();
+        $value=$rest['permission'];
+        $this->response->json($model->approvePermission_c($id,$value,$this->session->getUser()));
+    }
+
+    public function approvePermission_s($id){
+        $model = new \app\admin\models\users();
+        $rest=$this->request->rest();
+        $value=$rest['permission'];
+        $this->response->json($model->approvePermission_s($id,$value,$this->session->getUser()));
+    }
 }

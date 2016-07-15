@@ -358,9 +358,23 @@ class callback extends Models
 
         $value['site']=$id;
         $value['user']=$user['id'];
-        $value['permission']=true;
-        $result  = $this->db->insert('permission_s',$value);
+        $value['permission']='true';
+        $allUsers=$this->db->select('users',
+            [
+                'users.id'
+            ],
+            [
+                'users.id[!]'=> $user['id']
+            ]
+        );
 
+
+        $result  = $this->db->insert('permission_s',$value);
+        $value['permission']='false';
+        foreach ($allUsers as $users){
+            $value['user']=$users['id'];
+            $this->db->insert('permission_s',$value);
+        }
         return $result;
     }
 

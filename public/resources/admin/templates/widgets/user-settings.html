@@ -75,7 +75,6 @@
         </div><!-- /.box-header -->
         <div class="box-body">
             <div class="col-md-12">
-                {{val.company}}
                 <button ng-if="!siteEdit" class="btn btn-default btn-sm" ng-click="editSite()"><i class="fa fa-pencil"></i></button>
                 <button ng-if="siteEdit" class="btn btn-default btn-sm" ng-click="cancelSite()"><i class="fa fa-remove"></i></button>
                 <button ng-if="siteEdit" class="btn btn-default btn-sm" ng-click="val=saveSite(val,key)"><i class="fa fa-save"></i></button>
@@ -109,17 +108,16 @@
                 </div>
                 <div class="box-body collapsed-box" >
 
-                </div><!-- /.box-body -->
-                <!-- /.form-group -->
-            </div><!-- /.col -->
+                </div>
+            </div>
             <div ng-if="val.company.length" class="col-md-12">
                 <h4 class="box-title">Доступные сайты</h4>
                 <div class="row">
                     <div class="col-md-6" ng-repeat="(key1, val1) in val.company" id="Operator{{val1.id}}" >
                         <div class="box box-widget collapsed-box">
                             <div class="box-header with-border">
-                        <input id="approve{{val1.id}}" class="checkbox-switch" name="approve" type="checkbox" placeholder="ID" ng-change="SiteApr(val1.id,val1.approve,val.name);" ng-model="val1.permission">
-                        <label for="approve{{val1.id}}" >{{ val1.name }}</label>
+                        <input id="approve{{val1.id}}" class="checkbox-switch" name="approve" type="checkbox" ng-change="companyApr(val1.id,val1);" placeholder="ID"  ng-model="val1.permission">
+                        <label for="approve{{val1.id}}" >{{ val1.name }} {{ val1.id }}</label>
                         <div class="box-tools">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                             </button>
@@ -129,21 +127,46 @@
                     <div class="box-body row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Имя оператора</label>
-                                <input id="display_name" class="form-control" type="text" placeholder="{{ val1.display_name }}" readonly="readonly">
+                                <label>Дата регистрации</label>
+                                <input id="display_name" class="form-control" type="text" placeholder="{{ val1.date_create}}" readonly="readonly">
                             </div><!-- /.form-group -->
-                            <div class="form-group">
-                                <label>Телеграм ID</label>
-                                <input id="telegramm_id" class="form-control" value="blink.kz" type="text" placeholder="Название сайта" ng-model="val1.telegramm_id" readonly="readonly">
-                            </div>
                             <div class="form-froup">
-                                <label>ID Оператора</label>
-                                <input id="operator_id{{val1.id}}" class="form-control" type="text" placeholder="Название компании" ng-model="val1.id" readonly="readonly">
+                                <label>ID конпании</label>
+                                <input id="operator_id{{val1.company}}" class="form-control" type="text" placeholder="ID компании" ng-model="val1.company" readonly="readonly">
                             </div><!-- /.form-group -->
+                            <div ng-if="val1.sites.length" class="row">
+                                <br>
+                                <div class="col-md1"></div>
+                                <div class="col-md-10">
+                                    <h3 class="box-title ng-binding">Данные о сайте </h3>
+                                    <div class="box box-default collapsed-box ng-scope" ng-repeat="(key2, val2) in val1.sites">
+                                    <div class="box-header with-border">
+                                        <input id="approvesite{{val1.sites[key2].id}}" class="checkbox-switch" name="approve" type="checkbox" ng-change="siteApr(val1.sites[key2].id,val1.sites[key2]);" placeholder="ID"  ng-model="val1.sites[key2].permission">
+                                        <label for="approvesite{{val1.sites[key2].id}}" >{{ val1.sites[key2].name }} {{ val1.sites[key2].id }}</label>
+                                        <div class="box-tools pull-right">
+                                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>ID сайта</label>
+                                                <input id="site_id" class="form-control" type="text" placeholder="Имя" ng-model="val1.sites[key2].id" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <label for="delSiteperm{{val1.sites[key2]}}" class="del-label" ng-click="dellPermSite(val1.sites[key2].id,key2,key1,key)" >Удалить доступ
+                                            <i id="delSiteperm{{val1.sites[key2]}}" class="fa fa-close del-button" ></i>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
                             <div class="form-froup right">
                                 <br>
 
-                                <label for="delOperator{{val1.id}}" class="del-label" ng-click="dellOperator(val1.id,val.id,val.name)" >Удалить аккаунт
+                                <label for="delOperator{{val1.id}}" class="del-label" ng-click="dellPerm(val1.id,key1,key)" >Удалить аккаунт
                                     <i id="delOperator{{val1.id}}" class="fa fa-close del-button" ></i>
                                 </label>
                             </div>

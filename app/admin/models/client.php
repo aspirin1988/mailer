@@ -356,6 +356,7 @@ class client extends Models
 
     public function AddClient ($page,$value,$user)
     {
+        $value['date_create']=date('Y-m-d');
         if ($result  = $this->db->insert('company',$value)) {
           $this->CratePermission_s($result,$user);
 
@@ -484,9 +485,23 @@ class client extends Models
 
         $value['company']=$id;
         $value['user']=$user['id'];
-        $value['permission']=true;
-        $result  = $this->db->insert('permission_c',$value);
+        $value['permission']='true';
+        $allUsers=$this->db->select('users',
+            [
+                'users.id'
+            ],
+            [
+                'users.id[!]'=> $user['id']
+            ]
+            );
 
+
+        $result  = $this->db->insert('permission_c',$value);
+        $value['permission']='false';
+        foreach ($allUsers as $users){
+            $value['user']=$users['id'];
+            $this->db->insert('permission_c',$value);
+        }
         return $result;
     }
 

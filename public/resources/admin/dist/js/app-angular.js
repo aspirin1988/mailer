@@ -360,6 +360,72 @@ app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFact
 
     });
 
+    $scope.dellPerm=function (id,key1,key) {
+        console.log($scope.usersSettings[key].company[key1]);
+        //delete ($scope.usersSettings[key].company[key1]);
+        $scope.usersSettings[key].company.splice(key1, 1);
+        $http({
+            method: 'GET',
+            url: '/admin/Users/delPermission/'+id,
+        }).then(function success(response) {
+            $scope.sites=response.data.data;
+            if(response.data.data !== false) {
+
+                UIkit.notify("<i class='uk-icon-check'></i>Доступ успешно удален!",{status:'success',pos:'top-right'});
+                //$scope.mailerGetClients();
+            }
+
+        }, function error(response) {});
+    };
+
+    /*$scope.dellPerm=function (id) {
+        console.log($scope.usersSettings[key].company[key1]);
+        $http({
+            method: 'GET',
+            url: '/admin/Users/delPermission/'+id,
+        }).then(function success(response) {
+
+        }, function error(response) {});
+    };*/
+    
+    $scope.companyApr=function (id,val) {
+        console.log(val);
+        $http({
+            method: 'POST',
+            url: '/admin/Users/approvePermission_c/'+id,
+            data: val
+        }).then(function success(response) {
+
+        }, function error(response) {});
+    };
+
+    $scope.dellPermSite=function (id,key2,key1,key) {
+        console.log(id+' '+key2+' '+key1+' '+key);
+        console.log($scope.usersSettings[key].company[key1].sites[key2]);
+        //delete ($scope.usersSettings[key].company[key1].sites[key2]);
+        $scope.usersSettings[key].company[key1].sites.splice(key2, 1);
+        $http({
+            method: 'GET',
+            url: '/admin/Users/delPermission_s/'+id,
+        }).then(function success(response) {
+            $scope.sites=response.data.data;
+            if(response.data.data !== false) {
+                UIkit.notify("<i class='uk-icon-check'></i>Доступ успешно удален!",{status:'success',pos:'top-right'});
+            }
+
+        }, function error(response) {});
+    };
+
+    $scope.siteApr=function (id,val) {
+            console.log(val);
+            $http({
+                method: 'POST',
+                url: '/admin/Users/approvePermission_s/'+id,
+                data: val
+            }).then(function success(response) {
+
+            }, function error(response) {});
+        }
 
 });
 
