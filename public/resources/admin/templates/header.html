@@ -241,36 +241,26 @@
 <div id="offcanvas-1" class="uk-offcanvas" aria-hidden="true">
 
     <div class="uk-offcanvas-bar">
-        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="">
-            <li>
-                MAIN NAVIGATION
-            </li>
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
             <li>
                 <a href="#/clients-list/0">
                     <i class="fa fa-database"></i>
                     <span>Список клиентов</span>
                 </a>
             </li>
-            <li class="uk-parent" aria-expanded="false">
-                <a href="#">
+            <li>
+                <a href="#" onclick="return false;">
                     <i class="fa fa-list"></i>
                     <span>Сервисы</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    <!--small class="label pull-right bg-green">new</small-->
                 </a>
-                <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden">
-                    <ul class="uk-nav-sub">
-                        <li>
-                            <a href="#/mailer" ng-click="mailerGetTemplate()"><i class="fa fa-circle-o"></i> Mailer</a>
-                        </li>
-                        <li><a href="#">Sub item</a>
-                            <ul>
-                                <li><a href="#">Sub item</a></li>
-                                <li><a href="#">Sub item</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </li>
 
+                <ul class="treeview-menu">
+                    <li><a href="#/mailer" ng-click="mailerGetTemplate()"><i class="fa fa-circle-o"></i> Mailer</a></li>
+                </ul>
+            </li>
         </ul>
 
     </div>

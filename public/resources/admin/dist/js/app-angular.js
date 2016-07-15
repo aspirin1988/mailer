@@ -60,6 +60,10 @@ app.config(function ($routeProvider) {
         .when('/mailer-settings/:siteId', {
             templateUrl: '/resources/admin/templates/widgets/mailer-settings.html',
             controller: 'mailerCtrl'
+        })
+        .when('/users-list/:page', {
+            templateUrl: '/resources/admin/templates/widgets/user-settings.html',
+            controller: 'userCtrl'
         });
 });
 
@@ -126,6 +130,23 @@ app.factory('mailerFactory', function ($http) {
         }).then(function success(response) {
             if(response.data !== false) {
                 callback(response.data);
+            }
+        }, function error(response) {});
+    };
+
+    return factory;
+});
+
+app.factory('userFactory', function ($http) {
+    var factory = {};
+
+    factory.getSettings = function (callback) {
+        $http({
+            method: 'GET',
+            url: '/admin/Users/GetAllUsers/'
+        }).then(function success(response) {
+            if(response.data !== false) {
+                callback(response.data.data);
             }
         }, function error(response) {});
     };
@@ -329,6 +350,16 @@ app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailer
     };
 
     $scope.changeCss();
+
+});
+
+app.controller('userCtrl', function ($scope, $http, $sce, $routeParams, userFactory) {
+    userFactory.getSettings(function (data) {
+        $scope.usersSettings = data;
+
+
+    });
+
 
 });
 

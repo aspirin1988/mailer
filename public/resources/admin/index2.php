@@ -108,8 +108,8 @@
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Task', 'Количество комнаний'],
-            ['Work',     100],
+            ['title', 'Количество комнаний'],
+            ['Work',     20],
             ['Eat',      2],
             ['Commute',  2],
             ['Watch TV', 2],
@@ -118,7 +118,7 @@
 
           var options = {
             title: 'My Daily Activities',
-            is3D: false,
+            is3D: true,
           };
 
           var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

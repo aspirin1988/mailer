@@ -358,7 +358,7 @@ class callback extends Models
 
         $value['site']=$id;
         $value['user']=$user['id'];
-        $value['permission']=3;
+        $value['permission']=true;
         $result  = $this->db->insert('permission_s',$value);
 
         return $result;

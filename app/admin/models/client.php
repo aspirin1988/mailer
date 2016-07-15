@@ -51,7 +51,7 @@ class client extends Models
                     "[>]permission_c" => ["id" => "company"]
                 ],
                 [
-                    'company.id', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
+                    'permission_c.id',  'company.id(company)', 'name', 'site', 'ph_address', 'date_create', 'permission_c.permission'
                 ],
 
                 [
@@ -484,7 +484,7 @@ class client extends Models
 
         $value['company']=$id;
         $value['user']=$user['id'];
-        $value['permission']=3;
+        $value['permission']=true;
         $result  = $this->db->insert('permission_c',$value);
 
         return $result;
