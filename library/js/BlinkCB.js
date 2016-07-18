@@ -597,7 +597,10 @@ if(window.attachEvent) {
 document.onreadystatechange = function () {
     function viseble (){
         document.getElementById('blink-main-module').style.display='block';
-
+        var el = document.querySelector('#Recall input[name="phone"]');
+        VMasker(el).maskPattern("+9(999) 999-99-99");
+        var el = document.querySelector('#Query input[name="phone"]');
+        VMasker(el).maskPattern("+9(999) 999-99-99");
     }
     if (document.readyState==='complete'){
         setTimeout(viseble,1000);

@@ -89,7 +89,7 @@ class messagebot extends  Models
                             $addOperator=$this->addOperator($chat_id,$user_name,$site);
                             if ($addOperator) {
                                 $bot->SendMessage($chat_id, ['text' =>
-                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument[0]
+                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument[0]. ', ожидайте подтверждения от администратора!'
                                 ]);
                             }
                             else
@@ -102,7 +102,7 @@ class messagebot extends  Models
                         else
                         {
                             $bot->SendMessage($chat_id, ['text' =>
-                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не сеществует в нашей базе!'
+                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не существует в нашей базе!'
                             ]);
                         }
                         break;

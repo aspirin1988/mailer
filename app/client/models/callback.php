@@ -251,11 +251,11 @@ class callback extends Models
                     'site'=>$siteData[0]['id']
                 ]
             );
-//            print_r($siteData);
             $Content=json_decode($Content[0]['text'],true);
             $suc_text=$Content['recall']['data']['suc_res_txt'];
             $err_text=$Content['recall']['data']['err_res_txt'];
-            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html'); //$this->db->insert('email_massage',$rest);
+            $str=file_get_contents(BASE_PATH.DS.'app'.DS.'client'.DS.'views'.DS.'regform.html');
+            //$this->db->insert('email_massage',$rest);
             $tr='';
             foreach ($rest as $key=>$value) {
                 $str=str_replace('{'.$key.'}',$value,$str);

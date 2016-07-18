@@ -5,6 +5,29 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+/*if (type=0x6 | type=0x7 | type=0x16)
+{
+  if (has_c_attr("FRC")) {
+      remove_c_attr("FRC")
+  }
+}
+
+if (type=0x0a){
+  speed_limit=2
+}
+if (type=0x6)
+{
+  c_attr("FRC")="11";
+  speed_limit=3;
+}
+if (type=0x7) {
+  c_attr("FRC") = "12";
+  speed_limit = 1;
+}
+if (type=0x16) {
+  c_attr("FRC") = "13";
+  speed_limit = 0;
+}*/
 
 module.exports = function (grunt) {
 

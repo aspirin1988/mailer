@@ -143,7 +143,10 @@
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
 }
-.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text], .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text],
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=tel],
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=email],
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
     margin-top: 7px;
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 5px;
@@ -156,7 +159,10 @@
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form textarea {
     padding: 7px;
 }
-.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text] {
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=text],
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=tel],
+.blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front form input[type=email]
+{
     height: 40px;
     padding: 0 7px;
 }

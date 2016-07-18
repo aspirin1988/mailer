@@ -30,10 +30,11 @@ class editor extends Models
         {
             $siteData = $this->db->select('site_options',
                 [
-                    "[>]template_site" => ["template" => "id"]
+                    "[>]template_site" => ["template" => "id"],
+                    "[>]site" => ["site" => "id"]
                 ],
                 [
-                    'site_options.*','template_site.name(t_name)','template_site.directory'
+                    'site_options.*','site.name','template_site.name(t_name)','template_site.directory'
                 ],
                 [
                     'site'=>$id,
