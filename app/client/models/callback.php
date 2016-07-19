@@ -377,25 +377,35 @@ class callback extends Models
 
     function sendToOperator($siteData,$rest)
     {
-        if (!isset($rest['email'])) $rest['email']=' Не указан';
+        //if (!isset($rest['email'])) $rest['email']=' Не указан';
         $model = new \app\client\models\bot();
         $bot = new \app\telegram\MessageBot();
         $operators = $model->getOperators($siteData[0]['id']);
         $text='   На вашем сайте заполнена форма : <b>' . $siteData[0]['name'].'</b>
-        Данные с формы:
-        ';
+<b>Данные с формы:</b>
+';
 
         foreach ($rest as $key=>$value)
-        {
-            if ($key!='title') {
-                if ($key != 'URL') {
-                    $text .= $key . ': ' . $value . '
-            ';
-                } else {
-                    $text .= 'Страница: <a href="' . $value . '">' . $rest['title'] . '</a>
-            ';
-                }
+        {   $tel=stristr($key,'телефон').stristr($key,'phone');
+            if (!$tel)
+            switch ($key)
+            {
+                case 'title':
+                    $text .= 'Страница: <a href="' . $rest['URL'] . '">' . $value . '</a>
+';
+                    break;
+                case 'URL':
+                    break;
+                default: $text .=$key.': '.$value.'
+';
+                    break;
+
             }
+            else{
+
+                    $text .= '☎️ <a href="tel:+'.$value.'" > +'.$value.'</a> 
+';
+                }
         }
         $key_message=false;
         $return=[];

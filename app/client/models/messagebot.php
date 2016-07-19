@@ -15,7 +15,6 @@ class messagebot extends  Models
 {
     public function sendMessage($data)
     {
-        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data,true));
         if ($data['callback_query']){
             $this->FindMessage($data['callback_query']);
         }
@@ -27,18 +26,28 @@ class messagebot extends  Models
             $site_chat_title=$data['message']['chat']['title'];
             $message=$data['message']['text'];
             $command = [
-                '/operator' => 'string',
                 '/start' => 'string',
+                '/operator' => 'string',
                 '/help' => 'string',
                 '/statistic' => 'string',
+                'я оператор' => 'string',
+                'статистика' => 'string',
+                'помощь' => 'string',
             ];
             $is_bot_command = false;
             $argument = false;
             $id = false;
 
             foreach ($command as $key => $value) {
+
                 if (stristr($message,$key)) {
-                    $argument = explode($key, $message);
+                    $bot->SendMessage($chat_id, ['text' =>
+                        'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!' .stristr($message,$key)
+                    ]);
+                    $argument = explode(' ', $message);
+                    //$argument=$argument[1];
+                    file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($argument,true));
                     $command = $key;
                     $is_bot_command = true;
                     if (isset($argument[1]))
@@ -46,7 +55,7 @@ class messagebot extends  Models
                         $argument=ltrim($argument[1]);
                         $argument=explode(' ',$argument);
                     }
-                    file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
+//                    file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($data));
 
                     break;
                 }
@@ -82,6 +91,27 @@ class messagebot extends  Models
                         }
                         break;
 
+                    case 'статистика':
+                        $site=$this->permission(md5($argument[0]));
+                        $operator=$this->findOperator($chat_id,$user_name,$site['data'][0]['id']);
+                        if ($site['data']) {
+                            if ($operator) {
+                                $date=$argument;
+                                unset($date[0]);
+                                $SiteInfo=$this->GetSiteInfo($site,$date);
+                                $text='<strong>Статисти по сайту '.$site['data'][0]['name'].' на '.date('Y.m.d').'</strong>
+    ';
+                                foreach ($SiteInfo['MessageData'] as $value){
+                                    $text.='<b>'.$value['title'].' '.$value['count'].'</b>
+    ';
+                                }
+                                $timestamp = strtotime($date[1]);
+                                $bot->SendMessage($site_chat_id, ['text' =>$text
+                                ]);
+                            }
+                        }
+                        break;
+
                     case '/operator':
                         $site=$this->permission(md5($argument[0]));
                         if ($site['data']) {
@@ -106,10 +136,48 @@ class messagebot extends  Models
                             ]);
                         }
                         break;
+
+                    case 'я оператор':
+                        $site=$this->permission(md5($argument[0]));
+                        if ($site['data']) {
+                            $site=$site['data'][0]['id'];
+                            $addOperator=$this->addOperator($chat_id,$user_name,$site);
+                            if ($addOperator) {
+                                $bot->SendMessage($chat_id, ['text' =>
+                                    'Здравствуйте ' . $user_name . '! Вы добавлены как оператор для сайта ' . $argument[0]. ', ожидайте подтверждения от администратора!'
+                                ]);
+                            }
+                            else
+                            {
+                                $bot->SendMessage($chat_id, ['text' =>
+                                    'Здравствуйте ' . $user_name . '! Вы уже являетесь оператором сайта ' . $argument[0]
+                                ]);
+                            }
+                        }
+                        else
+                        {
+                            $bot->SendMessage($chat_id, ['text' =>
+                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не существует в нашей базе!'
+                            ]);
+                        }
+                        break;
+
+                    case 'помощь':
+                        $bot->SendMessage($chat_id, ['text' =>
+                            'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!'
+                        ]);
+                        break;
                     case '/help':
                         $bot->SendMessage($chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!'
+                        ]);
+                        break;
+                    default:
+                        $bot->SendMessage($chat_id, ['text' =>
+                            'Здравствуйте я бот компании Business link.
+    Я помогу вам наладить связи между вами и вашими клиентами!' .print_r($argument,true)
                         ]);
                         break;
                 }

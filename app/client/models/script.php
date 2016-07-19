@@ -17,8 +17,7 @@ class script extends Models
     {
         if ( $this-> permission($name)['data'])
         {
-            //print_r($_SERVER);
-            return file_get_contents(LIBRARY.DS.'js/BlinkCB1.min.js');
+            return file_get_contents(LIBRARY.DS.'js/BlinkCB.js');
         }
         else
         {
