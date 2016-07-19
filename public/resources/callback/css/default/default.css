@@ -134,6 +134,9 @@
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front {
     z-index: 2;
     -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-front h4 {
@@ -185,8 +188,10 @@
     margin-top: 20px;
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container .blink-cb-module-flipper .blink-cb-module-flip-back .blink-cb-module-messange-box {
     width: 100%;
@@ -240,11 +245,16 @@
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-back {
     -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
 .blink-cb-module-main-body .blink-cb-module-flip-container.active-flip .blink-cb-module-flip-front {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
 }
 .blink-cb-module-main-body #blink-cb-module-popup-recall {
     margin-top: 20%;
@@ -345,6 +355,11 @@
     background: rgba(0,0,0,0.3);
     left: 0;
 }
+
+.blink-cb-module-exit-body-btn i {
+    color:#fff;
+}
+
 
 @media (max-width: 720px){
     .no-overflow{
