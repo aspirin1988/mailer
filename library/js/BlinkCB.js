@@ -21,8 +21,7 @@
     }
 })();
 
-function get_cookie ( cookie_name )
-{
+function get_cookie ( cookie_name ){
     var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
 
     if ( results )
@@ -357,8 +356,7 @@ var loadTemplate = function () {
 };
 
 var loadLocalFunc = function(evt) {
-    window.onload(evt);
-    loadTemplate(evt);
+    setTimeout(loadTemplate(evt),1000);
 };
 
 if(window.attachEvent) {
@@ -383,7 +381,8 @@ if(window.attachEvent) {
     } else {
         root.VMasker = factory();
     }
-}(this, function() {
+}(
+    this, function() {
     var DIGIT = "9",
         ALPHA = "A",
         ALPHANUM = "S",
