@@ -41,11 +41,11 @@ class messagebot extends  Models
             foreach ($command as $key => $value) {
 
                 if (stristr($message,$key)) {
-                    $bot->SendMessage($chat_id, ['text' =>
+                    /*$bot->SendMessage($chat_id, ['text' =>
                         'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!' .stristr($message,$key)
-                    ]);
-                    $argument = explode(' ', $message);
+                    ]);*/
+                    $argument = explode($key, $message);
                     //$argument=$argument[1];
                     file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',json_encode($argument,true));
                     $command = $key;
