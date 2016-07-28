@@ -132,7 +132,7 @@ class messagebot extends  Models
                         else
                         {
                             $bot->SendMessage($chat_id, ['text' =>
-                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не существует в нашей базе!'
+                                'Здравствуйте ' . $user_name . '! Сайта с именем ' . $argument[0] . ' не существует в нашей базе!'
                             ]);
                         }
                         break;
@@ -157,7 +157,7 @@ class messagebot extends  Models
                         else
                         {
                             $bot->SendMessage($chat_id, ['text' =>
-                                'Здравствуйте ' . $user_name . '! Сайста с именем ' . $argument[0] . ' не существует в нашей базе!'
+                                'Здравствуйте ' . $user_name . '! Сайта с именем ' . $argument[0] . ' не существует в нашей базе!'
                             ]);
                         }
                         break;
@@ -174,12 +174,12 @@ class messagebot extends  Models
     Я помогу вам наладить связи между вами и вашими клиентами!'
                         ]);
                         break;
-                    default:
+                    /*default:
                         $bot->SendMessage($chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
     Я помогу вам наладить связи между вами и вашими клиентами!' .print_r($argument,true)
                         ]);
-                        break;
+                        break;*/
                 }
 
             }
