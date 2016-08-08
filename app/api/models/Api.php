@@ -20,7 +20,8 @@ class Api extends Models
             'token' => $token,
             'user' => $UserId,
             'time_stamp' => time(),
-            'last_update' =>  time()
+            'last_update' =>  time(),
+            'client' =>  json_encode($_SERVER)
         ];
 
         $this->db->insert('api_sessions',$new_session);
