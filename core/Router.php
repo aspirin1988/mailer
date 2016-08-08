@@ -39,6 +39,7 @@ class Router
         $permissions = [
             'programmer',
             'auth',
+            'api',
             'designer',
             'callcenter',
             'helper',
@@ -49,7 +50,7 @@ class Router
         ];
 
 
-        if (!$session->User() && $route[0] != 'auth' &&  $route[0] != 'client') {
+        if (!$session->User() && $route[0] != 'auth' &&  $route[0] != 'client' && $route[0] != 'api') {
             $response->redirect('/auth');
             exit;
         }

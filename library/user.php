@@ -21,7 +21,7 @@ public $_user;
         "access_level"=>0,
         "boss"=>0,
         "document_number"=>0,
-        "email"=>'anonymous@oto.com',
+        "email"=>'anonymous@mailer.com',
         "first_name"=>'anonymous',
         "id"=>-1,
         "issue_date"=>'00-00-00',
