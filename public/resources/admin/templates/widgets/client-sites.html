@@ -10,7 +10,7 @@
     </ol>
 </section>
 <br>
-<div class="row">
+<div class="row" >
     <div class="col-xs-12">
         <div class="col-xs-12">
             <!-- Box Comment -->
@@ -77,11 +77,16 @@
             </div>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <button ng-if="!siteEdit" class="btn btn-default btn-sm" ng-click="editSite()"><i class="fa fa-pencil"></i></button>
                 <button ng-if="siteEdit" class="btn btn-default btn-sm" ng-click="cancelSite()"><i class="fa fa-remove"></i></button>
                 <button ng-if="siteEdit" class="btn btn-default btn-sm" ng-click="val=saveSite(val,key)"><i class="fa fa-save"></i></button>
             </div>
+            <div class="col-md-6">
+                <button class="btn btn-default btn-sm pull-right" ng-click="DelSite(val.id,key)"><i class="fa fa-remove"></i></button>
+            </div>
+
+
             <div class="col-md-6">
                 <div class="form-group">
                     <label>md5</label>

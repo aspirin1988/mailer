@@ -15,8 +15,16 @@ class Template extends Controller
 {
     public function index()
     {
-        echo 'is template';
+        $this->screen("http://a-soft.kz/", "1920", "1920", "jpeg",'a-soft');
     }
+
+    function screen($url, $razr, $razm, $form, $name)
+    {
+        $toapi="http://mini.s-shot.ru/".$razr."/".$razm."/".$form."/?".$url;
+        $scim=file_get_contents($toapi);
+        file_put_contents(PUBLIC_PATH . DS . 'css' . DS.'cache'. DS.$name.'.'.$form , $scim);
+    }
+
 
     public function Get($style)
     {

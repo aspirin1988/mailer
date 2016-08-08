@@ -55,11 +55,11 @@ class Callback extends Controller
     }
 
 
-    public function DelSite ()
+    public function DelSite ($id)
     {
-        $value = $this->request->rest();
+//        $value = $this->request->rest();
         $model = new \app\admin\models\callback();
-        $this->response->json($model->DelSite($value));
+        $this->response->json($model->DelSite($id));
     }
 
     /*---------Gateway-----------*/

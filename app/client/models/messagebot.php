@@ -33,6 +33,9 @@ class messagebot extends  Models
                 'я оператор' => 'string',
                 'статистика' => 'string',
                 'помощь' => 'string',
+                '/screen all' => 'string',
+                '/screen' => 'string',
+
             ];
             $is_bot_command = false;
             $argument = false;
@@ -63,6 +66,43 @@ class messagebot extends  Models
 
             if ($is_bot_command) {
                 switch ($command) {
+
+                    case '/screen':
+                        $url=$this->screen($argument[0],"1920x1080", "1920", "jpeg",$argument[0]);
+                        if($url) {
+                            $bot->SendImage($chat_id, $url,$argument[0]);
+                        }
+                        else{
+                            $bot->SendMessage($chat_id, ['text' =>
+                                'К сожалению невозможно сделать снимок данного сайта "'.$argument[0].'"!'
+                            ]);
+                        }
+                        break;
+                    case '/screen all':
+                        $data=$this->db->select('site',['name']);
+                        $image=[];
+                        for ($i=0; $i<=count($data)-1; $i++){
+                            $value=$data[$i];
+                            $url=$this->screen($value['name'],"1920x1080", "1920", "jpeg",$value['name']);
+                            if($url) {
+                                $image[]['url']=$url;
+                                $image[]['name']=$value['name'];
+                            }
+                            else{
+                                $bot->SendMessage($chat_id, ['text' =>
+                                    'К сожалению невозможно сделать снимок данного сайта "'.$value['name'].'"!'
+                                ]);
+                            }
+                        }
+
+                        if ($image) {
+                            foreach ($image as $value) {
+                                $bot->SendImage($chat_id, $value['url'],$value['name']);
+                            }
+                        }
+
+                        break;
+
                     case '/start':
                         $bot->SendMessage($site_chat_id, ['text' =>
                             'Здравствуйте я бот компании Business link.
@@ -191,6 +231,31 @@ class messagebot extends  Models
         return false;
     }
 
+    function screen($url, $razr, $razm, $form, $name)
+    {
+        $path=PUBLIC_PATH . DS . 'css' . DS.'cache'. DS.date('Y-m-d');
+        mkdir($path, 0777,true);
+        $toapi="http://mini.s-shot.ru/".$razr."/".$razm."/".$form."/?http://".$url;
+        $scim=file_get_contents($toapi);
+        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$toapi);
+        if($scim){
+            file_put_contents($path.DS.$name.'.'.$form , $scim);
+            return $path.DS.$name.'.'.$form;
+        }
+        else{
+            $toapi="http://mini.s-shot.ru/".$razr."/".$razm."/".$form."/?https://".$url;
+            $scim=file_get_contents($toapi);
+            if ($scim){
+            file_put_contents($path.DS.$name.'.'.$form , $scim);
+            return $path.DS.$name.'.'.$form;
+            }
+            else{
+                return false;
+            }
+
+        }
+
+    }
 
     public function getMessage($data,$name)
     {

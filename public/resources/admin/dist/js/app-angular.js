@@ -220,6 +220,19 @@ app.controller('clientCtrl', function ($scope, $routeParams, clientFactory,$http
         }, function error(response) {});
     };
 
+    $scope.DelSite = function(id,key) {
+        console.log($scope.sites[key]);
+        $http({
+            method: 'GET',
+            url: '/admin/callback/DelSite/'+id
+        }).then(function success(response) {
+            if(response.data) {
+                $scope.sites.splice(key,1);
+            }
+        }, function error() {});
+
+    };
+
 });
 
 app.controller('mailerCtrl', function ($scope, $http, $sce, $routeParams, mailerFactory) {
@@ -562,11 +575,12 @@ app.controller('blinkMainController',function($scope, $http, authUser, $sce, $ro
             url: '/admin/callback/EditSite/',
             data: data
         }).then(function success(response) {
-            if(response.data.data !== false) {
+            if (response.data.data !== false) {
                 $scope.siteEdit = false;
                 return response.data.data;
             }
-        }, function error() {});
+        }, function error() {
+        });
     };
 
     $scope.sendHosts = function() {

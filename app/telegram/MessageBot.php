@@ -83,6 +83,30 @@ class MessageBot
         return json_decode($return,true);
     }
 
+    public function SendImage($chat_id=-149637232,$ImageUlr,$caption=false)
+    {
+        $bot_url    = "https://api.telegram.org/bot{$this->token}/";
+        $url        = $bot_url . "sendPhoto?chat_id=" . $chat_id ;
+
+        $post_fields = array('chat_id'   => $chat_id,
+            'photo'     => new \CURLFile(realpath($ImageUlr))
+        );
+        if ($caption){
+            $post_fields['caption']=$caption;
+        }
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Content-Type:multipart/form-data"
+        ));
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+        $output = curl_exec($ch);
+//        file_put_contents(PUBLIC_PATH.'/css/cache/text.txt',$ImageUlr);
+
+    }
+
     public function EditMessage($chat_id,$message_id,$message,$add_text){
         $url = "https://api.telegram.org/bot{$this->token}/editMessageText";
         $content = array(

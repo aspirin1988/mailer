@@ -213,7 +213,7 @@ class callback extends Models
 
     public function DelSite ($value)
     {
-        $result  = $this->db->delete('site',['id'=>$value['id']]);
+        $result  = $this->db->delete('site',['id'=>$value]);
         return [
             'data'=>$result
         ];
