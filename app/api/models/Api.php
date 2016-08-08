@@ -18,10 +18,12 @@ class Api extends Models
         $token = bin2hex(openssl_random_pseudo_bytes(128));
         $new_session = [
             'token' => $token,
-            'user' => $UserId
+            'user' => $UserId,
+            'time_stamp' => time(),
+            'last_update' =>  time()
         ];
 
-        $this->db->insert('temp_user',$new_session);
+        $this->db->insert('api_sessions',$new_session);
         return $new_session;
     }
 }
