@@ -21,7 +21,7 @@ class Api extends Models
             'user' => $UserId,
             'time_stamp' => time(),
             'last_update' =>  time(),
-            'client' =>  json_encode($_SERVER)
+            'client' =>  ['REMOTE_ADDR'=>$_SERVER['REMOTE_ADDR'],'HTTP_USER_AGENT'=>$_SERVER['HTTP_USER_AGENT']]
         ];
 
         $this->db->insert('api_sessions',$new_session);
