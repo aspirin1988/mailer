@@ -17,12 +17,12 @@ class Auth extends Controller
 
     public function index()
     {
-        $rest = $this->request->rest([]);
+        $rest = $this->request->rest();
         if(isset($rest['login']) && isset($rest['password']))
         {
             $model = new AuthModel();
             $verify = $model->verify($rest['login'], $rest['password']);
-            if($verify){
+            if($verify == 1){
                 $api = new Api();
                 $this->response->json(['status' => true, 'data' => $api->openSession($model->getUser('id'))]);
             }
