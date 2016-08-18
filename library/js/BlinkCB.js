@@ -1,25 +1,25 @@
 
-(function meta () {
-    var meta = document.getElementsByTagName('meta');
-    var head = document.getElementsByTagName('head');
-    var viewport=false;
-    for(i=0; i<Object(meta).length; i++)
-    {
-        if (meta[i].name==='viewport') {
-            viewport = true;
-            if (meta[i].content.indexOf('width=device-width')>-1) {
-            }
-            else
-            {
-                meta[i].content= meta[i].content+', width=device-width';
-            }
-        }
-    }
-    if (viewport===false)
-    {
-        head[0].innerHTML=head[0].innerHTML+'<meta name="viewport" content="width=device-width, initial-scale=1">';
-    }
-})();
+// (function meta () {
+//     var meta = document.getElementsByTagName('meta');
+//     var head = document.getElementsByTagName('head');
+//     var viewport=false;
+//     for(i=0; i<Object(meta).length; i++)
+//     {
+//         if (meta[i].name==='viewport') {
+//             viewport = true;
+//             if (meta[i].content.indexOf('width=device-width')>-1) {
+//             }
+//             else
+//             {
+//                 meta[i].content= meta[i].content+', width=device-width';
+//             }
+//         }
+//     }
+//     if (viewport===false)
+//     {
+//         head[0].innerHTML=head[0].innerHTML+'<meta name="viewport" content="width=device-width, initial-scale=1">';
+//     }
+// })();
 
 function get_cookie ( cookie_name ){
     var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
@@ -634,6 +634,8 @@ BMModule.prototype.post = function(e, t, o) {
 
 document.onreadystatechange = function () {
     function viseble (){
+        var button=document.getElementsByClassName('blink-cb-open-popup')[0];
+        button.style.display='block';
         document.getElementById('blink-main-module').style.display='block';
         var el = document.querySelector('#Recall input[name="phone"]');
         VMasker(el).maskPattern("+9(999) 999-99-99");

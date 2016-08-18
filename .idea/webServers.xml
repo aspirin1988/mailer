@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9a83e7a6-980d-4fbc-aa1b-1c149ecaafe9" name="mailer" url="http://80.87.202.120">
+        <fileTransfer host="80.87.202.120" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/mailer" accessType="SFTP" username="mailer" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
