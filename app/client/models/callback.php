@@ -134,7 +134,7 @@ class callback extends Models
         }
     }
 
-    public function SendForm ($rest,$name)
+    public function SendForm ($rest,$name,$mute=false)
     {
         $approve=true;
         $siteData = $this->db->select('site', [
@@ -209,8 +209,9 @@ class callback extends Models
             if ($result[0]['code']){
 
                 $result[0]['text']=$suc_text;
-
-                $this->sendToOperator($siteData,$rest);
+                if (!$mute) {
+                    $this->sendToOperator($siteData, $rest);
+                }
 
             }
             else

@@ -68,10 +68,16 @@ class Callback extends Controller
     {
         $name=$this->get_name();
         $rest='';
+        if (isset($_POST['_mute'])&&$_POST['_mute']==true){
+            $mute=true;
+        }
+        else{
+            $mute=false;
+        }
         $rest=$_POST;  //= $this->request;
         $model = new \app\client\models\callback();
         $rest['URL']=$_SERVER['HTTP_REFERER'];
-        $this->response->json($model->SendForm($rest,$name));
+        $this->response->json($model->SendForm($rest,$name,$mute));
     }
 
     public function SendFormTo($value,$name=false)
