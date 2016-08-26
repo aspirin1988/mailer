@@ -75,6 +75,7 @@ class Callback extends Controller
             $mute=false;
         }
         $rest=$_POST;  //= $this->request;
+        unset($rest['_mute']);
         $model = new \app\client\models\callback();
         $rest['URL']=$_SERVER['HTTP_REFERER'];
         $this->response->json($model->SendForm($rest,$name,$mute));

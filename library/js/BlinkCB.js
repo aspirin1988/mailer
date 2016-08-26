@@ -634,8 +634,8 @@ BMModule.prototype.post = function(e, t, o) {
 
 document.onreadystatechange = function () {
     function viseble (){
-        var button=document.getElementsByClassName('blink-cb-open-popup')[0];
-        button.style.display='block';
+        /*var button=document.getElementsByClassName('blink-cb-open-popup')[0];
+        button.style.display='block';*/
         document.getElementById('blink-main-module').style.display='block';
         var el = document.querySelector('#Recall input[name="phone"]');
         VMasker(el).maskPattern("+9(999) 999-99-99");
