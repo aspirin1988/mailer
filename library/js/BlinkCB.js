@@ -1,41 +1,5 @@
 
-// (function meta () {
-//     var meta = document.getElementsByTagName('meta');
-//     var head = document.getElementsByTagName('head');
-//     var viewport=false;
-//     for(i=0; i<Object(meta).length; i++)
-//     {
-//         if (meta[i].name==='viewport') {
-//             viewport = true;
-//             if (meta[i].content.indexOf('width=device-width')>-1) {
-//             }
-//             else
-//             {
-//                 meta[i].content= meta[i].content+', width=device-width';
-//             }
-//         }
-//     }
-//     if (viewport===false)
-//     {
-//         head[0].innerHTML=head[0].innerHTML+'<meta name="viewport" content="width=device-width, initial-scale=1">';
-//     }
-// })();
 
-/*function get_cookie ( cookie_name ){
-    var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
-
-    if ( results )
-        return ( encodeURIComponent ( results[2] ) );
-    else
-        return null;
-}
-
-function gen_cookie() {
-    var one=Math.random().toString(36),
-        second=Math.random().toString(36);
-    document.cookie = "blinkChat="+second+one;
-    return second+one;
-}*/
 
 function BlinkCBModule() {
     var that = this;
