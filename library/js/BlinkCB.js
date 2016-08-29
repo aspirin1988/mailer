@@ -1,6 +1,4 @@
 
-
-
 function BlinkCBModule() {
     var that = this;
     var xhr = new XMLHttpRequest();
