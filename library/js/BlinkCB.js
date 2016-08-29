@@ -7,40 +7,6 @@ function BlinkCBModule() {
     xhr.open('GET', '{host}/client/Template/Get/', true);
     xhr.send();
 
-    /*var token = get_cookie ( "blinkChat" );
-    if (!token)
-    {
-        token=gen_cookie();
-    }
-*/
-
-
-    /*setInterval(function () {
-        if (document.getElementById('blink-cb-module-popup-comments')) {
-            setTimeout(function () {
-                var toSendObject = document.getElementById('Chat');
-                // document.getElementById('chat-token').value = token;
-
-                that.post(toSendObject, 'GetChat', function (response) {
-                    var currentResutlt = JSON.parse(response);
-                    var Content = '';
-                    var count_obj = Object.keys(currentResutlt).length;
-                    for (i = count_obj - 1; i >= 0; i--) {
-                        if (currentResutlt[i].data&&currentResutlt[i].data.message) {
-                            if (currentResutlt[i].from == token) {
-                                Content = Content + '<div class="site"><p class="bubble">' + currentResutlt[i].data.message.text + '</p></div>';
-                            }
-                            else {
-                                Content = Content + '<div class="operator"><p class="bubble1" >' + currentResutlt[i].data.message.text + '</p></div>';
-                            }
-                        }
-                    }
-                    document.getElementById('Chat-text').innerHTML = Content;
-
-                });
-            }, 1);
-        }
-    },3000);*/
 
     xhr.onreadystatechange = function() {
         if (this.readyState!= 4) return;
