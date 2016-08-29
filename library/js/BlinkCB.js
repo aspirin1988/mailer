@@ -21,7 +21,7 @@
 //     }
 // })();
 
-function get_cookie ( cookie_name ){
+/*function get_cookie ( cookie_name ){
     var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
 
     if ( results )
@@ -35,7 +35,7 @@ function gen_cookie() {
         second=Math.random().toString(36);
     document.cookie = "blinkChat="+second+one;
     return second+one;
-}
+}*/
 
 function BlinkCBModule() {
     var that = this;
@@ -45,19 +45,19 @@ function BlinkCBModule() {
     xhr.open('GET', '{host}/client/Template/Get/', true);
     xhr.send();
 
-    var token = get_cookie ( "blinkChat" );
+    /*var token = get_cookie ( "blinkChat" );
     if (!token)
     {
         token=gen_cookie();
     }
+*/
 
 
-
-    setInterval(function () {
+    /*setInterval(function () {
         if (document.getElementById('blink-cb-module-popup-comments')) {
             setTimeout(function () {
                 var toSendObject = document.getElementById('Chat');
-                document.getElementById('chat-token').value = token;
+                // document.getElementById('chat-token').value = token;
 
                 that.post(toSendObject, 'GetChat', function (response) {
                     var currentResutlt = JSON.parse(response);
@@ -78,7 +78,7 @@ function BlinkCBModule() {
                 });
             }, 1);
         }
-    },3000);
+    },3000);*/
 
     xhr.onreadystatechange = function() {
         if (this.readyState!= 4) return;
