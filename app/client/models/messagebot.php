@@ -10,11 +10,14 @@ namespace app\client\models;
 
 
 use core\Models;
+use  core\Response;
+
 
 class messagebot extends  Models
 {
     public function sendMessage($data)
     {
+        $response = new Response();
         if ($data['callback_query']){
             $this->FindMessage($data['callback_query']);
         }
@@ -85,8 +88,8 @@ class messagebot extends  Models
                             $value=$data[$i];
                             $url=$this->screen($value['name'],"1920x1080", "1920", "jpeg",$value['name']);
                             if($url) {
-                                $image[]['url']=$url;
-                                $image[]['name']=$value['name'];
+                                $image[$i]['url']=$url;
+                                $image[$i]['name']=$value['name'];
                             }
                             else{
                                 $bot->SendMessage($chat_id, ['text' =>
@@ -100,7 +103,7 @@ class messagebot extends  Models
                                 $bot->SendImage($chat_id, $value['url'],$value['name']);
                             }
                         }
-
+                        return $response->json(true);
                         break;
 
                     case '/start':
@@ -757,5 +760,7 @@ class messagebot extends  Models
             'data' => $siteData,
         ];
     }
+
+
 
 }
